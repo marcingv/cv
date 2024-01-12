@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   it(`should have the 'gv-cv' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('gv-cv');
+    expect(app.title).toEqual('Marcin Gawski - Curriculum Vitae');
   });
 
   it('should render title', () => {
