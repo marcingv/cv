@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  angular:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./:/app
+    ports:
+      - 4200:4200
