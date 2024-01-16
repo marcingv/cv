@@ -1,0 +1,26 @@
+@if (data && data.length) {
+  <ul class="list-unstyled">
+    @for (item of data; track item; let isLast = $last) {
+      <li class="d-flex" [ngClass]="{ 'mb-3': !isLast }">
+        <div class="time-span-col flex-shrink-0">
+          <div><strong>{{ item.company }}</strong></div>
+          <div>
+            <app-time-span [from]="item.from" [to]="item.to"></app-time-span>
+            <div>{{ { from: item.from, to: item.to } | timeSpanDuration }}</div>
+          </div>
+        </div>
+
+        <div class="flex-fill">
+          <h3>{{ item.role }}</h3>
+          <p>{{ item.description }}</p>
+
+          @if (item.usedSkills) {
+            <h4>Narzędzia i technologie:</h4>
+
+            <app-skills-chips-list [data]="item.usedSkills"></app-skills-chips-list>
+          }
+        </div>
+      </li>
+    }
+  </ul>
+}

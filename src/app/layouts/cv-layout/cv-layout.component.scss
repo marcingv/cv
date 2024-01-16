@@ -1,0 +1,8 @@
+main {
+  background: var(--bs-gray-200);
+  min-height: 100dvh;
+
+  > .main__content {
+    background: var(--bs-body-bg);
+  }
+}

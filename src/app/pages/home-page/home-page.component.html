@@ -1,5 +1,19 @@
-<p>home-page works!</p>
-
 @if (cvData$ | async; as cvData) {
-  {{ cvData | json }}
+  <aside class="flex-shrink-0 bg-dark text-bg-dark">
+    <app-cv-section title="Edukacja">
+      <app-education-experience-list [data]="cvData.education"></app-education-experience-list>
+    </app-cv-section>
+  </aside>
+
+  <div class="flex-fill">
+    <app-profile-about [profile]="cvData.employee"></app-profile-about>
+
+    <app-cv-section title="Doświadczenie">
+      <app-job-experience-list [data]="cvData.jobs"></app-job-experience-list>
+    </app-cv-section>
+
+    <app-cv-section title="Najciekawsze projekty">
+      <app-projects-experience-list [data]="cvData.projects"></app-projects-experience-list>
+    </app-cv-section>
+  </div>
 }

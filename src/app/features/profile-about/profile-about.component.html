@@ -1,0 +1,16 @@
+<app-cv-section>
+  <h1>{{ profile.firstName }} {{ profile.lastName }}</h1>
+
+  <p>
+    <span>Obecna specjalizacja:</span> {{ profile.specialization }}
+  </p>
+
+  <p>{{ profile.about }}</p>
+
+  @if (profile.skills) {
+    <app-skills-chips-list [data]="profile.skills"></app-skills-chips-list>
+  }
+  <div>
+
+  </div>
+</app-cv-section>

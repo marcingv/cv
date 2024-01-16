@@ -1,0 +1,40 @@
+<ul class="list-unstyled">
+  @for (item of data; track item; let isLast = $last) {
+    <li class="d-flex" [ngClass]="{ 'mb-3': !isLast }">
+      <div class="time-span-col flex-shrink-0">
+        <div><span>&#64;</span> {{ item.companyName }}</div>
+        <div>
+          <app-time-span [from]="item.from" [to]="item.to"></app-time-span>
+        </div>
+      </div>
+
+      <div class="flex-grow-0">
+        <h3>{{ item.name }}</h3>
+
+        <p>
+          Rola: {{ item.role }}
+        </p>
+
+        <p>
+          {{ item.description }}
+        </p>
+
+        <h4>Zakres obowiązków:</h4>
+
+        <ul class="list-unstyled">
+          @for (resposibility of item.responsibilities; track resposibility) {
+            <li>{{ resposibility }}</li>
+          }
+        </ul>
+
+        @if (item.usedSkills) {
+          <h4>Narzędzia i technologie:</h4>
+
+          <app-skills-chips-list [data]="item.usedSkills"></app-skills-chips-list>
+        }
+
+
+      </div>
+    </li>
+  }
+</ul>
