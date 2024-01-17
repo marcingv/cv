@@ -1,4 +1,4 @@
-export * from './contact-address';
+export * from './contact-data';
 export * from './cv-data';
 export * from './education-experience';
 export * from './employee-data';

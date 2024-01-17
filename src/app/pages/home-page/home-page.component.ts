@@ -11,6 +11,7 @@ import { ProjectsExperienceListComponent } from '../../features/projects/compone
 import { LanguagesExperienceListComponent } from '../../features/languages/components/languages-experience-list';
 import { HobbiesListComponent } from '../../features/hobbies/components/hobbies-list';
 import { AdditionalSkillsListComponent } from '../../features/skills/components/additional-skills-list';
+import { ContactDetailsComponent } from '../../features/employee/components/contact-details';
 
 @Component({
   selector: 'app-home-page',
@@ -26,6 +27,7 @@ import { AdditionalSkillsListComponent } from '../../features/skills/components/
     LanguagesExperienceListComponent,
     HobbiesListComponent,
     AdditionalSkillsListComponent,
+    ContactDetailsComponent,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',

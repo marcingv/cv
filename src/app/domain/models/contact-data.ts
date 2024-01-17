@@ -1,4 +1,4 @@
-export interface ContactAddress {
+export interface ContactData {
   country: string;
   city: string;
   phone?: string;

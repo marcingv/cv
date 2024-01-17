@@ -1,12 +1,12 @@
 import { Skill } from './skill';
-import { ContactAddress } from './contact-address';
+import { ContactData } from './contact-data';
 import { Hobby } from './hobby';
 
 export interface EmployeeData {
   firstName: string;
   lastName: string;
   specialization: string;
-  contactAddress: ContactAddress;
+  contact: ContactData;
   about?: string;
   skills: Skill[];
   additionalSkills: Skill[];

@@ -61,7 +61,7 @@ export class CvDataApiService {
             name: 'Prawo jazdy kategorii B',
           },
         ],
-        contactAddress: {
+        contact: {
           city: 'Lublin',
           country: 'Polska',
           email: 'marcin.gawski@gmail.com',

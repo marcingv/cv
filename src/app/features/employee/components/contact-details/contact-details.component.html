@@ -1,0 +1,29 @@
+<div class="contact-details">
+  <div class="contact-details__row d-flex gap-3">
+    <div class="contact-details__label">
+      Miejsce zamieszkania
+    </div>
+
+    <div class="contact-details__value">{{ data.city }}, {{ data.country }}</div>
+  </div>
+
+  @if(data.email) {
+    <div class="contact-details__row d-flex gap-3">
+      <div class="contact-details__label">
+        E-mail
+      </div>
+
+      <div class="contact-details__value">{{ data.email }}</div>
+    </div>
+  }
+
+  @if(data.phone) {
+    <div class="contact-details__row d-flex gap-3">
+      <div class="contact-details__label">
+        Telefon
+      </div>
+
+      <div class="contact-details__value">{{ data.phone }}</div>
+    </div>
+  }
+</div>

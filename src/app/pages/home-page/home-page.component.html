@@ -1,10 +1,14 @@
 @if (cvData$ | async; as cvData) {
-  <aside class="flex-shrink-0 bg-dark text-bg-dark py-5">
-    <app-cv-section title="Edukacja" class="mb-5">
+  <aside class="flex-shrink-0 bg-dark text-bg-dark py-5 d-flex flex-column gap-5">
+    <app-cv-section title="Dane kontaktowe">
+      <app-contact-details [data]="cvData.employee.contact"></app-contact-details>
+    </app-cv-section>
+
+    <app-cv-section title="Edukacja">
       <app-education-experience-list [data]="cvData.education"></app-education-experience-list>
     </app-cv-section>
 
-    <app-cv-section title="Języki" class="mb-5">
+    <app-cv-section title="Języki">
       <app-languages-experience-list [data]="cvData.languages"></app-languages-experience-list>
     </app-cv-section>
 
