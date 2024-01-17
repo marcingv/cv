@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Skill } from '../../domain/models';
+import { Skill } from '../../../../domain/models';
 
 @Component({
   selector: 'app-skills-chips-list',

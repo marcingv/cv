@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ProjectExperience } from '../../domain/models';
-import { TimeSpanComponent } from '../../ui/time-span';
-import { SkillsChipsListComponent } from '../../ui/skills-chips-list';
+import { TimeSpanComponent } from '../../ui/components/time-span';
+import { SkillsChipsListComponent } from '../skills/components/skills-chips-list';
 import { NgClass } from '@angular/common';
 
 @Component({

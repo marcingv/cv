@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { CvData } from '../../domain/models';
 import { AsyncPipe, JsonPipe } from '@angular/common';
 import { ProfileAboutComponent } from '../../features/profile-about';
-import { CvSectionComponent } from '../../ui/cv-section';
+import { CvSectionComponent } from '../../ui/components/cv-section';
 import { EducationExperienceListComponent } from '../../features/education-experience-list';
 import { JobExperienceListComponent } from '../../features/job-experience-list';
 import { ProjectsExperienceListComponent } from '../../features/projects-experience-list';
