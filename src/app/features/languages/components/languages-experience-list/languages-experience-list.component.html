@@ -1,0 +1,8 @@
+<ul class="list-unstyled">
+  @for(item of data; track item) {
+    <li class="d-flex">
+      <div class="lang-name-col flex-shrink-0">{{ item.name }}</div>
+      <div class="flex-fill">{{ item.advancementDescription }}</div>
+    </li>
+  }
+</ul>

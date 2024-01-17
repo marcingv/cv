@@ -1,19 +1,31 @@
 @if (cvData$ | async; as cvData) {
-  <aside class="flex-shrink-0 bg-dark text-bg-dark">
-    <app-cv-section title="Edukacja">
+  <aside class="flex-shrink-0 bg-dark text-bg-dark py-5">
+    <app-cv-section title="Edukacja" class="mb-5">
       <app-education-experience-list [data]="cvData.education"></app-education-experience-list>
+    </app-cv-section>
+
+    <app-cv-section title="Języki" class="mb-5">
+      <app-languages-experience-list [data]="cvData.languages"></app-languages-experience-list>
+    </app-cv-section>
+
+    <app-cv-section title="Zainteresowania">
+      <app-hobbies-list [data]="cvData.employee.hobbies"></app-hobbies-list>
     </app-cv-section>
   </aside>
 
-  <div class="flex-fill">
+  <div class="flex-fill d-flex flex-column gap-5">
     <app-profile-about [profile]="cvData.employee"></app-profile-about>
 
-    <app-cv-section title="Doświadczenie" class="px-5">
+    <app-cv-section title="Doświadczenie">
       <app-job-experience-list [data]="cvData.jobs"></app-job-experience-list>
     </app-cv-section>
 
-    <app-cv-section title="Najciekawsze projekty" class="px-5">
+    <app-cv-section title="Najciekawsze projekty">
       <app-projects-experience-list [data]="cvData.projects"></app-projects-experience-list>
+    </app-cv-section>
+
+    <app-cv-section title="Dodatkowe umiejętności">
+      <app-additional-skills-list [data]="cvData.employee.additionalSkills"></app-additional-skills-list>
     </app-cv-section>
   </div>
 }

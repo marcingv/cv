@@ -350,6 +350,10 @@ export class CvDataApiService {
           ],
         },
       ],
+      languages: [
+        { name: 'Polski', advancementDescription: 'Język ojczysty' },
+        { name: 'Angielski', advancementDescription: 'Poziom komunikatywny' },
+      ],
     };
 
     return of(cvData);
