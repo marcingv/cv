@@ -23,7 +23,7 @@ import { ProjectsExperienceListComponent } from '../../features/projects-experie
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
-  host: { class: 'd-flex gap-3' },
+  host: { class: 'd-flex' },
 })
 export class HomePageComponent {
   public cvData$: Observable<CvData> = this.cvDataApi.fetchData();

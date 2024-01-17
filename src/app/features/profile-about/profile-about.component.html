@@ -1,16 +1,22 @@
 <app-cv-section>
-  <h1>{{ profile.firstName }} {{ profile.lastName }}</h1>
+  <div class="py-5 my-5 bg-warning px-5">
+    <h1>{{ profile.firstName }} {{ profile.lastName }}</h1>
 
-  <p>
-    <span>Obecna specjalizacja:</span> {{ profile.specialization }}
-  </p>
+    <p>
+      <span>Obecna specjalizacja:</span> {{ profile.specialization }}
+    </p>
+  </div>
 
-  <p>{{ profile.about }}</p>
+  <div class="px-5 mb-5">
+    <h2 class="text-uppercase">O mnie</h2>
+    <p>{{ profile.about }}</p>
+  </div>
 
   @if (profile.skills) {
-    <app-skills-chips-list [data]="profile.skills"></app-skills-chips-list>
-  }
-  <div>
+    <div class="px-5">
+      <app-grouped-skills-list [data]="profile.skills"></app-grouped-skills-list>
 
-  </div>
+      <app-skills-chips-list [data]="profile.skills"></app-skills-chips-list>
+    </div>
+  }
 </app-cv-section>

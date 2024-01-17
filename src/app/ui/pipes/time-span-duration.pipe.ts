@@ -11,8 +11,8 @@ export class TimeSpanDurationPipe implements PipeTransform {
   }): string {
     const { from, to } = value;
 
-    const fromDate: Date = this.toDate(value.from);
-    const toDate: Date = value.to ? this.toDate(value.to) : new Date();
+    const fromDate: Date = this.toDate(from);
+    const toDate: Date = to ? this.toDate(to) : new Date();
 
     const msDiff: number = toDate.getTime() - fromDate.getTime();
     const daysDiff: number = msDiff / 1000 / 3600 / 24;
