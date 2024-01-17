@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { EmployeeData } from '../../domain/models';
-import { CvSectionComponent } from '../../ui/components/cv-section';
-import { SkillsChipsListComponent } from '../skills/components/skills-chips-list';
-import { GroupedSkillsListComponent } from '../skills/components/grouped-skills-list';
+import { EmployeeData } from '../../../../domain/models';
+import { CvSectionComponent } from '../../../../ui/components/cv-section';
+import { SkillsChipsListComponent } from '../../../skills/components/skills-chips-list';
+import { GroupedSkillsListComponent } from '../../../skills/components/grouped-skills-list';
 
 @Component({
   selector: 'app-profile-about',
