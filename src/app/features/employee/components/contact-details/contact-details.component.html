@@ -1,29 +1,14 @@
-<div class="contact-details">
-  <div class="contact-details__row d-flex gap-3">
-    <div class="contact-details__label">
-      Miejsce zamieszkania
-    </div>
-
-    <div class="contact-details__value">{{ data.city }}, {{ data.country }}</div>
-  </div>
-
-  @if(data.email) {
-    <div class="contact-details__row d-flex gap-3">
-      <div class="contact-details__label">
-        E-mail
-      </div>
-
-      <div class="contact-details__value">{{ data.email }}</div>
-    </div>
-  }
+<app-details-view class="contact-data">
+  <app-details-view-row label="Miejsce zamieszkania">
+    <ng-template appDetailsViewRowValue>
+      {{ data.city }}, {{ data.country }}
+    </ng-template>
+  </app-details-view-row>
 
   @if(data.phone) {
-    <div class="contact-details__row d-flex gap-3">
-      <div class="contact-details__label">
-        Telefon
-      </div>
-
-      <div class="contact-details__value">{{ data.phone }}</div>
-    </div>
+    <app-details-view-row label="Telefon" [value]="data.phone"></app-details-view-row>
   }
-</div>
+  @if(data.email) {
+    <app-details-view-row label="E-mail" [value]="data.email"></app-details-view-row>
+  }
+</app-details-view>

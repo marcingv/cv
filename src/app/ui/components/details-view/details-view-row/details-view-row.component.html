@@ -1,0 +1,15 @@
+<div class="label">
+  @if (labelTpl) {
+    <ng-container *ngTemplateOutlet="labelTpl"></ng-container>
+  } @else {
+    {{ label }}
+  }
+</div>
+
+<div class="value">
+  @if (valueTpl) {
+    <ng-container *ngTemplateOutlet="valueTpl"></ng-container>
+  } @else {
+    {{ value }}
+  }
+</div>
