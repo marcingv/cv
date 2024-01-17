@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { delay, Observable, of } from 'rxjs';
 import { CvData } from '../../../domain/models';
 
 @Injectable({
@@ -9,6 +9,8 @@ export class CvDataApiService {
   public constructor() {}
 
   public fetchData(): Observable<CvData> {
+    console.warn('API For cv data hit');
+
     const cvData: CvData = {
       employee: {
         firstName: 'Marcin',
@@ -356,6 +358,6 @@ export class CvDataApiService {
       ],
     };
 
-    return of(cvData);
+    return of(cvData).pipe(delay(1000));
   }
 }

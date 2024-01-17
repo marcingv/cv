@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import { CvDataApiService } from '../../data-access/api/services';
-import { Observable } from 'rxjs';
+import { Component, inject, Signal } from '@angular/core';
 import { CvData } from '../../domain/models';
 import { AsyncPipe, JsonPipe } from '@angular/common';
 import { ProfileAboutComponent } from '../../features/employee/components/profile-about';
@@ -12,6 +10,7 @@ import { LanguagesExperienceListComponent } from '../../features/languages/compo
 import { HobbiesListComponent } from '../../features/hobbies/components/hobbies-list';
 import { AdditionalSkillsListComponent } from '../../features/skills/components/additional-skills-list';
 import { ContactDetailsComponent } from '../../features/employee/components/contact-details';
+import { HomePageService } from './home-page.service';
 
 @Component({
   selector: 'app-home-page',
@@ -32,9 +31,15 @@ import { ContactDetailsComponent } from '../../features/employee/components/cont
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
   host: { class: 'd-flex' },
+  providers: [HomePageService],
 })
 export class HomePageComponent {
-  public cvData$: Observable<CvData> = this.cvDataApi.fetchData();
+  private dataService: HomePageService = inject(HomePageService);
 
-  public constructor(private cvDataApi: CvDataApiService) {}
+  // public cvData$: Observable<CvData> = this.dataService.cvData$;
+  public cvData: Signal<CvData | undefined> = this.dataService.cvData;
+
+  constructor() {
+    console.error('home cmp init');
+  }
 }

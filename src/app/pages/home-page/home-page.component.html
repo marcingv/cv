@@ -1,4 +1,4 @@
-@if (cvData$ | async; as cvData) {
+@if (cvData(); as cvData) {
   <aside class="flex-shrink-0 bg-dark text-bg-dark py-5 d-flex flex-column gap-5">
     <app-cv-section title="Dane kontaktowe">
       <app-contact-details [data]="cvData.employee.contact"></app-contact-details>
