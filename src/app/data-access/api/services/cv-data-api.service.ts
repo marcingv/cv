@@ -1,11 +1,14 @@
-import { Injectable } from '@angular/core';
-import { delay, Observable, of } from 'rxjs';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { delay, map, Observable, of } from 'rxjs';
 import { CvData } from '../../../domain/models';
+import { isPlatformServer } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CvDataApiService {
+  private isServerPlatform = isPlatformServer(inject(PLATFORM_ID));
+
   public constructor() {}
 
   public fetchData(): Observable<CvData> {
@@ -358,6 +361,18 @@ export class CvDataApiService {
       ],
     };
 
-    return of(cvData).pipe(delay(1000));
+    return of(cvData).pipe(
+      delay(1000),
+      map((data) => {
+        // const shouldThrowError = Math.random() > 0.8;
+        const shouldThrowError = false; //this.isServerPlatform;
+
+        if (shouldThrowError) {
+          throw new Error('Bład pobierania danych CV :-(');
+        } else {
+          return data;
+        }
+      }),
+    );
   }
 }
