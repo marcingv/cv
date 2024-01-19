@@ -3,3 +3,5 @@
 <p class="m-0 p-5 rounded-5 text-bg-danger">
   {{ errorMessage }}
 </p>
+
+<button class="btn btn-secondary" (click)="onGoHome()" [disabled]="isNavigationPending()">Odśwież</button>

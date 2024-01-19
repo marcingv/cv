@@ -5,6 +5,8 @@ import {
   OnInit,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { uiFeature } from '../../data-access/state/ui/reducers/ui.reducer';
 
 @Component({
   selector: 'app-oops-error-page',
@@ -14,18 +16,22 @@ import { Router } from '@angular/router';
   styleUrl: './oops-error-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'd-flex flex-column align-items-center',
+    class: 'd-flex flex-column align-items-center gap-3',
   },
 })
 export class OopsErrorPageComponent implements OnInit {
   private router: Router = inject(Router);
+  private store: Store = inject(Store);
 
   private errorState?: Object;
   public errorMessage?: string;
 
+  public isNavigationPending = this.store.selectSignal(
+    uiFeature.selectIsNavigating,
+  );
+
   public constructor() {
     this.errorState = this.router.lastSuccessfulNavigation?.extras.state;
-    console.error(this.errorState);
   }
 
   public ngOnInit(): void {
@@ -38,5 +44,10 @@ export class OopsErrorPageComponent implements OnInit {
     if (!this.errorMessage) {
       this.errorMessage = 'Wystąpił błąd';
     }
+  }
+
+  public onGoHome(): void {
+    this.router.navigate(['/']);
+    this.router.events;
   }
 }
