@@ -2,10 +2,13 @@ import { TestBed } from '@angular/core/testing';
 import { ResolveFn } from '@angular/router';
 
 import { cvDataResolver } from './cv-data.resolver';
+import { CvData } from '../../domain/models';
 
 describe('cvDataResolver', () => {
-  const executeResolver: ResolveFn<boolean> = (...resolverParameters) => 
-      TestBed.runInInjectionContext(() => cvDataResolver(...resolverParameters));
+  const executeResolver: ResolveFn<CvData | undefined> = (
+    ...resolverParameters
+  ) =>
+    TestBed.runInInjectionContext(() => cvDataResolver(...resolverParameters));
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

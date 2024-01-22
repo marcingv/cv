@@ -4,9 +4,9 @@ import { selectCvDataState } from './cv-data.selectors';
 describe('CvData Selectors', () => {
   it('should select the feature state', () => {
     const result = selectCvDataState({
-      [fromCvData.cvDataFeatureKey]: {},
+      [fromCvData.cvDataFeatureKey]: fromCvData.initialState,
     });
 
-    expect(result).toEqual({});
+    expect(result).toEqual(fromCvData.initialState);
   });
 });
