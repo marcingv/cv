@@ -7,8 +7,5 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './details-view.component.html',
   styleUrl: './details-view.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {
-    class: 'details-view',
-  },
 })
 export class DetailsViewComponent {}

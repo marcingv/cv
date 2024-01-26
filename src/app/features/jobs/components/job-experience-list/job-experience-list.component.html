@@ -1,25 +1,28 @@
 @if (data && data.length) {
-  <ul class="list-unstyled">
+  <ul>
     @for (item of data; track item; let isLast = $last) {
-      <li class="d-flex" [ngClass]="{ 'mb-3': !isLast }">
-        <div class="time-span-col flex-shrink-0">
-          <div><strong>{{ item.company }}</strong></div>
-          <div>
+      <li class="flex flex-col gap-4 p-4 odd:bg-gray-100">
+        <header>
+          <h3 class="mb-2 font-normal text-gray-700">{{ item.company }}</h3>
+
+          <div class="text-xs">
             <app-time-span [from]="item.from" [to]="item.to"></app-time-span>
-            <div>{{ { from: item.from, to: item.to } | timeSpanDuration }}</div>
+            ({{ { from: item.from, to: item.to } | timeSpanDuration }})
           </div>
+        </header>
+
+        <div>
+          <p>{{ item.role }}</p>
+          <p>{{ item.description }}</p>
         </div>
 
-        <div class="flex-fill">
-          <h3>{{ item.role }}</h3>
-          <p>{{ item.description }}</p>
-
-          @if (item.usedSkills) {
-            <h4>Narzędzia i technologie:</h4>
+        @if (item.usedSkills) {
+          <div>
+            <h4 class="font-normal mb-2">Narzędzia i technologie:</h4>
 
             <app-skills-chips-list [data]="item.usedSkills"></app-skills-chips-list>
-          }
-        </div>
+          </div>
+        }
       </li>
     }
   </ul>

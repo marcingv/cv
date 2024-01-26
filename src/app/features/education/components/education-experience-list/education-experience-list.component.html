@@ -1,9 +1,12 @@
 @if (data && data.length > 0) {
-  <ul class="list-unstyled">
+  <ul>
     @for (item of data; track item) {
-      <li>
-        <h3>{{ item.name }}</h3>
-        <app-time-span [from]="item.from" [to]="item.to"></app-time-span>
+      <li class="mb-4 last-of-type:mb-0">
+        <div class="mb-4">
+          <h3 class="font-normal">{{ item.name }}</h3>
+          <app-time-span [from]="item.from" [to]="item.to" class="text-xs"></app-time-span>
+        </div>
+
         <p>{{ item.description }}</p>
       </li>
     }

@@ -17,7 +17,7 @@ import { DetailsViewRowValueDirective } from '../directives/details-view-row-val
   styleUrl: './details-view-row.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'details-view-row d-flex gap-3',
+    class: 'flex flex-row gap-3',
   },
 })
 export class DetailsViewRowComponent {

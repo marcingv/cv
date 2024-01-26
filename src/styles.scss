@@ -1,6 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import "@fontsource/montserrat";
+@import "@fontsource/firago";
+@import "@fontsource/firago/100.css";
+@import "@fontsource/firago/300.css";
+@import "@fontsource/firago/700.css";
 
-$font-family-sans-serif: 'Montserrat', sans-serif;
+//$font-family-sans-serif: 'Montserrat', sans-serif;
 
-@import "bootstrap/scss/bootstrap";
+//@import "bootstrap/scss/bootstrap";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-thin text-base;
+}
+
