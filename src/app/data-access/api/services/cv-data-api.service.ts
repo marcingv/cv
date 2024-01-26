@@ -362,7 +362,7 @@ export class CvDataApiService {
     };
 
     return of(cvData).pipe(
-      delay(1000),
+      // delay(1000),
       map((data) => {
         // const shouldThrowError = Math.random() > 0.8;
         const shouldThrowError = false; //this.isServerPlatform;

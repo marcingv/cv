@@ -1,26 +1,30 @@
 @if (data && data.length) {
-  <ul>
-    @for (item of data; track item; let isLast = $last) {
-      <li class="flex flex-col gap-4 p-4 odd:bg-gray-100">
+  <ul class="lg:grid lg:grid-cols-3">
+    @for (item of data; track item;) {
+      <li class="flex flex-col gap-4 p-4 bg-white odd:bg-gray-100">
         <header>
-          <h3 class="mb-2 font-normal text-gray-700">{{ item.company }}</h3>
+          <div class="mb-2 flex flex-row justify-between items-center">
+            <h3 class="font-normal">{{ item.company }}</h3>
 
-          <div class="text-xs">
-            <app-time-span [from]="item.from" [to]="item.to"></app-time-span>
-            ({{ { from: item.from, to: item.to } | timeSpanDuration }})
+            <div class="text-xs">
+              <app-time-span [from]="item.from" [to]="item.to"></app-time-span>
+              ({{ { from: item.from, to: item.to } | timeSpanDuration }})
+            </div>
           </div>
+
+          <h4 class="font-normal text-gray-700">{{ item.role }}</h4>
         </header>
 
         <div>
-          <p>{{ item.role }}</p>
+
           <p>{{ item.description }}</p>
         </div>
 
         @if (item.usedSkills) {
-          <div>
-            <h4 class="font-normal mb-2">Narzędzia i technologie:</h4>
+          <div class="mt-auto">
+<!--            <h4 class="font-normal mb-2">Narzędzia i technologie:</h4>-->
 
-            <app-skills-chips-list [data]="item.usedSkills"></app-skills-chips-list>
+            <app-skills-chips-list [data]="item.usedSkills" class="[&>ul]:flex-wrap-reverse"></app-skills-chips-list>
           </div>
         }
       </li>

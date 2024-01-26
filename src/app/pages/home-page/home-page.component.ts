@@ -10,6 +10,7 @@ import { LanguagesExperienceListComponent } from '../../features/languages/compo
 import { HobbiesListComponent } from '../../features/hobbies/components/hobbies-list';
 import { AdditionalSkillsListComponent } from '../../features/skills/components/additional-skills-list';
 import { HomePageService } from './home-page.service';
+import { GroupedSkillsListComponent } from '../../features/skills/components/grouped-skills-list';
 
 @Component({
   selector: 'app-home-page',
@@ -25,6 +26,7 @@ import { HomePageService } from './home-page.service';
     LanguagesExperienceListComponent,
     HobbiesListComponent,
     AdditionalSkillsListComponent,
+    GroupedSkillsListComponent,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',

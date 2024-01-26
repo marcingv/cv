@@ -9,6 +9,9 @@ module.exports = {
         montserrat: ['"Montserrat"'],
         firago: ['"Firago"'],
       },
+      screens: {
+        print: { raw: "print" },
+      },
     },
   },
   // safelist: [{ pattern: /(bg|text|border|font)-./ }],

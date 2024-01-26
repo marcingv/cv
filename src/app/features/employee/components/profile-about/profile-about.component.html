@@ -1,38 +1,28 @@
-
-  <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between py-10">
-    <div class="flex flex-row gap-10">
-      <img
-        class="w-20 h-20 rounded"
-        src="https://agrimachinery.nic.in/Images/User/User.png" alt="{{ profile.firstName }} {{ profile.lastName }}" />
-
-      <div>
-        <h1 class="text-3xl font-bold">{{ profile.firstName }} {{ profile.lastName }}</h1>
-        <h2 class="text-2xl text-gray-400">
-          {{ profile.specialization }}
-        </h2>
-      </div>
-
+<div class="container mx-auto flex flex-col gap-4 md:flex-row print:flex-row items-center justify-between py-4 md:py-10 print:py-[1.5cm]">
+  <div class="flex flex-row gap-4 items-center">
+    <img
+      class="hidden md:block w-20 h-20 rounded grayscale hover:grayscale-0 hover:scale-125 cursor-pointer transition-all ease-in-out"
+      src="/assets/profile.jpg" alt="{{ profile.firstName }} {{ profile.lastName }}"/>
+<!--    src="https://agrimachinery.nic.in/Images/User/User.png"-->
+    <div class="text-center md:text-left print:text-left">
+      <h1 class="text-3xl font-bold">{{ profile.firstName }} {{ profile.lastName }}</h1>
+      <h2 class="text-2xl text-gray-400">
+        {{ profile.specialization }}
+      </h2>
     </div>
+  </div>
 
-    <app-cv-section title="Dane kontaktowe">
-      <app-contact-details [data]="profile.contact"></app-contact-details>
+<!--  <app-cv-section title="Dane kontaktowe">-->
+    <app-contact-details [data]="profile.contact"></app-contact-details>
+<!--  </app-cv-section>-->
+</div>
+
+<div class="py-0 md:py-4 lg:py-12 bg-gray-100">
+  <div class="container mx-auto">
+    <app-cv-section title="O mnie">
+      <p>{{ profile.about }}</p>
     </app-cv-section>
   </div>
+</div>
 
-  <div class="p-16 bg-gray-100">
-    <div class="container mx-auto">
-      <app-cv-section title="O mnie">
-        <p>{{ profile.about }}</p>
-      </app-cv-section>
-    </div>
-  </div>
 
-  @if (profile.skills) {
-    <div class="container mx-auto">
-      <app-cv-section title="Umiejętności">
-        <app-grouped-skills-list [data]="profile.skills"></app-grouped-skills-list>
-
-        <!--      <app-skills-chips-list [data]="profile.skills"></app-skills-chips-list>-->
-      </app-cv-section>
-    </div>
-  }
