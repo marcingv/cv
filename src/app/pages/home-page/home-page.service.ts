@@ -1,27 +1,23 @@
 import { inject, Injectable, Signal } from '@angular/core';
-import { CvDataApiService } from '../../data-access/api/services';
-import {
-  catchError,
-  EMPTY,
-  filter,
-  map,
-  Observable,
-  shareReplay,
-  tap,
-} from 'rxjs';
+import { filter, map, Observable } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CvData } from '../../domain/models';
-import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { cvDataFeature } from '../../data-access/state/cv-data/reducers/cv-data.reducer';
+import { LangCode } from '../../data-access/state/ui/models';
+import { uiFeature } from '../../data-access/state/ui/reducers/ui.reducer';
+import { UiActions } from '../../data-access/state/ui/actions/ui.actions';
+import { CvDataActions } from '../../data-access/state/cv-data/actions/cv-data.actions';
 
 @Injectable()
 export class HomePageService {
-  private apiService: CvDataApiService = inject(CvDataApiService);
-  private router: Router = inject(Router);
   private store: Store = inject(Store);
 
-  public cvDataStore$: Observable<CvData> = this.store
+  public availableLangs = this.store.selectSignal(uiFeature.selectLanguages);
+
+  public currentLang = this.store.selectSignal(uiFeature.selectLang);
+
+  private cvDataStore$: Observable<CvData> = this.store
     .select(cvDataFeature.selectData)
     .pipe(
       filter((data) => !!data),
@@ -34,20 +30,10 @@ export class HomePageService {
       }),
     );
 
-  public cvDataApi$: Observable<CvData> = this.apiService.fetchData().pipe(
-    tap(() => console.warn('Pobieram z API')),
-    catchError((error) => {
-      this.router.navigate(['/error'], {
-        skipLocationChange: true,
-        state: { error: error },
-      });
-
-      return EMPTY;
-    }),
-    shareReplay(1),
-    tap(() => console.warn('Mam z share replay')),
-  );
-
-  // public cvData: Signal<CvData | undefined> = toSignal(this.cvDataApi$);
   public cvData: Signal<CvData | undefined> = toSignal(this.cvDataStore$);
+
+  public changeLanguage(lang: LangCode): void {
+    this.store.dispatch(UiActions.changeLang({ language: lang }));
+    this.store.dispatch(CvDataActions.load());
+  }
 }

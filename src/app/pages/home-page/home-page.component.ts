@@ -11,6 +11,8 @@ import { HobbiesListComponent } from '../../features/hobbies/components/hobbies-
 import { AdditionalSkillsListComponent } from '../../features/skills/components/additional-skills-list';
 import { HomePageService } from './home-page.service';
 import { GroupedSkillsListComponent } from '../../features/skills/components/grouped-skills-list';
+import { LangPickerComponent } from '../../ui/components/lang-picker';
+import { LangCode } from '../../data-access/state/ui/models';
 
 @Component({
   selector: 'app-home-page',
@@ -27,6 +29,7 @@ import { GroupedSkillsListComponent } from '../../features/skills/components/gro
     HobbiesListComponent,
     AdditionalSkillsListComponent,
     GroupedSkillsListComponent,
+    LangPickerComponent,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
@@ -37,8 +40,14 @@ export class HomePageComponent {
 
   // public cvData$: Observable<CvData> = this.dataService.cvData$;
   public cvData: Signal<CvData | undefined> = this.dataService.cvData;
+  public currentLang: Signal<LangCode> = this.dataService.currentLang;
+  public availableLangs: Signal<LangCode[]> = this.dataService.availableLangs;
 
   public constructor() {
     console.error('home cmp init');
+  }
+
+  public changeLang(lang: LangCode): void {
+    this.dataService.changeLanguage(lang);
   }
 }

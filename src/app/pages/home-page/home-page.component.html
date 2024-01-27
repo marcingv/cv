@@ -1,4 +1,12 @@
 @if (cvData(); as cvData) {
+  <div class="container mx-auto py-4">
+    <app-lang-picker
+      [currentLang]="currentLang()"
+      [availableLangs]="availableLangs()"
+      (langChange)="changeLang($event)"
+    ></app-lang-picker>
+  </div>
+
   <app-profile-about [profile]="cvData.employee"></app-profile-about>
 
   <div class="container mx-auto flex flex-col md:flex-row print:flex-row">
