@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { TranslationKey } from '@app/core/translations';
 
 @Component({
   selector: 'app-cv-section',
@@ -9,5 +10,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CvSectionComponent {
-  @Input() public title?: string;
+  @Input() public title?: TranslationKey | string;
 }

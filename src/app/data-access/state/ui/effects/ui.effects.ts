@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { map } from 'rxjs';
+import { map, tap } from 'rxjs';
 import { UiActions } from '../actions/ui.actions';
 import {
   routerCancelAction,
@@ -8,6 +8,7 @@ import {
   routerNavigatedAction,
   routerRequestAction,
 } from '@ngrx/router-store';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class UiEffects {
@@ -25,5 +26,17 @@ export class UiEffects {
     ),
   );
 
-  constructor(private actions$: Actions) {}
+  changeLang$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(UiActions.changeLang),
+        tap((action) => this.translateService.use(action.language)),
+      ),
+    { dispatch: false },
+  );
+
+  public constructor(
+    private actions$: Actions,
+    private translateService: TranslateService,
+  ) {}
 }

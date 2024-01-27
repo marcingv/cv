@@ -8,10 +8,9 @@ describe('LangPickerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LangPickerComponent]
-    })
-    .compileComponents();
-    
+      imports: [LangPickerComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(LangPickerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

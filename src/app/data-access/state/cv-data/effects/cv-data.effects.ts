@@ -4,10 +4,9 @@ import { catchError, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { of, tap } from 'rxjs';
 import { CvDataActions } from '../actions/cv-data.actions';
 import { CvDataApiService } from '../../../api/services';
-import { CvData } from '../../../../domain/models';
+import { CvData } from '@app/domain/models';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { UiActions } from '../../ui/actions/ui.actions';
 import { uiFeature } from '../../ui/reducers/ui.reducer';
 
 @Injectable()
@@ -16,7 +15,7 @@ export class CvDataEffects {
     return this.actions$.pipe(
       ofType(CvDataActions.load),
       withLatestFrom(this.store.select(uiFeature.selectLang)),
-      switchMap(([action, lang]) =>
+      switchMap(([, lang]) =>
         this.api.fetchData(lang).pipe(
           map((data: CvData) => CvDataActions.loadSuccess({ data })),
           catchError((error) => of(CvDataActions.loadFailure({ error }))),
