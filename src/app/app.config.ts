@@ -17,10 +17,12 @@ import {
   ROUTER_REQUEST,
 } from '@ngrx/router-store';
 import { UiEffects } from './data-access/state/ui/effects/ui.effects';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
+    provideHttpClient(),
     provideClientHydration(),
     provideStore(reducers, { metaReducers }),
     provideEffects(UiEffects, CvDataEffects),
