@@ -1,3 +1,10 @@
 {
-  "aboutMe": "About me"
+  "aboutMe": "About me",
+  "skills": "Skills",
+  "education": "Education",
+  "experience": "Experience",
+  "interestingProjects": "Interesting projects",
+  "languages": "Languages",
+  "hobbies": "Hobbies",
+  "additionalSkills": "Additional skills"
 }

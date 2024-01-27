@@ -3,7 +3,7 @@
     "firstName": "Marcin",
     "lastName": "Gawski",
     "specialization": "Programista Angular",
-    "about": "English description",
+    "about": "I am a full-stack programmer with many years of experience, dealing with web and mobile technologies. In my daily work, I put great emphasis on the readability and quality of the code I create. It uses the commonly proven CleanCode, SOLID, KISS and DRY rules. I am a supporter of automatic testing, containerization and working in a continuous integration environment. On a daily basis, depending on the needs/project, I work as a full-fledged backend and/or frontend programmer. He often acts as a leader and mentor of a team of programmers. I also sometimes act as an architect.",
     "skills": [
       { "name": "Angular", "category": "frontend" },
       { "name": "TypeScript", "category": "frontend" },

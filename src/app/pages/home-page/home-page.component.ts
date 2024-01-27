@@ -13,6 +13,7 @@ import { HomePageService } from './home-page.service';
 import { GroupedSkillsListComponent } from '../../features/skills/components/grouped-skills-list';
 import { LangPickerComponent } from '../../ui/components/lang-picker';
 import { LangCode } from '../../data-access/state/ui/models';
+import { TranslationKey } from '@app/core/translations';
 
 @Component({
   selector: 'app-home-page',

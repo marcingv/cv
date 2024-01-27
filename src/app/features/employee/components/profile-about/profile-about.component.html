@@ -7,7 +7,7 @@
       src="/assets/profile.jpg"
       alt="{{ profile.firstName }} {{ profile.lastName }}"
     />
-    <!--    src="https://agrimachinery.nic.in/Images/User/User.png"-->
+
     <div class="text-center md:text-left print:text-left">
       <h1 class="text-3xl font-bold">
         {{ profile.firstName }} {{ profile.lastName }}
@@ -18,14 +18,12 @@
     </div>
   </div>
 
-  <!--  <app-cv-section title="Dane kontaktowe">-->
   <app-contact-details [data]="profile.contact"></app-contact-details>
-  <!--  </app-cv-section>-->
 </div>
 
 <div class="py-0 bg-gray-100 dark:bg-gray-700 md:py-4 lg:py-12">
   <div class="container mx-auto">
-    <app-cv-section [title]="ABOUT_ME | translate">
+    <app-cv-section title="aboutMe">
       <p>{{ profile.about }}</p>
     </app-cv-section>
   </div>
