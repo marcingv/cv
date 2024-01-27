@@ -3,7 +3,7 @@
 >
   <div class="flex flex-row gap-4 items-center">
     <img
-      class="hidden md:block w-20 h-20 rounded grayscale hover:grayscale-0 hover:scale-125 cursor-pointer transition-all ease-in-out"
+      class="hidden print:block md:block w-20 h-20 rounded grayscale hover:grayscale-0 hover:scale-125 cursor-pointer transition-all ease-in-out"
       src="/assets/profile.jpg"
       alt="{{ profile.firstName }} {{ profile.lastName }}"
     />
@@ -23,7 +23,7 @@
   <!--  </app-cv-section>-->
 </div>
 
-<div class="py-0 md:py-4 lg:py-12 bg-gray-100">
+<div class="py-0 bg-gray-100 dark:bg-gray-700 md:py-4 lg:py-12">
   <div class="container mx-auto">
     <app-cv-section title="O mnie">
       <p>{{ profile.about }}</p>

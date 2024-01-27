@@ -1,8 +1,8 @@
 @if (cvData(); as cvData) {
   <app-profile-about [profile]="cvData.employee"></app-profile-about>
 
-  <div class="container mx-auto flex flex-row">
-    <div class="w-2/3">
+  <div class="container mx-auto flex flex-col md:flex-row print:flex-row">
+    <div class="md:w-2/3 print:w-2/3">
       <app-cv-section title="Umiejętności">
         <app-grouped-skills-list
           [data]="cvData.employee.skills"
@@ -11,7 +11,7 @@
         <!--      <app-skills-chips-list [data]="profile.skills"></app-skills-chips-list>-->
       </app-cv-section>
     </div>
-    <div class="w-1/3">
+    <div class="md:w-1/3 print:w-1/3">
       <app-cv-section title="Edukacja">
         <app-education-experience-list
           [data]="cvData.education"
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div class="bg-gray-100">
+  <div class="bg-gray-100 dark:bg-gray-700">
     <div class="container mx-auto">
       <app-cv-section title="Doświadczenie">
         <app-job-experience-list [data]="cvData.jobs"></app-job-experience-list>
@@ -38,7 +38,9 @@
     </div>
   </div>
 
-  <div class="container bg-gray-50 mx-auto flex flex-row flex-wrap gap-4">
+  <div
+    class="container bg-gray-50 dark:bg-gray-900 mx-auto flex flex-row flex-wrap gap-4"
+  >
     <app-cv-section title="Języki" class="flex-1">
       <app-languages-experience-list
         [data]="cvData.languages"

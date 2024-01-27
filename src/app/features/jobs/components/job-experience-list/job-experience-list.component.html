@@ -1,7 +1,9 @@
 @if (data && data.length) {
   <ul class="lg:grid lg:grid-cols-3">
     @for (item of data; track item) {
-      <li class="flex flex-col gap-4 p-4 bg-white odd:bg-gray-100">
+      <li
+        class="flex flex-col gap-4 p-4 bg-white dark:bg-gray-800 odd:bg-gray-100 dark:odd:bg-gray-700"
+      >
         <header>
           <div class="mb-2 flex flex-row justify-between items-center">
             <h3 class="font-normal">{{ item.company }}</h3>
@@ -12,7 +14,9 @@
             </div>
           </div>
 
-          <h4 class="font-normal text-gray-700">{{ item.role }}</h4>
+          <h4 class="font-normal text-gray-700 dark:text-gray-300">
+            {{ item.role }}
+          </h4>
         </header>
 
         <div>
