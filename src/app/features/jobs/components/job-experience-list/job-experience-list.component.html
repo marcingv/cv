@@ -1,6 +1,6 @@
 @if (data && data.length) {
   <ul class="lg:grid lg:grid-cols-3">
-    @for (item of data; track item;) {
+    @for (item of data; track item) {
       <li class="flex flex-col gap-4 p-4 bg-white odd:bg-gray-100">
         <header>
           <div class="mb-2 flex flex-row justify-between items-center">
@@ -16,15 +16,17 @@
         </header>
 
         <div>
-
           <p>{{ item.description }}</p>
         </div>
 
         @if (item.usedSkills) {
           <div class="mt-auto">
-<!--            <h4 class="font-normal mb-2">Narzędzia i technologie:</h4>-->
+            <!--            <h4 class="font-normal mb-2">Narzędzia i technologie:</h4>-->
 
-            <app-skills-chips-list [data]="item.usedSkills" class="[&>ul]:flex-wrap-reverse"></app-skills-chips-list>
+            <app-skills-chips-list
+              [data]="item.usedSkills"
+              class="[&>ul]:flex-wrap-reverse"
+            ></app-skills-chips-list>
           </div>
         }
       </li>

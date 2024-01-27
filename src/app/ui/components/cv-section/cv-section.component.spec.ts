@@ -8,10 +8,9 @@ describe('CvSectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CvSectionComponent]
-    })
-    .compileComponents();
-    
+      imports: [CvSectionComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(CvSectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

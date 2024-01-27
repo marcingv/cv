@@ -1,8 +1,8 @@
-<span>{{ from | date:'shortDate' }}</span>
+<span>{{ from | date: "shortDate" }}</span>
 <span> - </span>
 
 @if (to) {
-  <span>{{ to | date:'shortDate' }}</span>
+  <span>{{ to | date: "shortDate" }}</span>
 } @else {
   <span>Obecnie</span>
 }

@@ -5,10 +5,16 @@
     </ng-template>
   </app-details-view-row>
 
-  @if(data.phone) {
-    <app-details-view-row label="Telefon" [value]="data.phone"></app-details-view-row>
+  @if (data.phone) {
+    <app-details-view-row
+      label="Telefon"
+      [value]="data.phone"
+    ></app-details-view-row>
   }
-  @if(data.email) {
-    <app-details-view-row label="E-mail" [value]="data.email"></app-details-view-row>
+  @if (data.email) {
+    <app-details-view-row
+      label="E-mail"
+      [value]="data.email"
+    ></app-details-view-row>
   }
 </app-details-view>

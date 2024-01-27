@@ -8,10 +8,9 @@ describe('TimeSpanComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TimeSpanComponent]
-    })
-    .compileComponents();
-    
+      imports: [TimeSpanComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(TimeSpanComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

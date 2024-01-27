@@ -8,10 +8,9 @@ describe('CvLayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CvLayoutComponent]
-    })
-    .compileComponents();
-    
+      imports: [CvLayoutComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(CvLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

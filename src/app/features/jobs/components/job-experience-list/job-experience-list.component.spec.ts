@@ -8,10 +8,9 @@ describe('JobExperienceListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [JobExperienceListComponent]
-    })
-    .compileComponents();
-    
+      imports: [JobExperienceListComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(JobExperienceListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

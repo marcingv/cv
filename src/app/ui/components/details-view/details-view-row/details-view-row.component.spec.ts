@@ -8,10 +8,9 @@ describe('DetailsViewRowComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DetailsViewRowComponent]
-    })
-    .compileComponents();
-    
+      imports: [DetailsViewRowComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(DetailsViewRowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

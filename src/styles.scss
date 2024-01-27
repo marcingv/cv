@@ -18,7 +18,9 @@ body {
 }
 
 @media print {
-  root, html, body {
+  root,
+  html,
+  body {
     //@apply text-xs;
     font-size: 12px;
   }

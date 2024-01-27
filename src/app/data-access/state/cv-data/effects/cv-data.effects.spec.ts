@@ -10,10 +10,7 @@ describe('CvDataEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        CvDataEffects,
-        provideMockActions(() => actions$)
-      ]
+      providers: [CvDataEffects, provideMockActions(() => actions$)],
     });
 
     effects = TestBed.inject(CvDataEffects);
