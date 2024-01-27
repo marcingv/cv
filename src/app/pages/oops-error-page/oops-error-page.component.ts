@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  HostBinding,
   inject,
   OnInit,
 } from '@angular/core';
@@ -15,27 +16,31 @@ import { uiFeature } from '../../data-access/state/ui/reducers/ui.reducer';
   templateUrl: './oops-error-page.component.html',
   styleUrl: './oops-error-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {
-    class: 'd-flex flex-column align-items-center gap-3',
-  },
 })
 export class OopsErrorPageComponent implements OnInit {
   private router: Router = inject(Router);
   private store: Store = inject(Store);
 
-  private errorState?: Object;
+  private errorState?: unknown;
   public errorMessage?: string;
 
   public isNavigationPending = this.store.selectSignal(
     uiFeature.selectIsNavigating,
   );
 
+  @HostBinding('class') public hostClass: string =
+    'd-flex flex-column align-items-center gap-3';
+
   public constructor() {
     this.errorState = this.router.lastSuccessfulNavigation?.extras.state;
   }
 
   public ngOnInit(): void {
-    if (this.errorState && 'error' in this.errorState) {
+    if (
+      typeof this.errorState === 'object' &&
+      this.errorState &&
+      'error' in this.errorState
+    ) {
       if (this.errorState.error instanceof Error) {
         this.errorMessage = this.errorState.error.message;
       }

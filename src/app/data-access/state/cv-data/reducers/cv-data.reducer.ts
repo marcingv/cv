@@ -25,7 +25,7 @@ export const reducer = createReducer(
     isLoaded: true,
     isLoading: false,
   })),
-  on(CvDataActions.loadFailure, (state, action) => ({
+  on(CvDataActions.loadFailure, (state) => ({
     ...state,
     data: undefined,
     isLoaded: false,

@@ -3,9 +3,10 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs';
 
 import { UiEffects } from './ui.effects';
+import { Action } from '@ngrx/store';
 
 describe('UiEffects', () => {
-  let actions$: Observable<any>;
+  let actions$: Observable<Action>;
   let effects: UiEffects;
 
   beforeEach(() => {

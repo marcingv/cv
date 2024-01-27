@@ -3,9 +3,10 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs';
 
 import { CvDataEffects } from './cv-data.effects';
+import { Action } from '@ngrx/store';
 
 describe('CvDataEffects', () => {
-  let actions$: Observable<any>;
+  let actions$: Observable<Action>;
   let effects: CvDataEffects;
 
   beforeEach(() => {

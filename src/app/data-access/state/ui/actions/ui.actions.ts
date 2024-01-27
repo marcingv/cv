@@ -1,4 +1,4 @@
-import { createActionGroup, emptyProps, props } from '@ngrx/store';
+import { createActionGroup, emptyProps } from '@ngrx/store';
 
 export const UiActions = createActionGroup({
   source: 'Ui',

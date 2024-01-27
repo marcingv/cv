@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   ContentChild,
+  HostBinding,
   Input,
   TemplateRef,
 } from '@angular/core';
@@ -16,13 +17,12 @@ import { DetailsViewRowValueDirective } from '../directives/details-view-row-val
   templateUrl: './details-view-row.component.html',
   styleUrl: './details-view-row.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {
-    class: 'flex flex-row gap-3',
-  },
 })
 export class DetailsViewRowComponent {
   @Input() public label?: string;
   @Input() public value?: string;
+
+  @HostBinding('class') public hostClass: string = 'flex flex-row gap-3';
 
   @ContentChild(DetailsViewRowLabelDirective, {
     static: true,

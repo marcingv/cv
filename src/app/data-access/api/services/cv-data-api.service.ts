@@ -1,5 +1,5 @@
 import { inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { delay, map, Observable, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import { CvData } from '../../../domain/models';
 import { isPlatformServer } from '@angular/common';
 

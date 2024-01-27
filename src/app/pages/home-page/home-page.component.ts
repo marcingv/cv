@@ -30,7 +30,6 @@ import { GroupedSkillsListComponent } from '../../features/skills/components/gro
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
-  host: { class: 'd-flex' },
   providers: [HomePageService],
 })
 export class HomePageComponent {
@@ -39,7 +38,7 @@ export class HomePageComponent {
   // public cvData$: Observable<CvData> = this.dataService.cvData$;
   public cvData: Signal<CvData | undefined> = this.dataService.cvData;
 
-  constructor() {
+  public constructor() {
     console.error('home cmp init');
   }
 }
