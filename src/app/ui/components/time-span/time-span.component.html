@@ -1,8 +1,8 @@
-<span>{{ from | date: "shortDate" }}</span>
+<span>{{ from | localizedDate: "shortDate" }}</span>
 <span> - </span>
 
 @if (to) {
-  <span>{{ to | date: "shortDate" }}</span>
+  <span>{{ to | localizedDate: "shortDate" }}</span>
 } @else {
-  <span>Obecnie</span>
+  <span>{{ TILL_NOW_LABEL | translate }}</span>
 }

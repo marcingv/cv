@@ -6,6 +6,8 @@ import {
   TranslateModuleConfig,
 } from '@ngx-translate/core';
 import { importProvidersFrom } from '@angular/core';
+import { DatePipe, registerLocaleData } from '@angular/common';
+import localePl from '@angular/common/locales/pl';
 
 export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -20,5 +22,9 @@ const config: TranslateModuleConfig = {
   },
 };
 
-export const provideNgxTranslations = () =>
-  importProvidersFrom(TranslateModule.forRoot(config));
+registerLocaleData(localePl);
+
+export const provideNgxTranslations = () => [
+  importProvidersFrom(TranslateModule.forRoot(config)),
+  DatePipe,
+];
