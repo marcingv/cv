@@ -1,6 +1,6 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { CvDataActions } from '../actions/cv-data.actions';
-import { CvData } from '../../../../domain/models';
+import { CvData } from '@app/domain/models';
 
 export const cvDataFeatureKey = 'cvData';
 

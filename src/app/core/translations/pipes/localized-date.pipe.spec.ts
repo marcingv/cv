@@ -2,10 +2,10 @@ import { LocalizedDatePipe } from './localized-date.pipe';
 import { TestBed } from '@angular/core/testing';
 import { TranslateService } from '@ngx-translate/core';
 import { ChangeDetectorRef } from '@angular/core';
-import { TranslationsTestingModule } from '@app/testing/translations/translations-testing.module';
+import { TranslationsTestingModule } from '@app/testing/translations';
 import { firstValueFrom } from 'rxjs';
 
-fdescribe('LocalizedDatePipe', (): void => {
+describe('LocalizedDatePipe', (): void => {
   let pipe: LocalizedDatePipe;
   let translateService: TranslateService;
   let changeDetectorRef: jasmine.SpyObj<ChangeDetectorRef>;
