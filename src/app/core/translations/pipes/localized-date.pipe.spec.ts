@@ -1,17 +1,11 @@
 import { LocalizedDatePipe } from './localized-date.pipe';
 import { TestBed } from '@angular/core/testing';
-import { TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { ChangeDetectorRef } from '@angular/core';
-import { provideNgxTranslations } from '@app/core/translations';
-import { Observable, of } from 'rxjs';
+import { TranslationsTestingModule } from '@app/testing/translations/translations-testing.module';
+import { firstValueFrom } from 'rxjs';
 
-class FakeLoader implements TranslateLoader {
-  getTranslation(): Observable<object> {
-    return of({});
-  }
-}
-
-describe('LocalizedDatePipe', (): void => {
+fdescribe('LocalizedDatePipe', (): void => {
   let pipe: LocalizedDatePipe;
   let translateService: TranslateService;
   let changeDetectorRef: jasmine.SpyObj<ChangeDetectorRef>;
@@ -22,13 +16,9 @@ describe('LocalizedDatePipe', (): void => {
     ]);
 
     TestBed.configureTestingModule({
+      imports: [TranslationsTestingModule],
       providers: [
-        provideNgxTranslations(),
         LocalizedDatePipe,
-        {
-          provide: TranslateLoader,
-          useClass: FakeLoader,
-        },
         {
           provide: ChangeDetectorRef,
           useValue: changeDetectorRef,
@@ -63,9 +53,11 @@ describe('LocalizedDatePipe', (): void => {
     expect(currentLangSpy).toHaveBeenCalled();
   });
 
-  it('should call mark for change when language changes', (): void => {
-    translateService.use('pl');
+  it('should call mark for change when language changes', async () => {
+    await firstValueFrom(translateService.use('pl'));
+    await firstValueFrom(translateService.use('en'));
+    await firstValueFrom(translateService.use('pl'));
 
-    expect(changeDetectorRef.markForCheck).toHaveBeenCalled();
+    expect(changeDetectorRef.markForCheck).toHaveBeenCalledTimes(3);
   });
 });
