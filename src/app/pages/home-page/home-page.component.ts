@@ -1,19 +1,18 @@
 import { Component, inject, Signal } from '@angular/core';
-import { CvData } from '../../domain/models';
+import { CvData } from '@app/domain/models';
 import { AsyncPipe, JsonPipe } from '@angular/common';
-import { ProfileAboutComponent } from '../../features/employee/components/profile-about';
-import { CvSectionComponent } from '../../ui/components/cv-section';
-import { EducationExperienceListComponent } from '../../features/education/components/education-experience-list';
-import { JobExperienceListComponent } from '../../features/jobs/components/job-experience-list';
-import { ProjectsExperienceListComponent } from '../../features/projects/components/projects-experience-list';
-import { LanguagesExperienceListComponent } from '../../features/languages/components/languages-experience-list';
-import { HobbiesListComponent } from '../../features/hobbies/components/hobbies-list';
-import { AdditionalSkillsListComponent } from '../../features/skills/components/additional-skills-list';
+import { ProfileAboutComponent } from '@app/features/employee/components/profile-about';
+import { CvSectionComponent } from '@app/ui/components/cv-section';
+import { EducationExperienceListComponent } from '@app/features/education/components/education-experience-list';
+import { JobExperienceListComponent } from '@app/features/jobs/components/job-experience-list';
+import { ProjectsExperienceListComponent } from '@app/features/projects/components/projects-experience-list';
+import { LanguagesExperienceListComponent } from '@app/features/languages/components/languages-experience-list';
+import { HobbiesListComponent } from '@app/features/hobbies/components/hobbies-list';
+import { AdditionalSkillsListComponent } from '@app/features/skills/components/additional-skills-list';
 import { HomePageService } from './home-page.service';
-import { GroupedSkillsListComponent } from '../../features/skills/components/grouped-skills-list';
-import { LangPickerComponent } from '../../ui/components/lang-picker';
-import { LangCode } from '../../data-access/state/ui/models';
-import { TranslationKey } from '@app/core/translations';
+import { GroupedSkillsListComponent } from '@app/features/skills/components/grouped-skills-list';
+import { LangPickerComponent } from '@app/ui/components/lang-picker';
+import { LangCode } from '@app/data-access/state/ui/models';
 
 @Component({
   selector: 'app-home-page',
