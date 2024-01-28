@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { uiFeature } from '../../data-access/state/ui/reducers/ui.reducer';
+import { uiFeature } from '@app/data-access/state/ui/reducers/ui.reducer';
 
 @Component({
   selector: 'app-oops-error-page',

@@ -1,13 +1,13 @@
 import { inject, Injectable, Signal } from '@angular/core';
 import { filter, map, Observable } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { CvData } from '../../domain/models';
+import { CvData } from '@app/domain/models';
 import { Store } from '@ngrx/store';
-import { cvDataFeature } from '../../data-access/state/cv-data/reducers/cv-data.reducer';
-import { LangCode } from '../../data-access/state/ui/models';
-import { uiFeature } from '../../data-access/state/ui/reducers/ui.reducer';
-import { UiActions } from '../../data-access/state/ui/actions/ui.actions';
-import { CvDataActions } from '../../data-access/state/cv-data/actions/cv-data.actions';
+import { cvDataFeature } from '@app/data-access/state/cv-data/reducers/cv-data.reducer';
+import { LangCode } from '@app/data-access/state/ui/models';
+import { uiFeature } from '@app/data-access/state/ui/reducers/ui.reducer';
+import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
+import { CvDataActions } from '@app/data-access/state/cv-data/actions/cv-data.actions';
 
 @Injectable()
 export class HomePageService {

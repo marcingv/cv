@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { OopsErrorPageComponent } from './oops-error-page.component';
+import { provideMockStore } from '@ngrx/store/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('OopsErrorPageComponent', () => {
   let component: OopsErrorPageComponent;
@@ -8,7 +9,8 @@ describe('OopsErrorPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OopsErrorPageComponent],
+      imports: [OopsErrorPageComponent, RouterTestingModule],
+      providers: [provideMockStore()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(OopsErrorPageComponent);
