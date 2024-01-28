@@ -6,9 +6,9 @@ import {
   Input,
   TemplateRef,
 } from '@angular/core';
-import { DetailsViewRowLabelDirective } from '../directives/details-view-row-label.directive';
 import { NgTemplateOutlet } from '@angular/common';
-import { DetailsViewRowValueDirective } from '../directives/details-view-row-value.directive';
+import { DetailsViewRowLabelDirective } from './directives/details-view-row-label.directive';
+import { DetailsViewRowValueDirective } from './directives/details-view-row-value.directive';
 
 @Component({
   selector: 'app-details-view-row',
