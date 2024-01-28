@@ -29,7 +29,6 @@ export class CvDataEffects {
       this.actions$.pipe(
         ofType(CvDataActions.loadFailure),
         tap((action) => {
-          console.error('error', action);
           this.router.navigate(['/error'], {
             skipLocationChange: true,
             state: { error: action.error },
