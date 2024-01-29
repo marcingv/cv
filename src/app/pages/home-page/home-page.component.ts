@@ -38,7 +38,7 @@ import { LangCode } from '@app/data-access/state/ui/models';
 export class HomePageComponent {
   private dataService: HomePageService = inject(HomePageService);
 
-  public cvData: Signal<CvData | undefined> = this.dataService.cvData;
+  public cvData: Signal<CvData> = this.dataService.cvData;
   public currentLang: Signal<LangCode> = this.dataService.currentLang;
   public availableLangs: Signal<LangCode[]> = this.dataService.availableLangs;
 

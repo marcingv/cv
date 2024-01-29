@@ -13,24 +13,24 @@ import { CvDataActions } from '@app/data-access/state/cv-data/actions/cv-data.ac
 export class HomePageService {
   private store: Store = inject(Store);
 
-  public availableLangs = this.store.selectSignal(uiFeature.selectLanguages);
+  public availableLangs: Signal<LangCode[]> = this.store.selectSignal(
+    uiFeature.selectLanguages,
+  );
 
-  public currentLang = this.store.selectSignal(uiFeature.selectLang);
+  public currentLang: Signal<LangCode> = this.store.selectSignal(
+    uiFeature.selectLang,
+  );
 
   private cvDataStore$: Observable<CvData> = this.store
     .select(cvDataFeature.selectData)
     .pipe(
-      filter((data) => !!data),
-      map((data) => {
-        if (!data) {
-          throw new Error('Brak danych w store');
-        }
-
-        return data;
-      }),
+      filter((data: CvData | undefined) => !!data),
+      map((data: CvData | undefined) => data!),
     );
 
-  public cvData: Signal<CvData | undefined> = toSignal(this.cvDataStore$);
+  public cvData: Signal<CvData> = toSignal(this.cvDataStore$, {
+    requireSync: true,
+  });
 
   public changeLanguage(lang: LangCode): void {
     this.store.dispatch(UiActions.changeLang({ language: lang }));

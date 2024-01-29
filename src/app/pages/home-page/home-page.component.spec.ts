@@ -7,7 +7,7 @@ import { CvDataFactory } from '@app/testing/factories/models';
 import { LangCode } from '@app/data-access/state/ui/models';
 import { TranslationsTestingModule } from '@app/testing/translations';
 
-describe('HomePageComponent', () => {
+describe('HomePageComponent', (): void => {
   let component: HomePageComponent;
   let fixture: ComponentFixture<HomePageComponent>;
   let homePageService: jasmine.SpyObj<HomePageService>;
@@ -37,7 +37,15 @@ describe('HomePageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(component).toBeTruthy();
+  });
+
+  it('should trigger language change', (): void => {
+    component.changeLang(LangCode.EN);
+
+    expect(homePageService.changeLanguage).toHaveBeenCalledOnceWith(
+      LangCode.EN,
+    );
   });
 });
