@@ -1,9 +1,9 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  HostBinding,
   inject,
   OnInit,
+  Signal,
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -24,12 +24,9 @@ export class OopsErrorPageComponent implements OnInit {
   private errorState?: unknown;
   public errorMessage?: string;
 
-  public isNavigationPending = this.store.selectSignal(
+  public isNavigationPending: Signal<boolean> = this.store.selectSignal(
     uiFeature.selectIsNavigating,
   );
-
-  @HostBinding('class') public hostClass: string =
-    'd-flex flex-column align-items-center gap-3';
 
   public constructor() {
     this.errorState = this.router.lastSuccessfulNavigation?.extras.state;

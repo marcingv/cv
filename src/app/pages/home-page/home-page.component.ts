@@ -1,6 +1,5 @@
 import { Component, inject, Signal } from '@angular/core';
 import { CvData } from '@app/domain/models';
-import { AsyncPipe, JsonPipe } from '@angular/common';
 import { ProfileAboutComponent } from '@app/features/employee/components/profile-about';
 import { CvSectionComponent } from '@app/ui/components/cv-section';
 import { EducationExperienceListComponent } from '@app/features/education/components/education-experience-list';

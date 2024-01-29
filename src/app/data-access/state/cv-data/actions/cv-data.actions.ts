@@ -1,5 +1,5 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
-import { CvData } from '../../../../domain/models';
+import { CvData } from '@app/domain/models';
 
 export const CvDataActions = createActionGroup({
   source: 'CvData',
