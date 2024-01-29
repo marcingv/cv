@@ -1,21 +1,22 @@
 import { TestBed } from '@angular/core/testing';
 import { CvDataApiService } from './cv-data-api.service';
 import {
-  HttpClientTestingModule,
   HttpTestingController,
+  provideHttpClientTesting,
   TestRequest,
 } from '@angular/common/http/testing';
 import { CvData } from '@app/domain/models';
 import { CvDataFactory } from '@app/testing/factories/models';
 import { LangCode } from '@app/data-access/state/ui/models';
+import { provideHttpClient } from '@angular/common/http';
 
-describe('CvDataApiService', (): void => {
+fdescribe('CvDataApiService', (): void => {
   let service: CvDataApiService;
   let httpTestingController: HttpTestingController;
 
   beforeEach((): void => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
     });
 
     httpTestingController = TestBed.inject(HttpTestingController);
