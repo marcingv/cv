@@ -10,7 +10,7 @@ import { CvDataFactory } from '@app/testing/factories/models';
 import { LangCode } from '@app/data-access/state/ui/models';
 import { provideHttpClient } from '@angular/common/http';
 
-fdescribe('CvDataApiService', (): void => {
+describe('CvDataApiService', (): void => {
   let service: CvDataApiService;
   let httpTestingController: HttpTestingController;
 

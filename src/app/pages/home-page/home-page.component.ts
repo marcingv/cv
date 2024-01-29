@@ -18,8 +18,6 @@ import { LangCode } from '@app/data-access/state/ui/models';
   selector: 'app-home-page',
   standalone: true,
   imports: [
-    AsyncPipe,
-    JsonPipe,
     ProfileAboutComponent,
     CvSectionComponent,
     EducationExperienceListComponent,

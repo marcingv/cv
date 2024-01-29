@@ -1,11 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomePageComponent } from './home-page.component';
 import { HomePageService } from '@app/pages/home-page/home-page.service';
-import { signal } from '@angular/core';
+import { NO_ERRORS_SCHEMA, signal } from '@angular/core';
 import { CvData } from '@app/domain/models';
 import { CvDataFactory } from '@app/testing/factories/models';
 import { LangCode } from '@app/data-access/state/ui/models';
-import { TranslationsTestingModule } from '@app/testing/translations';
 
 describe('HomePageComponent', (): void => {
   let component: HomePageComponent;
@@ -23,11 +22,13 @@ describe('HomePageComponent', (): void => {
     );
 
     await TestBed.configureTestingModule({
-      imports: [HomePageComponent, TranslationsTestingModule],
+      imports: [HomePageComponent],
     })
       .overrideComponent(HomePageComponent, {
         set: {
+          imports: [],
           providers: [{ provide: HomePageService, useValue: homePageService }],
+          schemas: [NO_ERRORS_SCHEMA],
         },
       })
       .compileComponents();
