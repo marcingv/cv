@@ -1,18 +1,49 @@
 import { TestBed } from '@angular/core/testing';
 import { CvDataApiService } from './cv-data-api.service';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+  TestRequest,
+} from '@angular/common/http/testing';
+import { CvData } from '@app/domain/models';
+import { CvDataFactory } from '@app/testing/factories/models';
+import { LangCode } from '@app/data-access/state/ui/models';
 
-describe('CvDataApiService', () => {
+fdescribe('CvDataApiService', (): void => {
   let service: CvDataApiService;
+  let httpTestingController: HttpTestingController;
 
-  beforeEach(() => {
+  beforeEach((): void => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
     });
+
+    httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(CvDataApiService);
   });
 
-  it('should be created', () => {
+  afterEach((): void => {
+    httpTestingController.verify();
+  });
+
+  it('should be created', (): void => {
     expect(service).toBeTruthy();
+  });
+
+  it('should fetch cv in desired language', (): void => {
+    const requestLanguage: LangCode = LangCode.PL;
+    const expectedRequestUrl: string = `/assets/cv-${requestLanguage}.json1`;
+    const expectedResponseData: CvData = CvDataFactory.createInstance();
+
+    service.fetchData(requestLanguage).subscribe((data: CvData): void => {
+      expect(data).toEqual(expectedResponseData);
+    });
+
+    const request: TestRequest =
+      httpTestingController.expectOne(expectedRequestUrl);
+    expect(request.request.method).toEqual('GET');
+
+    request.flush(expectedResponseData);
+    httpTestingController.verify();
   });
 });

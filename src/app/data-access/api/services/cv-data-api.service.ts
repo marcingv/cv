@@ -1,6 +1,6 @@
 import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { CvData } from '../../../domain/models';
+import { CvData } from '@app/domain/models';
 import { isPlatformServer } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { LangCode } from '../../state/ui/models';
