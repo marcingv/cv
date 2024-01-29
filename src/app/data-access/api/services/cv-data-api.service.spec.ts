@@ -9,7 +9,7 @@ import { CvData } from '@app/domain/models';
 import { CvDataFactory } from '@app/testing/factories/models';
 import { LangCode } from '@app/data-access/state/ui/models';
 
-fdescribe('CvDataApiService', (): void => {
+describe('CvDataApiService', (): void => {
   let service: CvDataApiService;
   let httpTestingController: HttpTestingController;
 
@@ -32,7 +32,7 @@ fdescribe('CvDataApiService', (): void => {
 
   it('should fetch cv in desired language', (): void => {
     const requestLanguage: LangCode = LangCode.PL;
-    const expectedRequestUrl: string = `/assets/cv-${requestLanguage}.json1`;
+    const expectedRequestUrl: string = `/assets/cv-${requestLanguage}.json`;
     const expectedResponseData: CvData = CvDataFactory.createInstance();
 
     service.fetchData(requestLanguage).subscribe((data: CvData): void => {
