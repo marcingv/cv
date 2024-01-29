@@ -9,6 +9,7 @@ import {
   routerRequestAction,
 } from '@ngrx/router-store';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class UiEffects {
@@ -35,8 +36,22 @@ export class UiEffects {
     { dispatch: false },
   );
 
+  goToErrorPage$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(UiActions.goToErrorPage),
+        tap(() => {
+          this.router.navigate(['/error'], {
+            skipLocationChange: true,
+          });
+        }),
+      ),
+    { dispatch: false },
+  );
+
   public constructor(
     private actions$: Actions,
     private translateService: TranslateService,
+    private router: Router,
   ) {}
 }

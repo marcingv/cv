@@ -7,5 +7,8 @@
   "languages": "Languages",
   "hobbies": "Hobbies",
   "additionalSkills": "Additional skills",
-  "tillNow": "Till now"
+  "tillNow": "Till now",
+  "refresh": "Refresh",
+  "errorOopsTitle": "Oops!",
+  "errorUnknownMessage": "Error occurred!"
 }

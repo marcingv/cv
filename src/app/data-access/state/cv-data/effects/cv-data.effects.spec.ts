@@ -3,7 +3,6 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { first, of, Subject, tap, throwError } from 'rxjs';
 import { CvDataEffects } from './cv-data.effects';
 import { Action } from '@ngrx/store';
-import { RouterTestingModule } from '@angular/router/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { CvDataApiService } from '@app/data-access/api/services';
 import { fromCvData } from '@app/data-access/state/cv-data/reducers';
@@ -12,35 +11,35 @@ import { LangCode } from '@app/data-access/state/ui/models';
 import { CvDataActions } from '@app/data-access/state/cv-data/actions/cv-data.actions';
 import { CvData } from '@app/domain/models';
 import { CvDataFactory } from '@app/testing/factories/models';
-import { Router } from '@angular/router';
+import {
+  CvDataStateFactory,
+  UiStateFactory,
+} from '@app/testing/factories/state';
+import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
 
 describe('CvDataEffects', () => {
   let actions$: Subject<Action>;
   let effects: CvDataEffects;
   let api: jasmine.SpyObj<CvDataApiService>;
   let store: MockStore;
-  let router: Router;
+
   const state: {
     [fromUi.uiFeatureKey]: fromUi.State;
     [fromCvData.cvDataFeatureKey]: fromCvData.State;
   } = {
-    [fromUi.uiFeatureKey]: {
-      lang: LangCode.PL,
-      languages: [LangCode.PL, LangCode.EN],
-      isNavigating: false,
-    },
-    [fromCvData.cvDataFeatureKey]: {
+    [fromUi.uiFeatureKey]: UiStateFactory.createInstance(),
+    [fromCvData.cvDataFeatureKey]: CvDataStateFactory.createInstance({
       data: undefined,
       isLoaded: false,
       isLoading: false,
-    },
+    }),
   };
 
   beforeEach(() => {
     api = jasmine.createSpyObj<CvDataApiService>(['fetchData']);
 
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [],
       providers: [
         CvDataEffects,
         provideMockStore(),
@@ -51,7 +50,6 @@ describe('CvDataEffects', () => {
 
     actions$ = new Subject<Action>();
     store = TestBed.inject(MockStore);
-    router = TestBed.inject(Router);
     store.setState(state);
     effects = TestBed.inject(CvDataEffects);
   });
@@ -102,20 +100,20 @@ describe('CvDataEffects', () => {
     actions$.next(CvDataActions.load());
   });
 
-  it('should redirect user to error page on failure', (done: DoneFn) => {
+  it('should dispatch go to error page action on failure', (done: DoneFn) => {
     const failureAction = CvDataActions.loadFailure({
       error: new Error('Some error'),
     });
-    const navigateSpy = spyOn(router, 'navigate');
 
     effects.onError$
       .pipe(
         first(),
-        tap(() => {
-          expect(navigateSpy).toHaveBeenCalledOnceWith(['/error'], {
-            skipLocationChange: true,
-            state: { error: failureAction.error },
-          });
+        tap((resultAction) => {
+          expect(resultAction).toEqual(
+            UiActions.goToErrorPage({
+              errorMessage: failureAction.error.message,
+            }),
+          );
 
           done();
         }),

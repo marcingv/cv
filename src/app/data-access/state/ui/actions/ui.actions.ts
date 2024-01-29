@@ -7,5 +7,7 @@ export const UiActions = createActionGroup({
     'Navigation started': emptyProps(),
     'Navigation finished': emptyProps(),
     'Change lang': props<{ language: LangCode }>(),
+    'Go to error page': props<{ errorMessage: string | undefined }>(),
+    'Clear error page message': emptyProps(),
   },
 });

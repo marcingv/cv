@@ -1,10 +1,12 @@
-<h1 class="text-center text-xl text-red-800 font-normal uppercase mb-4">
-  Oops!
+<h1
+  class="text-center text-xl text-red-800 dark:text-red-500 font-normal uppercase mb-4"
+>
+  {{ TITLE_LABEL | translate }}
 </h1>
 
-<div class="bg-white shadow-sm p-8 rounded">
-  <p class="text-red-800 text-center mb-8">
-    {{ errorMessage }}
+<div class="bg-white shadow-sm p-8 rounded dark:bg-gray-900">
+  <p class="text-red-800 dark:text-red-500 text-center mb-8">
+    {{ errorMessage() ?? FALLBACK_ERROR_MESSAGE | translate }}
   </p>
 
   <button
@@ -12,6 +14,6 @@
     (click)="onGoHome()"
     [disabled]="isNavigationPending()"
   >
-    Odśwież
+    {{ REFRESH_LABEL | translate }}
   </button>
 </div>

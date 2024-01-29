@@ -2,54 +2,46 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
-  OnInit,
+  OnDestroy,
   Signal,
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { uiFeature } from '@app/data-access/state/ui/reducers/ui.reducer';
+import { TranslationKey } from '@app/core/translations';
+import { TranslateModule } from '@ngx-translate/core';
+import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
 
 @Component({
   selector: 'app-oops-error-page',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './oops-error-page.component.html',
   styleUrl: './oops-error-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class OopsErrorPageComponent implements OnInit {
+export class OopsErrorPageComponent implements OnDestroy {
+  public readonly TITLE_LABEL: TranslationKey = 'errorOopsTitle';
+  public readonly REFRESH_LABEL: TranslationKey = 'refresh';
+  public readonly FALLBACK_ERROR_MESSAGE: TranslationKey =
+    'errorUnknownMessage';
+
   private router: Router = inject(Router);
   private store: Store = inject(Store);
 
-  private errorState?: unknown;
-  public errorMessage?: string;
+  public errorMessage: Signal<string | undefined> = this.store.selectSignal(
+    uiFeature.selectErrorPageMessage,
+  );
 
   public isNavigationPending: Signal<boolean> = this.store.selectSignal(
     uiFeature.selectIsNavigating,
   );
 
-  public constructor() {
-    this.errorState = this.router.lastSuccessfulNavigation?.extras.state;
-  }
-
-  public ngOnInit(): void {
-    if (
-      typeof this.errorState === 'object' &&
-      this.errorState &&
-      'error' in this.errorState
-    ) {
-      if (this.errorState.error instanceof Error) {
-        this.errorMessage = this.errorState.error.message;
-      }
-    }
-
-    if (!this.errorMessage) {
-      this.errorMessage = 'Wystąpił błąd';
-    }
-  }
-
   public onGoHome(): void {
     this.router.navigate(['/']);
-    this.router.events;
+  }
+
+  public ngOnDestroy(): void {
+    this.store.dispatch(UiActions.clearErrorPageMessage());
   }
 }

@@ -7,7 +7,10 @@ import { CvDataActions } from '@app/data-access/state/cv-data/actions/cv-data.ac
 import { Action } from '@ngrx/store';
 import { fromUi } from '@app/data-access/state/ui/reducers';
 import { fromCvData } from '@app/data-access/state/cv-data/reducers';
-import { CvDataStateFactory } from '@app/testing/factories/state';
+import {
+  CvDataStateFactory,
+  UiStateFactory,
+} from '@app/testing/factories/state';
 import { CvData } from '@app/domain/models';
 
 describe('HomePageService', (): void => {
@@ -18,11 +21,7 @@ describe('HomePageService', (): void => {
     [fromUi.uiFeatureKey]: fromUi.State;
     [fromCvData.cvDataFeatureKey]: fromCvData.State;
   } = {
-    [fromUi.uiFeatureKey]: {
-      lang: LangCode.PL,
-      languages: [LangCode.PL, LangCode.EN],
-      isNavigating: false,
-    },
+    [fromUi.uiFeatureKey]: UiStateFactory.createInstance(),
     [fromCvData.cvDataFeatureKey]: CvDataStateFactory.createInstance(),
   };
 

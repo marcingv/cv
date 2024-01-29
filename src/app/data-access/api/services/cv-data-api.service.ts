@@ -22,7 +22,7 @@ export class CvDataApiService {
         const shouldThrowError = false; //this.isServerPlatform;
 
         if (shouldThrowError) {
-          throw new Error('Bład pobierania danych CV :-(');
+          throw new Error('Bład pobierania danych CV :-( ' + Date.now());
         } else {
           return data;
         }
