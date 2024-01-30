@@ -19,6 +19,7 @@ import { UiEffects } from './data-access/state/ui/effects/ui.effects';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideNgxTranslations } from './core/translations';
 import { provideAppInitializers } from '@app/core/initializers';
+import { UiLangEffects } from '@app/data-access/state/ui/effects/ui-lang.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -26,7 +27,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()),
     provideClientHydration(),
     provideStore(reducers, { metaReducers }),
-    provideEffects(UiEffects, CvDataEffects),
+    provideEffects(UiEffects, UiLangEffects, CvDataEffects),
     provideStoreDevtools({
       maxAge: 25,
       logOnly: !isDevMode(),

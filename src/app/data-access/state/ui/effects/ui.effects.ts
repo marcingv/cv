@@ -8,13 +8,7 @@ import {
   routerNavigatedAction,
   routerRequestAction,
 } from '@ngrx/router-store';
-import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
-import {
-  DEFAULT_LANG,
-  LANG_PARAM_NAME,
-  LangCode,
-} from '@app/data-access/state/ui/models';
 
 @Injectable()
 export class UiEffects {
@@ -47,17 +41,6 @@ export class UiEffects {
 
   public constructor(
     private actions$: Actions,
-    private translateService: TranslateService,
     private router: Router,
-    // private store: Store,
   ) {}
-
-  private updateLangUrlQueryParam(language: LangCode): void {
-    this.router.navigate([], {
-      queryParams: {
-        [LANG_PARAM_NAME]: language === DEFAULT_LANG ? undefined : language,
-      },
-      queryParamsHandling: 'merge',
-    });
-  }
 }
