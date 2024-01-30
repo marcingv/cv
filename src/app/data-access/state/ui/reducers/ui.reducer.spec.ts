@@ -1,6 +1,6 @@
 import { initialState, reducer } from './ui.reducer';
 import { Action } from '@ngrx/store';
-import { LangCode } from '@app/data-access/state/ui/models';
+import { LANG_EN_CODE, LANG_PL_CODE } from '@app/data-access/state/ui/models';
 import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
 import { UiStateFactory } from '@app/testing/factories/state';
 
@@ -19,20 +19,23 @@ describe('Ui Reducer', (): void => {
     it('should have default configuration', (): void => {
       const state = reducer(undefined, { type: 'NOOP' });
 
-      expect(state.lang).toEqual(LangCode.PL);
-      expect(state.languages).toContain(LangCode.PL);
-      expect(state.languages).toContain(LangCode.EN);
+      expect(state.lang).toEqual(LANG_PL_CODE);
+      expect(state.languages).toContain(LANG_PL_CODE);
+      expect(state.languages).toContain(LANG_EN_CODE);
       expect(state.isNavigating).toBeFalse();
     });
   });
 
   it('should change current language', (): void => {
     let state = reducer(undefined, { type: 'NOOP' });
-    expect(state.lang).not.toEqual(LangCode.EN);
+    expect(state.lang).not.toEqual(LANG_EN_CODE);
 
-    state = reducer(state, UiActions.changeLang({ language: LangCode.EN }));
+    state = reducer(
+      state,
+      UiActions.setLangSuccess({ language: LANG_EN_CODE }),
+    );
 
-    expect(state.lang).toEqual(LangCode.EN);
+    expect(state.lang).toEqual(LANG_EN_CODE);
   });
 
   describe('navigation flag indicator', (): void => {

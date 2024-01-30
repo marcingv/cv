@@ -1,6 +1,10 @@
 import { inject, Injectable, Signal } from '@angular/core';
-import { filter, map, Observable } from 'rxjs';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { distinctUntilChanged, filter, map, Observable, skip, tap } from 'rxjs';
+import {
+  takeUntilDestroyed,
+  toObservable,
+  toSignal,
+} from '@angular/core/rxjs-interop';
 import { CvData } from '@app/domain/models';
 import { Store } from '@ngrx/store';
 import { cvDataFeature } from '@app/data-access/state/cv-data/reducers/cv-data.reducer';
@@ -32,8 +36,18 @@ export class HomePageService {
     requireSync: true,
   });
 
+  private reloadCvDataOnLangChange$ = toObservable(this.currentLang).pipe(
+    distinctUntilChanged(),
+    skip(1),
+    tap(() => this.store.dispatch(CvDataActions.load())),
+    takeUntilDestroyed(),
+  );
+
+  public constructor() {
+    this.reloadCvDataOnLangChange$.subscribe();
+  }
+
   public changeLanguage(lang: LangCode): void {
     this.store.dispatch(UiActions.changeLang({ language: lang }));
-    this.store.dispatch(CvDataActions.load());
   }
 }

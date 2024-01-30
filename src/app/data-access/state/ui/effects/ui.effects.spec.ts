@@ -17,14 +17,12 @@ import {
   RouterRequestPayload,
 } from '@ngrx/router-store/src/actions';
 import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
-import { TranslateService } from '@ngx-translate/core';
-import { LangCode } from '@app/data-access/state/ui/models';
 import { Router } from '@angular/router';
 
 describe('UiEffects', () => {
   let actions$: Subject<Action>;
   let effects: UiEffects;
-  let translateService: TranslateService;
+  // let translateService: TranslateService;
   let router: Router;
 
   beforeEach(() => {
@@ -34,7 +32,7 @@ describe('UiEffects', () => {
     });
 
     actions$ = new Subject<Action>();
-    translateService = TestBed.inject(TranslateService);
+    // translateService = TestBed.inject(TranslateService);
     effects = TestBed.inject(UiEffects);
     router = TestBed.inject(Router);
   });
@@ -84,23 +82,23 @@ describe('UiEffects', () => {
     sourceActions.forEach((oneAction: Action) => actions$.next(oneAction));
   });
 
-  it('should change application language', (done: DoneFn) => {
-    const changeLangSpy = spyOn(translateService, 'use');
-    const sourceAction = UiActions.changeLang({ language: LangCode.EN });
-
-    effects.changeLang$
-      .pipe(
-        first(),
-        tap(() => {
-          expect(changeLangSpy).toHaveBeenCalledOnceWith(sourceAction.language);
-
-          done();
-        }),
-      )
-      .subscribe();
-
-    actions$.next(sourceAction);
-  });
+  // it('should change application language', (done: DoneFn) => {
+  //   const changeLangSpy = spyOn(translateService, 'use');
+  //   const sourceAction = UiActions.changeLang({ language: LangCode.EN });
+  //
+  //   effects.changeLang$
+  //     .pipe(
+  //       first(),
+  //       tap(() => {
+  //         expect(changeLangSpy).toHaveBeenCalledOnceWith(sourceAction.language);
+  //
+  //         done();
+  //       }),
+  //     )
+  //     .subscribe();
+  //
+  //   actions$.next(sourceAction);
+  // });
 
   it('should navigate to error page on error action', (done: DoneFn): void => {
     const navigateSpy = spyOn(router, 'navigate');

@@ -10,6 +10,11 @@ import {
 } from '@ngrx/router-store';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import {
+  DEFAULT_LANG,
+  LANG_PARAM_NAME,
+  LangCode,
+} from '@app/data-access/state/ui/models';
 
 @Injectable()
 export class UiEffects {
@@ -25,15 +30,6 @@ export class UiEffects {
       ofType(routerCancelAction, routerErrorAction, routerNavigatedAction),
       map(() => UiActions.navigationFinished()),
     ),
-  );
-
-  changeLang$ = createEffect(
-    () =>
-      this.actions$.pipe(
-        ofType(UiActions.changeLang),
-        tap((action) => this.translateService.use(action.language)),
-      ),
-    { dispatch: false },
   );
 
   goToErrorPage$ = createEffect(
@@ -53,5 +49,15 @@ export class UiEffects {
     private actions$: Actions,
     private translateService: TranslateService,
     private router: Router,
+    // private store: Store,
   ) {}
+
+  private updateLangUrlQueryParam(language: LangCode): void {
+    this.router.navigate([], {
+      queryParams: {
+        [LANG_PARAM_NAME]: language === DEFAULT_LANG ? undefined : language,
+      },
+      queryParamsHandling: 'merge',
+    });
+  }
 }

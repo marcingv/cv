@@ -4,7 +4,7 @@ import { HomePageService } from '@app/pages/home-page/home-page.service';
 import { NO_ERRORS_SCHEMA, signal } from '@angular/core';
 import { CvData } from '@app/domain/models';
 import { CvDataFactory } from '@app/testing/factories/models';
-import { LangCode } from '@app/data-access/state/ui/models';
+import { LANG_EN_CODE, LANG_PL_CODE } from '@app/data-access/state/ui/models';
 
 describe('HomePageComponent', (): void => {
   let component: HomePageComponent;
@@ -16,8 +16,8 @@ describe('HomePageComponent', (): void => {
       ['changeLanguage'],
       {
         cvData: signal<CvData>(CvDataFactory.createInstance()),
-        availableLangs: signal([LangCode.PL, LangCode.EN]),
-        currentLang: signal(LangCode.PL),
+        availableLangs: signal([LANG_PL_CODE, LANG_EN_CODE]),
+        currentLang: signal(LANG_PL_CODE),
       },
     );
 
@@ -43,10 +43,10 @@ describe('HomePageComponent', (): void => {
   });
 
   it('should trigger language change', (): void => {
-    component.changeLang(LangCode.EN);
+    component.changeLang(LANG_EN_CODE);
 
     expect(homePageService.changeLanguage).toHaveBeenCalledOnceWith(
-      LangCode.EN,
+      LANG_EN_CODE,
     );
   });
 });

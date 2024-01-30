@@ -7,7 +7,7 @@ import {
 } from '@angular/common/http/testing';
 import { CvData } from '@app/domain/models';
 import { CvDataFactory } from '@app/testing/factories/models';
-import { LangCode } from '@app/data-access/state/ui/models';
+import { LANG_PL_CODE, LangCode } from '@app/data-access/state/ui/models';
 import { provideHttpClient } from '@angular/common/http';
 
 describe('CvDataApiService', (): void => {
@@ -32,7 +32,7 @@ describe('CvDataApiService', (): void => {
   });
 
   it('should fetch cv in desired language', (): void => {
-    const requestLanguage: LangCode = LangCode.PL;
+    const requestLanguage: LangCode = LANG_PL_CODE;
     const expectedRequestUrl: string = `/assets/cv-${requestLanguage}.json`;
     const expectedResponseData: CvData = CvDataFactory.createInstance();
 

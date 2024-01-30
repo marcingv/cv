@@ -1,10 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { HomePageService } from './home-page.service';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { LangCode } from '@app/data-access/state/ui/models';
+import { LANG_EN_CODE, LangCode } from '@app/data-access/state/ui/models';
 import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
-import { CvDataActions } from '@app/data-access/state/cv-data/actions/cv-data.actions';
-import { Action } from '@ngrx/store';
 import { fromUi } from '@app/data-access/state/ui/reducers';
 import { fromCvData } from '@app/data-access/state/cv-data/reducers';
 import {
@@ -41,27 +39,15 @@ describe('HomePageService', (): void => {
   });
 
   it('should change lang and reload cv data', (): void => {
-    const dispatchedActionsOrder: Action[] = [];
-    const dispatchSpy = spyOn(store, 'dispatch').and.callFake(
-      (action: Action): void => {
-        dispatchedActionsOrder.push(action);
-      },
+    const dispatchSpy = spyOn(store, 'dispatch');
+
+    service.changeLanguage(LANG_EN_CODE);
+
+    expect(dispatchSpy).toHaveBeenCalledOnceWith(
+      UiActions.changeLang({
+        language: LANG_EN_CODE,
+      }),
     );
-
-    service.changeLanguage(LangCode.EN);
-
-    const changeLangAction: Action = UiActions.changeLang({
-      language: LangCode.EN,
-    });
-    const loadCvDataAction: Action = CvDataActions.load();
-
-    expect(dispatchSpy).toHaveBeenCalledWith(changeLangAction);
-    expect(dispatchSpy).toHaveBeenCalledWith(loadCvDataAction);
-    expect(dispatchedActionsOrder.length).toEqual(2);
-    expect(dispatchedActionsOrder).toEqual([
-      changeLangAction,
-      loadCvDataAction,
-    ]);
   });
 
   it('should provide available languages', (): void => {

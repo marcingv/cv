@@ -8,13 +8,14 @@ import {
 import { importProvidersFrom } from '@angular/core';
 import { DatePipe, registerLocaleData } from '@angular/common';
 import localePl from '@angular/common/locales/pl';
+import { DEFAULT_LANG } from '@app/data-access/state/ui/models';
 
 export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 const config: TranslateModuleConfig = {
-  defaultLanguage: 'pl',
+  defaultLanguage: DEFAULT_LANG,
   loader: {
     provide: TranslateLoader,
     useFactory: createTranslateLoader,

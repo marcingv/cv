@@ -7,7 +7,7 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { CvDataApiService } from '@app/data-access/api/services';
 import { fromCvData } from '@app/data-access/state/cv-data/reducers';
 import { fromUi } from '@app/data-access/state/ui/reducers';
-import { LangCode } from '@app/data-access/state/ui/models';
+import { LANG_PL_CODE } from '@app/data-access/state/ui/models';
 import { CvDataActions } from '@app/data-access/state/cv-data/actions/cv-data.actions';
 import { CvData } from '@app/domain/models';
 import { CvDataFactory } from '@app/testing/factories/models';
@@ -69,7 +69,7 @@ describe('CvDataEffects', () => {
           expect(resultAction).toEqual(
             CvDataActions.loadSuccess({ data: fetchedCvData }),
           );
-          expect(api.fetchData).toHaveBeenCalledOnceWith(LangCode.PL);
+          expect(api.fetchData).toHaveBeenCalledOnceWith(LANG_PL_CODE);
 
           done();
         }),
@@ -90,7 +90,7 @@ describe('CvDataEffects', () => {
           expect(resultAction).toEqual(
             CvDataActions.loadFailure({ error: fetchError }),
           );
-          expect(api.fetchData).toHaveBeenCalledOnceWith(LangCode.PL);
+          expect(api.fetchData).toHaveBeenCalledOnceWith(LANG_PL_CODE);
 
           done();
         }),
