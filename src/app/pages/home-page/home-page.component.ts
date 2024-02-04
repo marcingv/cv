@@ -11,7 +11,7 @@ import { AdditionalSkillsListComponent } from '@app/features/skills/components/a
 import { HomePageService } from './home-page.service';
 import { GroupedSkillsListComponent } from '@app/features/skills/components/grouped-skills-list';
 import { LangPickerComponent } from '@app/ui/components/lang-picker';
-import { LangCode } from '@app/data-access/state/ui/models';
+import { LangCode } from '@app/core/translations';
 
 @Component({
   selector: 'app-home-page',

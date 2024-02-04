@@ -8,10 +8,10 @@ import {
 import { CvData } from '@app/domain/models';
 import { Store } from '@ngrx/store';
 import { cvDataFeature } from '@app/data-access/state/cv-data/reducers/cv-data.reducer';
-import { LangCode } from '@app/data-access/state/ui/models';
 import { uiFeature } from '@app/data-access/state/ui/reducers/ui.reducer';
 import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
 import { CvDataActions } from '@app/data-access/state/cv-data/actions/cv-data.actions';
+import { LangCode } from '@app/core/translations';
 
 @Injectable()
 export class HomePageService {

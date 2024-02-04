@@ -1,7 +1,11 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { UiActions } from '../actions/ui.actions';
-import { DEFAULT_LANG, LANG_EN_CODE, LANG_PL_CODE, LangCode } from '../models';
-import { TranslationKey } from '@app/core/translations';
+import {
+  AVAILABLE_LANGS,
+  DEFAULT_LANG,
+  LangCode,
+  TranslationKey,
+} from '@app/core/translations';
 
 export const uiFeatureKey = 'ui';
 
@@ -14,7 +18,7 @@ export interface State {
 
 export const initialState: State = {
   lang: DEFAULT_LANG,
-  languages: [LANG_PL_CODE, LANG_EN_CODE],
+  languages: AVAILABLE_LANGS,
   isNavigating: false,
   errorPageMessage: undefined,
 };

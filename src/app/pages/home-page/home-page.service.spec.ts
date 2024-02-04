@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { HomePageService } from './home-page.service';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { LANG_EN_CODE, LangCode } from '@app/data-access/state/ui/models';
 import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
 import { fromUi } from '@app/data-access/state/ui/reducers';
 import { fromCvData } from '@app/data-access/state/cv-data/reducers';
@@ -10,6 +9,7 @@ import {
   UiStateFactory,
 } from '@app/testing/factories/state';
 import { CvData } from '@app/domain/models';
+import { LANG_EN_CODE, LangCode } from '@app/core/translations';
 
 describe('HomePageService', (): void => {
   let service: HomePageService;

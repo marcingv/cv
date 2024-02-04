@@ -8,7 +8,10 @@ import {
 import { importProvidersFrom } from '@angular/core';
 import { DatePipe, registerLocaleData } from '@angular/common';
 import localePl from '@angular/common/locales/pl';
-import { DEFAULT_LANG } from '@app/data-access/state/ui/models';
+import { LANG_EN_CODE, LANG_PL_CODE, LangCode } from './types/lang-code';
+
+export const DEFAULT_LANG: LangCode = LANG_PL_CODE;
+export const AVAILABLE_LANGS: LangCode[] = [LANG_PL_CODE, LANG_EN_CODE];
 
 export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');

@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { CvLayoutComponent } from './layouts/cv-layout';
-import { HomePageComponent } from './pages/home-page';
-import { OopsErrorPageComponent } from './pages/oops-error-page';
-import { ErrorLayoutComponent } from './layouts/error-layout';
-import { cvDataResolver } from './data-access/resolvers/cv-data.resolver';
+import { CvLayoutComponent } from '../../layouts/cv-layout';
+import { HomePageComponent } from '../../pages/home-page';
+import { OopsErrorPageComponent } from '../../pages/oops-error-page';
+import { ErrorLayoutComponent } from '../../layouts/error-layout';
+import { cvDataResolver } from '../../data-access/resolvers/cv-data.resolver';
 
 export const routes: Routes = [
   {

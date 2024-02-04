@@ -6,7 +6,7 @@ import {
   Output,
 } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { LangCode } from '../../../data-access/state/ui/models';
+import { LangCode } from '@app/core/translations';
 
 @Component({
   selector: 'app-lang-picker',

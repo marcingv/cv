@@ -7,11 +7,7 @@ import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
 import { provideMockStore } from '@ngrx/store/testing';
 import { fromUi } from '@app/data-access/state/ui/reducers';
 import { UiStateFactory } from '@app/testing/factories/state';
-import {
-  LANG_EN_CODE,
-  LANG_PL_CODE,
-  LangCode,
-} from '@app/data-access/state/ui/models';
+import { LANG_EN_CODE, LANG_PL_CODE, LangCode } from '@app/core/translations';
 import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
 
 describe('UiLangEffects', () => {

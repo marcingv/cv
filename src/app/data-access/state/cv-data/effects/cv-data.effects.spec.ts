@@ -7,7 +7,6 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { CvDataApiService } from '@app/data-access/api/services';
 import { fromCvData } from '@app/data-access/state/cv-data/reducers';
 import { fromUi } from '@app/data-access/state/ui/reducers';
-import { LANG_PL_CODE } from '@app/data-access/state/ui/models';
 import { CvDataActions } from '@app/data-access/state/cv-data/actions/cv-data.actions';
 import { CvData } from '@app/domain/models';
 import { CvDataFactory } from '@app/testing/factories/models';
@@ -16,6 +15,7 @@ import {
   UiStateFactory,
 } from '@app/testing/factories/state';
 import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
+import { LANG_PL_CODE } from '@app/core/translations';
 
 describe('CvDataEffects', () => {
   let actions$: Subject<Action>;

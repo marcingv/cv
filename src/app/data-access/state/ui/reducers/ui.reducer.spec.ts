@@ -1,8 +1,8 @@
 import { initialState, reducer } from './ui.reducer';
 import { Action } from '@ngrx/store';
-import { LANG_EN_CODE, LANG_PL_CODE } from '@app/data-access/state/ui/models';
 import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
 import { UiStateFactory } from '@app/testing/factories/state';
+import { LANG_EN_CODE, LANG_PL_CODE } from '@app/core/translations';
 
 describe('Ui Reducer', (): void => {
   describe('an unknown action', (): void => {

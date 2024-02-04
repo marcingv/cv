@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { LangCode } from '@app/data-access/state/ui/models';
 import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
 import { uiFeature } from '@app/data-access/state/ui/reducers/ui.reducer';
 import { withLatestFrom } from 'rxjs/operators';
 import { map } from 'rxjs';
 import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
+import { LangCode } from '@app/core/translations';
 
 @Injectable()
 export class UiLangEffects {

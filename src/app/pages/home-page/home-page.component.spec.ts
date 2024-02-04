@@ -4,7 +4,7 @@ import { HomePageService } from '@app/pages/home-page/home-page.service';
 import { NO_ERRORS_SCHEMA, signal } from '@angular/core';
 import { CvData } from '@app/domain/models';
 import { CvDataFactory } from '@app/testing/factories/models';
-import { LANG_EN_CODE, LANG_PL_CODE } from '@app/data-access/state/ui/models';
+import { LANG_EN_CODE, LANG_PL_CODE } from '@app/core/translations';
 
 describe('HomePageComponent', (): void => {
   let component: HomePageComponent;

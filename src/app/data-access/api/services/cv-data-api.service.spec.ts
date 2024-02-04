@@ -7,8 +7,8 @@ import {
 } from '@angular/common/http/testing';
 import { CvData } from '@app/domain/models';
 import { CvDataFactory } from '@app/testing/factories/models';
-import { LANG_PL_CODE, LangCode } from '@app/data-access/state/ui/models';
 import { provideHttpClient } from '@angular/common/http';
+import { LANG_PL_CODE, LangCode } from '@app/core/translations';
 
 describe('CvDataApiService', (): void => {
   let service: CvDataApiService;
