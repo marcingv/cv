@@ -1,4 +1,8 @@
-import { ApplicationConfig, isDevMode } from '@angular/core';
+import {
+  ApplicationConfig,
+  importProvidersFrom,
+  isDevMode,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
@@ -16,14 +20,52 @@ import {
   ROUTER_REQUEST,
 } from '@ngrx/router-store';
 import { UiEffects } from './data-access/state/ui/effects/ui.effects';
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import { provideNgxTranslations } from './core/translations';
 import { provideAppInitializers } from '@app/core/initializers';
+import {
+  LocalizeParser,
+  LocalizeRouterModule,
+  LocalizeRouterSettings,
+  ManualParserLoader,
+} from '@gilsdav/ngx-translate-router';
+import { TranslateService } from '@ngx-translate/core';
+import { Location } from '@angular/common';
 import { UiLangEffects } from '@app/data-access/state/ui/effects/ui-lang.effects';
+
+export function localizeLoaderFactory(
+  translate: TranslateService,
+  location: Location,
+  settings: LocalizeRouterSettings,
+): LocalizeParser {
+  return new ManualParserLoader(
+    translate,
+    location,
+    settings,
+    ['pl', 'en'],
+    'ROUTES',
+  );
+}
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideNgxTranslations(),
     provideRouter(routes),
+    importProvidersFrom(
+      LocalizeRouterModule.forRoot(routes, {
+        parser: {
+          provide: LocalizeParser,
+          useFactory: localizeLoaderFactory,
+          deps: [
+            TranslateService,
+            Location,
+            LocalizeRouterSettings,
+            HttpClient,
+          ],
+        },
+        useCachedLang: false,
+      }),
+    ),
     provideHttpClient(withFetch()),
     provideClientHydration(),
     provideStore(reducers, { metaReducers }),
@@ -40,7 +82,6 @@ export const appConfig: ApplicationConfig = {
       ],
     }),
     provideRouterStore(),
-    provideNgxTranslations(),
     provideAppInitializers(),
   ],
 };

@@ -1,26 +1,29 @@
 import { APP_INITIALIZER, Provider } from '@angular/core';
-import { Location } from '@angular/common';
-import { Router, UrlTree } from '@angular/router';
+import { first, map, Observable, tap } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
 import { Store } from '@ngrx/store';
-import { Observable, of } from 'rxjs';
 import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
-import { LANG_PARAM_NAME } from '@app/data-access/state/ui/models';
+import { LangCode } from '@app/data-access/state/ui/models';
 
 function initializeDefaultLang(
-  location: Location,
-  router: Router,
   store: Store,
+  localize: LocalizeRouterService,
+  translate: TranslateService,
 ): () => Observable<boolean> {
-  if (location.path()) {
-    const parsedUrl: UrlTree = router.parseUrl(location.path());
-    const desiredLang = parsedUrl.queryParamMap.get(LANG_PARAM_NAME);
+  return () =>
+    localize.hooks.initialized.pipe(
+      first(),
+      tap((): void => {
+        const currentLang: LangCode =
+          translate.currentLang ?? translate.defaultLang;
 
-    if (desiredLang) {
-      store.dispatch(UiActions.setInitialLang({ language: desiredLang }));
-    }
-  }
-
-  return () => of(true);
+        if (currentLang) {
+          store.dispatch(UiActions.setInitialLang({ language: currentLang }));
+        }
+      }),
+      map(() => true),
+    );
 }
 
 export function appLangInitializer(): Provider {
@@ -28,6 +31,6 @@ export function appLangInitializer(): Provider {
     provide: APP_INITIALIZER,
     useFactory: initializeDefaultLang,
     multi: true,
-    deps: [Location, Router, Store],
+    deps: [Store, LocalizeRouterService, TranslateService],
   };
 }

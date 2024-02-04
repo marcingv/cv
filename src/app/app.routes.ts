@@ -31,10 +31,10 @@ export const routes: Routes = [
           cvData: cvDataResolver,
         },
       },
-      {
-        path: '**',
-        redirectTo: '/',
-      },
     ],
+  },
+  {
+    path: '**',
+    redirectTo: '/',
   },
 ];
