@@ -2,17 +2,16 @@ import { initialState, reducer } from './cv-data.reducer';
 import { Action } from '@ngrx/store';
 import { CvDataActions } from '@app/data-access/state/cv-data/actions/cv-data.actions';
 import { CvDataStateFactory } from '@app/testing/factories/state';
-import { CvData } from '@app/domain/models';
-import { CvDataFactory } from '@app/testing/factories/models';
+import { CvDataEntity } from '@app/data-access/state/cv-data/models';
 
 describe('CvData Reducer', () => {
   describe('initial state', () => {
     it('should be empty', () => {
       const result = reducer(undefined, { type: 'NOOP' });
 
-      expect(result.data).toBeUndefined();
+      expect(result.entities).toEqual({});
+      expect(result.ids).toEqual([]);
       expect(result.isLoading).toBeFalse();
-      expect(result.isLoaded).toBeFalse();
     });
   });
 
@@ -40,34 +39,42 @@ describe('CvData Reducer', () => {
     });
 
     it('should save data after load', () => {
-      const cvData: CvData = CvDataFactory.createInstance();
+      const cvDataEntity: CvDataEntity = CvDataStateFactory.createEntity();
 
       let state = CvDataStateFactory.createInstance({
-        data: undefined,
-        isLoaded: false,
+        ids: [],
+        entities: {},
         isLoading: true,
       });
 
-      state = reducer(state, CvDataActions.loadSuccess({ data: cvData }));
+      state = reducer(
+        state,
+        CvDataActions.loadSuccess({ entity: cvDataEntity }),
+      );
 
-      expect(state.data).toEqual(cvData);
-      expect(state.isLoaded).toBeTrue();
+      expect(state.ids).toEqual(CvDataStateFactory.mapToIds([cvDataEntity]));
+      expect(state.entities).toEqual(
+        CvDataStateFactory.createDictionary([cvDataEntity]),
+      );
       expect(state.isLoading).toBeFalse();
     });
 
-    it('should clear data on load failure', () => {
-      let state = CvDataStateFactory.createInstance();
+    it('should set loading to false on load failure', () => {
+      let state = CvDataStateFactory.createInstance({
+        isLoading: true,
+      });
 
-      expect(state.data).not.toBeUndefined();
-      expect(state.isLoaded).toBeTrue();
+      expect(state.isLoading).toBeTrue();
 
       state = reducer(
         state,
-        CvDataActions.loadFailure({ error: new Error('Load Error') }),
+        CvDataActions.loadFailure({
+          language: 'fr',
+          error: new Error('Load Error'),
+        }),
       );
 
-      expect(state.data).toBeUndefined();
-      expect(state.isLoaded).toBeFalse();
+      expect(state.isLoading).toBeFalse();
     });
   });
 });

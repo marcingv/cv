@@ -7,10 +7,14 @@ import {
 import { cvDataResolver } from './cv-data.resolver';
 import { CvData } from '@app/domain/models';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { first, Observable, tap } from 'rxjs';
+import { first, Observable } from 'rxjs';
 import { fromCvData } from '@app/data-access/state/cv-data/reducers';
-import { CvDataStateFactory } from '@app/testing/factories/state';
+import {
+  CvDataStateFactory,
+  UiStateFactory,
+} from '@app/testing/factories/state';
 import { CvDataActions } from '@app/data-access/state/cv-data/actions/cv-data.actions';
+import { fromUi } from '@app/data-access/state/ui/reducers';
 
 describe('cvDataResolver', () => {
   const executeResolver: ResolveFn<CvData | undefined> = (
@@ -46,19 +50,26 @@ describe('cvDataResolver', () => {
       return;
     }
 
-    result
-      .pipe(
-        first(),
-        tap((data: CvData | undefined) => {
-          expect(data).toBeTruthy();
-          expect(dispatchSpy).toHaveBeenCalledOnceWith(CvDataActions.load());
+    store.setState({
+      [fromUi.uiFeatureKey]: UiStateFactory.createInstance(),
+      [fromCvData.cvDataFeatureKey]: CvDataStateFactory.createInstance({
+        ids: [],
+        entities: {},
+      }),
+    });
 
-          done();
-        }),
-      )
-      .subscribe();
+    result.pipe(first()).subscribe({
+      next: (data: CvData | undefined) => {
+        expect(data).toBeTruthy();
+        expect(dispatchSpy).toHaveBeenCalledOnceWith(CvDataActions.load());
+
+        done();
+      },
+      error: () => fail(),
+    });
 
     store.setState({
+      [fromUi.uiFeatureKey]: UiStateFactory.createInstance(),
       [fromCvData.cvDataFeatureKey]: CvDataStateFactory.createInstance(),
     });
   });

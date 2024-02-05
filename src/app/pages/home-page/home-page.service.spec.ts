@@ -61,9 +61,13 @@ describe('HomePageService', (): void => {
   });
 
   it('should provide cv data', (): void => {
-    const cvData: CvData | undefined = service.cvData();
+    const cvData: CvData | undefined = service.cvData() as CvData | undefined;
+
+    const lang: LangCode = state[fromUi.uiFeatureKey].lang;
 
     expect(cvData).toBeTruthy();
-    expect(cvData).toEqual(state[fromCvData.cvDataFeatureKey].data!);
+    expect(cvData).toEqual(
+      state[fromCvData.cvDataFeatureKey].entities[lang]?.data,
+    );
   });
 });

@@ -1,11 +1,13 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
-import { CvData } from '@app/domain/models';
+import { CvDataEntity } from '@app/data-access/state/cv-data/models';
+import { LangCode } from '@app/core/translations';
 
 export const CvDataActions = createActionGroup({
   source: 'CvData',
   events: {
     Load: emptyProps(),
-    'Load Success': props<{ data: CvData }>(),
-    'Load Failure': props<{ error: Error }>(),
+    'Load for language': props<{ language: LangCode }>(),
+    'Load Success': props<{ entity: CvDataEntity }>(),
+    'Load Failure': props<{ language: LangCode; error: Error }>(),
   },
 });

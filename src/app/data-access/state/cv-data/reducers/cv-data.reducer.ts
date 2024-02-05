@@ -1,39 +1,43 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { CvDataActions } from '../actions/cv-data.actions';
-import { CvData } from '@app/domain/models';
+import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
+import { CvDataEntity } from '@app/data-access/state/cv-data/models';
 
 export const cvDataFeatureKey = 'cvData';
 
-export interface State {
-  data: CvData | undefined;
+export interface State extends EntityState<CvDataEntity> {
   isLoading: boolean;
-  isLoaded: boolean;
 }
 
-export const initialState: State = {
-  data: undefined,
+const adapter: EntityAdapter<CvDataEntity> = createEntityAdapter<CvDataEntity>({
+  selectId: (model: CvDataEntity) => model.language,
+});
+
+export const initialState: State = adapter.getInitialState({
   isLoading: false,
-  isLoaded: false,
-};
+});
 
 export const reducer = createReducer(
   initialState,
   on(CvDataActions.load, (state) => ({ ...state, isLoading: true })),
-  on(CvDataActions.loadSuccess, (state, action) => ({
-    ...state,
-    data: action.data,
-    isLoaded: true,
-    isLoading: false,
-  })),
+  on(CvDataActions.loadSuccess, (state, action) => {
+    return adapter.upsertOne(action.entity, {
+      ...state,
+      isLoading: false,
+    });
+  }),
   on(CvDataActions.loadFailure, (state) => ({
     ...state,
-    data: undefined,
-    isLoaded: false,
     isLoading: false,
   })),
 );
 
-export const cvDataFeature = createFeature({
+const feature = createFeature({
   name: cvDataFeatureKey,
-  reducer,
+  reducer: reducer,
 });
+
+export const cvDataFeature = {
+  ...feature,
+  ...adapter.getSelectors(feature.selectCvDataState),
+};

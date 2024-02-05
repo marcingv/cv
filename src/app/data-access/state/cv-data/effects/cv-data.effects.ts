@@ -11,18 +11,36 @@ import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
 
 @Injectable()
 export class CvDataEffects {
-  load$ = createEffect(() => {
+  loadForCurrentLang$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(CvDataActions.load),
       withLatestFrom(this.store.select(uiFeature.selectLang)),
-      switchMap(([, lang]) =>
-        this.api.fetchData(lang).pipe(
-          map((data: CvData) => CvDataActions.loadSuccess({ data })),
-          catchError((error) => of(CvDataActions.loadFailure({ error }))),
-        ),
-      ),
+      map(([, lang]) => CvDataActions.loadForLanguage({ language: lang })),
     );
   });
+
+  loadForLang$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(CvDataActions.loadForLanguage),
+      switchMap((action) =>
+        this.api.fetchData(action.language).pipe(
+          map((data: CvData) =>
+            CvDataActions.loadSuccess({
+              entity: { language: action.language, data: data },
+            }),
+          ),
+          catchError((error) =>
+            of(
+              CvDataActions.loadFailure({
+                language: action.language,
+                error: error,
+              }),
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
 
   onError$ = createEffect(() =>
     this.actions$.pipe(
