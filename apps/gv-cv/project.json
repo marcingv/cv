@@ -1,0 +1,92 @@
+{
+  "name": "gv-cv",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss",
+      "changeDetection": "OnPush",
+      "displayBlock": true,
+      "inlineStyle": true
+    }
+  },
+  "sourceRoot": "apps/gv-cv/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "options": {
+        "outputPath": "dist/apps/gv-cv",
+        "index": "apps/gv-cv/src/index.html",
+        "browser": "apps/gv-cv/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/gv-cv/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/gv-cv/src/favicon.ico", "apps/gv-cv/src/assets"],
+        "styles": ["apps/gv-cv/src/styles.scss"],
+        "scripts": [],
+        "server": "apps/gv-cv/src/main.server.ts",
+        "prerender": true,
+        "ssr": false
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "gv-cv:build:production"
+        },
+        "development": {
+          "buildTarget": "gv-cv:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "gv-cv:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "polyfills": ["zone.js", "zone.js/testing"],
+        "tsConfig": "apps/gv-cv/tsconfig.spec.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/gv-cv/src/favicon.ico", "apps/gv-cv/src/assets"],
+        "styles": ["apps/gv-cv/src/styles.scss"],
+        "scripts": []
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["apps/gv-cv/**/*.ts", "apps/gv-cv/**/*.html"]
+      }
+    }
+  }
+}
