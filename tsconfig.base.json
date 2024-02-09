@@ -21,8 +21,8 @@
     "lib": ["ES2022", "dom"],
     "resolveJsonModule": true,
     "paths": {
-      "@app/*": ["./apps/gv-cv/src/app/*"],
-      "@assets/*": ["./apps/gv-cv/src/assets/*"]
+      "@app/*": ["./apps/frontend/src/app/*"],
+      "@assets/*": ["./apps/frontend/src/assets/*"]
     },
     "baseUrl": ".",
     "rootDir": "."
