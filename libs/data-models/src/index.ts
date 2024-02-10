@@ -11,3 +11,9 @@ export * from './lib/skill';
 export * from './lib/skill-category';
 
 export * from './lib/factories/cv-data.factory';
+
+import { default as PL_CV_DATA } from './lib/data/cv-pl.json';
+import { default as EN_CV_DATA } from './lib/data/cv-en.json';
+
+export { PL_CV_DATA };
+export { EN_CV_DATA };
