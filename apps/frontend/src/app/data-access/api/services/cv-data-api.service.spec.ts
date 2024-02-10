@@ -33,7 +33,7 @@ describe('CvDataApiService', (): void => {
 
   it('should fetch cv in desired language', (): void => {
     const requestLanguage: LangCode = LANG_PL_CODE;
-    const expectedRequestUrl: string = `/assets/cv-${requestLanguage}.json`;
+    const expectedRequestUrl = `/assets/cv-${requestLanguage}.json`;
     const expectedResponseData: CvData = CvDataFactory.createInstance();
 
     service.fetchData(requestLanguage).subscribe((data: CvData): void => {

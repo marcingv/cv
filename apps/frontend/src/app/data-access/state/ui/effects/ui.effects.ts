@@ -9,6 +9,7 @@ import {
   routerRequestAction,
 } from '@ngrx/router-store';
 import { Router } from '@angular/router';
+import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
 
 @Injectable()
 export class UiEffects {
@@ -31,9 +32,12 @@ export class UiEffects {
       this.actions$.pipe(
         ofType(UiActions.goToErrorPage),
         tap(() => {
-          this.router.navigate(['/error'], {
-            skipLocationChange: true,
-          });
+          this.router.navigate(
+            [this.localizeRouterService.translateRoute('/error')],
+            {
+              skipLocationChange: true,
+            },
+          );
         }),
       ),
     { dispatch: false },
@@ -42,5 +46,6 @@ export class UiEffects {
   public constructor(
     private actions$: Actions,
     private router: Router,
+    private localizeRouterService: LocalizeRouterService,
   ) {}
 }

@@ -18,21 +18,32 @@ import {
 } from '@ngrx/router-store/src/actions';
 import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
 import { Router } from '@angular/router';
+import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
 
 describe('UiEffects', () => {
   let actions$: Subject<Action>;
   let effects: UiEffects;
-  // let translateService: TranslateService;
   let router: Router;
+  let localizeRouterService: jasmine.SpyObj<LocalizeRouterService>;
 
   beforeEach(() => {
+    localizeRouterService = jasmine.createSpyObj<LocalizeRouterService>([
+      'translateRoute',
+    ]);
+
     TestBed.configureTestingModule({
       imports: [TranslationsTestingModule],
-      providers: [UiEffects, provideMockActions(() => actions$)],
+      providers: [
+        UiEffects,
+        provideMockActions(() => actions$),
+        {
+          provide: LocalizeRouterService,
+          useValue: localizeRouterService,
+        },
+      ],
     });
 
     actions$ = new Subject<Action>();
-    // translateService = TestBed.inject(TranslateService);
     effects = TestBed.inject(UiEffects);
     router = TestBed.inject(Router);
   });
@@ -82,30 +93,19 @@ describe('UiEffects', () => {
     sourceActions.forEach((oneAction: Action) => actions$.next(oneAction));
   });
 
-  // it('should change application language', (done: DoneFn) => {
-  //   const changeLangSpy = spyOn(translateService, 'use');
-  //   const sourceAction = UiActions.changeLang({ language: LangCode.EN });
-  //
-  //   effects.changeLang$
-  //     .pipe(
-  //       first(),
-  //       tap(() => {
-  //         expect(changeLangSpy).toHaveBeenCalledOnceWith(sourceAction.language);
-  //
-  //         done();
-  //       }),
-  //     )
-  //     .subscribe();
-  //
-  //   actions$.next(sourceAction);
-  // });
-
   it('should navigate to error page on error action', (done: DoneFn): void => {
+    const routeToLocalize = '/error';
+    const localizedRoute = '/en/error';
+
+    localizeRouterService.translateRoute.and.returnValue(localizedRoute);
     const navigateSpy = spyOn(router, 'navigate');
 
     effects.goToErrorPage$.pipe(first()).subscribe({
       next: (): void => {
-        expect(navigateSpy).toHaveBeenCalledOnceWith(['/error'], {
+        expect(localizeRouterService.translateRoute).toHaveBeenCalledOnceWith(
+          routeToLocalize,
+        );
+        expect(navigateSpy).toHaveBeenCalledOnceWith([localizedRoute], {
           skipLocationChange: true,
         });
 
