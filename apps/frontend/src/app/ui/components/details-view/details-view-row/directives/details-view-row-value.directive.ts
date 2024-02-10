@@ -4,6 +4,4 @@ import { Directive } from '@angular/core';
   selector: '[appDetailsViewRowValue]',
   standalone: true,
 })
-export class DetailsViewRowValueDirective {
-  public constructor() {}
-}
+export class DetailsViewRowValueDirective {}

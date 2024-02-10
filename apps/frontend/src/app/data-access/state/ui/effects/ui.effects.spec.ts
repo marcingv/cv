@@ -73,7 +73,7 @@ describe('UiEffects', () => {
       routerErrorAction({ payload: {} as RouterErrorPayload<never> }),
       routerNavigatedAction({ payload: {} as RouterNavigatedPayload<never> }),
     ];
-    let numberOfReactions: number = 0;
+    let numberOfReactions = 0;
 
     effects.navigationFinished$
       .pipe(

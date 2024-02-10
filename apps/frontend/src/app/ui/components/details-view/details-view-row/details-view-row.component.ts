@@ -22,7 +22,7 @@ export class DetailsViewRowComponent {
   @Input() public label?: string;
   @Input() public value?: string;
 
-  @HostBinding('class') public hostClass: string = 'flex flex-row gap-3';
+  @HostBinding('class') public hostClass = 'flex flex-row gap-3';
 
   @ContentChild(DetailsViewRowLabelDirective, {
     static: true,
