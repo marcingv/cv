@@ -2,10 +2,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { OopsErrorPageComponent } from './oops-error-page.component';
 import { provideMockStore } from '@ngrx/store/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { TranslationsTestingModule } from '@app/testing/translations';
 import { Router, RouterOutlet } from '@angular/router';
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
+import { TranslationsTestingModule } from '../../testing/translations';
 
 @Component({
   selector: 'app-router-outlet-stub',

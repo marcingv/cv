@@ -1,10 +1,10 @@
 import { createSelector } from '@ngrx/store';
-import { fromUi } from '@app/data-access/state/ui/reducers';
-import { fromCvData } from '@app/data-access/state/cv-data/reducers';
-import { CvData } from '@app/domain/models';
-import { LangCode } from '@app/core/translations';
 import { Dictionary } from '@ngrx/entity';
-import { CvDataEntity } from '@app/data-access/state/cv-data/models';
+import { fromUi } from '../../ui/reducers';
+import { fromCvData } from '../reducers';
+import { LangCode } from '../../../../core/translations';
+import { CvDataEntity } from '../models';
+import { CvData } from '../../../../domain/models';
 
 export const selectCvDataForCurrentLanguage = createSelector(
   fromUi.uiFeature.selectLang,

@@ -1,4 +1,4 @@
-import * as transPl from '@assets/i18n/pl.json';
+import * as transPl from '../../../../assets/i18n/pl.json';
 
 type Prev = [
   never,

@@ -1,5 +1,5 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
-import { LangCode } from '@app/core/translations';
+import { LangCode } from '../../../../core/translations';
 
 export const UiActions = createActionGroup({
   source: 'Ui',

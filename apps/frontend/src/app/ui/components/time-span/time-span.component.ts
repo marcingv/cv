@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { LocalizedDatePipe } from '@app/core/translations/pipes/localized-date.pipe';
-import { TranslationKey } from '@app/core/translations';
 import { TranslateModule } from '@ngx-translate/core';
+import { LocalizedDatePipe } from '../../../core/translations/pipes/localized-date.pipe';
+import { TranslationKey } from '../../../core/translations';
 
 @Component({
   selector: 'app-time-span',

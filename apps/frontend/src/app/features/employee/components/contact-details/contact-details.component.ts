@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { ContactData } from '@app/domain/models';
 import {
   DetailsViewComponent,
   DetailsViewRowComponent,
   DetailsViewRowLabelDirective,
   DetailsViewRowValueDirective,
-} from '@app/ui/components/details-view';
+} from '../../../../ui/components/details-view';
+import { ContactData } from '../../../../domain/models';
 
 @Component({
   selector: 'app-contact-details',

@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TimeSpanComponent } from './time-span.component';
-import { TranslationsTestingModule } from '@app/testing/translations';
 import { TranslateService } from '@ngx-translate/core';
-import { TranslationKey } from '@app/core/translations';
+import { TranslationsTestingModule } from '../../../testing/translations';
+import { TranslationKey } from '../../../core/translations';
 
 describe('TimeSpanComponent', () => {
   let component: TimeSpanComponent;

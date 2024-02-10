@@ -16,9 +16,9 @@ import {
 import { UiEffects } from './data-access/state/ui/effects/ui.effects';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideNgxTranslations } from './core/translations';
-import { provideAppInitializers } from '@app/core/initializers';
-import { UiLangEffects } from '@app/data-access/state/ui/effects/ui-lang.effects';
-import { provideAppRouterConfiguration } from '@app/core/router';
+import { provideAppRouterConfiguration } from './core/router';
+import { provideAppInitializers } from './core/initializers';
+import { UiLangEffects } from './data-access/state/ui/effects/ui-lang.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [

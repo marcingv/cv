@@ -1,8 +1,8 @@
 import { initialState, reducer } from './cv-data.reducer';
 import { Action } from '@ngrx/store';
-import { CvDataActions } from '@app/data-access/state/cv-data/actions/cv-data.actions';
-import { CvDataStateFactory } from '@app/testing/factories/state';
-import { CvDataEntity } from '@app/data-access/state/cv-data/models';
+import { CvDataStateFactory } from '../../../../testing/factories/state';
+import { CvDataActions } from '../actions/cv-data.actions';
+import { CvDataEntity } from '../models';
 
 describe('CvData Reducer', () => {
   describe('initial state', () => {

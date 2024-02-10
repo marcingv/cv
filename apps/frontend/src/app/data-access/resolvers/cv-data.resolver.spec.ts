@@ -5,16 +5,16 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 import { cvDataResolver } from './cv-data.resolver';
-import { CvData } from '@app/domain/models';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { first, Observable } from 'rxjs';
-import { fromCvData } from '@app/data-access/state/cv-data/reducers';
+import { CvData } from '../../domain/models';
 import {
   CvDataStateFactory,
   UiStateFactory,
-} from '@app/testing/factories/state';
-import { CvDataActions } from '@app/data-access/state/cv-data/actions/cv-data.actions';
-import { fromUi } from '@app/data-access/state/ui/reducers';
+} from '../../testing/factories/state';
+import { CvDataActions } from '../state/cv-data/actions/cv-data.actions';
+import { fromUi } from '../state/ui/reducers';
+import { fromCvData } from '../state/cv-data/reducers';
 
 describe('cvDataResolver', () => {
   const executeResolver: ResolveFn<CvData | undefined> = (

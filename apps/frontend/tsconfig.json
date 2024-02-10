@@ -9,11 +9,7 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "resolveJsonModule": true,
-    "paths": {
-      "@app/*": ["./apps/frontend/src/app/*"],
-      "@assets/*": ["./apps/frontend/src/assets/*"]
-    }
+    "resolveJsonModule": true
   },
   "files": [],
   "include": [],

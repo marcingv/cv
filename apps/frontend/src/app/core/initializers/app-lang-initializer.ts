@@ -3,8 +3,8 @@ import { first, map, Observable, tap } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
 import { Store } from '@ngrx/store';
-import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
-import { LangCode } from '@app/core/translations';
+import { LangCode } from '../translations';
+import { UiActions } from '../../data-access/state/ui/actions/ui.actions';
 
 function initializeDefaultLang(
   store: Store,

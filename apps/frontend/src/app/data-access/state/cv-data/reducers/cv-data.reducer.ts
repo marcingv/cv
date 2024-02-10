@@ -1,7 +1,7 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { CvDataActions } from '../actions/cv-data.actions';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
-import { CvDataEntity } from '@app/data-access/state/cv-data/models';
+import { CvDataEntity } from '../models';
 
 export const cvDataFeatureKey = 'cvData';
 

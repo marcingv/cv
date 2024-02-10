@@ -4,18 +4,18 @@ import { first, of, Subject, throwError } from 'rxjs';
 import { CvDataEffects } from './cv-data.effects';
 import { Action } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { CvDataApiService } from '@app/data-access/api/services';
-import { fromCvData } from '@app/data-access/state/cv-data/reducers';
-import { fromUi } from '@app/data-access/state/ui/reducers';
-import { CvDataActions } from '@app/data-access/state/cv-data/actions/cv-data.actions';
-import { CvData } from '@app/domain/models';
-import { CvDataFactory } from '@app/testing/factories/models';
+import { CvDataApiService } from '../../../api/services';
+import { fromUi } from '../../ui/reducers';
+import { fromCvData } from '../reducers';
 import {
   CvDataStateFactory,
   UiStateFactory,
-} from '@app/testing/factories/state';
-import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
-import { LANG_EN_CODE } from '@app/core/translations';
+} from '../../../../testing/factories/state';
+import { CvDataActions } from '../actions/cv-data.actions';
+import { LANG_EN_CODE } from '../../../../core/translations';
+import { CvData } from '../../../../domain/models';
+import { CvDataFactory } from '../../../../testing/factories/models';
+import { UiActions } from '../../ui/actions/ui.actions';
 
 describe('CvDataEffects', () => {
   let actions$: Subject<Action>;

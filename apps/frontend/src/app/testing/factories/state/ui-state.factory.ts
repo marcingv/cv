@@ -1,5 +1,5 @@
-import { fromUi } from '@app/data-access/state/ui/reducers';
-import { LANG_EN_CODE, LANG_PL_CODE } from '@app/core/translations';
+import { fromUi } from '../../../data-access/state/ui/reducers';
+import { LANG_EN_CODE, LANG_PL_CODE } from '../../../core/translations';
 
 export class UiStateFactory {
   public static createInstance(params?: Partial<fromUi.State>): fromUi.State {

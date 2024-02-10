@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { EmployeeData } from '@app/domain/models';
-import { CvSectionComponent } from '@app/ui/components/cv-section';
 import { ContactDetailsComponent } from '../contact-details';
 import { NgOptimizedImage } from '@angular/common';
+import { CvSectionComponent } from '../../../../ui/components/cv-section';
+import { EmployeeData } from '../../../../domain/models';
 
 @Component({
   selector: 'app-profile-about',

@@ -1,5 +1,5 @@
-import { CvData } from '@app/domain/models';
-import { default as cvData } from '@assets/cv-pl.json';
+import { CvData } from '../../../domain/models';
+import { default as cvData } from '../../../../assets/cv-pl.json';
 
 export class CvDataFactory {
   public static createInstance(params?: Partial<CvData>): CvData {

@@ -3,7 +3,6 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { first, Subject, take, tap } from 'rxjs';
 import { UiEffects } from './ui.effects';
 import { Action } from '@ngrx/store';
-import { TranslationsTestingModule } from '@app/testing/translations';
 import {
   routerCancelAction,
   routerErrorAction,
@@ -16,9 +15,10 @@ import {
   RouterNavigatedPayload,
   RouterRequestPayload,
 } from '@ngrx/router-store/src/actions';
-import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
 import { Router } from '@angular/router';
 import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
+import { TranslationsTestingModule } from '../../../../testing/translations';
+import { UiActions } from '../actions/ui.actions';
 
 describe('UiEffects', () => {
   let actions$: Subject<Action>;

@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomePageComponent } from './home-page.component';
-import { HomePageService } from '@app/pages/home-page/home-page.service';
 import { NO_ERRORS_SCHEMA, signal } from '@angular/core';
-import { CvData } from '@app/domain/models';
-import { CvDataFactory } from '@app/testing/factories/models';
-import { LANG_EN_CODE, LANG_PL_CODE } from '@app/core/translations';
+import { HomePageService } from './home-page.service';
+import { CvData } from '../../domain/models';
+import { CvDataFactory } from '../../testing/factories/models';
+import { LANG_EN_CODE, LANG_PL_CODE } from '../../core/translations';
 
 describe('HomePageComponent', (): void => {
   let component: HomePageComponent;

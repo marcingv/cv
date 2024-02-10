@@ -2,8 +2,8 @@ import { LocalizedDatePipe } from './localized-date.pipe';
 import { TestBed } from '@angular/core/testing';
 import { TranslateService } from '@ngx-translate/core';
 import { ChangeDetectorRef } from '@angular/core';
-import { TranslationsTestingModule } from '@app/testing/translations';
 import { firstValueFrom } from 'rxjs';
+import { TranslationsTestingModule } from '../../../testing/translations';
 
 describe('LocalizedDatePipe', (): void => {
   let pipe: LocalizedDatePipe;

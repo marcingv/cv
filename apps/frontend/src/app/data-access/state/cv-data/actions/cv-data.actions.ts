@@ -1,6 +1,6 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
-import { CvDataEntity } from '@app/data-access/state/cv-data/models';
-import { LangCode } from '@app/core/translations';
+import { LangCode } from '../../../../core/translations';
+import { CvDataEntity } from '../models';
 
 export const CvDataActions = createActionGroup({
   source: 'CvData',

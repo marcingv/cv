@@ -5,10 +5,10 @@ import {
   provideHttpClientTesting,
   TestRequest,
 } from '@angular/common/http/testing';
-import { CvData } from '@app/domain/models';
-import { CvDataFactory } from '@app/testing/factories/models';
 import { provideHttpClient } from '@angular/common/http';
-import { LANG_PL_CODE, LangCode } from '@app/core/translations';
+import { LANG_PL_CODE, LangCode } from '../../../core/translations';
+import { CvData } from '../../../domain/models';
+import { CvDataFactory } from '../../../testing/factories/models';
 
 describe('CvDataApiService', (): void => {
   let service: CvDataApiService;

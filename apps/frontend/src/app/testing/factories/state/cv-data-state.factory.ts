@@ -1,8 +1,8 @@
-import { fromCvData } from '@app/data-access/state/cv-data/reducers';
-import { CvDataFactory } from '@app/testing/factories/models';
-import { CvDataEntity } from '@app/data-access/state/cv-data/models';
 import { Dictionary } from '@ngrx/entity';
-import { LANG_PL_CODE, LangCode } from '@app/core/translations';
+import { CvDataEntity } from '../../../data-access/state/cv-data/models';
+import { fromCvData } from '../../../data-access/state/cv-data/reducers';
+import { LANG_PL_CODE, LangCode } from '../../../core/translations';
+import { CvDataFactory } from '../models';
 
 export class CvDataStateFactory {
   public static createInstance(

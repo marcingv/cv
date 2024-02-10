@@ -5,7 +5,7 @@ import {
   DEFAULT_LANG,
   LangCode,
   TranslationKey,
-} from '@app/core/translations';
+} from '../../../../core/translations';
 
 export const uiFeatureKey = 'ui';
 

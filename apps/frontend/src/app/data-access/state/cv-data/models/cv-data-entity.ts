@@ -1,5 +1,5 @@
-import { LangCode } from '@app/core/translations';
-import { CvData } from '@app/domain/models';
+import { LangCode } from '../../../../core/translations';
+import { CvData } from '../../../../domain/models';
 
 export interface CvDataEntity {
   language: LangCode;

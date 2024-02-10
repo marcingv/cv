@@ -10,7 +10,7 @@ import {
 import { TranslateService } from '@ngx-translate/core';
 import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { AVAILABLE_LANGS } from '@app/core/translations';
+import { AVAILABLE_LANGS } from '../translations';
 
 export function localizeLoaderFactory(
   translate: TranslateService,

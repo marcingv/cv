@@ -5,10 +5,14 @@ import { UiLangEffects } from './ui-lang.effects';
 import { Action } from '@ngrx/store';
 import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
 import { provideMockStore } from '@ngrx/store/testing';
-import { fromUi } from '@app/data-access/state/ui/reducers';
-import { UiStateFactory } from '@app/testing/factories/state';
-import { LANG_EN_CODE, LANG_PL_CODE, LangCode } from '@app/core/translations';
-import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
+import { fromUi } from '../reducers';
+import { UiStateFactory } from '../../../../testing/factories/state';
+import {
+  LANG_EN_CODE,
+  LANG_PL_CODE,
+  LangCode,
+} from '../../../../core/translations';
+import { UiActions } from '../actions/ui.actions';
 
 describe('UiLangEffects', () => {
   let effects: UiLangEffects;

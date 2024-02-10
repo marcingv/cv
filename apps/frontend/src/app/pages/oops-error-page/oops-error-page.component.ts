@@ -7,10 +7,10 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { uiFeature } from '@app/data-access/state/ui/reducers/ui.reducer';
-import { TranslationKey } from '@app/core/translations';
 import { TranslateModule } from '@ngx-translate/core';
-import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
+import { TranslationKey } from '../../core/translations';
+import { uiFeature } from '../../data-access/state/ui/reducers/ui.reducer';
+import { UiActions } from '../../data-access/state/ui/actions/ui.actions';
 
 @Component({
   selector: 'app-oops-error-page',

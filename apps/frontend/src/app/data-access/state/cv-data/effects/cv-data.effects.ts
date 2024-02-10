@@ -4,10 +4,10 @@ import { catchError, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { CvDataActions } from '../actions/cv-data.actions';
 import { CvDataApiService } from '../../../api/services';
-import { CvData } from '@app/domain/models';
 import { Store } from '@ngrx/store';
 import { uiFeature } from '../../ui/reducers/ui.reducer';
-import { UiActions } from '@app/data-access/state/ui/actions/ui.actions';
+import { CvData } from '../../../../domain/models';
+import { UiActions } from '../../ui/actions/ui.actions';
 
 @Injectable()
 export class CvDataEffects {

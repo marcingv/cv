@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfileAboutComponent } from './profile-about.component';
-import { EmployeeData } from '@app/domain/models';
-import { CvDataFactory } from '@app/testing/factories/models';
-import { TranslationsTestingModule } from '@app/testing/translations';
+import { EmployeeData } from '../../../../domain/models';
+import { CvDataFactory } from '../../../../testing/factories/models';
+import { TranslationsTestingModule } from '../../../../testing/translations';
 
 describe('ProfileAboutComponent', () => {
   let component: ProfileAboutComponent;
