@@ -1,4 +1,4 @@
-import { DateString } from '../../data-access/api/models';
+import { DateString } from './date-string';
 
 export interface EducationExperience {
   name: string;

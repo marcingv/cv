@@ -4,9 +4,9 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { Store } from '@ngrx/store';
 import { uiFeature } from '../../data-access/state/ui/reducers/ui.reducer';
 import { LangCode } from '../../core/translations';
-import { CvData } from '../../domain/models';
 import { CvDataSelectors } from '../../data-access/state/cv-data/selectors';
 import { UiActions } from '../../data-access/state/ui/actions/ui.actions';
+import { CvData } from '@gv-cv/data-models';
 
 @Injectable()
 export class HomePageService {

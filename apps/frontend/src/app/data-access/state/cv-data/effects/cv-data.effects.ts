@@ -6,8 +6,8 @@ import { CvDataActions } from '../actions/cv-data.actions';
 import { CvDataApiService } from '../../../api/services';
 import { Store } from '@ngrx/store';
 import { uiFeature } from '../../ui/reducers/ui.reducer';
-import { CvData } from '../../../../domain/models';
 import { UiActions } from '../../ui/actions/ui.actions';
+import { CvData } from '@gv-cv/data-models';
 
 @Injectable()
 export class CvDataEffects {

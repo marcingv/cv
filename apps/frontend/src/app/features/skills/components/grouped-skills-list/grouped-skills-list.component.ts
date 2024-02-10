@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Skill } from '../../../../domain/models';
 import { JsonPipe, KeyValuePipe } from '@angular/common';
 import { SkillsChipsListComponent } from '../skills-chips-list';
 import { GroupSkillsByCategoryPipe } from '../../pipes';
+import { Skill } from '@gv-cv/data-models';
 
 @Component({
   selector: 'app-grouped-skills-list',

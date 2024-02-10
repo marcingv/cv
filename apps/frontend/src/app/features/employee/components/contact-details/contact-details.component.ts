@@ -5,7 +5,7 @@ import {
   DetailsViewRowLabelDirective,
   DetailsViewRowValueDirective,
 } from '../../../../ui/components/details-view';
-import { ContactData } from '../../../../domain/models';
+import { ContactData } from '@gv-cv/data-models';
 
 @Component({
   selector: 'app-contact-details',

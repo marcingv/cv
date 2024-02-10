@@ -7,7 +7,6 @@ import {
 import { cvDataResolver } from './cv-data.resolver';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { first, Observable } from 'rxjs';
-import { CvData } from '../../domain/models';
 import {
   CvDataStateFactory,
   UiStateFactory,
@@ -15,6 +14,7 @@ import {
 import { CvDataActions } from '../state/cv-data/actions/cv-data.actions';
 import { fromUi } from '../state/ui/reducers';
 import { fromCvData } from '../state/cv-data/reducers';
+import { CvData } from '@gv-cv/data-models';
 
 describe('cvDataResolver', () => {
   const executeResolver: ResolveFn<CvData | undefined> = (

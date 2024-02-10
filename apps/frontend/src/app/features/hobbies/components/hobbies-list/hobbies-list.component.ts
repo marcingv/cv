@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Hobby } from '../../../../domain/models';
+import { Hobby } from '@gv-cv/data-models';
 
 @Component({
   selector: 'app-hobbies-list',

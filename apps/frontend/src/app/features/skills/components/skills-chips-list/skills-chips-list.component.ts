@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Skill } from '../../../../domain/models';
+import { Skill } from '@gv-cv/data-models';
 
 @Component({
   selector: 'app-skills-chips-list',

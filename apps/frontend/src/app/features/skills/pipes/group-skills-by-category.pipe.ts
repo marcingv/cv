@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Skill } from '../../../domain/models';
 import { GroupedSkillsKey } from '../models/grouped-skills-key';
+import { Skill } from '@gv-cv/data-models';
 
 @Pipe({
   name: 'groupSkillsByCategory',

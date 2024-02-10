@@ -3,7 +3,7 @@ import { map, Observable } from 'rxjs';
 import { isPlatformServer } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { LangCode } from '../../../core/translations';
-import { CvData } from '../../../domain/models';
+import { CvData } from '@gv-cv/data-models';
 
 @Injectable({
   providedIn: 'root',

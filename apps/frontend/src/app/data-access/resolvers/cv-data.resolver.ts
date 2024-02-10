@@ -3,8 +3,8 @@ import { inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { CvDataActions } from '../state/cv-data/actions/cv-data.actions';
 import { filter, tap } from 'rxjs';
-import { CvData } from '../../domain/models';
 import { CvDataSelectors } from '../state/cv-data/selectors';
+import { CvData } from '@gv-cv/data-models';
 
 export const cvDataResolver: ResolveFn<CvData | undefined> = () => {
   const store: Store = inject(Store);

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { EducationExperience } from '../../../../domain/models';
 import { TimeSpanComponent } from '../../../../ui/components/time-span';
+import { EducationExperience } from '@gv-cv/data-models';
 
 @Component({
   selector: 'app-education-experience-list',

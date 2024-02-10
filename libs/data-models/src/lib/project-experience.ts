@@ -1,5 +1,5 @@
-import { DateString } from '../../data-access/api/models';
 import { Skill } from './skill';
+import { DateString } from './date-string';
 
 export interface ProjectExperience {
   name: string;

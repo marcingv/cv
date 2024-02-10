@@ -10,8 +10,8 @@ import { HobbiesListComponent } from '../../features/hobbies/components/hobbies-
 import { AdditionalSkillsListComponent } from '../../features/skills/components/additional-skills-list';
 import { GroupedSkillsListComponent } from '../../features/skills/components/grouped-skills-list';
 import { LangPickerComponent } from '../../ui/components/lang-picker';
-import { CvData } from '../../domain/models';
 import { LangCode } from '../../core/translations';
+import { CvData } from '@gv-cv/data-models';
 
 @Component({
   selector: 'app-home-page',
