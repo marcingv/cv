@@ -1,12 +1,10 @@
-import { default as cvData } from '../data/cv-pl.json';
 import { CvData } from '../cv-data';
+import { PL_CV } from '../data/pl-cv';
 
 export class CvDataFactory {
   public static createInstance(params?: Partial<CvData>): CvData {
-    const model: CvData = cvData as CvData;
-
     return {
-      ...model,
+      ...PL_CV,
       ...(params ? params : {}),
     };
   }
