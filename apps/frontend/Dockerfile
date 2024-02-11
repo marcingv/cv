@@ -1,6 +1,6 @@
 FROM node:20
 
-RUN npm i -g @angular/cli
+RUN npm add --global nx@latest
 
 WORKDIR /app
 
@@ -14,7 +14,7 @@ VOLUME /app/node_modules
 
 EXPOSE 4200
 
-CMD ["npx", "nx", "serve", "frontend"]
+CMD ["nx", "serve", "frontend"]
 
 
 
