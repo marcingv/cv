@@ -4,17 +4,17 @@ RUN npm i -g @angular/cli
 
 WORKDIR /app
 
-COPY package.json package-lock.json /app/
+COPY ../../package.json package-lock.json /app/
 
 RUN npm ci
 
-COPY . .
+COPY ../.. .
 
 VOLUME /app/node_modules
 
 EXPOSE 4200
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "start:frontend"]
 
 
 

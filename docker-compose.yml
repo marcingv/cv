@@ -4,10 +4,11 @@ services:
   angular:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: apps/frontend/Dockerfile
     tty: true
     stdin_open: true
     volumes:
       - ./:/app
     ports:
       - 4200:4200
+    command: ["npx", "nx", "serve", "frontend"]

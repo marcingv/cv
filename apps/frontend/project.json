@@ -65,6 +65,8 @@
       },
       "defaultConfiguration": "development",
       "options": {
+        "host": "0.0.0.0",
+        "disableHostCheck": true,
         "proxyConfig": "apps/frontend/proxy.conf.json"
       }
     },
