@@ -1,0 +1,6 @@
+.angular
+.nx
+.vscode
+.idea
+node_modules
+dist
