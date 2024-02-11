@@ -14,7 +14,7 @@ VOLUME /app/node_modules
 
 EXPOSE 4200
 
-CMD ["npm", "run", "start:frontend"]
+CMD ["npx", "nx", "serve", "frontend"]
 
 
 

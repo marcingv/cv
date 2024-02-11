@@ -12,3 +12,15 @@ services:
     ports:
       - 4200:4200
     command: ["npx", "nx", "serve", "frontend"]
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/backend/Dockerfile
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./:/app
+    ports:
+      - 3000:3000
+    command: [ "npx", "nx", "serve", "backend" ]
