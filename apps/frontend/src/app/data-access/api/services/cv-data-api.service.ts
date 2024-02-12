@@ -1,5 +1,5 @@
 import { inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { isPlatformServer } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { LangCode } from '../../../core/translations';
@@ -9,24 +9,15 @@ import { CvData } from '@gv-cv/data-models';
   providedIn: 'root',
 })
 export class CvDataApiService {
+  private readonly SSR_API_HOST = 'http://api:3000';
+  private readonly API_HOST = '';
   private http: HttpClient = inject(HttpClient);
 
   private isServerPlatform = isPlatformServer(inject(PLATFORM_ID));
 
   public fetchData(lang: LangCode): Observable<CvData> {
-    const fileName: string = lang ? `cv-${lang}.json` : 'cv-pl.json';
+    const host = this.isServerPlatform ? this.SSR_API_HOST : this.API_HOST;
 
-    return this.http.get<CvData>(`/assets/${fileName}`).pipe(
-      map((data) => {
-        // const shouldThrowError = Math.random() > 0.8;
-        const shouldThrowError = false; //this.isServerPlatform;
-
-        if (shouldThrowError) {
-          throw new Error('Bład pobierania danych CV :-( ' + Date.now());
-        } else {
-          return data;
-        }
-      }),
-    );
+    return this.http.get<CvData>(`${host}/api/cv/${lang}`);
   }
 }

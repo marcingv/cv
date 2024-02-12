@@ -11,6 +11,7 @@ services:
       - ./:/app
     ports:
       - 4200:4200
+    restart: on-failure
 
   api:
     build:
@@ -22,3 +23,4 @@ services:
       - ./:/app
     ports:
       - 3000:3000
+    restart: on-failure
