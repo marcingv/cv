@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@gv-cv/data-models": ["libs/data-models/src/index.ts"]
+      "@gv-cv/data-models": ["libs/data-models/src/index.ts"],
+      "@gv-cv/ssr-env": ["libs/ssr-env/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

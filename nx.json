@@ -35,6 +35,11 @@
         "{workspaceRoot}/eslint.config.js"
       ],
       "cache": true
+    },
+    "@nx/angular:ng-packagr-lite": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "plugins": [
@@ -59,5 +64,14 @@
       }
     }
   ],
-  "nxCloudAccessToken": "NDE0ZGM2ZjktZWJhMy00OGZjLWEzZDktYjY4ZDk3ODFjNWIzfHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "NDE0ZGM2ZjktZWJhMy00OGZjLWEzZDktYjY4ZDk3ODFjNWIzfHJlYWQtd3JpdGU=",
+  "generators": {
+    "@nx/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nx/angular:component": {
+      "style": "css"
+    }
+  }
 }
