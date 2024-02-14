@@ -5,6 +5,12 @@
       [availableLangs]="availableLangs()"
       (langChange)="changeLang($event)"
     ></app-lang-picker>
+
+    <gv-cv-page-pdf-export
+      [fileName]="
+        'CV - ' + cvData.employee.firstName + ' ' + cvData.employee.lastName
+      "
+    ></gv-cv-page-pdf-export>
   </div>
 
   <app-profile-about [profile]="cvData.employee"></app-profile-about>

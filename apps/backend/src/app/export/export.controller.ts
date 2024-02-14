@@ -21,7 +21,10 @@ export class ExportController {
       throw new BadRequestException('Invalid request payload');
     }
 
-    const url = body.url;
+    let url = body.url;
+    // TODO: Komunikacja po sieci wewnetrznej
+    url = url.replace('localhost:4200', 'angular:4200');
+
     try {
       const fileStream = await this.pdfService.exportUrl(url);
       fileStream.pipe(res);

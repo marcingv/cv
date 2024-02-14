@@ -12,6 +12,7 @@ import { GroupedSkillsListComponent } from '../../features/skills/components/gro
 import { LangPickerComponent } from '../../ui/components/lang-picker';
 import { LangCode } from '../../core/translations';
 import { CvData } from '@gv-cv/data-models';
+import { PagePdfExportComponent } from '@gv-cv/pdf-export';
 
 @Component({
   selector: 'app-home-page',
@@ -27,6 +28,7 @@ import { CvData } from '@gv-cv/data-models';
     AdditionalSkillsListComponent,
     GroupedSkillsListComponent,
     LangPickerComponent,
+    PagePdfExportComponent,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
