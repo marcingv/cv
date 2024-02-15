@@ -1,21 +1,20 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { PingController } from './ping.controller';
+import { PingService } from './ping.service';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-
-describe('AppController', () => {
+describe('PingController', () => {
   let app: TestingModule;
 
   beforeAll(async () => {
     app = await Test.createTestingModule({
-      controllers: [AppController],
-      providers: [AppService],
+      controllers: [PingController],
+      providers: [PingService],
     }).compile();
   });
 
   describe('getData', () => {
     it('should return "Hello API"', () => {
-      const appController = app.get<AppController>(AppController);
+      const appController = app.get<PingController>(PingController);
       const response = appController.getData();
 
       expect(response.message).toEqual('Hello API');
