@@ -9,8 +9,10 @@ services:
     stdin_open: true
     volumes:
       - ./:/app
-      - /app/.angular
-      - /app/.nx
+      - node_modules:/app/node_modules
+      - nx_cache:/app/.angular/
+      - angular_cache:/app/.nx/
+
     ports:
       - 4200:4200
     restart: on-failure
@@ -23,8 +25,14 @@ services:
     stdin_open: true
     volumes:
       - ./:/app
-      - /app/.angular
-      - /app/.nx
+      - node_modules:/app/node_modules
+      - nx_cache:/app/.angular/
+      - angular_cache:/app/.nx/
     ports:
       - 3000:3000
     restart: on-failure
+
+volumes:
+  node_modules:
+  nx_cache:
+  angular_cache:

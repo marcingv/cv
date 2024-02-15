@@ -10,8 +10,6 @@ RUN npm ci
 
 COPY ../.. .
 
-VOLUME /app/node_modules
-
 EXPOSE 4200
 
 CMD ["nx", "serve", "frontend"]
