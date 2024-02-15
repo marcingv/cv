@@ -8,6 +8,7 @@ import {
 } from '@nestjs/common';
 import { Response } from 'express';
 import { PdfExportService } from './pdf-export.service';
+import { PdfExportUrlSanitizer } from './utils/pdf-export-url-sanitizer';
 
 @Controller('export')
 export class ExportController {
@@ -21,9 +22,7 @@ export class ExportController {
       throw new BadRequestException('Invalid request payload');
     }
 
-    let url = body.url;
-    // TODO: Komunikacja po sieci wewnetrznej
-    url = url.replace('localhost:4200', 'angular:4200');
+    const url = new PdfExportUrlSanitizer().sanitizeUrl(body.url);
 
     try {
       const fileStream = await this.pdfService.exportUrl(url);

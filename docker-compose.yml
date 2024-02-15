@@ -35,6 +35,8 @@ services:
     ports:
       - 3000:3000
     restart: on-failure
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
 volumes:
   node_modules:
