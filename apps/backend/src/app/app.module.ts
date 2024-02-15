@@ -3,12 +3,11 @@ import { PingController } from './ping/ping.controller';
 import { PingService } from './ping/ping.service';
 import { CvController } from './cv/cv.controller';
 import { CvDataService } from './cv/cv-data.service';
-import { ExportController } from './export/controllers/export.controller';
-import { PdfExportService } from './export/services/pdf-export.service';
+import { ExportModule } from './export/export.module';
 
 @Module({
-  imports: [],
-  controllers: [PingController, CvController, ExportController],
-  providers: [PingService, CvDataService, PdfExportService],
+  imports: [ExportModule],
+  controllers: [PingController, CvController],
+  providers: [PingService, CvDataService],
 })
 export class AppModule {}
