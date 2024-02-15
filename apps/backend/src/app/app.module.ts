@@ -3,8 +3,8 @@ import { PingController } from './ping/ping.controller';
 import { PingService } from './ping/ping.service';
 import { CvController } from './cv/cv.controller';
 import { CvDataService } from './cv/cv-data.service';
-import { ExportController } from './export/export.controller';
-import { PdfExportService } from './export/pdf-export.service';
+import { ExportController } from './export/controllers/export.controller';
+import { PdfExportService } from './export/services/pdf-export.service';
 
 @Module({
   imports: [],

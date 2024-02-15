@@ -1,10 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ExportController } from './export.controller';
-import { PdfExportService } from './pdf-export.service';
+import { PdfExportService } from '../services/pdf-export.service';
 import { Response } from 'express';
 import { BadRequestException } from '@nestjs/common';
 
-jest.mock('./pdf-export.service');
+jest.mock('../services/pdf-export.service');
 
 describe('ExportController', () => {
   let controller: ExportController;

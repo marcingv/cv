@@ -7,8 +7,8 @@ import {
   Res,
 } from '@nestjs/common';
 import { Response } from 'express';
-import { PdfExportService } from './pdf-export.service';
-import { PdfExportUrlSanitizer } from './utils/pdf-export-url-sanitizer';
+import { PdfExportService } from '../services/pdf-export.service';
+import { PdfExportUrlSanitizer } from '../utils/pdf-export-url-sanitizer';
 
 @Controller('export')
 export class ExportController {
