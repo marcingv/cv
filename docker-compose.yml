@@ -7,6 +7,8 @@ services:
       dockerfile: apps/frontend/Dockerfile
     tty: true
     stdin_open: true
+    tmpfs:
+      - /tmp # Czysczenie plikow tymczasowych /tmp pomaga rozwiazac problem: https://github.com/nrwl/nx/issues/21610
     volumes:
       - ./:/app
       - node_modules:/app/node_modules
@@ -23,6 +25,8 @@ services:
       dockerfile: apps/backend/Dockerfile
     tty: true
     stdin_open: true
+    tmpfs:
+      - /tmp # Czysczenie plikow tymczasowych /tmp pomaga rozwiazac problem: https://github.com/nrwl/nx/issues/21610
     volumes:
       - ./:/app
       - node_modules:/app/node_modules
