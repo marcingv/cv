@@ -55,6 +55,7 @@ describe('ExportController', () => {
         error = err;
       }
 
+      expect(exportUrlSpy).toHaveBeenCalled();
       expect(error).toBeTruthy();
       expect(error).toBeInstanceOf(BadRequestException);
     });
