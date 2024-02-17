@@ -3,10 +3,10 @@ import { PingController } from './ping/ping.controller';
 import { PingService } from './ping/ping.service';
 import { CvController } from './cv/cv.controller';
 import { CvDataService } from './cv/cv-data.service';
-import { ExportModule } from './export/export.module';
+import { FeatureExportModule } from '@gv-cv/nestjs-feature-export';
 
 @Module({
-  imports: [ExportModule],
+  imports: [FeatureExportModule],
   controllers: [PingController, CvController],
   providers: [PingService, CvDataService],
 })
