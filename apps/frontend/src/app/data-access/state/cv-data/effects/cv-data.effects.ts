@@ -3,11 +3,11 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { CvDataActions } from '../actions/cv-data.actions';
-import { CvDataApiService } from '../../../api/services';
 import { Store } from '@ngrx/store';
 import { uiFeature } from '../../ui/reducers/ui.reducer';
 import { UiActions } from '../../ui/actions/ui.actions';
 import { CvData } from '@gv-cv/shared-util-types';
+import { CvDataApiService } from '@gv-cv/angular-data-access-cv';
 
 @Injectable()
 export class CvDataEffects {
