@@ -1,0 +1,9 @@
+{
+  "name": "angular-data-access-cv",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/angular/data-access-cv/src",
+  "prefix": "gv-cv",
+  "tags": ["type:data-access", "scope:frontend", "framework:angular"],
+  "projectType": "library",
+  "targets": {}
+}

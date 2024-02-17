@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@gv-cv/angular-data-access-cv": [
+        "libs/angular/data-access-cv/src/index.ts"
+      ],
       "@gv-cv/angular-feature-pdf-export": [
         "libs/angular/feature-pdf-export/src/index.ts"
       ],
