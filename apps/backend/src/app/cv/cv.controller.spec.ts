@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CvController } from './cv.controller';
 import { CvDataService } from './cv-data.service';
-import { CvData } from '@gv-cv/data-models';
+import { CvData } from '@gv-cv/shared-util-types';
 
 jest.mock('./cv-data.service');
 

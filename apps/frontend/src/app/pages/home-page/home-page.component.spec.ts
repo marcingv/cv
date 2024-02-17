@@ -3,7 +3,7 @@ import { HomePageComponent } from './home-page.component';
 import { NO_ERRORS_SCHEMA, signal } from '@angular/core';
 import { HomePageService } from './home-page.service';
 import { LANG_EN_CODE, LANG_PL_CODE } from '../../core/translations';
-import { CvData, CvDataFactory } from '@gv-cv/data-models';
+import { CvData, CvDataFactory } from '@gv-cv/shared-util-types';
 
 describe('HomePageComponent', (): void => {
   let component: HomePageComponent;

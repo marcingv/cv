@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ContactDetailsComponent } from './contact-details.component';
-import { ContactData } from '@gv-cv/data-models';
+import { ContactData } from '@gv-cv/shared-util-types';
 
 describe('ContactDetailsComponent', () => {
   let component: ContactDetailsComponent;

@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CvDataService } from './cv-data.service';
-import { EN_CV, PL_CV } from '@gv-cv/data-models';
+import { EN_CV, PL_CV } from '@gv-cv/shared-util-types';
 
 describe('CvDataService', () => {
   let provider: CvDataService;

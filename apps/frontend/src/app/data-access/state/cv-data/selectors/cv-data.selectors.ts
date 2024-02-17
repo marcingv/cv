@@ -4,7 +4,7 @@ import { fromUi } from '../../ui/reducers';
 import { fromCvData } from '../reducers';
 import { LangCode } from '../../../../core/translations';
 import { CvDataEntity } from '../models';
-import { CvData } from '@gv-cv/data-models';
+import { CvData } from '@gv-cv/shared-util-types';
 
 export const selectCvDataForCurrentLanguage = createSelector(
   fromUi.uiFeature.selectLang,

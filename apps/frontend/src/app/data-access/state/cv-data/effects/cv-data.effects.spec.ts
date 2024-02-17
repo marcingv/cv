@@ -14,7 +14,7 @@ import {
 import { CvDataActions } from '../actions/cv-data.actions';
 import { LANG_EN_CODE } from '../../../../core/translations';
 import { UiActions } from '../../ui/actions/ui.actions';
-import { CvData, CvDataFactory } from '@gv-cv/data-models';
+import { CvData, CvDataFactory } from '@gv-cv/shared-util-types';
 
 describe('CvDataEffects', () => {
   let actions$: Subject<Action>;

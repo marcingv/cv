@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CvData, EN_CV, PL_CV } from '@gv-cv/data-models';
+import { CvData, EN_CV, PL_CV } from '@gv-cv/shared-util-types';
 
 @Injectable()
 export class CvDataService {

@@ -9,7 +9,7 @@ import {
 } from '../../testing/factories/state';
 import { LANG_EN_CODE, LangCode } from '../../core/translations';
 import { UiActions } from '../../data-access/state/ui/actions/ui.actions';
-import { CvData } from '@gv-cv/data-models';
+import { CvData } from '@gv-cv/shared-util-types';
 
 describe('HomePageService', (): void => {
   let service: HomePageService;

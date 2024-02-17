@@ -2,7 +2,7 @@ import { Dictionary } from '@ngrx/entity';
 import { CvDataEntity } from '../../../data-access/state/cv-data/models';
 import { fromCvData } from '../../../data-access/state/cv-data/reducers';
 import { LANG_PL_CODE, LangCode } from '../../../core/translations';
-import { CvDataFactory } from '@gv-cv/data-models';
+import { CvDataFactory } from '@gv-cv/shared-util-types';
 
 export class CvDataStateFactory {
   public static createInstance(

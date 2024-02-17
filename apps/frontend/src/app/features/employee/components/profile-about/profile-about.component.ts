@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ContactDetailsComponent } from '../contact-details';
 import { NgOptimizedImage } from '@angular/common';
 import { CvSectionComponent } from '../../../../ui/components/cv-section';
-import { EmployeeData } from '@gv-cv/data-models';
+import { EmployeeData } from '@gv-cv/shared-util-types';
 
 @Component({
   selector: 'app-profile-about',

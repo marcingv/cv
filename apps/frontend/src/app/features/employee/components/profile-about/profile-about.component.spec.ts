@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfileAboutComponent } from './profile-about.component';
 import { TranslationsTestingModule } from '../../../../testing/translations';
-import { CvDataFactory, EmployeeData } from '@gv-cv/data-models';
+import { CvDataFactory, EmployeeData } from '@gv-cv/shared-util-types';
 
 describe('ProfileAboutComponent', () => {
   let component: ProfileAboutComponent;

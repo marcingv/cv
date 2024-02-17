@@ -11,7 +11,7 @@ import { AdditionalSkillsListComponent } from '../../features/skills/components/
 import { GroupedSkillsListComponent } from '../../features/skills/components/grouped-skills-list';
 import { LangPickerComponent } from '../../ui/components/lang-picker';
 import { LangCode } from '../../core/translations';
-import { CvData } from '@gv-cv/data-models';
+import { CvData } from '@gv-cv/shared-util-types';
 import { PagePdfExportComponent } from '@gv-cv/pdf-export';
 
 @Component({

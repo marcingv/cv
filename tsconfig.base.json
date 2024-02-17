@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@gv-cv/data-models": ["libs/data-models/src/index.ts"],
       "@gv-cv/pdf-export": ["libs/pdf-export/src/index.ts"],
+      "@gv-cv/shared-util-types": ["libs/shared/util-types/src/index.ts"],
       "@gv-cv/ssr-env": ["libs/ssr-env/src/index.ts"]
     }
   },

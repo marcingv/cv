@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { LanguageExperience } from '@gv-cv/data-models';
+import { LanguageExperience } from '@gv-cv/shared-util-types';
 
 @Component({
   selector: 'app-languages-experience-list',

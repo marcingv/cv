@@ -3,7 +3,7 @@ import { SkillsChipsListComponent } from '../../../skills/components/skills-chip
 import { TimeSpanComponent } from '../../../../ui/components/time-span';
 import { TimeSpanDurationPipe } from '../../../../ui/pipes';
 import { NgClass } from '@angular/common';
-import { JobExperience } from '@gv-cv/data-models';
+import { JobExperience } from '@gv-cv/shared-util-types';
 
 @Component({
   selector: 'app-job-experience-list',

@@ -14,7 +14,7 @@ import {
 import { CvDataActions } from '../state/cv-data/actions/cv-data.actions';
 import { fromUi } from '../state/ui/reducers';
 import { fromCvData } from '../state/cv-data/reducers';
-import { CvData } from '@gv-cv/data-models';
+import { CvData } from '@gv-cv/shared-util-types';
 
 describe('cvDataResolver', () => {
   const executeResolver: ResolveFn<CvData | undefined> = (

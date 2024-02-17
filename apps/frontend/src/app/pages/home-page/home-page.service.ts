@@ -6,7 +6,7 @@ import { uiFeature } from '../../data-access/state/ui/reducers/ui.reducer';
 import { LangCode } from '../../core/translations';
 import { CvDataSelectors } from '../../data-access/state/cv-data/selectors';
 import { UiActions } from '../../data-access/state/ui/actions/ui.actions';
-import { CvData } from '@gv-cv/data-models';
+import { CvData } from '@gv-cv/shared-util-types';
 
 @Injectable()
 export class HomePageService {
