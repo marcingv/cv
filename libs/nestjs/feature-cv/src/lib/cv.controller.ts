@@ -7,7 +7,7 @@ export class CvController {
   public constructor(private readonly service: CvDataService) {}
 
   @Get(':lang')
-  public async getData(@Param('lang') lang): Promise<CvData> {
+  public async getData(@Param('lang') lang: 'pl' | 'en'): Promise<CvData> {
     return await this.service.getData(lang);
   }
 }
