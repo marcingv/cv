@@ -1,1 +1,1 @@
-export * from './lib/nestjs-feature-export.module';
+export * from './lib/feature-export.module';
