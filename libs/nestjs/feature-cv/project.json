@@ -1,0 +1,8 @@
+{
+  "name": "nestjs-feature-cv",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/nestjs/feature-cv/src",
+  "projectType": "library",
+  "targets": {},
+  "tags": ["type:feature", "scope:server", "framework:nestjs"]
+}
