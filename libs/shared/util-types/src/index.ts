@@ -14,3 +14,5 @@ export * from './lib/factories/cv-data.factory';
 
 export * from './lib/data/pl-cv';
 export * from './lib/data/en-cv';
+
+export * from './lib/dtos';

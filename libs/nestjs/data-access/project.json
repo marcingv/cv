@@ -4,5 +4,5 @@
   "sourceRoot": "libs/nestjs/data-access/src",
   "projectType": "library",
   "targets": {},
-  "tags": []
+  "tags": ["type:data-access", "scope:server", "framework:nestjs"]
 }

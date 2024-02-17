@@ -8,8 +8,8 @@ import {
 import { Response } from 'express';
 import { PdfExportService } from '../services/pdf-export.service';
 import { PdfExportUrlSanitizer } from '../utils/pdf-export-url-sanitizer';
-import { ExportPdfRequestDto } from '../models';
 import { ApiBadRequestResponse, ApiOkResponse } from '@nestjs/swagger';
+import { PdfExportRequestDto } from '@gv-cv/nestjs-data-access';
 
 @Controller('export')
 export class ExportController {
@@ -19,7 +19,7 @@ export class ExportController {
   @ApiOkResponse()
   @ApiBadRequestResponse()
   public async exportPdf(
-    @Body() body: ExportPdfRequestDto,
+    @Body() body: PdfExportRequestDto,
     @Res() res: Response,
   ) {
     // TODO: Walidacja URL
