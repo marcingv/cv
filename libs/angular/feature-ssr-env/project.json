@@ -3,7 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/angular/feature-ssr-env/src",
   "prefix": "gv-cv",
-  "tags": [],
+  "tags": ["type:feature", "scope:frontend", "framework:angular"],
   "projectType": "library",
   "targets": {}
 }
