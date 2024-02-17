@@ -26,6 +26,9 @@
       "@gv-cv/nestjs-feature-export": [
         "libs/nestjs/feature-export/src/index.ts"
       ],
+      "@gv-cv/nestjs-feature-healthcheck": [
+        "libs/nestjs/feature-healthcheck/src/index.ts"
+      ],
       "@gv-cv/shared-util-types": ["libs/shared/util-types/src/index.ts"]
     }
   },
