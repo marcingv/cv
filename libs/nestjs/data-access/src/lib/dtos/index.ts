@@ -1,1 +1,2 @@
-export * from './pdf-export-request.dto';
+export * from './cv';
+export * from './export';
