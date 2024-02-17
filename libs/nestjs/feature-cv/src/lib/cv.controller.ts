@@ -1,9 +1,10 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { CvDataService } from './cv-data.service';
 import { CvDataDto } from '@gv-cv/nestjs-data-access';
-import { ApiOkResponse, ApiParam } from '@nestjs/swagger';
+import { ApiOkResponse, ApiParam, ApiTags } from '@nestjs/swagger';
 
 @Controller('cv')
+@ApiTags('Cv Data')
 export class CvController {
   public constructor(private readonly service: CvDataService) {}
 

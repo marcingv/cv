@@ -8,10 +8,11 @@ import {
 import { Response } from 'express';
 import { PdfExportService } from '../services/pdf-export.service';
 import { PdfExportUrlSanitizer } from '../utils/pdf-export-url-sanitizer';
-import { ApiBadRequestResponse, ApiOkResponse } from '@nestjs/swagger';
+import { ApiBadRequestResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { PdfExportRequestDto } from '@gv-cv/nestjs-data-access';
 
 @Controller('export')
+@ApiTags('Export')
 export class ExportController {
   public constructor(private pdfService: PdfExportService) {}
 
