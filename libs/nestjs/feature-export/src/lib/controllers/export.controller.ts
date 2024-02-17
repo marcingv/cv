@@ -37,6 +37,7 @@ export class ExportController {
       throw new BadRequestException(`Could not export URL to pdf: ${url}`, {
         cause: e,
         description:
+          !!e &&
           typeof e === 'object' &&
           'message' in e &&
           typeof e.message === 'string'
