@@ -12,7 +12,7 @@ import { GroupedSkillsListComponent } from '../../features/skills/components/gro
 import { LangPickerComponent } from '../../ui/components/lang-picker';
 import { LangCode } from '../../core/translations';
 import { CvData } from '@gv-cv/shared-util-types';
-import { PagePdfExportComponent } from '@gv-cv/pdf-export';
+import { PagePdfExportComponent } from '@gv-cv/angular-feature-pdf-export';
 
 @Component({
   selector: 'app-home-page',

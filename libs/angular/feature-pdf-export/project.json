@@ -1,0 +1,9 @@
+{
+  "name": "angular-feature-pdf-export",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/angular/feature-pdf-export/src",
+  "prefix": "gv-cv",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

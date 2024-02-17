@@ -1,9 +1,0 @@
-{
-  "name": "pdf-export",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/pdf-export/src",
-  "prefix": "gv-cv",
-  "tags": [],
-  "projectType": "library",
-  "targets": {}
-}

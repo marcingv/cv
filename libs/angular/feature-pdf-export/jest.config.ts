@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'pdf-export',
-  preset: '../../jest.preset.js',
+  displayName: 'angular-feature-pdf-export',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/libs/pdf-export',
+  coverageDirectory: '../../../coverage/libs/angular/feature-pdf-export',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
