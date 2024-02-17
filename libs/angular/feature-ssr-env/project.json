@@ -1,0 +1,9 @@
+{
+  "name": "angular-feature-ssr-env",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/angular/feature-ssr-env/src",
+  "prefix": "gv-cv",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

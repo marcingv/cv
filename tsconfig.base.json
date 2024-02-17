@@ -15,9 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@gv-cv/angular-feature-ssr-env": [
+        "libs/angular/feature-ssr-env/src/index.ts"
+      ],
       "@gv-cv/pdf-export": ["libs/pdf-export/src/index.ts"],
-      "@gv-cv/shared-util-types": ["libs/shared/util-types/src/index.ts"],
-      "@gv-cv/ssr-env": ["libs/ssr-env/src/index.ts"]
+      "@gv-cv/shared-util-types": ["libs/shared/util-types/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
