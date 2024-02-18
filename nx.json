@@ -64,7 +64,6 @@
       }
     }
   ],
-  "nxCloudAccessToken": "NDE0ZGM2ZjktZWJhMy00OGZjLWEzZDktYjY4ZDk3ODFjNWIzfHJlYWQtd3JpdGU=",
   "generators": {
     "@nx/angular:library": {
       "linter": "eslint",
