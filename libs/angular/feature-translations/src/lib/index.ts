@@ -1,2 +1,3 @@
 export * from './configuration';
-export * from './pipes/index';
+export * from './pipes';
+export * from './testing';

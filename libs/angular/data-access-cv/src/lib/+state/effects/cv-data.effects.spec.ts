@@ -105,7 +105,7 @@ describe('CvDataEffects', () => {
               error: fetchError,
             }),
           );
-          expect(api.fetchData).toHaveBeenCalledWith(sourceAction.language);
+          expect(fetchDataSpy).toHaveBeenCalledWith(sourceAction.language);
 
           done();
         },

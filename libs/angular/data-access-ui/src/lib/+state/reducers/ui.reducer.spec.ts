@@ -1,8 +1,8 @@
 import { initialState, reducer } from './ui.reducer';
 import { Action } from '@ngrx/store';
-import { LANG_EN_CODE, LANG_PL_CODE } from '../../../../core/translations';
 import { UiActions } from '../actions/ui.actions';
-import { UiStateFactory } from '../../../../testing/factories/state';
+import { EN_LANG_CODE, PL_LANG_CODE } from '@gv-cv/shared-util-types';
+import { UiStateFactory } from '../testing';
 
 describe('Ui Reducer', (): void => {
   describe('an unknown action', (): void => {
@@ -19,35 +19,35 @@ describe('Ui Reducer', (): void => {
     it('should have default configuration', (): void => {
       const state = reducer(undefined, { type: 'NOOP' });
 
-      expect(state.lang).toEqual(LANG_PL_CODE);
-      expect(state.languages).toContain(LANG_PL_CODE);
-      expect(state.languages).toContain(LANG_EN_CODE);
-      expect(state.isNavigating).toBeFalse();
+      expect(state.lang).toEqual(PL_LANG_CODE);
+      expect(state.languages).toContain(PL_LANG_CODE);
+      expect(state.languages).toContain(EN_LANG_CODE);
+      expect(state.isNavigating).toBe(false);
     });
   });
 
   it('should change current language', (): void => {
     let state = reducer(undefined, { type: 'NOOP' });
-    expect(state.lang).not.toEqual(LANG_EN_CODE);
+    expect(state.lang).not.toEqual(EN_LANG_CODE);
 
     state = reducer(
       state,
-      UiActions.setLangSuccess({ language: LANG_EN_CODE }),
+      UiActions.setLangSuccess({ language: EN_LANG_CODE }),
     );
 
-    expect(state.lang).toEqual(LANG_EN_CODE);
+    expect(state.lang).toEqual(EN_LANG_CODE);
   });
 
   describe('navigation flag indicator', (): void => {
     it('should update flag during navigation', (): void => {
       let state = reducer(undefined, { type: 'NOOP' });
-      expect(state.isNavigating).toBeFalse();
+      expect(state.isNavigating).toBe(false);
 
       state = reducer(state, UiActions.navigationStarted());
-      expect(state.isNavigating).toBeTrue();
+      expect(state.isNavigating).toBe(true);
 
       state = reducer(state, UiActions.navigationFinished());
-      expect(state.isNavigating).toBeFalse();
+      expect(state.isNavigating).toBe(false);
     });
   });
 

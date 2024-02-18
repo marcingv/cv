@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateLoader } from '@ngx-translate/core';
 import { FakeTranslationsLoader } from './fake-translations-loader';
-import { provideNgxTranslations } from '@gv-cv/angular-feature-translations';
+import { provideNgxTranslations } from '../configuration';
 
 @NgModule({
   declarations: [],

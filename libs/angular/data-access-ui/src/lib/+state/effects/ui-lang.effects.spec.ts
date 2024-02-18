@@ -6,30 +6,28 @@ import { Action } from '@ngrx/store';
 import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
 import { provideMockStore } from '@ngrx/store/testing';
 import { fromUi } from '../reducers';
-import { UiStateFactory } from '../../../../testing/factories/state';
-import {
-  LANG_EN_CODE,
-  LANG_PL_CODE,
-  LangCode,
-} from '../../../../core/translations';
 import { UiActions } from '../actions/ui.actions';
+import { UiStateFactory } from '../testing';
+import { EN_LANG_CODE, LangCode, PL_LANG_CODE } from '@gv-cv/shared-util-types';
 
 describe('UiLangEffects', () => {
   let effects: UiLangEffects;
   const actions$: Subject<Action> = new Subject<Action>();
-  let localize: jasmine.SpyObj<LocalizeRouterService>;
+  let localize: Partial<LocalizeRouterService>;
 
   const initialState: {
     [fromUi.uiFeatureKey]: fromUi.State;
   } = {
     [fromUi.uiFeatureKey]: UiStateFactory.createInstance({
-      lang: LANG_PL_CODE,
-      languages: [LANG_PL_CODE, LANG_EN_CODE],
+      lang: PL_LANG_CODE,
+      languages: [PL_LANG_CODE, EN_LANG_CODE],
     }),
   };
 
   beforeEach(() => {
-    localize = jasmine.createSpyObj<LocalizeRouterService>(['changeLanguage']);
+    localize = {
+      changeLanguage: jest.fn(),
+    };
 
     TestBed.configureTestingModule({
       providers: [
@@ -51,8 +49,8 @@ describe('UiLangEffects', () => {
   });
 
   describe('Set initial lang', () => {
-    it('should set lang and dispatch success action', (done: DoneFn): void => {
-      const newLang: LangCode = LANG_EN_CODE;
+    it('should set lang and dispatch success action', (done: jest.DoneCallback): void => {
+      const newLang: LangCode = EN_LANG_CODE;
       const sourceAction = UiActions.setInitialLang({
         language: newLang,
       });
@@ -63,19 +61,19 @@ describe('UiLangEffects', () => {
       effects.changeLang$.pipe(first()).subscribe({
         next: (resultAction: Action) => {
           expect(resultAction).toEqual(expectedAction);
-          expect(localize.changeLanguage).toHaveBeenCalledOnceWith(
+          expect(localize.changeLanguage).toHaveBeenCalledWith(
             sourceAction.language,
           );
 
           done();
         },
-        error: () => fail(),
+        error: (e) => done(e),
       });
 
       actions$.next(sourceAction);
     });
 
-    it('should not set lang and dispatch failure action for invalid language', (done: DoneFn): void => {
+    it('should not set lang and dispatch failure action for invalid language', (done: jest.DoneCallback): void => {
       const newLang: LangCode = 'invalid';
       const sourceAction = UiActions.setInitialLang({
         language: newLang,
@@ -91,7 +89,7 @@ describe('UiLangEffects', () => {
 
           done();
         },
-        error: () => fail(),
+        error: (e) => done(e),
       });
 
       actions$.next(sourceAction);
@@ -99,8 +97,8 @@ describe('UiLangEffects', () => {
   });
 
   describe('Change lang', () => {
-    it('should set lang and dispatch success action', (done: DoneFn): void => {
-      const newLang: LangCode = LANG_EN_CODE;
+    it('should set lang and dispatch success action', (done: jest.DoneCallback): void => {
+      const newLang: LangCode = EN_LANG_CODE;
       const sourceAction = UiActions.changeLang({
         language: newLang,
       });
@@ -111,19 +109,19 @@ describe('UiLangEffects', () => {
       effects.changeLang$.pipe(first()).subscribe({
         next: (resultAction: Action) => {
           expect(resultAction).toEqual(expectedAction);
-          expect(localize.changeLanguage).toHaveBeenCalledOnceWith(
+          expect(localize.changeLanguage).toHaveBeenCalledWith(
             sourceAction.language,
           );
 
           done();
         },
-        error: () => fail(),
+        error: (e) => done(e),
       });
 
       actions$.next(sourceAction);
     });
 
-    it('should not set lang and dispatch failure action for invalid language', (done: DoneFn): void => {
+    it('should not set lang and dispatch failure action for invalid language', (done: jest.DoneCallback): void => {
       const newLang: LangCode = 'invalid';
       const sourceAction = UiActions.changeLang({
         language: newLang,
@@ -139,7 +137,7 @@ describe('UiLangEffects', () => {
 
           done();
         },
-        error: () => fail(),
+        error: (e) => done(e),
       });
 
       actions$.next(sourceAction);

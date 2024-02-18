@@ -1,5 +1,6 @@
 // TODO: Czy istnieje lepsze rozwiazanie?
-import * as transPl from './i18n/pl.json';
+import * as TRANS_Pl from './i18n/pl.json';
+import * as TRANS_EN from './i18n/en.json';
 
 type Prev = [
   never,
@@ -49,4 +50,6 @@ type Paths<T, D extends number = 10> = [D] extends [never]
 //   ? { [K in keyof T]-?: Join<K, Leaves<T[K], Prev[D]>> }[keyof T]
 //   : '';
 
-export type TranslationKey = Paths<typeof transPl>;
+export type TranslationKey = Paths<typeof TRANS_Pl>;
+export { TRANS_Pl };
+export { TRANS_EN };
