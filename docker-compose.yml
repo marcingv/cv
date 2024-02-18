@@ -4,7 +4,7 @@ services:
   angular:
     build:
       context: .
-      dockerfile: apps/frontend/Dockerfile
+      dockerfile: apps/frontend-angular/Dockerfile
     tty: true
     stdin_open: true
     tmpfs:
