@@ -18,7 +18,12 @@
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/frontend-angular/src/favicon.ico",
-          "apps/frontend-angular/src/assets"
+          "apps/frontend-angular/src/assets",
+          {
+            "input": "libs/angular/data-access-translations/src/lib/i18n",
+            "glob": "**/*",
+            "output": "assets/i18n_v2"
+          }
         ],
         "styles": ["apps/frontend-angular/src/styles.scss"],
         "scripts": [],
@@ -55,7 +60,9 @@
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
+        "host": "0.0.0.0",
         "port": 4200,
+        "disableHostCheck": true,
         "proxyConfig": "apps/frontend-angular/proxy.conf.json"
       },
       "configurations": {
