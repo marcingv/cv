@@ -14,7 +14,7 @@ import { CvData, LangCode } from '@gv-cv/shared-util-types';
 import { PagePdfExportComponent } from '@gv-cv/angular-feature-pdf-export';
 
 @Component({
-  selector: 'app-home-page',
+  selector: 'gv-cv-home-page',
   standalone: true,
   imports: [
     ProfileAboutComponent,

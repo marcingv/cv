@@ -1,7 +1,7 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[appDetailsViewRowValue]',
+  selector: '[gvCvDetailsViewRowValue]',
   standalone: true,
 })
 export class DetailsViewRowValueDirective {}

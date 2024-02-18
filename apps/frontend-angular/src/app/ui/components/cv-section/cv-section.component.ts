@@ -3,7 +3,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { TranslationKey } from '@gv-cv/angular-data-access-translations';
 
 @Component({
-  selector: 'app-cv-section',
+  selector: 'gv-cv-cv-section',
   standalone: true,
   imports: [TranslateModule],
   templateUrl: './cv-section.component.html',

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Skill } from '@gv-cv/shared-util-types';
 
 @Component({
-  selector: 'app-additional-skills-list',
+  selector: 'gv-cv-additional-skills-list',
   standalone: true,
   imports: [],
   templateUrl: './additional-skills-list.component.html',

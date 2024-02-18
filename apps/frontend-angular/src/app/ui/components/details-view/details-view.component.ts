@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-details-view',
+  selector: 'gv-cv-details-view',
   standalone: true,
   imports: [],
   templateUrl: './details-view.component.html',

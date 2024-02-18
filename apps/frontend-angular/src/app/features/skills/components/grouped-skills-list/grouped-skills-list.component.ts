@@ -5,7 +5,7 @@ import { GroupSkillsByCategoryPipe } from '../../pipes';
 import { Skill } from '@gv-cv/shared-util-types';
 
 @Component({
-  selector: 'app-grouped-skills-list',
+  selector: 'gv-cv-grouped-skills-list',
   standalone: true,
   imports: [
     GroupSkillsByCategoryPipe,

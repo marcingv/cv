@@ -4,7 +4,7 @@ import { LocalizedDatePipe } from '@gv-cv/angular-feature-translations';
 import { TranslationKey } from '@gv-cv/angular-data-access-translations';
 
 @Component({
-  selector: 'app-time-span',
+  selector: 'gv-cv-time-span',
   standalone: true,
   imports: [LocalizedDatePipe, TranslateModule],
   templateUrl: './time-span.component.html',

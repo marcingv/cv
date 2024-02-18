@@ -30,7 +30,7 @@ describe('ContactDetailsComponent', () => {
 
   it('should display full contact data', () => {
     const detailsRows = (fixture.nativeElement as HTMLElement).querySelectorAll(
-      'app-details-view-row',
+      'gv-cv-details-view-row',
     );
     const textContent: string =
       (fixture.nativeElement as HTMLElement).textContent ?? '';
@@ -38,7 +38,7 @@ describe('ContactDetailsComponent', () => {
     expect(detailsRows.length).toEqual(3);
     expect(textContent).toContain(data.city);
     expect(textContent).toContain(data.country);
-    expect(textContent).toContain(data.email!);
-    expect(textContent).toContain(data.phone!);
+    expect(textContent).toContain(data.email as string);
+    expect(textContent).toContain(data.phone as string);
   });
 });

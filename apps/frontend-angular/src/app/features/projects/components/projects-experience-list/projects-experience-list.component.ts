@@ -5,7 +5,7 @@ import { NgClass } from '@angular/common';
 import { ProjectExperience } from '@gv-cv/shared-util-types';
 
 @Component({
-  selector: 'app-projects-experience-list',
+  selector: 'gv-cv-projects-experience-list',
   standalone: true,
   imports: [TimeSpanComponent, SkillsChipsListComponent, NgClass],
   templateUrl: './projects-experience-list.component.html',

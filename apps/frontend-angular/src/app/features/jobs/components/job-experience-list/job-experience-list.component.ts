@@ -6,7 +6,7 @@ import { NgClass } from '@angular/common';
 import { JobExperience } from '@gv-cv/shared-util-types';
 
 @Component({
-  selector: 'app-job-experience-list',
+  selector: 'gv-cv-job-experience-list',
   standalone: true,
   imports: [
     SkillsChipsListComponent,

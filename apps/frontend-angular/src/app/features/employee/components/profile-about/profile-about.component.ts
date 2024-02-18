@@ -5,7 +5,7 @@ import { CvSectionComponent } from '../../../../ui/components/cv-section';
 import { EmployeeData } from '@gv-cv/shared-util-types';
 
 @Component({
-  selector: 'app-profile-about',
+  selector: 'gv-cv-profile-about',
   standalone: true,
   imports: [CvSectionComponent, ContactDetailsComponent, NgOptimizedImage],
   templateUrl: './profile-about.component.html',

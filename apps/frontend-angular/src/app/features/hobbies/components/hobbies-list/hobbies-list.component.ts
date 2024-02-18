@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Hobby } from '@gv-cv/shared-util-types';
 
 @Component({
-  selector: 'app-hobbies-list',
+  selector: 'gv-cv-hobbies-list',
   standalone: true,
   imports: [],
   templateUrl: './hobbies-list.component.html',

@@ -22,7 +22,7 @@ export class HomePageService {
     .select(CvDataSelectors.selectCvDataForCurrentLanguage)
     .pipe(
       filter((data: CvData | undefined) => !!data),
-      map((data: CvData | undefined) => data!),
+      map((data: CvData | undefined) => data as CvData),
     );
 
   public cvData: Signal<CvData> = toSignal(this.cvDataStore$, {

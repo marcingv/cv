@@ -3,7 +3,7 @@ import { TimeSpanComponent } from '../../../../ui/components/time-span';
 import { EducationExperience } from '@gv-cv/shared-util-types';
 
 @Component({
-  selector: 'app-education-experience-list',
+  selector: 'gv-cv-education-experience-list',
   standalone: true,
   imports: [TimeSpanComponent],
   templateUrl: './education-experience-list.component.html',

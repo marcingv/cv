@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 import { TranslationsTestingModule } from '@gv-cv/angular-feature-translations';
 
 @Component({
-  selector: 'app-router-outlet-stub',
+  selector: 'gv-cv-router-outlet-stub',
   template: '<router-outlet></router-outlet>',
   standalone: true,
   imports: [RouterOutlet],

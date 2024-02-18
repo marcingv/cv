@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { LanguageExperience } from '@gv-cv/shared-util-types';
 
 @Component({
-  selector: 'app-languages-experience-list',
+  selector: 'gv-cv-languages-experience-list',
   standalone: true,
   imports: [],
   templateUrl: './languages-experience-list.component.html',

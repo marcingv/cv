@@ -1,20 +1,20 @@
-<app-details-view>
-  <app-details-view-row label="Miejsce zamieszkania">
-    <ng-template appDetailsViewRowValue>
+<gv-cv-details-view>
+  <gv-cv-details-view-row label="Miejsce zamieszkania">
+    <ng-template gvCvDetailsViewRowValue>
       {{ data.city }}, {{ data.country }}
     </ng-template>
-  </app-details-view-row>
+  </gv-cv-details-view-row>
 
   @if (data.phone) {
-    <app-details-view-row
+    <gv-cv-details-view-row
       label="Telefon"
       [value]="data.phone"
-    ></app-details-view-row>
+    ></gv-cv-details-view-row>
   }
   @if (data.email) {
-    <app-details-view-row
+    <gv-cv-details-view-row
       label="E-mail"
       [value]="data.email"
-    ></app-details-view-row>
+    ></gv-cv-details-view-row>
   }
-</app-details-view>
+</gv-cv-details-view>

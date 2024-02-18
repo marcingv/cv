@@ -11,7 +11,7 @@ import { DetailsViewRowLabelDirective } from './directives/details-view-row-labe
 import { DetailsViewRowValueDirective } from './directives/details-view-row-value.directive';
 
 @Component({
-  selector: 'app-details-view-row',
+  selector: 'gv-cv-details-view-row',
   standalone: true,
   imports: [NgTemplateOutlet],
   templateUrl: './details-view-row.component.html',

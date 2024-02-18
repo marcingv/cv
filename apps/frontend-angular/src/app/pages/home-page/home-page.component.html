@@ -1,10 +1,10 @@
 @if (cvData(); as cvData) {
   <div class="container mx-auto py-4 print:hidden">
-    <app-lang-picker
+    <gv-cv-lang-picker
       [currentLang]="currentLang()"
       [availableLangs]="availableLangs()"
       (langChange)="changeLang($event)"
-    ></app-lang-picker>
+    ></gv-cv-lang-picker>
 
     <gv-cv-page-pdf-export
       [fileName]="
@@ -13,62 +13,64 @@
     ></gv-cv-page-pdf-export>
   </div>
 
-  <app-profile-about [profile]="cvData.employee"></app-profile-about>
+  <gv-cv-profile-about [profile]="cvData.employee"></gv-cv-profile-about>
 
   <div class="container mx-auto flex flex-col md:flex-row print:flex-row">
     <div class="md:w-2/3 print:w-2/3">
-      <app-cv-section title="skills">
-        <app-grouped-skills-list
+      <gv-cv-cv-section title="skills">
+        <gv-cv-grouped-skills-list
           [data]="cvData.employee.skills"
-        ></app-grouped-skills-list>
+        ></gv-cv-grouped-skills-list>
 
-        <!--      <app-skills-chips-list [data]="profile.skills"></app-skills-chips-list>-->
-      </app-cv-section>
+        <!--      <gv-cv-skills-chips-list [data]="profile.skills"></gv-cv-skills-chips-list>-->
+      </gv-cv-cv-section>
     </div>
     <div class="md:w-1/3 print:w-1/3">
-      <app-cv-section title="education">
-        <app-education-experience-list
+      <gv-cv-cv-section title="education">
+        <gv-cv-education-experience-list
           [data]="cvData.education"
-        ></app-education-experience-list>
-      </app-cv-section>
+        ></gv-cv-education-experience-list>
+      </gv-cv-cv-section>
     </div>
   </div>
 
   <div class="bg-gray-100 dark:bg-gray-700">
     <div class="container mx-auto">
-      <app-cv-section title="experience">
-        <app-job-experience-list [data]="cvData.jobs"></app-job-experience-list>
-      </app-cv-section>
+      <gv-cv-cv-section title="experience">
+        <gv-cv-job-experience-list
+          [data]="cvData.jobs"
+        ></gv-cv-job-experience-list>
+      </gv-cv-cv-section>
     </div>
   </div>
 
   <div class="container mx-auto grid grid-cols-1">
     <div>
-      <app-cv-section title="interestingProjects">
-        <app-projects-experience-list
+      <gv-cv-cv-section title="interestingProjects">
+        <gv-cv-projects-experience-list
           [data]="cvData.projects"
-        ></app-projects-experience-list>
-      </app-cv-section>
+        ></gv-cv-projects-experience-list>
+      </gv-cv-cv-section>
     </div>
   </div>
 
   <div
     class="container bg-gray-50 dark:bg-gray-900 mx-auto flex flex-row flex-wrap gap-4"
   >
-    <app-cv-section title="languages" class="flex-1">
-      <app-languages-experience-list
+    <gv-cv-cv-section title="languages" class="flex-1">
+      <gv-cv-languages-experience-list
         [data]="cvData.languages"
-      ></app-languages-experience-list>
-    </app-cv-section>
+      ></gv-cv-languages-experience-list>
+    </gv-cv-cv-section>
 
-    <app-cv-section title="hobbies" class="flex-1">
-      <app-hobbies-list [data]="cvData.employee.hobbies"></app-hobbies-list>
-    </app-cv-section>
+    <gv-cv-cv-section title="hobbies" class="flex-1">
+      <gv-cv-hobbies-list [data]="cvData.employee.hobbies"></gv-cv-hobbies-list>
+    </gv-cv-cv-section>
 
-    <app-cv-section title="additionalSkills" class="flex-1">
-      <app-additional-skills-list
+    <gv-cv-cv-section title="additionalSkills" class="flex-1">
+      <gv-cv-additional-skills-list
         [data]="cvData.employee.additionalSkills"
-      ></app-additional-skills-list>
-    </app-cv-section>
+      ></gv-cv-additional-skills-list>
+    </gv-cv-cv-section>
   </div>
 }

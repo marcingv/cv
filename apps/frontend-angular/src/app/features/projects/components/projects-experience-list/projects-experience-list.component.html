@@ -10,7 +10,10 @@
           </div>
 
           <div class="flex flex-col text-xs whitespace-nowrap text-end">
-            <app-time-span [from]="item.from" [to]="item.to"></app-time-span>
+            <gv-cv-time-span
+              [from]="item.from"
+              [to]="item.to"
+            ></gv-cv-time-span>
             <div>(<span>&#64;</span> {{ item.companyName }})</div>
           </div>
         </div>
@@ -36,10 +39,10 @@
         <div class="mt-auto">
           <!--          <h4 class="font-normal mb-4">Narzędzia i technologie:</h4>-->
 
-          <app-skills-chips-list
+          <gv-cv-skills-chips-list
             [data]="item.usedSkills"
             class="[&>ul]:flex-wrap-reverse"
-          ></app-skills-chips-list>
+          ></gv-cv-skills-chips-list>
         </div>
       }
     </li>

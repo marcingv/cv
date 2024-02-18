@@ -9,7 +9,7 @@ import { NgClass } from '@angular/common';
 import { LangCode } from '@gv-cv/shared-util-types';
 
 @Component({
-  selector: 'app-lang-picker',
+  selector: 'gv-cv-lang-picker',
   standalone: true,
   imports: [NgClass],
   templateUrl: './lang-picker.component.html',

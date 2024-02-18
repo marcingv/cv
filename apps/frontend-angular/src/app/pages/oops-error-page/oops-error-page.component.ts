@@ -12,7 +12,7 @@ import { UiActions, uiFeature } from '@gv-cv/angular-data-access-ui';
 import { TranslationKey } from '@gv-cv/angular-data-access-translations';
 
 @Component({
-  selector: 'app-oops-error-page',
+  selector: 'gv-cv-oops-error-page',
   standalone: true,
   imports: [TranslateModule],
   templateUrl: './oops-error-page.component.html',

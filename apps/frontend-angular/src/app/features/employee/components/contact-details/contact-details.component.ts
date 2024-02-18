@@ -8,7 +8,7 @@ import {
 import { ContactData } from '@gv-cv/shared-util-types';
 
 @Component({
-  selector: 'app-contact-details',
+  selector: 'gv-cv-contact-details',
   standalone: true,
   imports: [
     DetailsViewComponent,

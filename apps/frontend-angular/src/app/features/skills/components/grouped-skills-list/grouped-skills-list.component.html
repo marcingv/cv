@@ -5,7 +5,9 @@
         {{ oneGroup.key }}
       </div>
       <div class="flex-grow">
-        <app-skills-chips-list [data]="oneGroup.value"></app-skills-chips-list>
+        <gv-cv-skills-chips-list
+          [data]="oneGroup.value"
+        ></gv-cv-skills-chips-list>
       </div>
     </div>
   }
