@@ -18,7 +18,7 @@ import { CvDataStateFactory } from '../testing';
 describe('CvDataEffects', () => {
   let actions$: Subject<Action>;
   let effects: CvDataEffects;
-  let api: jasmine.SpyObj<CvDataApiService>;
+  let api: Partial<CvDataApiService>;
   let store: MockStore;
 
   const state: {
@@ -32,7 +32,9 @@ describe('CvDataEffects', () => {
   };
 
   beforeEach(() => {
-    api = jasmine.createSpyObj<CvDataApiService>(['fetchData']);
+    api = {
+      fetchData: jest.fn(),
+    };
 
     TestBed.configureTestingModule({
       imports: [],
@@ -55,13 +57,15 @@ describe('CvDataEffects', () => {
   });
 
   describe('Load for current specified language', () => {
-    it('should dispatch successful action', (done: DoneFn): void => {
+    it('should dispatch successful action', (done: jest.DoneCallback): void => {
       const sourceAction = CvDataActions.loadForLanguage({
         language: EN_LANG_CODE,
       });
 
       const fetchedCvData: CvData = CvDataFactory.createInstance();
-      api.fetchData.and.returnValue(of(fetchedCvData));
+      const fetchDataSpy = jest
+        .spyOn(api, 'fetchData')
+        .mockImplementation(() => of(fetchedCvData));
 
       effects.loadForLang$.pipe(first()).subscribe({
         next: (resultAction) => {
@@ -73,23 +77,25 @@ describe('CvDataEffects', () => {
               },
             }),
           );
-          expect(api.fetchData).toHaveBeenCalledOnceWith(sourceAction.language);
+          expect(fetchDataSpy).toHaveBeenCalledWith(sourceAction.language);
 
           done();
         },
-        error: () => fail(),
+        error: (e) => done(e),
       });
 
       actions$.next(sourceAction);
     });
 
-    it('should dispatch failure action', (done: DoneFn): void => {
+    it('should dispatch failure action', (done: jest.DoneCallback): void => {
       const sourceAction = CvDataActions.loadForLanguage({
         language: EN_LANG_CODE,
       });
 
       const fetchError: Error = new Error('Some error');
-      api.fetchData.and.returnValue(throwError(() => fetchError));
+      const fetchDataSpy = jest
+        .spyOn(api, 'fetchData')
+        .mockImplementation(() => throwError(() => fetchError));
 
       effects.loadForLang$.pipe(first()).subscribe({
         next: (resultAction) => {
@@ -99,17 +105,17 @@ describe('CvDataEffects', () => {
               error: fetchError,
             }),
           );
-          expect(api.fetchData).toHaveBeenCalledOnceWith(sourceAction.language);
+          expect(api.fetchData).toHaveBeenCalledWith(sourceAction.language);
 
           done();
         },
-        error: () => fail(),
+        error: (e) => done(e),
       });
 
       actions$.next(sourceAction);
     });
 
-    it('should dispatch go to error page action on failure', (done: DoneFn) => {
+    it('should dispatch go to error page action on failure', (done: jest.DoneCallback) => {
       const failureAction = CvDataActions.loadFailure({
         language: EN_LANG_CODE,
         error: new Error('Some error'),
@@ -125,7 +131,7 @@ describe('CvDataEffects', () => {
 
           done();
         },
-        error: () => fail(),
+        error: (e) => done(e),
       });
 
       actions$.next(failureAction);
@@ -133,7 +139,7 @@ describe('CvDataEffects', () => {
   });
 
   describe('Load for current app language', () => {
-    it('should load data for current app language', (done: DoneFn) => {
+    it('should load data for current app language', (done: jest.DoneCallback) => {
       const sourceAction = CvDataActions.load();
 
       effects.loadForCurrentLang$.pipe(first()).subscribe({
@@ -146,7 +152,7 @@ describe('CvDataEffects', () => {
 
           done();
         },
-        error: () => fail(),
+        error: (e) => done(e),
       });
 
       actions$.next(sourceAction);

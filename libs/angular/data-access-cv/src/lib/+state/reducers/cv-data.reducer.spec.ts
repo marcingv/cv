@@ -11,7 +11,7 @@ describe('CvData Reducer', () => {
 
       expect(result.entities).toEqual({});
       expect(result.ids).toEqual([]);
-      expect(result.isLoading).toBeFalse();
+      expect(result.isLoading).toBe(false);
     });
   });
 
@@ -31,11 +31,11 @@ describe('CvData Reducer', () => {
         isLoading: false,
       });
 
-      expect(state.isLoading).toBeFalse();
+      expect(state.isLoading).toBe(false);
 
       state = reducer(state, CvDataActions.load());
 
-      expect(state.isLoading).toBeTrue();
+      expect(state.isLoading).toBe(true);
     });
 
     it('should save data after load', () => {
@@ -56,7 +56,7 @@ describe('CvData Reducer', () => {
       expect(state.entities).toEqual(
         CvDataStateFactory.createDictionary([cvDataEntity]),
       );
-      expect(state.isLoading).toBeFalse();
+      expect(state.isLoading).toBe(false);
     });
 
     it('should set loading to false on load failure', () => {
@@ -64,7 +64,7 @@ describe('CvData Reducer', () => {
         isLoading: true,
       });
 
-      expect(state.isLoading).toBeTrue();
+      expect(state.isLoading).toBe(true);
 
       state = reducer(
         state,
@@ -74,7 +74,7 @@ describe('CvData Reducer', () => {
         }),
       );
 
-      expect(state.isLoading).toBeFalse();
+      expect(state.isLoading).toBe(false);
     });
   });
 });
