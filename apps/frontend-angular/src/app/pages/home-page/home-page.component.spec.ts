@@ -2,23 +2,25 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomePageComponent } from './home-page.component';
 import { NO_ERRORS_SCHEMA, signal } from '@angular/core';
 import { HomePageService } from './home-page.service';
-import { LANG_EN_CODE, LANG_PL_CODE } from '../../core/translations';
-import { CvData, CvDataFactory } from '@gv-cv/shared-util-types';
+import {
+  CvData,
+  CvDataFactory,
+  EN_LANG_CODE,
+  PL_LANG_CODE,
+} from '@gv-cv/shared-util-types';
 
 describe('HomePageComponent', (): void => {
   let component: HomePageComponent;
   let fixture: ComponentFixture<HomePageComponent>;
-  let homePageService: jasmine.SpyObj<HomePageService>;
+  let homePageService: Partial<HomePageService>;
 
   beforeEach(async () => {
-    homePageService = jasmine.createSpyObj<HomePageService>(
-      ['changeLanguage'],
-      {
-        cvData: signal<CvData>(CvDataFactory.createInstance()),
-        availableLangs: signal([LANG_PL_CODE, LANG_EN_CODE]),
-        currentLang: signal(LANG_PL_CODE),
-      },
-    );
+    homePageService = {
+      cvData: signal<CvData>(CvDataFactory.createInstance()),
+      availableLangs: signal([PL_LANG_CODE, EN_LANG_CODE]),
+      currentLang: signal(PL_LANG_CODE),
+      changeLanguage: jest.fn(),
+    };
 
     await TestBed.configureTestingModule({
       imports: [HomePageComponent],
@@ -42,10 +44,8 @@ describe('HomePageComponent', (): void => {
   });
 
   it('should trigger language change', (): void => {
-    component.changeLang(LANG_EN_CODE);
+    component.changeLang(EN_LANG_CODE);
 
-    expect(homePageService.changeLanguage).toHaveBeenCalledOnceWith(
-      LANG_EN_CODE,
-    );
+    expect(homePageService.changeLanguage).toHaveBeenCalledWith(EN_LANG_CODE);
   });
 });

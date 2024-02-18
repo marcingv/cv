@@ -7,13 +7,13 @@ import {
 import { cvDataResolver } from './cv-data.resolver';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { first, Observable } from 'rxjs';
-import {
-  CvDataStateFactory,
-  UiStateFactory,
-} from '../../testing/factories/state';
 import { CvData } from '@gv-cv/shared-util-types';
-import { fromUi } from '@gv-cv/angular-data-access-ui';
-import { CvDataActions, fromCvData } from '@gv-cv/angular-data-access-cv';
+import { fromUi, UiStateFactory } from '@gv-cv/angular-data-access-ui';
+import {
+  CvDataActions,
+  CvDataStateFactory,
+  fromCvData,
+} from '@gv-cv/angular-data-access-cv';
 
 describe('cvDataResolver', () => {
   const executeResolver: ResolveFn<CvData | undefined> = (
@@ -35,8 +35,8 @@ describe('cvDataResolver', () => {
     expect(executeResolver).toBeTruthy();
   });
 
-  it('should dispatch load action', (done) => {
-    const dispatchSpy = spyOn(store, 'dispatch');
+  it('should dispatch load action', (done: jest.DoneCallback) => {
+    const dispatchSpy = jest.spyOn(store, 'dispatch');
 
     const result = executeResolver(
       {} as ActivatedRouteSnapshot,
@@ -44,7 +44,7 @@ describe('cvDataResolver', () => {
     );
 
     if (!(result instanceof Observable)) {
-      fail();
+      done(new Error('Resolver must return an observable'));
 
       return;
     }
@@ -60,11 +60,11 @@ describe('cvDataResolver', () => {
     result.pipe(first()).subscribe({
       next: (data: CvData | undefined) => {
         expect(data).toBeTruthy();
-        expect(dispatchSpy).toHaveBeenCalledOnceWith(CvDataActions.load());
+        expect(dispatchSpy).toHaveBeenCalledWith(CvDataActions.load());
 
         done();
       },
-      error: () => fail(),
+      error: (e) => done(e),
     });
 
     store.setState({

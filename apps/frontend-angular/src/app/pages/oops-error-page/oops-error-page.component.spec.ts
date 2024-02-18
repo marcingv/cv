@@ -5,7 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Router, RouterOutlet } from '@angular/router';
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { TranslationsTestingModule } from '../../testing/translations';
+import { TranslationsTestingModule } from '@gv-cv/angular-feature-translations';
 
 @Component({
   selector: 'app-router-outlet-stub',
