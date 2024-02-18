@@ -1,0 +1,86 @@
+{
+  "name": "frontend-angular",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "gv-cv",
+  "sourceRoot": "apps/frontend-angular/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/frontend-angular",
+        "index": "apps/frontend-angular/src/index.html",
+        "browser": "apps/frontend-angular/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/frontend-angular/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/frontend-angular/src/favicon.ico",
+          "apps/frontend-angular/src/assets"
+        ],
+        "styles": ["apps/frontend-angular/src/styles.scss"],
+        "scripts": [],
+        "server": "apps/frontend-angular/src/main.server.ts",
+        "prerender": true,
+        "ssr": {
+          "entry": "apps/frontend-angular/server.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "port": 4200,
+        "proxyConfig": "apps/frontend-angular/proxy.conf.json"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "frontend-angular:build:production"
+        },
+        "development": {
+          "buildTarget": "frontend-angular:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "frontend-angular:build"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "frontend-angular:build",
+        "port": 4200,
+        "staticFilePath": "dist/apps/frontend-angular/browser"
+      }
+    }
+  }
+}
