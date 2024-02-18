@@ -3,17 +3,17 @@ import { TestBed } from '@angular/core/testing';
 import { TranslateService } from '@ngx-translate/core';
 import { ChangeDetectorRef } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
-import { TranslationsTestingModule } from '../../../testing/translations';
+import { TranslationsTestingModule } from '@gv-cv/angular-feature-translations';
 
 describe('LocalizedDatePipe', (): void => {
   let pipe: LocalizedDatePipe;
   let translateService: TranslateService;
-  let changeDetectorRef: jasmine.SpyObj<ChangeDetectorRef>;
+  let changeDetectorRef: Partial<ChangeDetectorRef>;
 
   beforeEach((): void => {
-    changeDetectorRef = jasmine.createSpyObj<ChangeDetectorRef>([
-      'markForCheck',
-    ]);
+    changeDetectorRef = {
+      markForCheck: jest.fn(),
+    };
 
     TestBed.configureTestingModule({
       imports: [TranslationsTestingModule],
@@ -41,11 +41,9 @@ describe('LocalizedDatePipe', (): void => {
   });
 
   it('should print date in EN format', (): void => {
-    const currentLangSpy = spyOnProperty(
-      translateService,
-      'currentLang',
-      'get',
-    ).and.returnValue('en');
+    const currentLangSpy = jest
+      .spyOn(translateService, 'currentLang', 'get')
+      .mockReturnValue('en');
 
     const date: Date = new Date(2024, 1, 14);
 
