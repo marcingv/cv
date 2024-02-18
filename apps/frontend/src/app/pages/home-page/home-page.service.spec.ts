@@ -1,15 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { HomePageService } from './home-page.service';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { fromUi } from '../../data-access/state/ui/reducers';
-import { fromCvData } from '../../data-access/state/cv-data/reducers';
 import {
   CvDataStateFactory,
   UiStateFactory,
 } from '../../testing/factories/state';
-import { LANG_EN_CODE, LangCode } from '../../core/translations';
-import { UiActions } from '../../data-access/state/ui/actions/ui.actions';
-import { CvData } from '@gv-cv/shared-util-types';
+import { CvData, EN_LANG_CODE, LangCode } from '@gv-cv/shared-util-types';
+import { fromUi, UiActions } from '@gv-cv/angular-data-access-ui';
+import { fromCvData } from '@gv-cv/angular-data-access-cv';
 
 describe('HomePageService', (): void => {
   let service: HomePageService;
@@ -41,11 +39,11 @@ describe('HomePageService', (): void => {
   it('should change lang and reload cv data', (): void => {
     const dispatchSpy = spyOn(store, 'dispatch');
 
-    service.changeLanguage(LANG_EN_CODE);
+    service.changeLanguage(EN_LANG_CODE);
 
     expect(dispatchSpy).toHaveBeenCalledOnceWith(
       UiActions.changeLang({
-        language: LANG_EN_CODE,
+        language: EN_LANG_CODE,
       }),
     );
   });

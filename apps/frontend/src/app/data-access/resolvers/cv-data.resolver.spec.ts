@@ -11,10 +11,9 @@ import {
   CvDataStateFactory,
   UiStateFactory,
 } from '../../testing/factories/state';
-import { CvDataActions } from '../state/cv-data/actions/cv-data.actions';
-import { fromUi } from '../state/ui/reducers';
-import { fromCvData } from '../state/cv-data/reducers';
 import { CvData } from '@gv-cv/shared-util-types';
+import { fromUi } from '@gv-cv/angular-data-access-ui';
+import { CvDataActions, fromCvData } from '@gv-cv/angular-data-access-cv';
 
 describe('cvDataResolver', () => {
   const executeResolver: ResolveFn<CvData | undefined> = (

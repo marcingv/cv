@@ -16,3 +16,4 @@ export * from './lib/data/pl-cv';
 export * from './lib/data/en-cv';
 
 export * from './lib/dtos';
+export * from './lib/translations';

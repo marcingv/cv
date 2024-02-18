@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { TranslationKey } from '../../../core/translations';
+import { TranslationKey } from '@gv-cv/angular-data-access-translations';
 
 @Component({
   selector: 'app-cv-section',

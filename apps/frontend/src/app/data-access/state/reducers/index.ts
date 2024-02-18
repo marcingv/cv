@@ -1,8 +1,8 @@
 import { isDevMode } from '@angular/core';
 import { ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { routerReducer, RouterReducerState } from '@ngrx/router-store';
-import { fromCvData } from '../cv-data/reducers';
-import { fromUi } from '../ui/reducers';
+import { fromCvData } from '@gv-cv/angular-data-access-cv';
+import { fromUi } from '@gv-cv/angular-data-access-ui';
 
 export interface State {
   [fromCvData.cvDataFeatureKey]: fromCvData.State;

@@ -18,11 +18,20 @@
       "@gv-cv/angular-data-access-cv": [
         "libs/angular/data-access-cv/src/index.ts"
       ],
+      "@gv-cv/angular-data-access-translations": [
+        "libs/angular/data-access-translations/src/index.ts"
+      ],
+      "@gv-cv/angular-data-access-ui": [
+        "libs/angular/data-access-ui/src/index.ts"
+      ],
       "@gv-cv/angular-feature-pdf-export": [
         "libs/angular/feature-pdf-export/src/index.ts"
       ],
       "@gv-cv/angular-feature-ssr-env": [
         "libs/angular/feature-ssr-env/src/index.ts"
+      ],
+      "@gv-cv/angular-feature-translations": [
+        "libs/angular/feature-translations/src/index.ts"
       ],
       "@gv-cv/nestjs-data-access": ["libs/nestjs/data-access/src/index.ts"],
       "@gv-cv/nestjs-feature-cv": ["libs/nestjs/feature-cv/src/index.ts"],

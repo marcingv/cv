@@ -22,7 +22,15 @@
         "polyfills": ["zone.js"],
         "tsConfig": "apps/frontend/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/frontend/src/favicon.ico", "apps/frontend/src/assets"],
+        "assets": [
+          "apps/frontend/src/favicon.ico",
+          "apps/frontend/src/assets",
+          {
+            "input": "libs/angular/data-access-translations/src/lib/i18n",
+            "glob": "**/*",
+            "output": "assets/i18n_v2"
+          }
+        ],
         "styles": ["apps/frontend/src/styles.scss"],
         "scripts": [],
         "server": "apps/frontend/src/main.server.ts",

@@ -6,7 +6,12 @@ import {
   TestRequest,
 } from '@angular/common/http/testing';
 import { provideHttpClient } from '@angular/common/http';
-import { CvData, CvDataFactory } from '@gv-cv/shared-util-types';
+import {
+  CvData,
+  CvDataFactory,
+  LangCode,
+  PL_LANG_CODE,
+} from '@gv-cv/shared-util-types';
 
 describe('CvDataApiService', (): void => {
   let service: CvDataApiService;
@@ -30,7 +35,7 @@ describe('CvDataApiService', (): void => {
   });
 
   it('should fetch cv in desired language', (): void => {
-    const requestLanguage = 'pl';
+    const requestLanguage: LangCode = PL_LANG_CODE;
     const expectedRequestUrl = `/api/cv/${requestLanguage}`;
     const expectedResponseData: CvData = CvDataFactory.createInstance();
 

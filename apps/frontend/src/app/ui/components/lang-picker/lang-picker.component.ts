@@ -6,7 +6,7 @@ import {
   Output,
 } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { LangCode } from '../../../core/translations';
+import { LangCode } from '@gv-cv/shared-util-types';
 
 @Component({
   selector: 'app-lang-picker',

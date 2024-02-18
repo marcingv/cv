@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateLoader } from '@ngx-translate/core';
-import { provideNgxTranslations } from '../../core/translations';
 import { FakeTranslationsLoader } from './fake-translations-loader';
+import { provideNgxTranslations } from '@gv-cv/angular-feature-translations';
 
 @NgModule({
   declarations: [],
