@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'angular-feature-ssr-env',
+  displayName: 'angular-util-ssr-env',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/libs/angular/feature-ssr-env',
+  coverageDirectory: '../../../coverage/libs/angular/util-ssr-env',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
