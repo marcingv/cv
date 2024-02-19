@@ -26,7 +26,7 @@ describe('ExportController', () => {
 
   describe('Export PDF', () => {
     it('should throw error for invalid request body', async () => {
-      let error: Error | undefined;
+      let error: any;
 
       try {
         await controller.exportPdf({ url: '' }, {} as Response);
@@ -39,7 +39,7 @@ describe('ExportController', () => {
     });
 
     it('should throw error when pdf export fails', async () => {
-      let error: Error | undefined;
+      let error: any;
 
       const exportUrlSpy = jest.spyOn(pdfService, 'exportUrl');
       exportUrlSpy.mockImplementation(() => {

@@ -1,11 +1,10 @@
 import { PdfExportUrlSanitizer } from './pdf-export-url-sanitizer';
-import * as process from 'process';
+
 describe('PdfExportUrlSanitizer', () => {
-  const orgEnvs = { ...process.env };
+  const orgEnvs: NodeJS.ProcessEnv = { ...process.env };
 
   afterAll(() => {
-    // console.warn('przywracam envy');
-    Object.apply(process.env, orgEnvs);
+    Object.assign(process.env, orgEnvs);
   });
 
   it('should be defined', () => {

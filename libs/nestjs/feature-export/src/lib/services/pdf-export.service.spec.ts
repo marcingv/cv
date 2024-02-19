@@ -25,13 +25,14 @@ describe('PdfExportService', () => {
 
     const generatePdfSpy = jest
       .spyOn(RenderPdf, 'generatePdfBuffer')
-      .mockImplementation((url, options: IRenderPdfOptions) => {
+      .mockImplementation((url, options: IRenderPdfOptions | undefined) => {
+        expect(options).toBeTruthy();
         expect(url).toEqual(url);
-        expect(options.includeBackground).toBe(true);
-        expect(options.noMargins).toBe(true);
-        expect(options.chromeOptions).toContain('--no-sandbox');
-        expect(options.paperWidth).toEqual('8.26771654');
-        expect(options.paperHeight).toEqual('11.7');
+        expect(options!.includeBackground).toBe(true);
+        expect(options!.noMargins).toBe(true);
+        expect(options!.chromeOptions).toContain('--no-sandbox');
+        expect(options!.paperWidth).toEqual('8.26771654');
+        expect(options!.paperHeight).toEqual('11.7');
 
         return Promise.resolve(pdfBufferResult);
       });
