@@ -31,6 +31,9 @@
       "@gv-cv/angular-feature-translations": [
         "libs/angular/feature-translations/src/index.ts"
       ],
+      "@gv-cv/angular-ui-cv-section": [
+        "libs/angular/ui-cv-section/src/index.ts"
+      ],
       "@gv-cv/angular-ui-details-view": [
         "libs/angular/ui-details-view/src/index.ts"
       ],
