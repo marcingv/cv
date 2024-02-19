@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'angular-ui-pipes',
+  displayName: 'angular-ui-timespan',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/libs/angular/ui-pipes',
+  coverageDirectory: '../../../coverage/libs/angular/ui-timespan',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

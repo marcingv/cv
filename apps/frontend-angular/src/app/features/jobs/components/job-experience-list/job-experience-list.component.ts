@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { SkillsChipsListComponent } from '../../../skills/components/skills-chips-list';
 import { TimeSpanComponent } from '../../../../ui/components/time-span';
-import { TimeSpanDurationPipe } from '@gv-cv/angular-ui-pipes';
+import { TimeSpanDurationPipe } from '@gv-cv/angular-ui-timespan';
 import { NgClass } from '@angular/common';
 import { JobExperience } from '@gv-cv/shared-util-types';
 
