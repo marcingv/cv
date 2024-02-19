@@ -17,15 +17,9 @@ describe('AppLangInitializer', () => {
   } satisfies Partial<LocalizeRouterService>;
 
   const translate = {
-    myLang: 'pl',
-
-    get currentLang() {
-      return this.myLang;
-    },
-    set currentLang(currentLang: string) {
-      this.myLang = currentLang;
-    },
-  } satisfies Partial<TranslateService> & { myLang: string };
+    currentLang: 'en',
+    defaultLang: 'pl',
+  } satisfies Partial<TranslateService>;
 
   let initializerFunc: () => Observable<boolean>;
 
@@ -33,7 +27,7 @@ describe('AppLangInitializer', () => {
     initializerFunc = initializeDefaultLang(
       store as unknown as Store,
       localize as unknown as LocalizeRouterService,
-      translate as unknown as TranslateService,
+      translate as TranslateService,
     );
   });
 
