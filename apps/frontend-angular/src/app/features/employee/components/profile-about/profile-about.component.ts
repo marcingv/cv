@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ContactDetailsComponent } from '../contact-details';
 import { NgOptimizedImage } from '@angular/common';
-import { CvSectionComponent } from '../../../../ui/components/cv-section';
+import { CvSectionComponent } from '@gv-cv/angular-ui-cv-section';
 import { EmployeeData } from '@gv-cv/shared-util-types';
 
 @Component({
