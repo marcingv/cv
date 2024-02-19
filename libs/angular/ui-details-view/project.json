@@ -1,0 +1,9 @@
+{
+  "name": "angular-ui-details-view",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/angular/ui-details-view/src",
+  "prefix": "gv-cv",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}
