@@ -10,6 +10,7 @@ import { Store } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
 import { UiActions, uiFeature } from '@gv-cv/angular-data-access-ui';
 import { TranslationKey } from '@gv-cv/angular-util-translations';
+import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
 
 @Component({
   selector: 'gv-cv-oops-error-page',
@@ -27,6 +28,7 @@ export class OopsErrorPageComponent implements OnDestroy {
 
   private router: Router = inject(Router);
   private store: Store = inject(Store);
+  private localizeRouterService = inject(LocalizeRouterService);
 
   public errorMessage: Signal<string | undefined> = this.store.selectSignal(
     uiFeature.selectErrorPageMessage,
@@ -37,7 +39,7 @@ export class OopsErrorPageComponent implements OnDestroy {
   );
 
   public onGoHome(): void {
-    this.router.navigate(['/']);
+    this.router.navigate([this.localizeRouterService.translateRoute('/')]);
   }
 
   public ngOnDestroy(): void {
