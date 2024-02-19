@@ -1,16 +1,15 @@
-import { provideRouter } from '@angular/router';
-import { routes } from './app.routes';
-import { importProvidersFrom } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { Location } from '@angular/common';
 import {
   LocalizeParser,
   LocalizeRouterModule,
   LocalizeRouterSettings,
   ManualParserLoader,
 } from '@gilsdav/ngx-translate-router';
-import { TranslateService } from '@ngx-translate/core';
-import { Location } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { AVAILABLE_LANGS } from '@gv-cv/shared-util-types';
+import { provideRouter, Route } from '@angular/router';
+import { importProvidersFrom } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 export function localizeLoaderFactory(
   translate: TranslateService,
@@ -26,7 +25,7 @@ export function localizeLoaderFactory(
   );
 }
 
-export const provideAppRouterConfiguration = () => [
+export const provideAppRouterConfiguration = (routes: Route[]) => [
   provideRouter(routes),
   importProvidersFrom(
     LocalizeRouterModule.forRoot(routes, {

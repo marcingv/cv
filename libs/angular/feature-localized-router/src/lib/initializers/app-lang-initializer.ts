@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 import { UiActions } from '@gv-cv/angular-data-access-ui';
 import { LangCode } from '@gv-cv/shared-util-types';
 
-function initializeDefaultLang(
+export function initializeDefaultLang(
   store: Store,
   localize: LocalizeRouterService,
   translate: TranslateService,

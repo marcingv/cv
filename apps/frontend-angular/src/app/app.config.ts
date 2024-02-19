@@ -12,17 +12,18 @@ import {
   ROUTER_REQUEST,
 } from '@ngrx/router-store';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { provideAppRouterConfiguration } from './core/router';
 import { provideAppInitializers } from './core/initializers';
 import { provideNgxTranslations } from '@gv-cv/angular-feature-translations';
 import { UI_EFFECTS } from '@gv-cv/angular-data-access-ui';
 import { CV_EFFECTS } from '@gv-cv/angular-data-access-cv';
 import { metaReducers, reducers } from './+state';
+import { provideAppRouterConfiguration } from '@gv-cv/angular-feature-localized-router';
+import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideNgxTranslations(),
-    provideAppRouterConfiguration(),
+    provideAppRouterConfiguration(routes),
     provideAppInitializers(),
     provideHttpClient(withFetch()),
     provideClientHydration(),
