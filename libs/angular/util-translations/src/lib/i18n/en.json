@@ -10,5 +10,10 @@
   "tillNow": "Till now",
   "refresh": "Refresh",
   "errorOopsTitle": "Oops!",
-  "errorUnknownMessage": "Error occurred!"
+  "errorUnknownMessage": "Error occurred!",
+  "timeSpan": {
+    "years": "years",
+    "months": "months",
+    "days": "days"
+  }
 }

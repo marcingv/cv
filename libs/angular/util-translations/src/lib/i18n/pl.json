@@ -10,5 +10,10 @@
   "tillNow": "Obecnie",
   "refresh": "Odśwież",
   "errorOopsTitle": "Oops!",
-  "errorUnknownMessage": "Wystapił błąd!"
+  "errorUnknownMessage": "Wystapił błąd!",
+  "timeSpan": {
+    "years": "lat",
+    "months": "miesięcy",
+    "days": "dni"
+  }
 }
