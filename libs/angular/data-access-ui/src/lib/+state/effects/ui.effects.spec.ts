@@ -18,7 +18,6 @@ import {
 import { Router } from '@angular/router';
 import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
 import { UiActions } from '../actions/ui.actions';
-import { TranslationsTestingModule } from '@gv-cv/angular-feature-translations';
 
 describe('UiEffects', () => {
   let actions$: Subject<Action>;
@@ -32,7 +31,6 @@ describe('UiEffects', () => {
     };
 
     TestBed.configureTestingModule({
-      imports: [TranslationsTestingModule],
       providers: [
         UiEffects,
         provideMockActions(() => actions$),

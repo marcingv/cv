@@ -5,7 +5,7 @@ import { withLatestFrom } from 'rxjs/operators';
 import { map } from 'rxjs';
 import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
 import { UiActions } from '../actions/ui.actions';
-import { uiFeature } from '../reducers/ui.reducer';
+import { uiFeature } from '../reducers';
 import { LangCode } from '@gv-cv/shared-util-types';
 
 @Injectable()

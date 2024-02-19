@@ -1,12 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { HomePageService } from './home-page.service';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { CvData, EN_LANG_CODE, LangCode } from '@gv-cv/shared-util-types';
-import {
-  fromUi,
-  UiActions,
-  UiStateFactory,
-} from '@gv-cv/angular-data-access-ui';
+import { CvData, LangCode } from '@gv-cv/shared-util-types';
+import { fromUi, UiStateFactory } from '@gv-cv/angular-data-access-ui';
 import { CvDataStateFactory, fromCvData } from '@gv-cv/angular-data-access-cv';
 
 describe('HomePageService', (): void => {
@@ -34,28 +30,6 @@ describe('HomePageService', (): void => {
 
   it('should be created', (): void => {
     expect(service).toBeTruthy();
-  });
-
-  it('should change lang and reload cv data', (): void => {
-    const dispatchSpy = jest.spyOn(store, 'dispatch');
-
-    service.changeLanguage(EN_LANG_CODE);
-
-    expect(dispatchSpy).toHaveBeenCalledWith(
-      UiActions.changeLang({
-        language: EN_LANG_CODE,
-      }),
-    );
-  });
-
-  it('should provide available languages', (): void => {
-    const langs: LangCode[] = service.availableLangs();
-
-    expect(langs).toEqual(state[fromUi.uiFeatureKey].languages);
-  });
-
-  it('should provide current language', (): void => {
-    expect(service.currentLang()).toEqual(state[fromUi.uiFeatureKey].lang);
   });
 
   it('should provide cv data', (): void => {

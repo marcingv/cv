@@ -9,8 +9,8 @@ import { LanguagesExperienceListComponent } from '../../features/languages/compo
 import { HobbiesListComponent } from '../../features/hobbies/components/hobbies-list';
 import { AdditionalSkillsListComponent } from '../../features/skills/components/additional-skills-list';
 import { GroupedSkillsListComponent } from '../../features/skills/components/grouped-skills-list';
-import { LangPickerComponent } from '../../ui/components/lang-picker';
-import { CvData, LangCode } from '@gv-cv/shared-util-types';
+import { LangPickerComponent } from '@gv-cv/angular-feature-translations';
+import { CvData } from '@gv-cv/shared-util-types';
 import { PagePdfExportComponent } from '@gv-cv/angular-feature-pdf-export';
 
 @Component({
@@ -37,10 +37,4 @@ export class HomePageComponent {
   private dataService: HomePageService = inject(HomePageService);
 
   public cvData: Signal<CvData> = this.dataService.cvData;
-  public currentLang: Signal<LangCode> = this.dataService.currentLang;
-  public availableLangs: Signal<LangCode[]> = this.dataService.availableLangs;
-
-  public changeLang(lang: LangCode): void {
-    this.dataService.changeLanguage(lang);
-  }
 }

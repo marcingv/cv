@@ -1,12 +1,12 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  EventEmitter,
-  Input,
-  Output,
+  inject,
+  Signal,
 } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { LangCode } from '@gv-cv/shared-util-types';
+import { UiLangService } from '@gv-cv/angular-data-access-ui';
 
 @Component({
   selector: 'gv-cv-lang-picker',
@@ -21,8 +21,12 @@ import { LangCode } from '@gv-cv/shared-util-types';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LangPickerComponent {
-  @Input({ required: true }) public currentLang!: LangCode;
-  @Input({ required: true }) public availableLangs: LangCode[] = [];
-  @Output() public langChange: EventEmitter<LangCode> =
-    new EventEmitter<LangCode>();
+  private readonly uiLangService = inject(UiLangService);
+
+  public currentLang: Signal<LangCode> = this.uiLangService.currentLang;
+  public availableLangs: Signal<LangCode[]> = this.uiLangService.availableLangs;
+
+  public changeLang(lang: LangCode): void {
+    this.uiLangService.changeLanguage(lang);
+  }
 }
