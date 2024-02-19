@@ -5,7 +5,7 @@ import {
   DEFAULT_LANG,
   LangCode,
 } from '@gv-cv/shared-util-types';
-import { TranslationKey } from '@gv-cv/angular-data-access-translations';
+import { TranslationKey } from '@gv-cv/angular-util-translations';
 
 export const uiFeatureKey = 'ui';
 

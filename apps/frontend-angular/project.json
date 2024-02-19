@@ -20,9 +20,9 @@
           "apps/frontend-angular/src/favicon.ico",
           "apps/frontend-angular/src/assets",
           {
-            "input": "libs/angular/data-access-translations/src/lib/i18n",
+            "input": "libs/angular/util-translations/src/lib/i18n",
             "glob": "**/*",
-            "output": "assets/i18n_v2"
+            "output": "assets/i18n"
           }
         ],
         "styles": ["apps/frontend-angular/src/styles.scss"],

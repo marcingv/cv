@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { LocalizedDatePipe } from '@gv-cv/angular-feature-translations';
-import { TranslationKey } from '@gv-cv/angular-data-access-translations';
+import { TranslationKey } from '@gv-cv/angular-util-translations';
 
 @Component({
   selector: 'gv-cv-time-span',

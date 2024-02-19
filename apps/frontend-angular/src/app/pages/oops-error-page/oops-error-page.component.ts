@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
 import { UiActions, uiFeature } from '@gv-cv/angular-data-access-ui';
-import { TranslationKey } from '@gv-cv/angular-data-access-translations';
+import { TranslationKey } from '@gv-cv/angular-util-translations';
 
 @Component({
   selector: 'gv-cv-oops-error-page',

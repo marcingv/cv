@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TimeSpanComponent } from './time-span.component';
 import { TranslateService } from '@ngx-translate/core';
-import { TranslationKey } from '@gv-cv/angular-data-access-translations';
+import { TranslationKey } from '@gv-cv/angular-util-translations';
 import { TranslationsTestingModule } from '@gv-cv/angular-feature-translations';
 
 describe('TimeSpanComponent', () => {

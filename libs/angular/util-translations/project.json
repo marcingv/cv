@@ -1,7 +1,7 @@
 {
-  "name": "angular-data-access-translations",
+  "name": "angular-util-translations",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/angular/data-access-translations/src",
+  "sourceRoot": "libs/angular/util-translations/src",
   "prefix": "gv-cv",
   "tags": ["type:data-access", "scope:frontend", "framework:angular"],
   "projectType": "library",

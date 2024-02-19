@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'angular-data-access-translations',
+  displayName: 'angular-util-translations',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/libs/angular/data-access-translations',
+  coverageDirectory: '../../../coverage/libs/angular/util-translations',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
