@@ -22,6 +22,9 @@
       "@gv-cv/angular-data-access-ui": [
         "libs/angular/data-access-ui/src/index.ts"
       ],
+      "@gv-cv/angular-feature-localized-router": [
+        "libs/angular/feature-localized-router/src/index.ts"
+      ],
       "@gv-cv/angular-feature-pdf-export": [
         "libs/angular/feature-pdf-export/src/index.ts"
       ],

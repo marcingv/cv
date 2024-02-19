@@ -1,0 +1,9 @@
+{
+  "name": "angular-feature-localized-router",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/angular/feature-localized-router/src",
+  "prefix": "gv-cv",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}
