@@ -7,8 +7,8 @@ import {
   TemplateRef,
 } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
-import { DetailsViewRowLabelDirective } from './directives/details-view-row-label.directive';
-import { DetailsViewRowValueDirective } from './directives/details-view-row-value.directive';
+import { DetailsViewRowLabelDirective } from '../directives/details-view-row-label.directive';
+import { DetailsViewRowValueDirective } from '../directives/details-view-row-value.directive';
 
 @Component({
   selector: 'gv-cv-details-view-row',

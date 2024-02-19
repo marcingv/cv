@@ -3,7 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/angular/ui-details-view/src",
   "prefix": "gv-cv",
-  "tags": [],
+  "tags": ["type:ui", "scope:frontend", "framework:angular"],
   "projectType": "library",
   "targets": {}
 }

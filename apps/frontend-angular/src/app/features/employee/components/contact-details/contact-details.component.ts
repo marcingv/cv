@@ -4,7 +4,7 @@ import {
   DetailsViewRowComponent,
   DetailsViewRowLabelDirective,
   DetailsViewRowValueDirective,
-} from '../../../../ui/components/details-view';
+} from '@gv-cv/angular-ui-details-view';
 import { ContactData } from '@gv-cv/shared-util-types';
 
 @Component({
