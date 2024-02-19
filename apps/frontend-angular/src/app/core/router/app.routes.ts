@@ -3,7 +3,7 @@ import { ErrorLayoutComponent } from '../../layouts/error-layout';
 import { OopsErrorPageComponent } from '../../pages/oops-error-page';
 import { CvLayoutComponent } from '../../layouts/cv-layout';
 import { HomePageComponent } from '../../pages/home-page';
-import { cvDataResolver } from '../../data-access/resolvers/cv-data.resolver';
+import { cvDataResolver } from '@gv-cv/angular-data-access-cv';
 
 export const routes: Routes = [
   {

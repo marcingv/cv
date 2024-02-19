@@ -9,11 +9,7 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { first, Observable } from 'rxjs';
 import { CvData } from '@gv-cv/shared-util-types';
 import { fromUi, UiStateFactory } from '@gv-cv/angular-data-access-ui';
-import {
-  CvDataActions,
-  CvDataStateFactory,
-  fromCvData,
-} from '@gv-cv/angular-data-access-cv';
+import { CvDataActions, CvDataStateFactory, fromCvData } from '../+state';
 
 describe('cvDataResolver', () => {
   const executeResolver: ResolveFn<CvData | undefined> = (
