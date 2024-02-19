@@ -12,8 +12,29 @@
   "errorOopsTitle": "Oops!",
   "errorUnknownMessage": "Wystapił błąd!",
   "timeSpan": {
-    "years": "lat",
-    "months": "miesięcy",
-    "days": "dni"
+    "pluralYears": {
+      "zero": "lat",
+      "one": "rok",
+      "two": "lata",
+      "few": "lata",
+      "many": "lat",
+      "other": "lat"
+    },
+    "pluralMonths": {
+      "zero": "miesięcy",
+      "one": "miesiąc",
+      "two": "miesiące",
+      "few": "miesiące",
+      "many": "miesięcy",
+      "other": "miesięcy"
+    },
+    "pluralDays": {
+      "zero": "dni",
+      "one": "dzień",
+      "two": "dni",
+      "few": "dni",
+      "many": "dni",
+      "other": "dni"
+    }
   }
 }

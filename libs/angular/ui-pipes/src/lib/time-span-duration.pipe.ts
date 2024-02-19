@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { tap } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslationKey } from '@gv-cv/angular-util-translations';
+import { NgLocaleLocalization } from '@angular/common';
 
 @Pipe({
   name: 'timeSpanDuration',
@@ -38,22 +39,33 @@ export class TimeSpanDurationPipe implements PipeTransform {
 
     let data: { diff: number; label: TranslationKey } = {
       diff: Math.floor(daysDiff),
-      label: 'timeSpan.days',
+      label: 'timeSpan.pluralDays',
     };
 
-    if (yearsDiff > 1) {
+    if (yearsDiff >= 1) {
       data = {
         diff: Math.floor(yearsDiff),
-        label: 'timeSpan.years',
+        label: 'timeSpan.pluralYears',
       };
-    } else if (monthsDiff > 1) {
+    } else if (monthsDiff >= 1) {
       data = {
         diff: Math.floor(monthsDiff),
-        label: 'timeSpan.months',
+        label: 'timeSpan.pluralMonths',
       };
     }
 
-    return `${data.diff} ${this.translateService.instant(data.label)}`;
+    return this.format(data);
+  }
+
+  private format(data: { diff: number; label: TranslationKey }): string {
+    const locale =
+      this.translateService.currentLang ?? this.translateService.defaultLang;
+    const localization = new NgLocaleLocalization(locale);
+
+    const pluralCategory = localization.getPluralCategory(data.diff);
+    const pluralTranslation = data.label + '.' + pluralCategory;
+
+    return `${data.diff} ${this.translateService.instant(pluralTranslation)}`;
   }
 
   private toDate(value: Date | string | number): Date {

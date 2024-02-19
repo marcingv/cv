@@ -12,8 +12,29 @@
   "errorOopsTitle": "Oops!",
   "errorUnknownMessage": "Error occurred!",
   "timeSpan": {
-    "years": "years",
-    "months": "months",
-    "days": "days"
+    "pluralYears": {
+      "zero": "years",
+      "one": "year",
+      "two": "years",
+      "few": "years",
+      "many": "years",
+      "other": "years"
+    },
+    "pluralMonths": {
+      "zero": "months",
+      "one": "month",
+      "two": "months",
+      "few": "months",
+      "many": "months",
+      "other": "months"
+    },
+    "pluralDays": {
+      "zero": "days",
+      "one": "day",
+      "two": "days",
+      "few": "days",
+      "many": "days",
+      "other": "days"
+    }
   }
 }
