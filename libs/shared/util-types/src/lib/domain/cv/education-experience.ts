@@ -1,4 +1,4 @@
-import { DateString } from './date-string';
+import { DateString } from '../../dtos';
 
 export interface EducationExperience {
   name: string;

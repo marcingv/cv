@@ -1,5 +1,5 @@
-import { CvData } from '../cv-data';
-import { PL_CV } from '../data/pl-cv';
+import { CvData } from '../domain';
+import { PL_CV } from '../data';
 
 export class CvDataFactory {
   public static createInstance(params?: Partial<CvData>): CvData {

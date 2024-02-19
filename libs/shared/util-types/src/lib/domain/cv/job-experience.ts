@@ -1,5 +1,5 @@
 import { Skill } from './skill';
-import { DateString } from './date-string';
+import { DateString } from '../../dtos';
 
 export interface JobExperience {
   from: DateString;

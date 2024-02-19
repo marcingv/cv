@@ -1,4 +1,4 @@
-import { CvData } from '../cv-data';
+import { CvData } from '../domain';
 
 export const EN_CV: CvData = {
   employee: {

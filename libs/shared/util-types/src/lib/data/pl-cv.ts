@@ -1,4 +1,4 @@
-import { CvData } from '../cv-data';
+import { CvData } from '../domain';
 
 export const PL_CV: CvData = {
   employee: {
