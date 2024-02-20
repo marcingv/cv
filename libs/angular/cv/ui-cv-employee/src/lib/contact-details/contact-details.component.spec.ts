@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ContactDetailsComponent } from './contact-details.component';
 import { ContactData } from '@gv-cv/shared-util-types';
-import { TranslationsTestingModule } from '@gv-cv/angular-feature-translations';
+import { TranslationsTestingModule } from '@gv-cv/angular-test-translations';
 
 describe('ContactDetailsComponent', () => {
   let component: ContactDetailsComponent;

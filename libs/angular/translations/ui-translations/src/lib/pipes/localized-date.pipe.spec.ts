@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { TranslateService } from '@ngx-translate/core';
 import { ChangeDetectorRef } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
-import { TranslationsTestingModule } from '../testing';
+import { TranslationsTestingModule } from '@gv-cv/angular-test-translations';
 
 describe('LocalizedDatePipe', (): void => {
   let pipe: LocalizedDatePipe;

@@ -43,6 +43,9 @@
       "@gv-cv/angular-feature-translations": [
         "libs/angular/translations/feature-translations/src/index.ts"
       ],
+      "@gv-cv/angular-test-translations": [
+        "libs/angular/translations/test-translations/src/index.ts"
+      ],
       "@gv-cv/angular-ui-cv-education": [
         "libs/angular/cv/ui-cv-education/src/index.ts"
       ],
@@ -70,6 +73,9 @@
       ],
       "@gv-cv/angular-ui-timespan": [
         "libs/angular/shared/ui-timespan/src/index.ts"
+      ],
+      "@gv-cv/angular-ui-translations": [
+        "libs/angular/translations/ui-translations/src/index.ts"
       ],
       "@gv-cv/angular-util-ssr-env": [
         "libs/angular/shared/util-ssr-env/src/index.ts"

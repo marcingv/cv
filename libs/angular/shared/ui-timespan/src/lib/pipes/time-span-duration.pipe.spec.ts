@@ -1,6 +1,6 @@
 import { TimeSpanDurationPipe } from './time-span-duration.pipe';
 import { TestBed } from '@angular/core/testing';
-import { TranslationsTestingModule } from '@gv-cv/angular-feature-translations';
+import { TranslationsTestingModule } from '@gv-cv/angular-test-translations';
 import { ChangeDetectorRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { EN_LANG_CODE, PL_LANG_CODE } from '@gv-cv/shared-util-types';

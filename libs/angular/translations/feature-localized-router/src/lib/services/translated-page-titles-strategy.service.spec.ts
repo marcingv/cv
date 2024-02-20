@@ -2,7 +2,7 @@ import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { TranslatedPageTitlesStrategyService } from './translated-page-titles-strategy.service';
 import { provideLocationMocks } from '@angular/common/testing';
 import { provideRouter, Router, TitleStrategy } from '@angular/router';
-import { TranslationsTestingModule } from '@gv-cv/angular-feature-translations';
+import { TranslationsTestingModule } from '@gv-cv/angular-test-translations';
 import { DOCUMENT } from '@angular/common';
 import {
   pickTranslationKey,
