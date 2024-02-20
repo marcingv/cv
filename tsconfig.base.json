@@ -44,6 +44,9 @@
         "libs/angular/ui-cv-hobbies/src/index.ts"
       ],
       "@gv-cv/angular-ui-cv-jobs": ["libs/angular/ui-cv-jobs/src/index.ts"],
+      "@gv-cv/angular-ui-cv-projects": [
+        "libs/angular/ui-cv-projects/src/index.ts"
+      ],
       "@gv-cv/angular-ui-cv-section": [
         "libs/angular/ui-cv-section/src/index.ts"
       ],
