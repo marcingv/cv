@@ -1,7 +1,7 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { provideAppInitializers } from './core/initializers';
+import { provideAppInitializers } from './initializers';
 import { provideNgxTranslations } from '@gv-cv/angular-feature-translations';
 import { provideAppState } from './+state';
 import { provideAppRouterConfiguration } from '@gv-cv/angular-feature-localized-router';
