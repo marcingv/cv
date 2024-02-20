@@ -34,6 +34,9 @@
       "@gv-cv/angular-feature-page-cv": [
         "libs/angular/feature-page-cv/src/index.ts"
       ],
+      "@gv-cv/angular-feature-page-error": [
+        "libs/angular/feature-page-error/src/index.ts"
+      ],
       "@gv-cv/angular-feature-pdf-export": [
         "libs/angular/feature-pdf-export/src/index.ts"
       ],
