@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { SkillsChipsListComponent } from '../../../skills/components/skills-chips-list';
 import {
   TimeSpanComponent,
   TimeSpanDurationPipe,
 } from '@gv-cv/angular-ui-timespan';
 import { NgClass } from '@angular/common';
 import { JobExperience } from '@gv-cv/shared-util-types';
+import { SkillsChipsListComponent } from '@gv-cv/angular-ui-cv-skills';
 
 @Component({
   selector: 'gv-cv-job-experience-list',

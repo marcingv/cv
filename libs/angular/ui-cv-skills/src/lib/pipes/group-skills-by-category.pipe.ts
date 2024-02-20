@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { GroupedSkillsKey } from '../models/grouped-skills-key';
+import { GroupedSkillsKey } from '../models';
 import { Skill } from '@gv-cv/shared-util-types';
 
 @Pipe({
