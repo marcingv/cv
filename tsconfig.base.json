@@ -31,6 +31,9 @@
       "@gv-cv/angular-feature-localized-router": [
         "libs/angular/feature-localized-router/src/index.ts"
       ],
+      "@gv-cv/angular-feature-page-cv": [
+        "libs/angular/feature-page-cv/src/index.ts"
+      ],
       "@gv-cv/angular-feature-pdf-export": [
         "libs/angular/feature-pdf-export/src/index.ts"
       ],
