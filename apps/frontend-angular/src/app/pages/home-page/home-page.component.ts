@@ -5,7 +5,7 @@ import { CvSectionComponent } from '@gv-cv/angular-ui-cv-section';
 import { EducationExperienceListComponent } from '@gv-cv/angular-ui-cv-education';
 import { JobExperienceListComponent } from '@gv-cv/angular-ui-cv-jobs';
 import { ProjectsExperienceListComponent } from '@gv-cv/angular-ui-cv-projects';
-import { LanguagesExperienceListComponent } from '../../features/languages/components/languages-experience-list';
+import { LanguagesExperienceListComponent } from '@gv-cv/angular-ui-cv-languages';
 import { HobbiesListComponent } from '@gv-cv/angular-ui-cv-hobbies';
 import { LangPickerComponent } from '@gv-cv/angular-feature-translations';
 import { CvData } from '@gv-cv/shared-util-types';
