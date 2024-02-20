@@ -7,9 +7,10 @@ import {
   ManualParserLoader,
 } from '@gilsdav/ngx-translate-router';
 import { AVAILABLE_LANGS } from '@gv-cv/shared-util-types';
-import { provideRouter, Route } from '@angular/router';
+import { provideRouter, Route, TitleStrategy } from '@angular/router';
 import { importProvidersFrom } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { TranslatedPageTitlesStrategyService } from './services/translated-page-titles-strategy.service';
 
 export function localizeLoaderFactory(
   translate: TranslateService,
@@ -37,4 +38,5 @@ export const provideAppRouterConfiguration = (routes: Route[]) => [
       useCachedLang: false,
     }),
   ),
+  { provide: TitleStrategy, useClass: TranslatedPageTitlesStrategyService },
 ];

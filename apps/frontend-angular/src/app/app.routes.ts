@@ -4,6 +4,7 @@ import { ErrorLayoutComponent } from '@gv-cv/angular-feature-layout-error';
 import { OopsErrorPageComponent } from './pages/oops-error-page';
 import { CvLayoutComponent } from '@gv-cv/angular-feature-layout-cv';
 import { HomePageComponent } from './pages/home-page';
+import { pickTranslationKey } from '@gv-cv/angular-util-translations';
 
 export const routes: Routes = [
   {
@@ -14,14 +15,14 @@ export const routes: Routes = [
         path: '',
         pathMatch: 'full',
         component: OopsErrorPageComponent,
-        title: 'Wystąpił błąd',
+        title: pickTranslationKey('pageTitles.error'),
       },
     ],
   },
   {
     path: '',
     component: CvLayoutComponent,
-    title: 'Marcin Gawski - Curriculum Vitae',
+    title: pickTranslationKey('pageTitles.cv'),
     children: [
       {
         path: '',

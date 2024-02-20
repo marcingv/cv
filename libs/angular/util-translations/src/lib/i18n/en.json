@@ -11,6 +11,11 @@
   "refresh": "Refresh",
   "errorOopsTitle": "Oops!",
   "errorUnknownMessage": "Error occurred!",
+  "pageTitles": {
+    "default": "Marcin Gawski - Curriculum Vitae",
+    "cv": "Marcin Gawski - Curriculum Vitae",
+    "error": "An error occurred"
+  },
   "timeSpan": {
     "pluralYears": {
       "zero": "years",

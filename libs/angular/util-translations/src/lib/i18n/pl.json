@@ -11,6 +11,11 @@
   "refresh": "Odśwież",
   "errorOopsTitle": "Oops!",
   "errorUnknownMessage": "Wystapił błąd!",
+  "pageTitles": {
+    "default": "Marcin Gawski - Curriculum Vitae",
+    "cv": "Marcin Gawski - Curriculum Vitae",
+    "error": "Wystąpił błąd"
+  },
   "timeSpan": {
     "pluralYears": {
       "zero": "lat",
