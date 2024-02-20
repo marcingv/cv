@@ -25,6 +25,9 @@
       "@gv-cv/angular-feature-layout-cv": [
         "libs/angular/feature-layout-cv/src/index.ts"
       ],
+      "@gv-cv/angular-feature-layout-error": [
+        "libs/angular/feature-layout-error/src/index.ts"
+      ],
       "@gv-cv/angular-feature-localized-router": [
         "libs/angular/feature-localized-router/src/index.ts"
       ],
