@@ -33,6 +33,18 @@
                   "framework:nestjs",
                   "framework:agnostic"
                 ]
+              },
+              {
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared"]
+              },
+              {
+                "sourceTag": "scope:frontend",
+                "onlyDependOnLibsWithTags": ["scope:frontend", "scope:shared"]
+              },
+              {
+                "sourceTag": "scope:server",
+                "onlyDependOnLibsWithTags": ["scope:server", "scope:shared"]
               }
             ]
           }
