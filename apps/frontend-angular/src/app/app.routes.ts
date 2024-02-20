@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { cvDataResolver } from '@gv-cv/angular-data-access-cv';
 import { ErrorLayoutComponent } from './layouts/error-layout';
 import { OopsErrorPageComponent } from './pages/oops-error-page';
-import { CvLayoutComponent } from './layouts/cv-layout';
+import { CvLayoutComponent } from '@gv-cv/angular-feature-layout-cv';
 import { HomePageComponent } from './pages/home-page';
 
 export const routes: Routes = [
