@@ -40,6 +40,9 @@
       "@gv-cv/angular-ui-cv-education": [
         "libs/angular/ui-cv-education/src/index.ts"
       ],
+      "@gv-cv/angular-ui-cv-employee": [
+        "libs/angular/ui-cv-employee/src/index.ts"
+      ],
       "@gv-cv/angular-ui-cv-hobbies": [
         "libs/angular/ui-cv-hobbies/src/index.ts"
       ],
