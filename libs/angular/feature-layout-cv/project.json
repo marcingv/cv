@@ -1,0 +1,9 @@
+{
+  "name": "angular-feature-layout-cv",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/angular/feature-layout-cv/src",
+  "prefix": "gv-cv",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}
