@@ -1,6 +1,6 @@
 import { Component, inject, Signal } from '@angular/core';
 import { HomePageService } from './home-page.service';
-import { ProfileAboutComponent } from '../../features/employee/components/profile-about';
+import { ProfileAboutComponent } from '@gv-cv/angular-ui-cv-employee';
 import { CvSectionComponent } from '@gv-cv/angular-ui-cv-section';
 import { EducationExperienceListComponent } from '@gv-cv/angular-ui-cv-education';
 import { JobExperienceListComponent } from '@gv-cv/angular-ui-cv-jobs';
