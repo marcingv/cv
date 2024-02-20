@@ -20,5 +20,5 @@
       }
     }
   },
-  "tags": []
+  "tags": ["type:app", "scope:server", "framework:nestjs"]
 }

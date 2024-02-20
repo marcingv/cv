@@ -4,7 +4,7 @@
   "projectType": "application",
   "prefix": "gv-cv",
   "sourceRoot": "apps/frontend-angular/src",
-  "tags": [],
+  "tags": ["type:app", "scope:frontend", "framework:angular"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
