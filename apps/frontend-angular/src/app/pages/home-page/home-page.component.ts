@@ -6,7 +6,7 @@ import { EducationExperienceListComponent } from '@gv-cv/angular-ui-cv-education
 import { JobExperienceListComponent } from '../../features/jobs/components/job-experience-list';
 import { ProjectsExperienceListComponent } from '../../features/projects/components/projects-experience-list';
 import { LanguagesExperienceListComponent } from '../../features/languages/components/languages-experience-list';
-import { HobbiesListComponent } from '../../features/hobbies/components/hobbies-list';
+import { HobbiesListComponent } from '@gv-cv/angular-ui-cv-hobbies';
 import { AdditionalSkillsListComponent } from '../../features/skills/components/additional-skills-list';
 import { GroupedSkillsListComponent } from '../../features/skills/components/grouped-skills-list';
 import { LangPickerComponent } from '@gv-cv/angular-feature-translations';
