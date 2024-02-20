@@ -15,6 +15,24 @@
               {
                 "sourceTag": "*",
                 "onlyDependOnLibsWithTags": ["*"]
+              },
+              {
+                "sourceTag": "framework:agnostic",
+                "onlyDependOnLibsWithTags": ["framework:agnostic"]
+              },
+              {
+                "sourceTag": "framework:angular",
+                "onlyDependOnLibsWithTags": [
+                  "framework:angular",
+                  "framework:agnostic"
+                ]
+              },
+              {
+                "sourceTag": "framework:nestjs",
+                "onlyDependOnLibsWithTags": [
+                  "framework:nestjs",
+                  "framework:agnostic"
+                ]
               }
             ]
           }

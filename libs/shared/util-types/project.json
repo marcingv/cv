@@ -4,5 +4,5 @@
   "sourceRoot": "libs/shared/util-types/src",
   "projectType": "library",
   "targets": {},
-  "tags": ["type:util", "scope:shared"]
+  "tags": ["type:util", "scope:shared", "framework:agnostic"]
 }
