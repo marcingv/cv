@@ -2,7 +2,7 @@ import { Component, inject, Signal } from '@angular/core';
 import { HomePageService } from './home-page.service';
 import { ProfileAboutComponent } from '../../features/employee/components/profile-about';
 import { CvSectionComponent } from '@gv-cv/angular-ui-cv-section';
-import { EducationExperienceListComponent } from '../../features/education/components/education-experience-list';
+import { EducationExperienceListComponent } from '@gv-cv/angular-ui-cv-education';
 import { JobExperienceListComponent } from '../../features/jobs/components/job-experience-list';
 import { ProjectsExperienceListComponent } from '../../features/projects/components/projects-experience-list';
 import { LanguagesExperienceListComponent } from '../../features/languages/components/languages-experience-list';
