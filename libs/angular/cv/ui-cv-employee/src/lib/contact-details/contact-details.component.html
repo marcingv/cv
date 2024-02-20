@@ -1,5 +1,5 @@
 <gv-cv-details-view>
-  <gv-cv-details-view-row label="Miejsce zamieszkania">
+  <gv-cv-details-view-row [label]="PLACE_OF_RESIDENCE_LABEL | translate">
     <ng-template gvCvDetailsViewRowValue>
       {{ data.city }}, {{ data.country }}
     </ng-template>
@@ -7,13 +7,13 @@
 
   @if (data.phone) {
     <gv-cv-details-view-row
-      label="Telefon"
+      [label]="PHONE_NUMBER_LABEL | translate"
       [value]="data.phone"
     ></gv-cv-details-view-row>
   }
   @if (data.email) {
     <gv-cv-details-view-row
-      label="E-mail"
+      [label]="EMAIL_LABEL | translate"
       [value]="data.email"
     ></gv-cv-details-view-row>
   }

@@ -11,6 +11,16 @@
   "refresh": "Odśwież",
   "errorOopsTitle": "Oops!",
   "errorUnknownMessage": "Wystapił błąd!",
+  "projectExperienceLabels": {
+    "responsibilities": "Zakres obowiązków",
+    "toolsAndTech": "Narzędzia i technologie",
+    "role": "Rola"
+  },
+  "contactLabels": {
+    "placeOfResidence": "Miejsce zamieszkania",
+    "phoneNumber": "Telefon",
+    "email": "E-mail"
+  },
   "pageTitles": {
     "default": "Marcin Gawski - Curriculum Vitae",
     "cv": "Marcin Gawski - Curriculum Vitae",

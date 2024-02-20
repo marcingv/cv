@@ -18,7 +18,9 @@
           </div>
         </div>
 
-        <h4 class="font-normal">Rola: {{ item.role }}</h4>
+        <h4 class="font-normal">
+          {{ ROLE_LABEL | translate }}: {{ item.role }}
+        </h4>
       </header>
 
       <p class="text-sm">
@@ -26,7 +28,9 @@
       </p>
 
       <div class="text-sm">
-        <h4 class="font-normal mb-2">Zakres obowiązków:</h4>
+        <h4 class="font-normal mb-2">
+          {{ RESPONSIBILITIES_LABEL | translate }}:
+        </h4>
 
         <ul>
           @for (resposibility of item.responsibilities; track resposibility) {
@@ -37,7 +41,9 @@
 
       @if (item.usedSkills) {
         <div class="mt-auto">
-          <!--          <h4 class="font-normal mb-4">Narzędzia i technologie:</h4>-->
+          <!--          <h4 class="font-normal mb-4">-->
+          <!--            {{ TOOLS_AND_TECH_LABEL | translate }}:-->
+          <!--          </h4>-->
 
           <gv-cv-skills-chips-list
             [data]="item.usedSkills"

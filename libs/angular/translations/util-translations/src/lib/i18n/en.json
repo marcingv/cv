@@ -11,6 +11,16 @@
   "refresh": "Refresh",
   "errorOopsTitle": "Oops!",
   "errorUnknownMessage": "Error occurred!",
+  "projectExperienceLabels": {
+    "responsibilities": "Duties and responsibilities",
+    "toolsAndTech": "Tools and technologies",
+    "role": "Role"
+  },
+  "contactLabels": {
+    "placeOfResidence": "Place of residence",
+    "phoneNumber": "Phone",
+    "email": "E-mail"
+  },
   "pageTitles": {
     "default": "Marcin Gawski - Curriculum Vitae",
     "cv": "Marcin Gawski - Curriculum Vitae",
