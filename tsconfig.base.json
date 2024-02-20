@@ -17,59 +17,65 @@
     "resolveJsonModule": true,
     "paths": {
       "@gv-cv/angular-data-access-cv": [
-        "libs/angular/data-access-cv/src/index.ts"
+        "libs/angular/cv/data-access-cv/src/index.ts"
       ],
       "@gv-cv/angular-data-access-ui": [
-        "libs/angular/data-access-ui/src/index.ts"
+        "libs/angular/shared/data-access-ui/src/index.ts"
       ],
       "@gv-cv/angular-feature-layout-cv": [
-        "libs/angular/feature-layout-cv/src/index.ts"
+        "libs/angular/cv/feature-layout-cv/src/index.ts"
       ],
       "@gv-cv/angular-feature-layout-error": [
-        "libs/angular/feature-layout-error/src/index.ts"
+        "libs/angular/errors/feature-layout-error/src/index.ts"
       ],
       "@gv-cv/angular-feature-localized-router": [
-        "libs/angular/feature-localized-router/src/index.ts"
+        "libs/angular/translations/feature-localized-router/src/index.ts"
       ],
       "@gv-cv/angular-feature-page-cv": [
-        "libs/angular/feature-page-cv/src/index.ts"
+        "libs/angular/cv/feature-page-cv/src/index.ts"
       ],
       "@gv-cv/angular-feature-page-error": [
-        "libs/angular/feature-page-error/src/index.ts"
+        "libs/angular/errors/feature-page-error/src/index.ts"
       ],
       "@gv-cv/angular-feature-pdf-export": [
-        "libs/angular/feature-pdf-export/src/index.ts"
+        "libs/angular/export/feature-pdf-export/src/index.ts"
       ],
       "@gv-cv/angular-feature-translations": [
-        "libs/angular/feature-translations/src/index.ts"
+        "libs/angular/translations/feature-translations/src/index.ts"
       ],
       "@gv-cv/angular-ui-cv-education": [
-        "libs/angular/ui-cv-education/src/index.ts"
+        "libs/angular/cv/ui-cv-education/src/index.ts"
       ],
       "@gv-cv/angular-ui-cv-employee": [
-        "libs/angular/ui-cv-employee/src/index.ts"
+        "libs/angular/cv/ui-cv-employee/src/index.ts"
       ],
       "@gv-cv/angular-ui-cv-hobbies": [
-        "libs/angular/ui-cv-hobbies/src/index.ts"
+        "libs/angular/cv/ui-cv-hobbies/src/index.ts"
       ],
-      "@gv-cv/angular-ui-cv-jobs": ["libs/angular/ui-cv-jobs/src/index.ts"],
+      "@gv-cv/angular-ui-cv-jobs": ["libs/angular/cv/ui-cv-jobs/src/index.ts"],
       "@gv-cv/angular-ui-cv-languages": [
-        "libs/angular/ui-cv-languages/src/index.ts"
+        "libs/angular/cv/ui-cv-languages/src/index.ts"
       ],
       "@gv-cv/angular-ui-cv-projects": [
-        "libs/angular/ui-cv-projects/src/index.ts"
+        "libs/angular/cv/ui-cv-projects/src/index.ts"
       ],
       "@gv-cv/angular-ui-cv-section": [
-        "libs/angular/ui-cv-section/src/index.ts"
+        "libs/angular/cv/ui-cv-section/src/index.ts"
       ],
-      "@gv-cv/angular-ui-cv-skills": ["libs/angular/ui-cv-skills/src/index.ts"],
+      "@gv-cv/angular-ui-cv-skills": [
+        "libs/angular/cv/ui-cv-skills/src/index.ts"
+      ],
       "@gv-cv/angular-ui-details-view": [
-        "libs/angular/ui-details-view/src/index.ts"
+        "libs/angular/shared/ui-details-view/src/index.ts"
       ],
-      "@gv-cv/angular-ui-timespan": ["libs/angular/ui-timespan/src/index.ts"],
-      "@gv-cv/angular-util-ssr-env": ["libs/angular/util-ssr-env/src/index.ts"],
+      "@gv-cv/angular-ui-timespan": [
+        "libs/angular/shared/ui-timespan/src/index.ts"
+      ],
+      "@gv-cv/angular-util-ssr-env": [
+        "libs/angular/shared/util-ssr-env/src/index.ts"
+      ],
       "@gv-cv/angular-util-translations": [
-        "libs/angular/util-translations/src/index.ts"
+        "libs/angular/translations/util-translations/src/index.ts"
       ],
       "@gv-cv/nestjs-data-access": ["libs/nestjs/data-access/src/index.ts"],
       "@gv-cv/nestjs-feature-cv": ["libs/nestjs/feature-cv/src/index.ts"],

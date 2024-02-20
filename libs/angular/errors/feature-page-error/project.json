@@ -1,0 +1,9 @@
+{
+  "name": "angular-feature-page-error",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/angular/errors/feature-page-error/src",
+  "prefix": "gv-cv",
+  "tags": ["type:feature", "scope:frontend", "framework:angular"],
+  "projectType": "library",
+  "targets": {}
+}

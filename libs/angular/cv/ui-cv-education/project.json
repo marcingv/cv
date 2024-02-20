@@ -1,0 +1,9 @@
+{
+  "name": "angular-ui-cv-education",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/angular/cv/ui-cv-education/src",
+  "prefix": "gv-cv",
+  "tags": ["type:ui", "scope:frontend", "framework:angular"],
+  "projectType": "library",
+  "targets": {}
+}

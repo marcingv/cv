@@ -1,0 +1,9 @@
+{
+  "name": "angular-util-ssr-env",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/angular/shared/util-ssr-env/src",
+  "prefix": "gv-cv",
+  "tags": ["type:util", "scope:frontend", "framework:angular"],
+  "projectType": "library",
+  "targets": {}
+}

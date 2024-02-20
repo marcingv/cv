@@ -1,0 +1,9 @@
+{
+  "name": "angular-util-translations",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/angular/translations/util-translations/src",
+  "prefix": "gv-cv",
+  "tags": ["type:util", "scope:frontend", "framework:angular"],
+  "projectType": "library",
+  "targets": {}
+}
