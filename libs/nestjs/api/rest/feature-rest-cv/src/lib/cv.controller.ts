@@ -1,7 +1,8 @@
 import { Controller, Get, NotFoundException, Param } from '@nestjs/common';
-import { CvDataDto, CvDataRepository } from '@gv-cv/nestjs-data-access-cv';
+import { CvDataRepository } from '@gv-cv/nestjs-data-access-cv';
 import { ApiOkResponse, ApiParam, ApiTags } from '@nestjs/swagger';
 import { LangCode, PL_LANG_CODE } from '@gv-cv/shared-util-types';
+import { CvDataDto } from '@gv-cv/nestjs-data-access-rest-cv';
 
 @Controller('cv')
 @ApiTags('Cv Data')

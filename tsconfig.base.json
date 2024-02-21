@@ -86,6 +86,12 @@
       "@gv-cv/nestjs-data-access-cv": [
         "libs/nestjs/data-access-cv/src/index.ts"
       ],
+      "@gv-cv/nestjs-data-access-rest-cv": [
+        "libs/nestjs/api/rest/data-access-rest-cv/src/index.ts"
+      ],
+      "@gv-cv/nestjs-data-access-rest-export": [
+        "libs/nestjs/api/rest/data-access-rest-export/src/index.ts"
+      ],
       "@gv-cv/nestjs-feature-export": [
         "libs/nestjs/feature-export/src/index.ts"
       ],

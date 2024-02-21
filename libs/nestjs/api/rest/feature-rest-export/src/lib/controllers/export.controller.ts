@@ -9,7 +9,7 @@ import { Response } from 'express';
 import { PdfExportService } from '@gv-cv/nestjs-feature-export';
 import { PdfExportUrlSanitizer } from '../utils/pdf-export-url-sanitizer';
 import { ApiBadRequestResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
-import { PdfExportRequestDto } from '@gv-cv/nestjs-data-access-cv';
+import { PdfExportRequestDto } from '@gv-cv/nestjs-data-access-rest-export';
 
 @Controller('export')
 @ApiTags('Export')
