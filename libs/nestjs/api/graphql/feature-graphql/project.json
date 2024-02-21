@@ -1,0 +1,8 @@
+{
+  "name": "nestjs-feature-graphql",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/nestjs/api/graphql/feature-graphql/src",
+  "projectType": "library",
+  "targets": {},
+  "tags": ["type:feature", "scope:server", "framework:nestjs"]
+}

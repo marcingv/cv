@@ -86,15 +86,26 @@
       "@gv-cv/nestjs-data-access-cv": [
         "libs/nestjs/data-access-cv/src/index.ts"
       ],
-      "@gv-cv/nestjs-feature-cv": ["libs/nestjs/feature-cv/src/index.ts"],
       "@gv-cv/nestjs-feature-export": [
         "libs/nestjs/feature-export/src/index.ts"
       ],
       "@gv-cv/nestjs-feature-graphql": [
-        "libs/nestjs/feature-graphql/src/index.ts"
+        "libs/nestjs/api/graphql/feature-graphql/src/index.ts"
       ],
-      "@gv-cv/nestjs-feature-healthcheck": [
-        "libs/nestjs/feature-healthcheck/src/index.ts"
+      "@gv-cv/nestjs-feature-rest-api": [
+        "libs/nestjs/api/rest/feature-rest-api/src/index.ts"
+      ],
+      "@gv-cv/nestjs-feature-rest-cv": [
+        "libs/nestjs/api/rest/feature-rest-cv/src/index.ts"
+      ],
+      "@gv-cv/nestjs-feature-rest-export": [
+        "libs/nestjs/api/rest/feature-rest-export/src/index.ts"
+      ],
+      "@gv-cv/nestjs-feature-rest-healthcheck": [
+        "libs/nestjs/api/rest/feature-rest-healthcheck/src/index.ts"
+      ],
+      "@gv-cv/nestjs-feature-rest-hello": [
+        "libs/nestjs/api/rest/feature-rest-hello/src/index.ts"
       ],
       "@gv-cv/shared-util-types": ["libs/shared/util-types/src/index.ts"]
     }

@@ -1,0 +1,8 @@
+{
+  "name": "nestjs-feature-rest-api",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/nestjs/api/rest/feature-rest-api/src",
+  "projectType": "library",
+  "targets": {},
+  "tags": ["type:feature", "scope:server", "framework:nestjs"]
+}
