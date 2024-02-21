@@ -1,22 +1,28 @@
-import {
-  CvData,
-  EducationExperience,
-  EmployeeData,
-  JobExperience,
-  LangCode,
-  LanguageExperience,
-  ProjectExperience,
-} from '@gv-cv/shared-util-types';
-import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { CvData, LangCode } from '@gv-cv/shared-util-types';
+import { Field, ObjectType } from '@nestjs/graphql';
+import { EducationExperienceDto } from './education-experience.dto';
+import { JobExperienceDto } from './job-experience.dto';
+import { ProjectExperienceDto } from './project-experience.dto';
+import { LanguageExperienceDto } from './language-experience.dto';
+import { EmployeeDataDto } from './employee-data.dto';
 
 @ObjectType()
 export class CvDataDto implements CvData {
-  @Field((type) => String)
+  @Field(() => String)
   lang!: LangCode;
 
-  employee!: EmployeeData;
-  education!: EducationExperience[];
-  jobs!: JobExperience[];
-  projects!: ProjectExperience[];
-  languages!: LanguageExperience[];
+  @Field(() => EmployeeDataDto)
+  employee!: EmployeeDataDto;
+
+  @Field(() => [EducationExperienceDto])
+  education!: EducationExperienceDto[];
+
+  @Field(() => [JobExperienceDto])
+  jobs!: JobExperienceDto[];
+
+  @Field(() => [ProjectExperienceDto])
+  projects!: ProjectExperienceDto[];
+
+  @Field(() => [LanguageExperienceDto])
+  languages!: LanguageExperienceDto[];
 }
