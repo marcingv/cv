@@ -1,6 +1,6 @@
 import { Query, Resolver } from '@nestjs/graphql';
 import { CvDataDto } from '../dtos';
-import { CvDataRepository } from '@gv-cv/nestjs-data-access';
+import { CvDataRepository } from '@gv-cv/nestjs-data-access-cv';
 
 @Resolver((of: CvDataDto) => CvDataDto)
 export class CvDataResolver {

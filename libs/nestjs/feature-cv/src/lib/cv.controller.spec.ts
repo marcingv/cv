@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CvController } from './cv.controller';
 import { CvData } from '@gv-cv/shared-util-types';
-import { CvDataRepository } from '@gv-cv/nestjs-data-access';
+import { CvDataRepository } from '@gv-cv/nestjs-data-access-cv';
 import { NotFoundException } from '@nestjs/common';
 
 describe('CvController', () => {

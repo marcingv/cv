@@ -1,7 +1,7 @@
 {
-  "name": "nestjs-data-access",
+  "name": "nestjs-data-access-cv",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/nestjs/data-access/src",
+  "sourceRoot": "libs/nestjs/data-access-cv/src",
   "projectType": "library",
   "targets": {},
   "tags": ["type:data-access", "scope:server", "framework:nestjs"]

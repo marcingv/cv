@@ -83,7 +83,9 @@
       "@gv-cv/angular-util-translations": [
         "libs/angular/translations/util-translations/src/index.ts"
       ],
-      "@gv-cv/nestjs-data-access": ["libs/nestjs/data-access/src/index.ts"],
+      "@gv-cv/nestjs-data-access-cv": [
+        "libs/nestjs/data-access-cv/src/index.ts"
+      ],
       "@gv-cv/nestjs-feature-cv": ["libs/nestjs/feature-cv/src/index.ts"],
       "@gv-cv/nestjs-feature-export": [
         "libs/nestjs/feature-export/src/index.ts"

@@ -1,5 +1,5 @@
 import { PL_CV } from '@gv-cv/shared-util-types';
-import { CvDataDto } from '@gv-cv/nestjs-data-access';
+import { CvDataDto } from '@gv-cv/nestjs-data-access-cv';
 
 describe('Error Page', () => {
   it('should display error when cv data fetch failed', () => {

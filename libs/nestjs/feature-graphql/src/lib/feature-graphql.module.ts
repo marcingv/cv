@@ -3,7 +3,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import * as path from 'path';
 import { CvDataResolver } from './resolvers/cv-data.resolver';
-import { DataAccessModule } from '@gv-cv/nestjs-data-access';
+import { DataAccessModule } from '@gv-cv/nestjs-data-access-cv';
 
 @Module({
   imports: [

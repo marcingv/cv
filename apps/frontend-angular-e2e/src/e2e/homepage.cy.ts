@@ -1,4 +1,4 @@
-import { CvDataDto } from '@gv-cv/nestjs-data-access';
+import { CvDataDto } from '@gv-cv/nestjs-data-access-cv';
 import { EN_CV, PL_CV } from '@gv-cv/shared-util-types';
 
 describe('HomePage', () => {
