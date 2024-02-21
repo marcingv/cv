@@ -4,6 +4,7 @@
       <button
         (click)="changeLang(lang)"
         [disabled]="lang === currentLang()"
+        [attr.data-cy]="'btn-lang-' + lang"
         class="p-2 rounded text-xs {{
           lang === currentLang()
             ? 'bg-gray-700 text-gray-300'

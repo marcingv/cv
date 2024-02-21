@@ -1,7 +1,7 @@
 import { provideStore } from '@ngrx/store';
 import { metaReducers, reducers } from './index';
 import { provideEffects } from '@ngrx/effects';
-import { UI_EFFECTS } from '@gv-cv/angular-data-access-ui';
+import { UI_EFFECTS, UiActions } from '@gv-cv/angular-data-access-ui';
 import { CV_EFFECTS } from '@gv-cv/angular-data-access-cv';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { isDevMode } from '@angular/core';
@@ -27,6 +27,8 @@ export function provideAppState() {
         ROUTER_NAVIGATION,
         ROUTER_NAVIGATED,
         ROUTER_REQUEST,
+        UiActions.navigationStarted.type,
+        UiActions.navigationFinished.type,
       ],
     }),
     provideRouterStore(),

@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { CvData } from '@gv-cv/shared-util-types';
 import { CvDataApiService } from '../../api';
 import { UiActions, uiFeature } from '@gv-cv/angular-data-access-ui';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable()
 export class CvDataEffects {
@@ -46,7 +47,7 @@ export class CvDataEffects {
       ofType(CvDataActions.loadFailure),
       map((action) =>
         UiActions.goToErrorPage({
-          errorMessage: action.error.message,
+          errorMessage: this.extractServerErrorMessage(action.error),
         }),
       ),
     ),
@@ -57,4 +58,19 @@ export class CvDataEffects {
     private api: CvDataApiService,
     private store: Store,
   ) {}
+
+  private extractServerErrorMessage(e: Error) {
+    if (e instanceof HttpErrorResponse) {
+      if (
+        e.error &&
+        'message' in e.error &&
+        e.error.message &&
+        typeof e.error.message === 'string'
+      ) {
+        return e.error.message;
+      }
+    }
+
+    return e.message;
+  }
 }
