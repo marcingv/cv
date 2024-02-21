@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
 import { CvController } from './cv.controller';
-import { CvDataService } from './cv-data.service';
+import { DataAccessModule } from '@gv-cv/nestjs-data-access';
 
 @Module({
+  imports: [DataAccessModule],
   controllers: [CvController],
-  providers: [CvDataService],
+  providers: [],
   exports: [],
 })
 export class FeatureCvModule {}

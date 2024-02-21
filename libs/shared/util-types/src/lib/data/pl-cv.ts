@@ -1,6 +1,7 @@
-import { CvData } from '../domain';
+import { CvData, PL_LANG_CODE } from '../domain';
 
 export const PL_CV: CvData = {
+  lang: PL_LANG_CODE,
   employee: {
     firstName: 'Marcin',
     lastName: 'Gawski',

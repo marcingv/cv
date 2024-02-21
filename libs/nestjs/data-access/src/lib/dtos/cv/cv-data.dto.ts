@@ -8,6 +8,9 @@ import { LanguageExperienceDto } from './language-experience.dto';
 
 export class CvDataDto implements CvData {
   @ApiProperty()
+  lang!: string;
+
+  @ApiProperty()
   employee!: EmployeeDataDto;
 
   @ApiProperty({ type: [EducationExperienceDto] })

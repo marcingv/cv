@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
+import { CvDataRepository } from './services';
 
 @Module({
   controllers: [],
-  providers: [],
-  exports: [],
+  providers: [CvDataRepository],
+  exports: [CvDataRepository],
 })
 export class DataAccessModule {}
