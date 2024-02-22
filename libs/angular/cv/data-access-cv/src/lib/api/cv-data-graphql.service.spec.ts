@@ -1,5 +1,6 @@
-import { TestBed } from '@angular/core/testing';
-import { CvDataApiService } from './cv-data-api.service';
+import { fakeAsync, TestBed } from '@angular/core/testing';
+
+import { CvDataGraphqlService } from './cv-data-graphql.service';
 import {
   HttpTestingController,
   provideHttpClientTesting,
@@ -13,30 +14,30 @@ import {
   PL_LANG_CODE,
 } from '@gv-cv/shared-util-types';
 
-describe('CvDataApiService', (): void => {
-  let service: CvDataApiService;
+describe('CvDataGraphqlService', () => {
+  let service: CvDataGraphqlService;
   let httpTestingController: HttpTestingController;
 
-  beforeEach((): void => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [provideHttpClient(), provideHttpClientTesting()],
     });
 
     httpTestingController = TestBed.inject(HttpTestingController);
-    service = TestBed.inject(CvDataApiService);
+    service = TestBed.inject(CvDataGraphqlService);
   });
 
   afterEach((): void => {
     httpTestingController.verify();
   });
 
-  it('should be created', (): void => {
+  it('should be created', () => {
     expect(service).toBeTruthy();
   });
 
   it('should fetch cv in desired language', (): void => {
     const requestLanguage: LangCode = PL_LANG_CODE;
-    const expectedRequestUrl = `/api/cv/${requestLanguage}`;
+    const expectedRequestUrl = `/graphql`;
     const expectedResponseData: CvData = CvDataFactory.createInstance();
     let resultData;
 
@@ -46,9 +47,13 @@ describe('CvDataApiService', (): void => {
 
     const request: TestRequest =
       httpTestingController.expectOne(expectedRequestUrl);
-    expect(request.request.method).toEqual('GET');
+    expect(request.request.method).toEqual('POST');
 
-    request.flush(expectedResponseData);
+    request.flush({
+      data: {
+        getCvByLang: expectedResponseData,
+      },
+    });
     httpTestingController.verify();
 
     expect(resultData).toEqual(expectedResponseData);
