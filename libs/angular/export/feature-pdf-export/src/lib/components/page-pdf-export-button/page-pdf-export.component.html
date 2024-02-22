@@ -1,3 +1,41 @@
-<button class="export-btn" [disabled]="pending" (click)="export()">
-  Eksportuj
-</button>
+<div
+  class="inline-block group animate-bounce hover:[animation-play-state:paused] transition-all ease-in-out"
+>
+  <span
+    class="{{
+      'group-disabled:opacity-0 group-hover:opacity-0 ' +
+        'bg-orange-800 dark:bg-orange-400 ' +
+        'transition-all ease-in-out animate-ping ' +
+        'absolute block ' +
+        'size-[75%] top-[12.5%] left-[12.5%] rounded'
+    }}"
+  ></span>
+
+  <button
+    class="{{
+      'inline-flex flex-col items-center relative p-2 rounded ' +
+        'text-white bg-orange-500 hover:bg-orange-400 active:bg-orange-600 ' +
+        'disabled:opacity-25 ' +
+        'shadow-md shadow-black/25 hover:shadow-lg hover:shadow-black/25 '
+    }}"
+    [disabled]="pending"
+    (click)="export()"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-4 h-4"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+      />
+    </svg>
+
+    <span class="font-mono text-[0.5rem]">[ PDF ]</span>
+  </button>
+</div>

@@ -1,18 +1,27 @@
-<ul class="flex flex-row gap-3">
+<ul
+  class="{{
+    'group flex flex-col rounded-tr rounded-br hover:ring transition-all shadow-md shadow-black/25 ' +
+      'ring-gray-300 dark:ring-gray-300/25 '
+  }}"
+>
   @for (lang of availableLangs(); track lang) {
-    <li>
-      <button
-        (click)="changeLang(lang)"
-        [disabled]="lang === currentLang()"
-        [attr.data-cy]="'btn-lang-' + lang"
-        class="p-2 rounded text-xs {{
+    <li
+      class="first-of-type:rounded-tr last-of-type:rounded-br text-white font-mono uppercase text-xs"
+      [ngClass]="{
+        'bg-gray-400 hover:bg-gray-500 active:bg-gray-600':
+          lang !== currentLang(),
+        'bg-gray-700 hover:bg-gray-800 active:bg-gray-900':
           lang === currentLang()
-            ? 'bg-gray-700 text-gray-300'
-            : 'bg-gray-400 text-gray-700'
-        }}"
+      }"
+    >
+      <a
+        href="/{{ lang }}"
+        [attr.data-cy]="'btn-lang-' + lang"
+        class="block px-2 py-2 group-hover:px-4 transition-all ease-in-out"
+        (click)="$event.preventDefault(); changeLang(lang)"
       >
         {{ lang }}
-      </button>
+      </a>
     </li>
   }
 </ul>

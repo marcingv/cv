@@ -1,12 +1,13 @@
 @if (cvData(); as cvData) {
-  <div class="container mx-auto py-4 print:hidden">
-    <gv-cv-lang-picker></gv-cv-lang-picker>
+  <gv-cv-page-pdf-export
+    class="fixed right-4 bottom-4 lg:right-8 lg:bottom-8 print:hidden"
+    [fileName]="
+      'CV - ' + cvData.employee.firstName + ' ' + cvData.employee.lastName
+    "
+  ></gv-cv-page-pdf-export>
 
-    <gv-cv-page-pdf-export
-      [fileName]="
-        'CV - ' + cvData.employee.firstName + ' ' + cvData.employee.lastName
-      "
-    ></gv-cv-page-pdf-export>
+  <div class="fixed top-12 left-0 print:hidden">
+    <gv-cv-lang-picker></gv-cv-lang-picker>
   </div>
 
   <gv-cv-profile-about [profile]="cvData.employee"></gv-cv-profile-about>
