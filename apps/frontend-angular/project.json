@@ -53,6 +53,10 @@
           "optimization": false,
           "extractLicenses": false,
           "sourceMap": true
+        },
+        "e2e": {
+          "ssr": false,
+          "prerender": false
         }
       },
       "defaultConfiguration": "production"
@@ -63,7 +67,7 @@
         "host": "0.0.0.0",
         "port": 4200,
         "disableHostCheck": true,
-        "proxyConfig": "apps/frontend-angular/proxy.conf.json"
+        "proxyConfig": "apps/frontend-angular/proxy.conf.mjs"
       },
       "configurations": {
         "production": {
@@ -71,6 +75,10 @@
         },
         "development": {
           "buildTarget": "frontend-angular:build:development"
+        },
+        "e2e": {
+          "buildTarget": "frontend-angular:build:e2e",
+          "port": 5200
         }
       },
       "defaultConfiguration": "development"

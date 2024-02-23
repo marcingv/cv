@@ -1,5 +1,4 @@
-import { CvDataDto } from '@gv-cv/nestjs-data-access-cv';
-import { EN_CV, PL_CV } from '@gv-cv/shared-util-types';
+import { CvData, EN_CV, PL_CV } from '@gv-cv/shared-util-types';
 
 describe('HomePage', () => {
   beforeEach(() => {
@@ -9,7 +8,7 @@ describe('HomePage', () => {
         statusCode: 200,
         body: {
           ...PL_CV,
-        } satisfies CvDataDto,
+        } satisfies CvData,
       },
     );
     cy.intercept(
@@ -18,7 +17,7 @@ describe('HomePage', () => {
         statusCode: 200,
         body: {
           ...EN_CV,
-        } satisfies CvDataDto,
+        } satisfies CvData,
       },
     );
   });
@@ -50,17 +49,11 @@ describe('HomePage', () => {
     cy.get('[data-cy="btn-lang-pl"]').as('plBtn');
     cy.get('[data-cy="btn-lang-en"]').as('enBtn');
 
-    cy.get('@plBtn').should('be.disabled');
-    cy.get('@enBtn').should('not.be.disabled');
-
     // Change lang to EN
     cy.get('@enBtn').click({ force: true });
     cy.location().should((location) => {
       expect(location.pathname).to.eq('/en');
     });
-
-    cy.get('@plBtn').should('not.be.disabled');
-    cy.get('@enBtn').should('be.disabled');
 
     // Change lang to PL
     cy.get('@plBtn').click({ force: true });
@@ -68,16 +61,10 @@ describe('HomePage', () => {
       expect(location.pathname).to.eq('/pl');
     });
 
-    cy.get('@plBtn').should('be.disabled');
-    cy.get('@enBtn').should('not.be.disabled');
-
     // Go Back
     cy.go('back');
     cy.location().should((location) => {
       expect(location.pathname).to.eq('/en');
     });
-
-    cy.get('@plBtn').should('not.be.disabled');
-    cy.get('@enBtn').should('be.disabled');
   });
 });

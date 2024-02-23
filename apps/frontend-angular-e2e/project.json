@@ -4,12 +4,23 @@
   "projectType": "application",
   "sourceRoot": "apps/frontend-angular-e2e/src",
   "targets": {
+    "serve-api-and-front": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "start-server-and-test \"PORT=2000 nx serve backend\" http://localhost:2000/api \"API_PROXY_TARGET_HOST=http://localhost:2000 nx run frontend-angular:serve:e2e\""
+          }
+        ],
+        "readyWhen": "Application bundle generation complete."
+      }
+    },
     "e2e": {
       "executor": "@nx/cypress:cypress",
       "options": {
         "cypressConfig": "apps/frontend-angular-e2e/cypress.config.ts",
         "testingType": "e2e",
-        "devServerTarget": "frontend-angular:serve:development"
+        "devServerTarget": "frontend-angular-e2e:serve-api-and-front"
       },
       "configurations": {
         "production": {

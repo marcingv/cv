@@ -1,5 +1,4 @@
-import { PL_CV } from '@gv-cv/shared-util-types';
-import { CvDataDto } from '@gv-cv/nestjs-data-access-cv';
+import { CvData, PL_CV } from '@gv-cv/shared-util-types';
 
 describe('Error Page', () => {
   it('should display error when cv data fetch failed', () => {
@@ -68,7 +67,7 @@ describe('Error Page - Refresh', () => {
         statusCode: 200,
         body: {
           ...PL_CV,
-        } satisfies CvDataDto,
+        } satisfies CvData,
       },
     ).as('fetchCvDataSuccess');
 

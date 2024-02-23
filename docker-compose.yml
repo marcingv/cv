@@ -12,9 +12,9 @@ services:
     volumes:
       - ./:/app
       - node_modules:/app/node_modules
-      - nx_cache:/app/.angular/
-      - angular_cache:/app/.nx/
-
+      - frontend_nx_cache:/app/.angular/
+      - frontend_angular_cache:/app/.nx/
+      - dist:/app/dist/
     ports:
       - 4200:4200
     restart: on-failure
@@ -30,8 +30,9 @@ services:
     volumes:
       - ./:/app
       - node_modules:/app/node_modules
-      - nx_cache:/app/.angular/
-      - angular_cache:/app/.nx/
+      - backend_nx_cache:/app/.angular/
+      - backend_angular_cache:/app/.nx/
+      - dist:/app/dist/
     ports:
       - 3000:3000
     restart: on-failure
@@ -40,5 +41,8 @@ services:
 
 volumes:
   node_modules:
-  nx_cache:
-  angular_cache:
+  backend_nx_cache:
+  backend_angular_cache:
+  frontend_nx_cache:
+  frontend_angular_cache:
+  dist:
