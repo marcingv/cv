@@ -71,6 +71,9 @@
       "@gv-cv/angular-ui-details-view": [
         "libs/angular/shared/ui-details-view/src/index.ts"
       ],
+      "@gv-cv/angular-ui-masked-text": [
+        "libs/angular/shared/ui-masked-text/src/index.ts"
+      ],
       "@gv-cv/angular-ui-timespan": [
         "libs/angular/shared/ui-timespan/src/index.ts"
       ],

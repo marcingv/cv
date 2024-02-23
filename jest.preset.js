@@ -4,4 +4,5 @@ module.exports = {
   ...nxPreset,
   // collectCoverage: true,
   // coverageReporters: ['html', 'json', 'text', 'cobertura', 'lcov'],
+  passWithNoTests: true,
 };
