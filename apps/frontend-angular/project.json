@@ -61,6 +61,39 @@
       },
       "defaultConfiguration": "production"
     },
+    "build-webpack-with-coverage": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/frontend-angular",
+        "index": "apps/frontend-angular/src/index.html",
+        "main": "apps/frontend-angular/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/frontend-angular/tsconfig.app.json",
+        "assets": [
+          "apps/frontend-angular/src/favicon.ico",
+          "apps/frontend-angular/src/assets",
+          {
+            "input": "libs/angular/translations/util-translations/src/lib/i18n",
+            "glob": "**/*",
+            "output": "assets/i18n"
+          }
+        ],
+        "styles": ["apps/frontend-angular/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "development"
+    },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
@@ -82,6 +115,15 @@
         }
       },
       "defaultConfiguration": "development"
+    },
+    "serve-e2e-for-coverage": {
+      "executor": "ngx-build-plus:dev-server",
+      "defaultConfiguration": "",
+      "options": {
+        "buildTarget": "frontend-angular:build-webpack-with-coverage",
+        "extraWebpackConfig": "./webpack.coverage.js",
+        "port": 5200
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",

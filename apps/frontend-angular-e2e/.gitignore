@@ -1,3 +1,5 @@
 # Cypress examples:
 /cypress
 .env.local
+/coverage
+/.nyc_output
