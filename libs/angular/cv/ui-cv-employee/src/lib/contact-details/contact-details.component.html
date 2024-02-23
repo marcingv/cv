@@ -6,10 +6,11 @@
   </gv-cv-details-view-row>
 
   @if (data.phone) {
-    <gv-cv-details-view-row
-      [label]="PHONE_NUMBER_LABEL | translate"
-      [value]="data.phone"
-    ></gv-cv-details-view-row>
+    <gv-cv-details-view-row [label]="PHONE_NUMBER_LABEL | translate">
+      <ng-template gvCvDetailsViewRowValue>
+        <gv-cv-masked-phone [phone]="data.phone"></gv-cv-masked-phone>
+      </ng-template>
+    </gv-cv-details-view-row>
   }
   @if (data.email) {
     <gv-cv-details-view-row

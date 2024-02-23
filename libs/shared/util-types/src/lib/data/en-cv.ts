@@ -47,7 +47,7 @@ export const EN_CV: CvData = {
       city: 'Lublin',
       country: 'Polska',
       email: 'marcin.gawski@gmail.com',
-      phone: '781 *** 246',
+      phone: '781 978 246',
     },
     hobbies: [
       { name: 'Bilard' },

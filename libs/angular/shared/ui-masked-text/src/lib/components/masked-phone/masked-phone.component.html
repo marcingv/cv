@@ -1,0 +1,20 @@
+<div class="inline-flex gap-3">
+  <span>
+    @if (isMasked) {
+      {{ phone | maskedPhone }}
+    } @else {
+      {{ phone }}
+    }
+  </span>
+
+  <button
+    (click)="toggleMask()"
+    class="p-1 rounded active:ring hover:bg-gray-50"
+  >
+    @if (isMasked) {
+      <gv-cv-icon-eye-slash [strokeWidth]="1"></gv-cv-icon-eye-slash>
+    } @else {
+      <gv-cv-icon-eye [strokeWidth]="1"></gv-cv-icon-eye>
+    }
+  </button>
+</div>
