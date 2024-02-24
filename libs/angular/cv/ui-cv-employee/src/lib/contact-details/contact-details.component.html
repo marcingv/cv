@@ -8,7 +8,12 @@
   @if (data.phone) {
     <gv-cv-details-view-row [label]="PHONE_NUMBER_LABEL | translate">
       <ng-template gvCvDetailsViewRowValue>
-        <gv-cv-masked-phone [phone]="data.phone"></gv-cv-masked-phone>
+        <gv-cv-masked-phone
+          [phone]="data.phone"
+          class="print:hidden"
+        ></gv-cv-masked-phone>
+
+        <span data-nosnippet class="hidden print:inline">{{ data.phone }}</span>
       </ng-template>
     </gv-cv-details-view-row>
   }

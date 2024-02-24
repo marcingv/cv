@@ -2,11 +2,12 @@ import { Component, inject, Input, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PdfExportService } from '../../services/pdf-export.service';
 import { Subject, takeUntil } from 'rxjs';
+import { IconArrowDownTrayComponent } from '@gv-cv/angular-ui-icons';
 
 @Component({
   selector: 'gv-cv-page-pdf-export',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, IconArrowDownTrayComponent],
   templateUrl: './page-pdf-export.component.html',
   styleUrl: './page-pdf-export.component.scss',
 })

@@ -17,7 +17,6 @@ import {
   ],
   templateUrl: './masked-phone.component.html',
   styleUrl: './masked-phone.component.css',
-  styles: ':host { display: inline-block }',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MaskedPhoneComponent {

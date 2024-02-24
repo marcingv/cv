@@ -8,7 +8,15 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        montserrat: ['"Montserrat"'],
+        firago: ['"Firago"'],
+      },
+      screens: {
+        print: { raw: 'print' },
+      },
+    },
   },
   plugins: [],
 };
