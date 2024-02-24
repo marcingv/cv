@@ -18,9 +18,15 @@
     </gv-cv-details-view-row>
   }
   @if (data.email) {
-    <gv-cv-details-view-row
-      [label]="EMAIL_LABEL | translate"
-      [value]="data.email"
-    ></gv-cv-details-view-row>
+    <gv-cv-details-view-row [label]="EMAIL_LABEL | translate">
+      <ng-template gvCvDetailsViewRowValue>
+        <gv-cv-masked-email
+          [email]="data.email"
+          class="print:hidden"
+        ></gv-cv-masked-email>
+
+        <span data-nosnippet class="hidden print:inline">{{ data.email }}</span>
+      </ng-template>
+    </gv-cv-details-view-row>
   }
 </gv-cv-details-view>

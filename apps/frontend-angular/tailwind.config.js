@@ -11,7 +11,7 @@ module.exports = {
     extend: {
       fontFamily: {
         montserrat: ['"Montserrat"'],
-        firago: ['"Firago"'],
+        firago: ['"FiraGO"'],
       },
       screens: {
         print: { raw: 'print' },

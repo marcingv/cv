@@ -8,7 +8,10 @@ import {
 import { ContactData } from '@gv-cv/shared-util-types';
 import { TranslationKey } from '@gv-cv/angular-util-translations';
 import { TranslateModule } from '@ngx-translate/core';
-import { MaskedPhoneComponent } from '@gv-cv/angular-ui-masked-text';
+import {
+  MaskedEmailComponent,
+  MaskedPhoneComponent,
+} from '@gv-cv/angular-ui-masked-text';
 
 @Component({
   selector: 'gv-cv-contact-details',
@@ -20,6 +23,7 @@ import { MaskedPhoneComponent } from '@gv-cv/angular-ui-masked-text';
     DetailsViewRowValueDirective,
     TranslateModule,
     MaskedPhoneComponent,
+    MaskedEmailComponent,
   ],
   templateUrl: './contact-details.component.html',
   styleUrl: './contact-details.component.scss',
