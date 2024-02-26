@@ -28,7 +28,7 @@
         "styles": ["apps/frontend-angular/src/styles.scss"],
         "scripts": [],
         "server": "apps/frontend-angular/src/main.server.ts",
-        "prerender": true,
+        "prerender": false,
         "ssr": {
           "entry": "apps/frontend-angular/server.ts"
         }
@@ -55,8 +55,7 @@
           "sourceMap": true
         },
         "e2e": {
-          "ssr": false,
-          "prerender": false
+          "ssr": false
         }
       },
       "defaultConfiguration": "production"

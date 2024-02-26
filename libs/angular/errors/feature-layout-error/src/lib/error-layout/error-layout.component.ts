@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LangPickerComponent } from '@gv-cv/angular-feature-translations';
 
@@ -10,4 +10,7 @@ import { LangPickerComponent } from '@gv-cv/angular-feature-translations';
   styleUrl: './error-layout.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ErrorLayoutComponent {}
+export class ErrorLayoutComponent {
+  @HostBinding('class') public hostClass =
+    'block bg-pattern-cogs dark:bg-pattern-cogs-dark';
+}
