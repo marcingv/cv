@@ -11,7 +11,7 @@ import { DEFAULT_LANG } from '@gv-cv/shared-util-types';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
 }
 
 const config: TranslateModuleConfig = {

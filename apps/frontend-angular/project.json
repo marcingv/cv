@@ -29,7 +29,6 @@
         "scripts": [],
         "server": "apps/frontend-angular/src/main.server.ts",
         "prerender": false,
-        "namedChunks": true,
         "ssr": {
           "entry": "apps/frontend-angular/server.ts"
         }
@@ -48,8 +47,7 @@
               "maximumError": "4kb"
             }
           ],
-          "namedChunks": true,
-          "outputHashing": "none"
+          "outputHashing": "all"
         },
         "development": {
           "optimization": false,

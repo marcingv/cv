@@ -2,7 +2,6 @@ import {
   BadRequestException,
   Body,
   Controller,
-  Get,
   Post,
   Res,
 } from '@nestjs/common';
@@ -16,30 +15,6 @@ import { PdfExportRequestDto } from '@gv-cv/nestjs-data-access-rest-export';
 @ApiTags('Export')
 export class ExportController {
   public constructor(private pdfService: PdfExportService) {}
-
-  @Get('test')
-  public async testExport(@Res() res: Response) {
-    const url = new PdfExportUrlSanitizer().sanitizeUrl(
-      'http://localhost:4200/pl',
-    );
-    console.warn(url, Date.now());
-
-    try {
-      const fileStream = await this.pdfService.exportUrl(url);
-      fileStream.pipe(res);
-    } catch (e: unknown) {
-      throw new BadRequestException(`Could not export URL to pdf: ${url}`, {
-        cause: e,
-        description:
-          !!e &&
-          typeof e === 'object' &&
-          'message' in e &&
-          typeof e.message === 'string'
-            ? e.message
-            : undefined,
-      });
-    }
-  }
 
   @Post('pdf')
   @ApiOkResponse()
