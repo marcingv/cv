@@ -1,5 +1,5 @@
 <div
-  class="container mx-auto flex flex-col gap-4 md:flex-row print:flex-row items-center justify-between py-4 md:py-10 print:py-[1.5cm]"
+  class="container flex flex-col gap-4 md:flex-row print:flex-row items-center justify-between py-4 md:py-10 print:py-[1.5cm]"
 >
   <div class="flex flex-row gap-4 items-center">
     <img
@@ -21,8 +21,8 @@
   <gv-cv-contact-details [data]="profile.contact"></gv-cv-contact-details>
 </div>
 
-<div class="py-0 bg-gray-100 dark:bg-gray-700 md:py-4 lg:py-12">
-  <div class="container mx-auto">
+<div class="py-0 md:py-4 lg:py-12 bg-gray-100 dark:bg-gray-700">
+  <div class="container">
     <gv-cv-cv-section title="aboutMe">
       <p>{{ profile.about }}</p>
     </gv-cv-cv-section>

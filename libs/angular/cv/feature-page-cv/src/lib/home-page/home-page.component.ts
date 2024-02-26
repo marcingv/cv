@@ -7,7 +7,6 @@ import { JobExperienceListComponent } from '@gv-cv/angular-ui-cv-jobs';
 import { ProjectsExperienceListComponent } from '@gv-cv/angular-ui-cv-projects';
 import { LanguagesExperienceListComponent } from '@gv-cv/angular-ui-cv-languages';
 import { HobbiesListComponent } from '@gv-cv/angular-ui-cv-hobbies';
-import { LangPickerComponent } from '@gv-cv/angular-feature-translations';
 import { CvData } from '@gv-cv/shared-util-types';
 import { PagePdfExportComponent } from '@gv-cv/angular-feature-pdf-export';
 import {
@@ -28,7 +27,6 @@ import {
     HobbiesListComponent,
     AdditionalSkillsListComponent,
     GroupedSkillsListComponent,
-    LangPickerComponent,
     PagePdfExportComponent,
   ],
   templateUrl: './home-page.component.html',

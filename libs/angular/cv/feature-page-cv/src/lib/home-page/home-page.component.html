@@ -6,13 +6,9 @@
     "
   ></gv-cv-page-pdf-export>
 
-  <div class="fixed top-12 left-0 print:hidden">
-    <gv-cv-lang-picker></gv-cv-lang-picker>
-  </div>
-
   <gv-cv-profile-about [profile]="cvData.employee"></gv-cv-profile-about>
 
-  <div class="container mx-auto flex flex-col md:flex-row print:flex-row">
+  <div class="container flex flex-col md:flex-row print:flex-row">
     <div class="md:w-2/3 print:w-2/3">
       <gv-cv-cv-section title="skills">
         <gv-cv-grouped-skills-list
@@ -22,6 +18,7 @@
         <!--      <gv-cv-skills-chips-list [data]="profile.skills"></gv-cv-skills-chips-list>-->
       </gv-cv-cv-section>
     </div>
+
     <div class="md:w-1/3 print:w-1/3">
       <gv-cv-cv-section title="education">
         <gv-cv-education-experience-list
@@ -32,7 +29,7 @@
   </div>
 
   <div class="bg-gray-100 dark:bg-gray-700">
-    <div class="container mx-auto">
+    <div class="container">
       <gv-cv-cv-section title="experience">
         <gv-cv-job-experience-list
           [data]="cvData.jobs"
@@ -41,33 +38,33 @@
     </div>
   </div>
 
-  <div class="container mx-auto grid grid-cols-1">
-    <div>
-      <gv-cv-cv-section title="interestingProjects">
-        <gv-cv-projects-experience-list
-          [data]="cvData.projects"
-        ></gv-cv-projects-experience-list>
-      </gv-cv-cv-section>
-    </div>
+  <div class="container">
+    <gv-cv-cv-section title="interestingProjects">
+      <gv-cv-projects-experience-list
+        [data]="cvData.projects"
+      ></gv-cv-projects-experience-list>
+    </gv-cv-cv-section>
   </div>
 
-  <div
-    class="container bg-gray-50 dark:bg-gray-900 mx-auto flex flex-row flex-wrap gap-4"
-  >
-    <gv-cv-cv-section title="languages" class="flex-1">
-      <gv-cv-languages-experience-list
-        [data]="cvData.languages"
-      ></gv-cv-languages-experience-list>
-    </gv-cv-cv-section>
+  <div class="bg-gray-50 dark:bg-gray-900">
+    <div class="container flex flex-row flex-wrap gap-4">
+      <gv-cv-cv-section title="languages" class="flex-1">
+        <gv-cv-languages-experience-list
+          [data]="cvData.languages"
+        ></gv-cv-languages-experience-list>
+      </gv-cv-cv-section>
 
-    <gv-cv-cv-section title="hobbies" class="flex-1">
-      <gv-cv-hobbies-list [data]="cvData.employee.hobbies"></gv-cv-hobbies-list>
-    </gv-cv-cv-section>
+      <gv-cv-cv-section title="hobbies" class="flex-1">
+        <gv-cv-hobbies-list
+          [data]="cvData.employee.hobbies"
+        ></gv-cv-hobbies-list>
+      </gv-cv-cv-section>
 
-    <gv-cv-cv-section title="additionalSkills" class="flex-1">
-      <gv-cv-additional-skills-list
-        [data]="cvData.employee.additionalSkills"
-      ></gv-cv-additional-skills-list>
-    </gv-cv-cv-section>
+      <gv-cv-cv-section title="additionalSkills" class="flex-1">
+        <gv-cv-additional-skills-list
+          [data]="cvData.employee.additionalSkills"
+        ></gv-cv-additional-skills-list>
+      </gv-cv-cv-section>
+    </div>
   </div>
 }

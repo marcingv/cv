@@ -12,4 +12,5 @@ import { TranslationKey } from '@gv-cv/angular-util-translations';
 })
 export class CvSectionComponent {
   @Input() public title?: TranslationKey;
+  @Input() public cssClass? = 'py-4';
 }
