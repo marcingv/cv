@@ -4,6 +4,15 @@
   "sourceRoot": "apps/backend/src",
   "projectType": "application",
   "targets": {
+    "docker-build-images": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "docker build --file {projectRoot}/prod.Dockerfile --tag gv-cv-prod-backend:latest ."
+        ],
+        "parallel": false
+      }
+    },
     "build-release": {
       "executor": "nx:run-commands",
       "options": {

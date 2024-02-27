@@ -6,6 +6,15 @@
   "sourceRoot": "apps/frontend-angular/src",
   "tags": ["type:app", "scope:frontend", "framework:angular"],
   "targets": {
+    "docker-build-images": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "docker build --file {projectRoot}/prod.Dockerfile --tag gv-cv-prod-angular:latest ."
+        ],
+        "parallel": false
+      }
+    },
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
