@@ -7,11 +7,23 @@ import {
 import { importProvidersFrom } from '@angular/core';
 import { DatePipe, registerLocaleData } from '@angular/common';
 import localePl from '@angular/common/locales/pl';
-import { DEFAULT_LANG } from '@gv-cv/shared-util-types';
+import { DEFAULT_LANG, EN_LANG_CODE } from '@gv-cv/shared-util-types';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { catchError, Observable, of } from 'rxjs';
+import { TRANS_EN, TRANS_Pl } from '@gv-cv/angular-util-translations';
+
+class AppTranslationsLoader extends TranslateHttpLoader {
+  override getTranslation(lang: string): Observable<NonNullable<unknown>> {
+    return super.getTranslation(lang).pipe(
+      catchError(() => {
+        return of(lang === EN_LANG_CODE ? TRANS_EN : TRANS_Pl);
+      }),
+    );
+  }
+}
 
 export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
+  return new AppTranslationsLoader(http, '/assets/i18n/', '.json');
 }
 
 const config: TranslateModuleConfig = {

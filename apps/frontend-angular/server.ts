@@ -7,10 +7,13 @@ import bootstrap from './src/main.server';
 import proxy from 'express-http-proxy';
 
 const ENV_SETTINGS = {
+  PORT: +(process.env['PORT'] || 4000),
   SSR_ENABLE_PERFORMANCE_PROFILER:
     process.env['SSR_ENABLE_PERFORMANCE_PROFILER'] === 'true',
   SSR_ENABLE_BACKEND_PROXY: process.env['SSR_ENABLE_BACKEND_PROXY'] === 'true',
-  SSR_API_HOST: process.env['SSR_API_HOST'],
+  SSR_ENABLE_TEST_ENDPOINTS:
+    process.env['SSR_ENABLE_TEST_ENDPOINTS'] === 'true',
+  BACKEND_API_HOST: process.env['BACKEND_API_HOST'],
 };
 
 // The Express app is exported so that it can be used by serverless Functions.
@@ -27,25 +30,60 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
-  if (ENV_SETTINGS.SSR_ENABLE_BACKEND_PROXY && ENV_SETTINGS.SSR_API_HOST) {
-    server.use(
-      '/api/',
-      proxy(ENV_SETTINGS.SSR_API_HOST + '/api/', {
-        proxyReqPathResolver: (req) => {
-          console.warn('Proxy: ' + req.url);
+  if (ENV_SETTINGS.SSR_ENABLE_BACKEND_PROXY && ENV_SETTINGS.BACKEND_API_HOST) {
+    const restPrefix = '/api';
+    const restProxyHost = ENV_SETTINGS.BACKEND_API_HOST + restPrefix;
 
-          return '/api' + req.url;
+    // REST API Proxy
+    server.use(
+      restPrefix,
+      proxy(restProxyHost, {
+        proxyReqPathResolver: (req) => {
+          const sourcePath = restPrefix + req.url;
+          const targetUrl = restProxyHost + req.url;
+
+          console.log(`[Proxy] ${sourcePath} => ${targetUrl}`);
+
+          return targetUrl;
         },
       }),
     );
-    // TODO: Catch and proxy graphql
+
+    // GraphQL API Proxy
+    const graphqlPrefix = '/graphql';
+    const graphqlProxyHost = ENV_SETTINGS.BACKEND_API_HOST + graphqlPrefix;
+    server.use(
+      graphqlPrefix,
+      proxy(graphqlProxyHost, {
+        proxyReqPathResolver: (req) => {
+          const sourcePath = graphqlPrefix + req.url;
+          const targetUrl = graphqlProxyHost + req.url;
+
+          console.log(`[Proxy] ${sourcePath} => ${targetUrl}`);
+
+          return targetUrl;
+        },
+      }),
+    );
   } else {
     server.get('/api/**', (req, res) => {
       res.status(500).send({
         message: 'Proxy for API server is not configured.',
       });
+    });
+  }
+
+  if (ENV_SETTINGS.SSR_ENABLE_TEST_ENDPOINTS) {
+    server.get('/_test/fail', (req, res) => {
+      console.warn('\n***************************************');
+      console.warn('[Testing] SSR Server will fail shortly');
+      console.warn('***************************************\n');
+
+      res.send({
+        message: 'SSR Server will fail shortly',
+      });
+
+      setTimeout(() => process.abort());
     });
   }
 
@@ -77,11 +115,11 @@ export function app(): express.Express {
 }
 
 function run(): void {
-  const port = process.env['PORT'] || 4000;
+  const port = ENV_SETTINGS.PORT;
 
   // Start up the Node server
   const server = app();
-  server.listen(+port, () => {
+  server.listen(port, () => {
     console.warn('*****************************************');
     console.warn('Starting server with environment params: \n');
     console.log(ENV_SETTINGS);
