@@ -30,14 +30,18 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Building prod images
 
+**!!! Run commands inside of workspace root !!!**
+
 ```bash
 docker build --file apps/frontend-angular/prod.Dockerfile --tag gv-cv-prod-angular:latest .
+docker build --file apps/backend/prod.Dockerfile --tag gv-cv-prod-backend:latest .
 ```
 
 ## Entering image bash
 
 ```bash
-docker run gv-cv-prod-angular --rm -it --entrypoint bash
+docker run --rm -it --entrypoint bash gv-cv-prod-angular
+docker run --rm -it --entrypoint bash gv-cv-prod-backend
 ```
 
 ## Running prod images with docker-compose

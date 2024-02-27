@@ -30,6 +30,7 @@ export class ExportController {
     }
 
     const url = new PdfExportUrlSanitizer().sanitizeUrl(body.url);
+    console.warn(`Generate PDF from: ${url}`);
 
     try {
       const fileStream = await this.pdfService.exportUrl(url);
