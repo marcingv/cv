@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  angular:
+    image: gv-cv-prod-angular:latest
+    tty: true
+    stdin_open: true
+    ports:
+      - 4000:4000
+    environment:
+      - SSR_ENABLE_PERFORMANCE_PROFILER=false
+      - SSR_ENABLE_BACKEND_PROXY=false
+      - SSR_API_HOST=

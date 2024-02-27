@@ -25,3 +25,23 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# Docker build
+
+## Building prod images
+
+```bash
+docker build --file apps/frontend-angular/prod.Dockerfile --tag gv-cv-prod-angular:latest .
+```
+
+## Entering image bash
+
+```bash
+docker run gv-cv-prod-angular --rm -it --entrypoint bash
+```
+
+## Running prod images with docker-compose
+
+```bash
+docker-compose -f docker-compose.prod.yml up
+```
