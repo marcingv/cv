@@ -4,6 +4,20 @@
   "sourceRoot": "apps/backend/src",
   "projectType": "application",
   "targets": {
+    "build-release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "cp apps/backend/.env dist/apps/backend/.env",
+          "cp apps/backend/docs/SERVER.README.md dist/apps/backend/README.md"
+        ],
+        "parallel": false
+      },
+      "configurations": {
+        "production": {}
+      },
+      "dependsOn": ["build"]
+    },
     "serve": {
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
