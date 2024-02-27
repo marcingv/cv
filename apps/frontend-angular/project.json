@@ -60,6 +60,20 @@
       },
       "defaultConfiguration": "production"
     },
+    "build-release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "cp apps/frontend-angular/.env dist/apps/frontend-angular/server/.env",
+          "cp apps/frontend-angular/docs/SSR-SERVER.README.md dist/apps/frontend-angular/server/README.md"
+        ],
+        "parallel": false
+      },
+      "configurations": {
+        "production": {}
+      },
+      "dependsOn": ["build"]
+    },
     "build-webpack-with-coverage": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
