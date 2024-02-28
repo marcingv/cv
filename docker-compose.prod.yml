@@ -22,6 +22,6 @@ services:
     environment:
       - PDF_GENERATOR_HOSTNAME_REPLACE_RULES=localhost=host.docker.internal
       - API_DOC_ENABLED=false
-      - GRAPHQL_PLAYGROUND=true
+      - GRAPHQL_PLAYGROUND=false
     extra_hosts:
       - "host.docker.internal:host-gateway"
