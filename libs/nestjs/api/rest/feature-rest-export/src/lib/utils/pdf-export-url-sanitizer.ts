@@ -12,6 +12,10 @@ export class PdfExportUrlSanitizer {
   }
 
   public sanitizeUrl(url: string): string {
+    if (!URL.canParse(url.trim())) {
+      return url;
+    }
+
     const parsedUrl = new URL(url.trim());
 
     if (this.hostnameReplaceRules[parsedUrl.hostname]) {

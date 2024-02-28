@@ -4,12 +4,15 @@ import {
   Controller,
   Post,
   Res,
+  UsePipes,
+  ValidationPipe,
 } from '@nestjs/common';
 import { Response } from 'express';
 import { PdfExportService } from '@gv-cv/nestjs-feature-export';
 import { PdfExportUrlSanitizer } from '../utils/pdf-export-url-sanitizer';
 import { ApiBadRequestResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { PdfExportRequestDto } from '@gv-cv/nestjs-data-access-rest-export';
+import { ExportRequestTransformerPipe } from '../pipes/export-request-transformer.pipe';
 
 @Controller('export')
 @ApiTags('Export')
@@ -19,18 +22,12 @@ export class ExportController {
   @Post('pdf')
   @ApiOkResponse()
   @ApiBadRequestResponse()
+  @UsePipes(ExportRequestTransformerPipe, ValidationPipe)
   public async exportPdf(
     @Body() body: PdfExportRequestDto,
     @Res() res: Response,
   ) {
-    // TODO: Walidacja URL
-    const isPayloadValid = !!body && 'url' in body && body.url.trim().length;
-    if (!isPayloadValid) {
-      throw new BadRequestException('Invalid request payload');
-    }
-
     const url = new PdfExportUrlSanitizer().sanitizeUrl(body.url);
-    console.warn(`Generate PDF from: ${url}`);
 
     try {
       const fileStream = await this.pdfService.exportUrl(url);

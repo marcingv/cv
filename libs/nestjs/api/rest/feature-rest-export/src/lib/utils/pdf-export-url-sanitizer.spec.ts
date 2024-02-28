@@ -25,5 +25,12 @@ describe('PdfExportUrlSanitizer', () => {
         'http://some-other-host:4200/',
       );
     });
+
+    it('should return url "as-is" when invalid url is passed', () => {
+      const sanitizer = new PdfExportUrlSanitizer();
+      const invalidUrl = 'invalid-url';
+
+      expect(sanitizer.sanitizeUrl(invalidUrl)).toBe(invalidUrl);
+    });
   });
 });
