@@ -5,6 +5,14 @@
   "projectType": "application",
   "targets": {
     "e2e": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "start-server-and-test \"PORT=2500 nx serve backend\" http://localhost:2500/api \"PORT=2500 nx _e2e backend-e2e\""
+        ]
+      }
+    },
+    "_e2e": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
       "options": {
