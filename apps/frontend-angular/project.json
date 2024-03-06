@@ -10,7 +10,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "docker build --file {projectRoot}/prod.Dockerfile --tag gv-cv-prod-angular:latest ."
+          "docker build --file {projectRoot}/prod.Dockerfile --tag marcingv/cv-frontend-angular:latest ."
         ],
         "parallel": false
       }

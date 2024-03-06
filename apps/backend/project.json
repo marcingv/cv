@@ -8,7 +8,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "docker build --file {projectRoot}/prod.Dockerfile --tag gv-cv-prod-backend:latest ."
+          "docker build --file {projectRoot}/prod.Dockerfile --tag marcingv/cv-backend-nestjs:latest ."
         ],
         "parallel": false
       }
