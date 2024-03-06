@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   angular:
-    image: gv-cv-prod-angular:latest
+    image: marcingv/cv-frontend-angular:latest
     tty: true
     stdin_open: true
     ports:
@@ -14,7 +14,7 @@ services:
       - BACKEND_API_HOST=http://api:3000
 
   api:
-    image: gv-cv-prod-backend:latest
+    image: marcingv/cv-backend-nestjs:latest
     tty: true
     stdin_open: true
     ports:

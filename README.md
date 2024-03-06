@@ -33,15 +33,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 **!!! Run commands inside of workspace root !!!**
 
 ```bash
-docker build --file apps/frontend-angular/prod.Dockerfile --tag gv-cv-prod-angular:latest .
-docker build --file apps/backend/prod.Dockerfile --tag gv-cv-prod-backend:latest .
+docker build --file apps/frontend-angular/prod.Dockerfile --tag marcingv/cv-frontend-angular:latest .
+docker build --file apps/backend/prod.Dockerfile --tag marcingv/cv-backend-nestjs:latest .
 ```
 
 ## Entering image bash
 
 ```bash
-docker run --rm -it --entrypoint bash gv-cv-prod-angular
-docker run --rm -it --entrypoint bash gv-cv-prod-backend
+docker run --rm -it --entrypoint bash marcingv/cv-frontend-angular
+docker run --rm -it --entrypoint bash marcingv/cv-backend-nestjs
 ```
 
 ## Running prod images with docker-compose
