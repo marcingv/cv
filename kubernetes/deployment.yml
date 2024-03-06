@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-nestjs
+spec:
+  selector:
+    app: cv
+  ports:
+    - protocol: 'TCP'
+      port: 3000
+      targetPort: 3000 # Inside container
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cv-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cv
+  template:
+    metadata:
+      labels:
+        app: cv
+    spec:
+      containers:
+        - name: cv-backend-nestjs
+          image: marcingv/cv-backend-nestjs
