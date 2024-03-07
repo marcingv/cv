@@ -20,6 +20,8 @@ kubectl rollout history deployment/cv-app-backend-deployment # Historia deployme
 kubectl rollout history deployment/cv-app-backend-deployment --revision=1 # Szczegoly konkretnego deploymentu
 kubectl rollout undo deployment/cv-app-backend-deployment # Wycofanie ostatniego deploymentu
 kubectl rollout undo deployment/cv-app-backend-deployment --to-revision=1 # Wycofanie deploymentu do konkretnej wczesniejszej wersji
+
+kubectl get namespaces # Lista namespace'ow
 ```
 
 ## Minikube

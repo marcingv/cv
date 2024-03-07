@@ -67,3 +67,6 @@ spec:
         - name: cv-frontend-angular
           image: marcingv/cv-frontend-angular:latest
           imagePullPolicy: Always
+          env:
+            - name: BACKEND_API_HOST
+              value: 'http://cv-backend.default:3000'
