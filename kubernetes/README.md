@@ -21,6 +21,10 @@ kubectl rollout history deployment/cv-app-backend-deployment --revision=1 # Szcz
 kubectl rollout undo deployment/cv-app-backend-deployment # Wycofanie ostatniego deploymentu
 kubectl rollout undo deployment/cv-app-backend-deployment --to-revision=1 # Wycofanie deploymentu do konkretnej wczesniejszej wersji
 
+# Restart deploymentow (np. po aktualizacji obrazow DockerHUB bez aktualizacji kubernetesa)
+kubectl rollout restart deployment/cv-app-backend-deployment
+kubectl rollout restart deployment/cv-app-frontend-deployment
+
 kubectl get namespaces # Lista namespace'ow
 ```
 

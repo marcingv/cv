@@ -12,6 +12,8 @@ COPY ../.. .
 
 RUN nx build-release backend
 
+RUN npm ci --omit=dev
+
 FROM node:20
 
 # Install Google Chrome for PDF exports
