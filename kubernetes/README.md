@@ -32,7 +32,7 @@ minikube stop
 
 minikube dashboard # Uruchamia panel UI
 
-minikube service <serviceName> # expose service to outside world (np. minikube service cv-backend)
-minikube service cv-backend
-minikube service cv-frontend
+minikube service <serviceName> # expose service to outside world
+minikube service cv-backend-service
+minikube service cv-frontend-service
 ```
