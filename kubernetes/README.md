@@ -10,6 +10,16 @@ kubectl apply -f=deployment.yml # Aktualizacja konfiguracji
 
 kubectl get deployments
 kubectl get services
+kubectl get pods
+
+kubectl delete -f=deployment.yml # Usuniecie deploymentu na podstawie konfiguracji
+kubectl delete deployment <deploymentName> # Usuniecie deploymentu po nazwie
+
+kubectl rollout status deployment/cv-app-deployment # Status aktualizacji deployment
+kubectl rollout history deployment/cv-app-deployment # Historia deploymentow
+kubectl rollout history deployment/cv-app-deployment --revision=1 # Szczegoly konkretnego deploymentu
+kubectl rollout undo deployment/cv-app-deployment # Wycofanie ostatniego deploymentu
+kubectl rollout undo deployment/cv-app-deployment --to-revision=1 # Wycofanie deploymentu do konkretnej wczesniejszej wersji
 ```
 
 ## Minikube
