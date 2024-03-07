@@ -1,37 +1,69 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-nestjs
+  name: cv-backend
 spec:
   selector:
     app: cv
     tier: backend
-    framework: nestjs
   ports:
     - protocol: 'TCP'
       port: 3000
       targetPort: 3000 # Inside container
   type: LoadBalancer
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cv-frontend
+spec:
+  selector:
+    app: cv
+    tier: frontend
+  ports:
+    - protocol: 'TCP'
+      port: 80
+      targetPort: 4000 # Inside container
+  type: LoadBalancer
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cv-app-deployment
+  name: cv-app-backend-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: cv
       tier: backend
-      framework: nestjs
   template:
     metadata:
       labels:
         app: cv
         tier: backend
-        framework: nestjs
     spec:
       containers:
         - name: cv-backend-nestjs
           image: marcingv/cv-backend-nestjs:latest # Dodanie :latest powoduje domyslne uzywanie imagePullPolicy: Always
           imagePullPolicy: Always # Nie wymagane jesli obraz jest otagowany przez :latest
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cv-app-frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cv
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: cv
+        tier: frontend
+    spec:
+      containers:
+        - name: cv-frontend-angular
+          image: marcingv/cv-frontend-angular:latest
+          imagePullPolicy: Always
