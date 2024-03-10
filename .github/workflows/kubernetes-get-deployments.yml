@@ -1,0 +1,14 @@
+name: Get Kubernetes deployments info
+on: workflow_dispatch
+jobs:
+  get-deployments:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure cluster config
+        env:
+          K8S_CONFIG: ${{ secrets.K8S_CONFIG }}
+        run: |
+          mkdir -p $HOME/.kube
+          echo "${K8S_CONFIG}" | base64 --decode > $HOME/.kube/config
+      - name: Get deployments info
+        run: kubectl get deployments

@@ -49,3 +49,10 @@ docker run --rm -it --entrypoint bash marcingv/cv-backend-nestjs
 ```bash
 docker-compose -f docker-compose.prod.yml up
 ```
+
+## Pushing to Docker HUB
+
+```bash
+docker push marcingv/cv-backend-nestjs:latest
+docker push marcingv/cv-frontend-angular:latest
+```

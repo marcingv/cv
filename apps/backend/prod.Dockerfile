@@ -1,4 +1,4 @@
-FROM node:20 AS build-stage
+FROM node:20-alpine AS build-stage
 
 RUN npm add --global nx@latest
 
@@ -12,11 +12,12 @@ COPY ../.. .
 
 RUN nx build-release backend
 
-FROM node:20
+RUN npm ci --omit=dev
+
+FROM node:20-alpine
 
 # Install Google Chrome for PDF exports
-RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN apt-get update && apt-get install -y ./google-chrome-stable_current_amd64.deb
+RUN apk --update --upgrade add chromium
 
 WORKDIR /app
 
