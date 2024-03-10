@@ -26,7 +26,24 @@ kubectl rollout restart deployment/cv-app-backend-deployment
 kubectl rollout restart deployment/cv-app-frontend-deployment
 
 kubectl get namespaces # Lista namespace'ow
-```
+
+# Zmiana konfiguracji klastra
+# https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/
+# https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/
+
+cd $HOME/.kube
+
+# Ustawienie permanentne w pliku ~/.bashrc
+export KUBECONFIG=${HOME}/.kube/config:${HOME}/.kube/dev-microk8s.config
+
+kubectl config get-contexts
+kubectl config get-contexts --kubeconfig dev-microk8s.config
+
+kubectl config --kubeconfig=config use-context minikube
+kubectl config --kubeconfig=dev-microk8s.config use-context microk8s
+kubectl config use-context microk8s
+kubectl config use-context minikube
+```/home/marcin/.kube/config:/home/marcin/.kube/dev-microk8s.config
 
 ## Minikube
 
@@ -39,4 +56,15 @@ minikube dashboard # Uruchamia panel UI
 minikube service <serviceName> # expose service to outside world
 minikube service cv-backend-service
 minikube service cv-frontend-service
+```
+
+## Microk8s
+
+```bash
+# Uruchomienie dashboard UI
+microk8s dashboard-proxy
+
+# Wydruk pliku konfiguracyjnego umozliwiajacego zarzadzanie klasterem przez kubectl
+microk8s.config
+
 ```
