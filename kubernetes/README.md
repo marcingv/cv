@@ -72,9 +72,13 @@ microk8s.config
 # Konfigutacja ingress
 microk8s enable metallb
 microk8s enable ingress
+microk8s enable cert-manager
 
 # Check ingress namespace
 microk8s.kubectl get all -n ingress
 microk8s.kubectl get po --show-labels -n ingress
 microk8s.kubectl apply -f ingress-lb-service.yml -n ingress
+
+# Check certificates
+microk8s.kubectl describe certificate letsencrypt
 ```
