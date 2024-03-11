@@ -61,10 +61,20 @@ minikube service cv-frontend-service
 ## Microk8s
 
 ```bash
+microk8s status
+
 # Uruchomienie dashboard UI
 microk8s dashboard-proxy
 
 # Wydruk pliku konfiguracyjnego umozliwiajacego zarzadzanie klasterem przez kubectl
 microk8s.config
 
+# Konfigutacja ingress
+microk8s enable metallb
+microk8s enable ingress
+
+# Check ingress namespace
+microk8s.kubectl get all -n ingress
+microk8s.kubectl get po --show-labels -n ingress
+microk8s.kubectl apply -f ingress-lb-service.yml -n ingress
 ```
