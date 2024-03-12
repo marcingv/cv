@@ -8,3 +8,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Deploy to Kubernetes cluster
         uses: ./.github/actions/deploy
+        with:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+          K8S_CONFIG: ${{ secrets.K8S_CONFIG }}
