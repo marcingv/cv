@@ -3,7 +3,10 @@
     "defaultBase": "main"
   },
   "namedInputs": {
-    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci-feature.yml"],
+    "sharedGlobals": [
+      "{workspaceRoot}/.github/workflows/ci-main.yml",
+      "{workspaceRoot}/.github/workflows/ci-feature.yml"
+    ],
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
