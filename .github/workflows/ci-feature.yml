@@ -1,5 +1,8 @@
-name: Lint & Test
-on: [push, workflow_dispatch]
+name: [feature branches] Lint & Test
+on:
+  push:
+    branches-ignore:
+      - main
 jobs:
   lint:
     runs-on: ubuntu-latest
