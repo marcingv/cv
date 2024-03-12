@@ -9,11 +9,16 @@ metadata:
     # ACME challenge will fail: you don't have a cert yet!
     ingress.kubernetes.io/force-ssl-redirect: "false"
     kubernetes.io/ingress.class: public
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+    nginx.ingress.kubernetes.io/server-snippet: |
+      gzip on;
+      gzip_types *;
 spec:
   tls:
     - secretName: letsencrypt-secrets
       hosts:
         - gawski.info
+        - www.gawski.info
   rules:
     - host: gawski.info
       http:
