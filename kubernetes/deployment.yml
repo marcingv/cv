@@ -31,7 +31,8 @@ kind: Deployment
 metadata:
   name: cv-app-backend-deployment
 spec:
-  replicas: 1
+  replicas: 2
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: cv
@@ -52,7 +53,8 @@ kind: Deployment
 metadata:
   name: cv-app-frontend-deployment
 spec:
-  replicas: 1
+  replicas: 2
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: cv
