@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
+import { MaintenanceController } from './maintenance.controller';
 
 @Module({
-  controllers: [],
+  controllers: [MaintenanceController],
   providers: [],
   exports: [],
 })
