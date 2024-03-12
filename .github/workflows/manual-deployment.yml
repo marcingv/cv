@@ -1,0 +1,8 @@
+name: Deploy to Kubernetes manually
+on: workflow_dispatch
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Kubernetes cluster
+        uses: ./.github/actions/deploy
