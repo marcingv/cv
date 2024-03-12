@@ -3,6 +3,7 @@ on:
   push:
     branches-ignore:
       - main
+  workflow_call:
 jobs:
   lint:
     runs-on: ubuntu-latest
