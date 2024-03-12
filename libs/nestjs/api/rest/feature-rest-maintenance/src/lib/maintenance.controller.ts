@@ -15,7 +15,7 @@ export class MaintenanceController {
   @ApiOkResponse({ type: TerminateServerDto })
   public terminateServer(): TerminateServerDto {
     setTimeout(() => {
-      process.abort();
+      process.exit(1);
     }, this.MILLIS_TO_TERMINATE);
 
     return {

@@ -17,8 +17,8 @@ describe('MaintenanceController', () => {
   });
 
   describe('Terminate action', () => {
-    const mockProcessAbort = jest
-      .spyOn(process, 'abort')
+    const mockProcessExit = jest
+      .spyOn(process, 'exit')
       .mockImplementation(() => {
         return undefined as never;
       });
@@ -32,14 +32,14 @@ describe('MaintenanceController', () => {
     });
 
     afterAll(() => {
-      mockProcessAbort.mockRestore();
+      mockProcessExit.mockRestore();
     });
 
     it('should abort process with delay', () => {
       controller.terminateServer();
       jest.runAllTimers();
 
-      expect(mockProcessAbort).toHaveBeenCalled();
+      expect(mockProcessExit).toHaveBeenCalledWith(1);
     });
 
     it('should return dto info', () => {
