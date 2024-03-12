@@ -4,6 +4,13 @@
   "sourceRoot": "apps/backend/src",
   "projectType": "application",
   "targets": {
+    "docker-publish-images": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["docker push marcingv/cv-backend-nestjs:latest"],
+        "parallel": false
+      }
+    },
     "docker-build-images": {
       "executor": "nx:run-commands",
       "options": {
