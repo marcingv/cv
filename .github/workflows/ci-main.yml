@@ -1,4 +1,4 @@
-name: [main branch] Lint & Test & Deploy
+name: '[main branch] Lint & Test & Deploy'
 on:
   push:
     branches:

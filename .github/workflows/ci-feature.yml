@@ -1,4 +1,4 @@
-name: [feature branches] Lint & Test
+name: '[feature branches] Lint & Test'
 on:
   push:
     branches-ignore:
