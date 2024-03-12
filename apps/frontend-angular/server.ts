@@ -83,7 +83,7 @@ export function app(): express.Express {
         message: 'SSR Server will fail shortly',
       });
 
-      setTimeout(() => process.abort());
+      setTimeout(() => process.exit(1));
     });
   }
 
