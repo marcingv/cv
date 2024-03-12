@@ -3,6 +3,7 @@ on:
   push:
     branches-ignore:
       - main
+  workflow_call:
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -10,10 +11,16 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Load & cache dependencies
         uses: ./.github/actions/cached-deps
+      - name: Setup NX Shas
+        uses: nrwl/nx-set-shas@v3
+      # This line is needed for nx affected to work when CI is running on a PR
+      - run: git branch --track main origin/main
       - name: Run lint
-        run: npx nx run-many -t lint
+        run: npx nx affected -t lint --parallel=3
 
   test:
     runs-on: ubuntu-latest
@@ -21,7 +28,13 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Load & cache dependencies
         uses: ./.github/actions/cached-deps
+      - name: Setup NX Shas
+        uses: nrwl/nx-set-shas@v3
+      # This line is needed for nx affected to work when CI is running on a PR
+      - run: git branch --track main origin/main
       - name: Run tests
-        run: npx nx run-many -t test
+        run: npx nx run-many -t test --parallel=3
