@@ -36,7 +36,7 @@ runs:
       uses: actions/cache@v4
       with:
         path: kubernetes/deployment.yml
-        key: npm-deps-${{ hashFiles('kubernetes/deployment.yml') }}
+        key: k8s-deployment-${{ hashFiles('kubernetes/deployment.yml') }}
     - name: Apply new Kubernetes deployment
       if: steps.cache-deployment.outputs.cache-hit != 'true'
       run: kubectl apply -f=kubernetes/deployment.yml
