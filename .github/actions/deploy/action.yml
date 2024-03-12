@@ -38,11 +38,11 @@ runs:
         path: kubernetes/deployment.yml
         key: npm-deps-${{ hashFiles('kubernetes/deployment.yml') }}
     - name: Apply new Kubernetes deployment
-      if: steps.cache-deployment.outputs.cache-hit == 'true'
+      if: steps.cache-deployment.outputs.cache-hit != 'true'
       run: kubectl apply -f=kubernetes/deployment.yml
       shell: bash
     - name: Restart & refresh Kubernetes deployments
-      if: steps.cache-deployment.outputs.cache-hit != 'true'
+      if: steps.cache-deployment.outputs.cache-hit == 'true'
       run: kubectl rollout restart deployment
       shell: bash
 
