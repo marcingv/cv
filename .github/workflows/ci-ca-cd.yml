@@ -19,12 +19,12 @@ jobs:
         uses: ./.github/actions/cached-deps
       - name: Setup NX SHAs
         uses: nrwl/nx-set-shas@v3
-      - run: echo 'DEPLOY HERE :)'
-      - run: npx nx show projects --affected --withTarget docker-build-images
-      - run: npx nx show projects --affected --withTarget docker-publish-images
-#      - name: Deploy to Kubernetes cluster
-#        uses: ./.github/actions/deploy
-#        with:
-#          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-#          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-#          K8S_CONFIG: ${{ secrets.K8S_CONFIG }}
+#      - run: echo 'DEPLOY HERE :)'
+#      - run: npx nx show projects --affected --withTarget docker-build-images
+#      - run: npx nx show projects --affected --withTarget docker-publish-images
+      - name: Deploy to Kubernetes cluster
+        uses: ./.github/actions/deploy
+        with:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+          K8S_CONFIG: ${{ secrets.K8S_CONFIG }}
