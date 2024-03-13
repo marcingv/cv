@@ -15,7 +15,7 @@ describe('PdfExportService', () => {
 
   beforeEach(() => {
     api = {
-      exportPage(url: string): Observable<Blob> {
+      exportPage(_url: string): Observable<Blob> {
         return of(new Blob());
       },
     };

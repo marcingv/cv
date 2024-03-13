@@ -1,4 +1,4 @@
-import { JobExperience, Skill } from '@gv-cv/shared-util-types';
+import { JobExperience } from '@gv-cv/shared-util-types';
 import { Field, ObjectType } from '@nestjs/graphql';
 import { SkillDto } from './skill.dto';
 
