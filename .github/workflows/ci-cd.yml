@@ -1,11 +1,11 @@
-name: 'CI / CA / CD'
+name: 'CI / CD'
 on:
   push:
     branches:
       - main
 jobs:
   lint-and-test:
-    uses: ./.github/workflows/ci-ca.yml
+    uses: ./.github/workflows/ci.yml
 
   deploy:
     runs-on: ubuntu-latest
@@ -19,9 +19,6 @@ jobs:
         uses: ./.github/actions/cached-deps
       - name: Setup NX SHAs
         uses: nrwl/nx-set-shas@v3
-#      - run: echo 'DEPLOY HERE :)'
-#      - run: npx nx show projects --affected --withTarget docker-build-images
-#      - run: npx nx show projects --affected --withTarget docker-publish-images
       - name: Deploy to Kubernetes cluster
         uses: ./.github/actions/deploy
         with:
