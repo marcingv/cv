@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   lint-and-test:
-    uses: ./.github/workflows/ci-feature.yml
+    uses: ./.github/workflows/ci-ca.yml
 
   deploy:
     runs-on: ubuntu-latest
