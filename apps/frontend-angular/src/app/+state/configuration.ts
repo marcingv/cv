@@ -13,11 +13,12 @@ import {
   ROUTER_NAVIGATION,
   ROUTER_REQUEST,
 } from '@ngrx/router-store';
+import { SEO_META_TAGS_EFFECTS } from '@gv-cv/angular-feature-seo-meta-tags';
 
 export function provideAppState() {
   return [
     provideStore(reducers, { metaReducers }),
-    provideEffects(...UI_EFFECTS, ...CV_EFFECTS),
+    provideEffects(...UI_EFFECTS, ...CV_EFFECTS, ...SEO_META_TAGS_EFFECTS),
     provideStoreDevtools({
       maxAge: 25,
       logOnly: !isDevMode(),
