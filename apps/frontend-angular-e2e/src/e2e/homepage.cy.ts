@@ -27,6 +27,9 @@ describe('HomePage', () => {
     it('should redirect to PL lang by default', () => {
       cy.visit('/', {
         onBeforeLoad(win: Cypress.AUTWindow) {
+          Object.defineProperty(win.navigator, 'language', {
+            value: '',
+          });
           Object.defineProperty(win.navigator, 'languages', {
             value: [''],
           });
