@@ -19,6 +19,9 @@
       "@gv-cv/angular-data-access-cv": [
         "libs/angular/cv/data-access-cv/src/index.ts"
       ],
+      "@gv-cv/angular-data-access-router": [
+        "libs/angular/router/data-access-router/src/index.ts"
+      ],
       "@gv-cv/angular-data-access-ui": [
         "libs/angular/shared/data-access-ui/src/index.ts"
       ],
