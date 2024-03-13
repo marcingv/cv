@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: lint-and-test
     steps:
-      - run: echo 'DEPLOY HERE'
+      - run: echo 'DEPLOY HERE :)'
       - run: npx nx show projects --affected --withTarget docker-build-image
       - run: npx nx show projects --affected --withTarget docker-publish-image
 #      - name: Get Code

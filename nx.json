@@ -4,8 +4,9 @@
   },
   "namedInputs": {
     "sharedGlobals": [
-      "{workspaceRoot}/.github/workflows/ci-main.yml",
-      "{workspaceRoot}/.github/workflows/ci-feature.yml"
+      "{workspaceRoot}/.github/workflows/ci-ca.yml",
+      "{workspaceRoot}/.github/workflows/ci-ca-cd.yml",
+      "{workspaceRoot}/kubernetes/deployment.yml"
     ],
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
