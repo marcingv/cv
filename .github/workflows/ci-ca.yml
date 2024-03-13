@@ -55,4 +55,12 @@ jobs:
       - run: git branch --track main origin/main
         if: "!contains(github.ref, 'main')"
       - name: Run tests
+        id: run-tests
         run: npx nx affected -t e2e --parallel=1 --verbose
+      - name: Upload tests reports
+        if: steps.run-tests.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-tests-report
+          path: dist/cypress
+
