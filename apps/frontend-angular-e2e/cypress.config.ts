@@ -6,6 +6,7 @@ export default defineConfig({
   e2e: {
     ...nxE2EPreset(__filename, { cypressDir: 'src' }),
     baseUrl: 'http://localhost:5200', // Should match port of target: frontend-angular:serve:e2e (in project.json)
+    video: true,
 
     // CodeCoverage:
     setupNodeEvents(on, config) {
