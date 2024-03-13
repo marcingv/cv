@@ -9,7 +9,7 @@ class TerminateServerDto {
 @Controller('maintenance')
 @ApiTags('Maintenance')
 export class MaintenanceController {
-  private readonly MILLIS_TO_TERMINATE = 1100;
+  private readonly MILLIS_TO_TERMINATE = 1200;
 
   @Get('terminate')
   @ApiOkResponse({ type: TerminateServerDto })
