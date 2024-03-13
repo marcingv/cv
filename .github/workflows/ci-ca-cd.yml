@@ -11,13 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: lint-and-test
     steps:
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Load & cache dependencies
+        uses: ./.github/actions/cached-deps
+      - name: Setup NX SHAs
+        uses: nrwl/nx-set-shas@v3
       - run: echo 'DEPLOY HERE :)'
       - run: npx nx show projects --affected --withTarget docker-build-image
       - run: npx nx show projects --affected --withTarget docker-publish-image
-#      - name: Get Code
-#        uses: actions/checkout@v4
-#      - name: Load & cache dependencies
-#        uses: ./.github/actions/cached-deps
 #      - name: Deploy to Kubernetes cluster
 #        uses: ./.github/actions/deploy
 #        with:
