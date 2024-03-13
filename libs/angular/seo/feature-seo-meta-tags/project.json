@@ -1,0 +1,9 @@
+{
+  "name": "angular-feature-seo-meta-tags",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/angular/seo/feature-seo-meta-tags/src",
+  "prefix": "gv-cv",
+  "tags": ["type:feature", "scope:frontend", "framework:angular"],
+  "projectType": "library",
+  "targets": {}
+}
