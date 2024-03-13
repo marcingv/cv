@@ -1,4 +1,5 @@
 import { CvData, EN_CV, PL_CV } from '@gv-cv/shared-util-types';
+import * as Cypress from 'cypress';
 
 describe('HomePage', () => {
   beforeEach(() => {
@@ -22,14 +23,50 @@ describe('HomePage', () => {
     );
   });
 
-  it('should redirect user to default lang if lang is not specified', () => {
-    cy.visit('/');
+  describe('should redirect user to default lang if lang is not specified', () => {
+    it('should redirect to PL lang by default', () => {
+      cy.visit('/', {
+        onBeforeLoad(win: Cypress.AUTWindow) {
+          Object.defineProperty(win.navigator, 'languages', {
+            value: [''],
+          });
+        },
+      });
 
-    cy.location().should((location) => {
-      expect(location.pathname).to.eq('/pl');
+      cy.location().should((location) => {
+        expect(location.pathname).to.eq('/pl');
+      });
+
+      cy.contains('O mnie');
     });
 
-    cy.contains('O mnie');
+    it('should redirect to PL if browser supports pl-PL', () => {
+      cy.visit('/', {
+        onBeforeLoad(win: Cypress.AUTWindow) {
+          Object.defineProperty(win.navigator, 'languages', {
+            value: ['pl-PL'],
+          });
+        },
+      });
+
+      cy.location().should((location) => {
+        expect(location.pathname).to.eq('/pl');
+      });
+    });
+
+    it('should redirect to EN if browser supports en-PL', () => {
+      cy.visit('/', {
+        onBeforeLoad(win: Cypress.AUTWindow) {
+          Object.defineProperty(win.navigator, 'languages', {
+            value: ['en-PL'],
+          });
+        },
+      });
+
+      cy.location().should((location) => {
+        expect(location.pathname).to.eq('/en');
+      });
+    });
   });
 
   it('should display page in PL lang', () => {
