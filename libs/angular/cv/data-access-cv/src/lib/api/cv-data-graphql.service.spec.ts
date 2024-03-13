@@ -1,5 +1,4 @@
-import { fakeAsync, TestBed } from '@angular/core/testing';
-
+import { TestBed } from '@angular/core/testing';
 import { CvDataGraphqlService } from './cv-data-graphql.service';
 import {
   HttpTestingController,

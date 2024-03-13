@@ -19,7 +19,7 @@ jobs:
       - run: git branch --track main origin/main
         if: "!contains(github.ref, 'main')"
       - name: Run lint
-        run: npx nx affected -t lint --parallel=3
+        run: npx nx affected -t lint --parallel=3 --max-warnings=0
 
   test:
     runs-on: ubuntu-latest

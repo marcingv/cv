@@ -3,7 +3,7 @@ import { CvDataDto } from '../dtos';
 import { CvDataRepository } from '@gv-cv/nestjs-data-access-cv';
 import { LangCode } from '@gv-cv/shared-util-types';
 
-@Resolver((of: CvDataDto) => CvDataDto)
+@Resolver((_of: CvDataDto) => CvDataDto)
 export class CvDataResolver {
   public constructor(private readonly cvRepository: CvDataRepository) {}
 
