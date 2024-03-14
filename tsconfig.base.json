@@ -19,6 +19,9 @@
       "@gv-cv/angular-data-access-cv": [
         "libs/angular/cv/data-access-cv/src/index.ts"
       ],
+      "@gv-cv/angular-data-access-router": [
+        "libs/angular/router/data-access-router/src/index.ts"
+      ],
       "@gv-cv/angular-data-access-ui": [
         "libs/angular/shared/data-access-ui/src/index.ts"
       ],
@@ -39,6 +42,9 @@
       ],
       "@gv-cv/angular-feature-pdf-export": [
         "libs/angular/export/feature-pdf-export/src/index.ts"
+      ],
+      "@gv-cv/angular-feature-seo-meta-tags": [
+        "libs/angular/seo/feature-seo-meta-tags/src/index.ts"
       ],
       "@gv-cv/angular-feature-translations": [
         "libs/angular/translations/feature-translations/src/index.ts"

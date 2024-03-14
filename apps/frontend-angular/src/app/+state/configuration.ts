@@ -5,32 +5,25 @@ import { UI_EFFECTS, UiActions } from '@gv-cv/angular-data-access-ui';
 import { CV_EFFECTS } from '@gv-cv/angular-data-access-cv';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { isDevMode } from '@angular/core';
+import { SEO_META_TAGS_EFFECTS } from '@gv-cv/angular-feature-seo-meta-tags';
 import {
   provideRouterStore,
-  ROUTER_CANCEL,
-  ROUTER_ERROR,
-  ROUTER_NAVIGATED,
-  ROUTER_NAVIGATION,
-  ROUTER_REQUEST,
-} from '@ngrx/router-store';
+  ROUTER_BLOCKED_ACTIONS_LIST,
+} from '@gv-cv/angular-data-access-router';
 
 export function provideAppState() {
   return [
     provideStore(reducers, { metaReducers }),
-    provideEffects(...UI_EFFECTS, ...CV_EFFECTS),
+    provideEffects(...UI_EFFECTS, ...CV_EFFECTS, ...SEO_META_TAGS_EFFECTS),
+    provideRouterStore(),
     provideStoreDevtools({
       maxAge: 25,
       logOnly: !isDevMode(),
       actionsBlocklist: [
-        ROUTER_ERROR,
-        ROUTER_CANCEL,
-        ROUTER_NAVIGATION,
-        ROUTER_NAVIGATED,
-        ROUTER_REQUEST,
+        ...ROUTER_BLOCKED_ACTIONS_LIST,
         UiActions.navigationStarted.type,
         UiActions.navigationFinished.type,
       ],
     }),
-    provideRouterStore(),
   ];
 }
