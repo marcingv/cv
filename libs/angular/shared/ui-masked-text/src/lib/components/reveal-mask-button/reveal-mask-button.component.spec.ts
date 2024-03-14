@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RevealMaskButtonComponent } from './reveal-mask-button.component';
+import { TranslationsTestingModule } from '@gv-cv/angular-test-translations';
 
 describe('RevealMaskButtonComponent', () => {
   let component: RevealMaskButtonComponent;
@@ -7,7 +8,7 @@ describe('RevealMaskButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RevealMaskButtonComponent],
+      imports: [RevealMaskButtonComponent, TranslationsTestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(RevealMaskButtonComponent);

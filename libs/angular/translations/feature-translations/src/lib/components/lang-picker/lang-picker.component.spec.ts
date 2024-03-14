@@ -3,6 +3,7 @@ import { LangPickerComponent } from './lang-picker.component';
 import { UiLangService } from '@gv-cv/angular-data-access-ui';
 import { signal } from '@angular/core';
 import { EN_LANG_CODE, LangCode, PL_LANG_CODE } from '@gv-cv/shared-util-types';
+import { TranslationsTestingModule } from '@gv-cv/angular-test-translations';
 
 describe('LangPickerComponent', () => {
   let component: LangPickerComponent;
@@ -11,7 +12,7 @@ describe('LangPickerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LangPickerComponent],
+      imports: [LangPickerComponent, TranslationsTestingModule],
       providers: [
         {
           provide: UiLangService,

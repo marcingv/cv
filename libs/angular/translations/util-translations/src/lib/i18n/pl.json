@@ -51,5 +51,11 @@
       "many": "dni",
       "other": "dni"
     }
+  },
+  "buttonLabels": {
+    "changeLangTo": "Zmień język na: {{lang}}",
+    "reveal": "Pokaż",
+    "cover": "Ukryj",
+    "downloadPdf": "Pobierz PDF"
   }
 }

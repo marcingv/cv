@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MaskedEmailComponent } from './masked-email.component';
+import { TranslationsTestingModule } from '@gv-cv/angular-test-translations';
 
 describe('MaskedEmailComponent', () => {
   let component: MaskedEmailComponent;
@@ -7,7 +8,7 @@ describe('MaskedEmailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MaskedEmailComponent],
+      imports: [MaskedEmailComponent, TranslationsTestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(MaskedEmailComponent);

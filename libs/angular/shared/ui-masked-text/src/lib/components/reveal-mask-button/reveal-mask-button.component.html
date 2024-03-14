@@ -1,4 +1,8 @@
-<button (click)="toggleMask()" class="p-1 rounded active:ring hover:bg-gray-50">
+<button
+  (click)="toggleMask()"
+  class="p-1 rounded active:ring hover:bg-gray-50"
+  [title]="(isMasked ? REVEAL_LABEL : COVER_LABEL) | translate"
+>
   @if (isMasked) {
     <gv-cv-icon-eye-slash [strokeWidth]="1"></gv-cv-icon-eye-slash>
   } @else {
