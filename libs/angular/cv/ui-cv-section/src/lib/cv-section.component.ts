@@ -11,6 +11,6 @@ import { TranslationKey } from '@gv-cv/angular-util-translations';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CvSectionComponent {
-  @Input() public title?: TranslationKey;
+  @Input() public headerTitle?: TranslationKey;
   @Input() public cssClass? = 'py-8';
 }
