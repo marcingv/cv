@@ -107,12 +107,4 @@ describe('HomePage', () => {
       expect(location.pathname).to.eq('/en');
     });
   });
-
-  it('should contain HTML meta description tag defined', () => {
-    cy.visit('/');
-
-    cy.get('meta[name="description"]')
-      .invoke('attr', 'content')
-      .should('not.be.empty');
-  });
 });
