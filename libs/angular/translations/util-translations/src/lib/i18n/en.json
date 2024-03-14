@@ -51,5 +51,11 @@
       "many": "days",
       "other": "days"
     }
+  },
+  "buttonLabels": {
+    "changeLangTo": "Change language to: {{lang}}",
+    "reveal": "Reveal",
+    "cover": "Cover",
+    "downloadPdf": "Download PDF"
   }
 }
