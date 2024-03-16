@@ -33,7 +33,7 @@
         "tsConfig": "apps/frontend-angular/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/frontend-angular/src/favicon.ico",
+          "apps/frontend-angular/src/manifest.json",
           "apps/frontend-angular/src/robots.txt",
           "apps/frontend-angular/src/assets",
           {
@@ -101,7 +101,7 @@
         "polyfills": ["zone.js"],
         "tsConfig": "apps/frontend-angular/tsconfig.app.json",
         "assets": [
-          "apps/frontend-angular/src/favicon.ico",
+          "apps/frontend-angular/src/manifest.json",
           "apps/frontend-angular/src/robots.txt",
           "apps/frontend-angular/src/assets",
           {
