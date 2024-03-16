@@ -19,7 +19,19 @@ spec:
       hosts:
         - gawski.info
         - www.gawski.info
+        - marcin.gawski.info
+        - www.marcin.gawski.info
   rules:
+    - host: marcin.gawski.info
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: cv-frontend-service
+                port:
+                  number: 80
     - host: gawski.info
       http:
         paths:
