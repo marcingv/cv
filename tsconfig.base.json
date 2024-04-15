@@ -96,6 +96,9 @@
       "@gv-cv/angular-util-translations": [
         "libs/angular/translations/util-translations/src/index.ts"
       ],
+      "@gv-cv/feature-cv-printing-layout": [
+        "libs/angular/cv/feature-cv-printing-layout/src/index.ts"
+      ],
       "@gv-cv/nestjs-data-access-cv": [
         "libs/nestjs/data-access-cv/src/index.ts"
       ],
