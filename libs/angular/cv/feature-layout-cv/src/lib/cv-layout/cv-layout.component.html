@@ -1,7 +1,17 @@
-<div class="fixed z-10 top-12 left-0 print:hidden">
-  <gv-cv-lang-picker></gv-cv-lang-picker>
-</div>
+<ng-template #content>
+  <div class="fixed z-10 top-12 left-0 print:hidden">
+    <gv-cv-lang-picker></gv-cv-lang-picker>
+  </div>
 
-<main class="w-full min-h-dvh">
-  <router-outlet></router-outlet>
-</main>
+  <main class="w-full min-h-dvh">
+    <router-outlet></router-outlet>
+  </main>
+</ng-template>
+
+@if (isPdfMode$ | async) {
+  <gv-cv-printing-layout>
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </gv-cv-printing-layout>
+} @else {
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+}

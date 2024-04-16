@@ -8,3 +8,4 @@ export * from './language-experience';
 export * from './project-experience';
 export * from './skill';
 export * from './skill-category';
+export * from './consents';

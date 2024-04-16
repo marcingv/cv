@@ -334,4 +334,7 @@ export const EN_CV: CvData = {
     { name: 'Polski', advancementDescription: 'Język ojczysty' },
     { name: 'Angielski', advancementDescription: 'Poziom komunikatywny' },
   ],
+  consents: {
+    RODO: 'I hereby give consent for my personal data to be processed for the purpose of conducting recruitment for the position for which I am applying.',
+  },
 };

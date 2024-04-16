@@ -1,0 +1,9 @@
+{
+  "name": "angular-util-router",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/angular/router/util-router/src",
+  "prefix": "gv-cv",
+  "tags": ["type:util", "scope:frontend", "framework:angular"],
+  "projectType": "library",
+  "targets": {}
+}

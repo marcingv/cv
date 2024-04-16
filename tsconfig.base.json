@@ -25,6 +25,9 @@
       "@gv-cv/angular-data-access-ui": [
         "libs/angular/shared/data-access-ui/src/index.ts"
       ],
+      "@gv-cv/angular-feature-cv-printing-layout": [
+        "libs/angular/cv/feature-cv-printing-layout/src/index.ts"
+      ],
       "@gv-cv/angular-feature-layout-cv": [
         "libs/angular/cv/feature-layout-cv/src/index.ts"
       ],
@@ -89,6 +92,9 @@
       ],
       "@gv-cv/angular-util-http-logger": [
         "libs/angular/shared/util-http-logger/src/index.ts"
+      ],
+      "@gv-cv/angular-util-router": [
+        "libs/angular/router/util-router/src/index.ts"
       ],
       "@gv-cv/angular-util-ssr-env": [
         "libs/angular/shared/util-ssr-env/src/index.ts"

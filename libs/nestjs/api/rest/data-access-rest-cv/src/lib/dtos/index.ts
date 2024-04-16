@@ -7,3 +7,4 @@ export * from './education-experience.dto';
 export * from './job-experience.dto';
 export * from './project-experience.dto';
 export * from './language-experience.dto';
+export * from './consents.dto';
