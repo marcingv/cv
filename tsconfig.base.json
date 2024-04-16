@@ -90,6 +90,9 @@
       "@gv-cv/angular-util-http-logger": [
         "libs/angular/shared/util-http-logger/src/index.ts"
       ],
+      "@gv-cv/angular-util-router": [
+        "libs/angular/router/util-router/src/index.ts"
+      ],
       "@gv-cv/angular-util-ssr-env": [
         "libs/angular/shared/util-ssr-env/src/index.ts"
       ],
