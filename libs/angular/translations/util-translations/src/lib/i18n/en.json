@@ -19,7 +19,8 @@
   "contactLabels": {
     "placeOfResidence": "Place of residence",
     "phoneNumber": "Phone",
-    "email": "E-mail"
+    "email": "E-mail",
+    "github": "GitHub"
   },
   "pageTitles": {
     "default": "Marcin Gawski - Curriculum Vitae",

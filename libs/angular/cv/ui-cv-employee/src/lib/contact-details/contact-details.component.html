@@ -29,4 +29,17 @@
       </ng-template>
     </gv-cv-details-view-row>
   }
+  @if (data.github) {
+    <gv-cv-details-view-row [label]="GITHUB_LABEL | translate">
+      <ng-template gvCvDetailsViewRowValue>
+        <a
+          [href]="data.github"
+          target="_blank"
+          class="hover:underline hover:underline-offset-4"
+        >
+          {{ data.github }}
+        </a>
+      </ng-template>
+    </gv-cv-details-view-row>
+  }
 </gv-cv-details-view>
