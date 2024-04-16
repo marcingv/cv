@@ -14,4 +14,7 @@ export class ContactDataDto implements ContactData {
 
   @Field({ nullable: true })
   email?: string | undefined;
+
+  @Field({ nullable: true })
+  github?: string | undefined;
 }

@@ -6,4 +6,5 @@ export class ContactDataDto implements ContactData {
   @ApiProperty() city!: string;
   @ApiProperty({ required: false }) phone?: string | undefined;
   @ApiProperty({ required: false }) email?: string | undefined;
+  @ApiProperty({ required: false }) github?: string | undefined;
 }
