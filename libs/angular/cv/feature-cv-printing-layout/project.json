@@ -1,5 +1,5 @@
 {
-  "name": "feature-cv-printing-layout",
+  "name": "angular-feature-cv-printing-layout",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/angular/cv/feature-cv-printing-layout/src",
   "prefix": "gv-cv",

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LangPickerComponent } from '@gv-cv/angular-feature-translations';
-import { CvPrintingLayoutComponent } from '@gv-cv/feature-cv-printing-layout';
+import { CvPrintingLayoutComponent } from '@gv-cv/angular-feature-cv-printing-layout';
 import { map } from 'rxjs';
 import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
 import { Store } from '@ngrx/store';

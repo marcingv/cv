@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'feature-cv-printing-layout',
+  displayName: 'angular-feature-cv-printing-layout',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory:
