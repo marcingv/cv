@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnDestroy } from '@angular/core';
+import { Component, inject, Input, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PdfExportService } from '../../services/pdf-export.service';
 import { Subject, takeUntil } from 'rxjs';
@@ -17,19 +17,19 @@ export class PagePdfExportComponent implements OnDestroy {
   public readonly DOWNLOAD_LABEL: TranslationKey = 'buttonLabels.downloadPdf';
 
   @Input({ required: true }) public fileName!: string;
-  public pending = false;
+  public pending = signal(false);
 
   private readonly exportService = inject(PdfExportService);
   private destroyed$ = new Subject<void>();
 
   public export(): void {
-    this.pending = true;
+    this.pending.set(true);
     this.exportService
       .currentPageToPdf(this.fileName)
       .pipe(takeUntil(this.destroyed$))
       .subscribe({
-        error: () => (this.pending = false),
-        complete: () => (this.pending = false),
+        error: () => this.pending.set(false),
+        complete: () => this.pending.set(false),
       });
   }
 

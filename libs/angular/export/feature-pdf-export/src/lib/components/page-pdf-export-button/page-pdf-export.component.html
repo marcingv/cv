@@ -18,7 +18,7 @@
         'disabled:opacity-25 ' +
         'shadow-md shadow-black/25 hover:shadow-lg hover:shadow-black/25 '
     }}"
-    [disabled]="pending"
+    [disabled]="pending()"
     (click)="export()"
     [title]="DOWNLOAD_LABEL | translate"
   >

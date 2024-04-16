@@ -11,3 +11,8 @@ export const selectCvDataForCurrentLanguage = createSelector(
   (lang: LangCode, entities: Dictionary<CvDataEntity>): CvData | undefined =>
     entities[lang]?.data,
 );
+
+export const selectRODOConsentForCurrentLanguage = createSelector(
+  selectCvDataForCurrentLanguage,
+  (data: CvData | undefined) => data?.consents.RODO,
+);

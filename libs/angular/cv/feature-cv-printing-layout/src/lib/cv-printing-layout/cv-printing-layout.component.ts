@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BehaviorSubject } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { CvDataSelectors } from '@gv-cv/angular-data-access-cv';
 
 @Component({
   selector: 'gv-cv-printing-layout',
@@ -11,7 +12,9 @@ import { BehaviorSubject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CvPrintingLayoutComponent {
-  public footerText$ = new BehaviorSubject<string>(
-    'Wyrażam zgodę na przetwarzanie moich danych osobowych w celu prowadzenia rekrutacji na aplikowane przeze mnie stanowisko.',
+  private store = inject(Store);
+
+  public footerText$ = this.store.select(
+    CvDataSelectors.selectRODOConsentForCurrentLanguage,
   );
 }
