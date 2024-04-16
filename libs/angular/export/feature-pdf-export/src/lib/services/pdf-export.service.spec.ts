@@ -4,6 +4,7 @@ import { PdfExportService } from './pdf-export.service';
 import { PdfExportApiService } from '../api/pdf-export-api.service';
 import { firstValueFrom, Observable, of } from 'rxjs';
 import { saveAs } from 'file-saver';
+import { QueryParams } from '@gv-cv/angular-util-router';
 
 jest.mock('file-saver', () => ({
   saveAs: jest.fn(),
@@ -42,7 +43,9 @@ describe('PdfExportService', () => {
 
     await firstValueFrom(service.currentPageToPdf('test-file'));
 
-    expect(exportPageSpy).toHaveBeenCalledWith(currentPageUrl);
+    expect(exportPageSpy).toHaveBeenCalledWith(
+      currentPageUrl + '?' + QueryParams.PRINTING,
+    );
     expect(saveAs).toHaveBeenCalledWith(new Blob(), 'test-file.pdf');
   });
 });

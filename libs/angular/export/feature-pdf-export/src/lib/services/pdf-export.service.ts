@@ -2,6 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { PdfExportApiService } from '../api/pdf-export-api.service';
 import { Observable, tap } from 'rxjs';
 import { saveAs } from 'file-saver';
+import { QueryParams } from '@gv-cv/angular-util-router';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ export class PdfExportService {
   public currentPageToPdf(fileName: string): Observable<Blob> {
     fileName = this.preparePdfFileName(fileName);
 
-    return this.api.exportPage(location.href).pipe(
+    return this.api.exportPage(location.href + '?' + QueryParams.PRINTING).pipe(
       tap((data: Blob) => {
         saveAs(data, fileName);
       }),
