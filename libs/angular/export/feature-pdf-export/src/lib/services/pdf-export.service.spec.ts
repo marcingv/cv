@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { PdfExportService } from './pdf-export.service';
 import { PdfExportApiService } from '../api/pdf-export-api.service';
 import { firstValueFrom, Observable, of } from 'rxjs';
@@ -44,7 +43,7 @@ describe('PdfExportService', () => {
     await firstValueFrom(service.currentPageToPdf('test-file'));
 
     expect(exportPageSpy).toHaveBeenCalledWith(
-      currentPageUrl + '?' + QueryParams.PRINTING,
+      currentPageUrl + '?' + QueryParams.PRINTING + '=',
     );
     expect(saveAs).toHaveBeenCalledWith(new Blob(), 'test-file.pdf');
   });
