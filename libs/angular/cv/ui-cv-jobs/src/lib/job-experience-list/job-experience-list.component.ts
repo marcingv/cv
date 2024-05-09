@@ -22,4 +22,5 @@ import { SkillsChipsListComponent } from '@gv-cv/angular-ui-cv-skills';
 })
 export class JobExperienceListComponent {
   @Input() public data: JobExperience[] = [];
+  @Input() public showUsedSkills = false;
 }

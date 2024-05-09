@@ -4,4 +4,5 @@ export interface ContactData {
   phone?: string;
   email?: string;
   github?: string;
+  www?: string;
 }

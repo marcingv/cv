@@ -42,4 +42,20 @@
       </ng-template>
     </gv-cv-details-view-row>
   }
+
+  @if (data.www) {
+    <div class="hidden print:block">
+      <gv-cv-details-view-row [label]="WWW_LABEL | translate">
+        <ng-template gvCvDetailsViewRowValue>
+          <a
+            [href]="data.www"
+            target="_blank"
+            class="hover:underline hover:underline-offset-4"
+          >
+            {{ data.www }}
+          </a>
+        </ng-template>
+      </gv-cv-details-view-row>
+    </div>
+  }
 </gv-cv-details-view>
