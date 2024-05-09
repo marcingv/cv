@@ -1,12 +1,15 @@
 <div class="flex flex-col gap-2">
-  @for (oneGroup of data | groupSkillsByCategory | keyvalue; track oneGroup) {
+  @for (oneGroup of data | groupSkillsByCategory; track oneGroup) {
     <div class="flex flex-col lg:flex-row lg:gap-4">
-      <div class="hidden lg:block flex-shrink-0 w-[10rem]">
-        {{ oneGroup.key }}
+      <div class="hidden lg:flex flex-shrink-0 w-[8rem] items-center">
+        <span class="font-medium uppercase text-sm">{{
+          oneGroup.category | skillCategoryLabel | translate
+        }}</span>
       </div>
       <div class="flex-grow">
         <gv-cv-skills-chips-list
-          [data]="oneGroup.value"
+          [data]="oneGroup.skills"
+          [cssClass]="oneGroup.category | categorySkillChipsBgClass"
         ></gv-cv-skills-chips-list>
       </div>
     </div>

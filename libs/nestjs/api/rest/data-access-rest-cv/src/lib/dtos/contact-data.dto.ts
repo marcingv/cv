@@ -7,4 +7,5 @@ export class ContactDataDto implements ContactData {
   @ApiProperty({ required: false }) phone?: string | undefined;
   @ApiProperty({ required: false }) email?: string | undefined;
   @ApiProperty({ required: false }) github?: string | undefined;
+  @ApiProperty({ required: false }) www?: string | undefined;
 }

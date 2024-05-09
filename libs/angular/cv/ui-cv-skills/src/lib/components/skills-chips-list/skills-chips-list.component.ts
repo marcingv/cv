@@ -11,4 +11,5 @@ import { Skill } from '@gv-cv/shared-util-types';
 })
 export class SkillsChipsListComponent {
   @Input() public data: Skill[] = [];
+  @Input() public cssClass = 'bg-gray-700 dark:bg-gray-900';
 }

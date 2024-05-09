@@ -2,16 +2,20 @@
   <ul>
     @for (item of data; track item) {
       <li class="mb-4 last-of-type:mb-0">
-        <div class="mb-4">
+        <div class="flex flex-row gap-4 justify-between">
           <h3 class="font-normal">{{ item.name }}</h3>
-          <gv-cv-time-span
-            [from]="item.from"
-            [to]="item.to"
-            class="text-xs"
-          ></gv-cv-time-span>
+
+          <span class="text-xs whitespace-nowrap leading-6">
+            (<gv-cv-time-span
+              [from]="item.from"
+              [to]="item.to"
+              dateFormat="y"
+            ></gv-cv-time-span
+            >)
+          </span>
         </div>
 
-        <p>{{ item.description }}</p>
+        <p class="text-sm">{{ item.description }}</p>
       </li>
     }
   </ul>

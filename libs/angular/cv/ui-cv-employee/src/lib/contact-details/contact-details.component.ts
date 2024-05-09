@@ -36,6 +36,7 @@ export class ContactDetailsComponent {
     'contactLabels.phoneNumber';
   public readonly EMAIL_LABEL: TranslationKey = 'contactLabels.email';
   public readonly GITHUB_LABEL: TranslationKey = 'contactLabels.github';
+  public readonly WWW_LABEL: TranslationKey = 'contactLabels.www';
 
   @Input({ required: true }) public data!: ContactData;
 }

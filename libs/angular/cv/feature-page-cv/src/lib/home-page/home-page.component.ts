@@ -4,7 +4,10 @@ import { ProfileAboutComponent } from '@gv-cv/angular-ui-cv-employee';
 import { CvSectionComponent } from '@gv-cv/angular-ui-cv-section';
 import { EducationExperienceListComponent } from '@gv-cv/angular-ui-cv-education';
 import { JobExperienceListComponent } from '@gv-cv/angular-ui-cv-jobs';
-import { ProjectsExperienceListComponent } from '@gv-cv/angular-ui-cv-projects';
+import {
+  OrderedProjectsExperiencePipe,
+  ProjectsExperienceListComponent,
+} from '@gv-cv/angular-ui-cv-projects';
 import { LanguagesExperienceListComponent } from '@gv-cv/angular-ui-cv-languages';
 import { HobbiesListComponent } from '@gv-cv/angular-ui-cv-hobbies';
 import { CvData } from '@gv-cv/shared-util-types';
@@ -28,6 +31,7 @@ import {
     AdditionalSkillsListComponent,
     GroupedSkillsListComponent,
     PagePdfExportComponent,
+    OrderedProjectsExperiencePipe,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',

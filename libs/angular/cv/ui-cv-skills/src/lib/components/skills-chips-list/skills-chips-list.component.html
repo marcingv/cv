@@ -1,8 +1,6 @@
-<ul class="flex flex-row flex-wrap gap-1">
+<ul class="flex flex-row flex-wrap gap-y-2 gap-x-1">
   @for (skill of data; track skill) {
-    <li
-      class="bg-gray-700 dark:bg-gray-900 font-mono text-gray-50 rounded text-xs px-3 py-1"
-    >
+    <li class="{{ cssClass }} font-mono text-gray-50 rounded text-xs px-3 py-1">
       {{ skill.name }}
     </li>
   }

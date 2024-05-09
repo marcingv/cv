@@ -20,7 +20,8 @@
     "placeOfResidence": "Miejsce zamieszkania",
     "phoneNumber": "Telefon",
     "email": "E-mail",
-    "github": "GitHub"
+    "github": "GitHub",
+    "www": "WWW"
   },
   "pageTitles": {
     "default": "Marcin Gawski - Curriculum Vitae",
@@ -58,5 +59,12 @@
     "reveal": "Pokaż",
     "cover": "Ukryj",
     "downloadPdf": "Pobierz PDF"
+  },
+  "skillCategoriesLabels": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "databases": "Bazy danych",
+    "methodology": "Metodologie",
+    "no-category": "Inne"
   }
 }

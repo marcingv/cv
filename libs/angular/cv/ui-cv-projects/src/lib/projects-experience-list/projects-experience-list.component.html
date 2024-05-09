@@ -1,5 +1,5 @@
 <ul
-  class="grid lg:grid-cols-2 xl:grid-cols-3 print:grid-cols-2 gap-y-4 xl:gap-0"
+  class="grid lg:grid-cols-2 xl:grid-cols-3 print:grid-cols-2 gap-y-4 xl:gap-0 print:gap-y-4"
 >
   @for (item of data; track item) {
     <li class="flex flex-col gap-4 p-4 odd:bg-gray-100 dark:odd:bg-gray-700">
@@ -34,7 +34,7 @@
           {{ RESPONSIBILITIES_LABEL | translate }}:
         </h4>
 
-        <ul>
+        <ul class="list-disc ps-4">
           @for (resposibility of item.responsibilities; track resposibility) {
             <li>{{ resposibility }}</li>
           }

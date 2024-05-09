@@ -16,4 +16,5 @@ export class TimeSpanComponent {
 
   @Input({ required: true }) from!: Date | string | number;
   @Input() to?: Date | string | number;
+  @Input() dateFormat = 'MMM y';
 }
