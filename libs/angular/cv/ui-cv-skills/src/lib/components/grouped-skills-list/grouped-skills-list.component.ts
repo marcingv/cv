@@ -1,8 +1,13 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { JsonPipe, KeyValuePipe } from '@angular/common';
 import { SkillsChipsListComponent } from '../skills-chips-list';
-import { GroupSkillsByCategoryPipe } from '../../pipes';
+import {
+  CategorySkillChipsBgClassPipe,
+  GroupSkillsByCategoryPipe,
+  SkillCategoryLabelPipe,
+} from '../../pipes';
 import { Skill } from '@gv-cv/shared-util-types';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'gv-cv-grouped-skills-list',
@@ -12,6 +17,9 @@ import { Skill } from '@gv-cv/shared-util-types';
     JsonPipe,
     KeyValuePipe,
     SkillsChipsListComponent,
+    SkillCategoryLabelPipe,
+    TranslateModule,
+    CategorySkillChipsBgClassPipe,
   ],
   templateUrl: './grouped-skills-list.component.html',
   styleUrl: './grouped-skills-list.component.scss',

@@ -58,5 +58,12 @@
     "reveal": "Reveal",
     "cover": "Cover",
     "downloadPdf": "Download PDF"
+  },
+  "skillCategoriesLabels": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "databases": "Databases",
+    "methodology": "Methodologies",
+    "no-category": "Others"
   }
 }
