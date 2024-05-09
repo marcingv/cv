@@ -235,11 +235,11 @@ export const PL_CV: CvData = {
       ],
     },
     {
-      name: 'PIU Empatia - platforma z wnioskami o świadczenia socjalne',
+      name: 'PIU Emp@tia - platforma z wnioskami o świadczenia socjalne',
       from: '2017-03-01',
       to: '2018-01-01',
       description:
-        'Implementacja modułu na platformie PIU Empatia do składania wniosków o świadczenia socjalne (500+, Karta Dużej Rodziny, itp).',
+        'Implementacja modułu na platformie "PIU Emp@tia" do składania wniosków o świadczenia socjalne (500+, Karta Dużej Rodziny, itp).',
       companyName: 'Sygnity',
       role: 'Programista Angular / Team Leader',
       responsibilities: [
