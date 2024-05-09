@@ -130,7 +130,7 @@ export const EN_CV: CvData = {
         'Aplikacja frontend dla traderów / klientów domu maklerskiego banku BNP. Platforma umożliwiająca handlowanie instrumentami finansowymi notowanymi na GPW oraz na rynkach zagranicznych.',
       role: 'Senior Angular Developer',
       companyName: 'Sygnity',
-      from: '2021-02-01',
+      from: '2022-02-01',
       to: '2023-09-30',
       responsibilities: [
         'Główny programista i lider zespołu frontendowego.',
@@ -175,6 +175,7 @@ export const EN_CV: CvData = {
         { name: 'Bootstrap' },
         { name: 'SASS' },
         { name: 'Websockets' },
+        { name: 'CI' },
       ],
     },
     {
@@ -197,7 +198,7 @@ export const EN_CV: CvData = {
       usedSkills: [
         { name: 'Symfony 4' },
         { name: 'REST API' },
-        { name: 'CI / CA / CD' },
+        { name: 'CI / CD' },
         { name: 'RabbitMQ' },
         { name: 'PostgreSQL' },
         { name: 'Angular 12' },
@@ -310,26 +311,26 @@ export const EN_CV: CvData = {
         { name: 'Android' },
       ],
     },
-    {
-      name: 'OfficeOnTime',
-      companyName: 'JoomSoft',
-      description: 'System rezerwacji pomieszczeń on-line',
-      from: '2013-06-01',
-      to: '2014-01-30',
-      role: 'Programista WEB (PHP)',
-      responsibilities: [
-        'Implementacja funkcjolaności systemu zgodnie z wymaganiami.',
-        'Zapewnienie responsywności na urządzeniach mobilnych.',
-        'Integracja z systemami płatności PayU i PayPal.',
-      ],
-      usedSkills: [
-        { name: 'PHP' },
-        { name: 'Yii' },
-        { name: 'PostgreSQL' },
-        { name: 'Bootstrap' },
-        { name: 'CSS' },
-      ],
-    },
+    // {
+    //   name: 'OfficeOnTime',
+    //   companyName: 'JoomSoft',
+    //   description: 'System rezerwacji pomieszczeń on-line',
+    //   from: '2013-06-01',
+    //   to: '2014-01-30',
+    //   role: 'Programista WEB (PHP)',
+    //   responsibilities: [
+    //     'Implementacja funkcjolaności systemu zgodnie z wymaganiami.',
+    //     'Zapewnienie responsywności na urządzeniach mobilnych.',
+    //     'Integracja z systemami płatności PayU i PayPal.',
+    //   ],
+    //   usedSkills: [
+    //     { name: 'PHP' },
+    //     { name: 'Yii' },
+    //     { name: 'PostgreSQL' },
+    //     { name: 'Bootstrap' },
+    //     { name: 'CSS' },
+    //   ],
+    // },
     {
       name: 'BooksOn',
       companyName: 'Estymator',

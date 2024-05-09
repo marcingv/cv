@@ -41,7 +41,7 @@
   <div class="container">
     <gv-cv-cv-section headerTitle="interestingProjects">
       <gv-cv-projects-experience-list
-        [data]="cvData.projects"
+        [data]="cvData.projects | orderedProjectsExperience"
       ></gv-cv-projects-experience-list>
     </gv-cv-cv-section>
   </div>

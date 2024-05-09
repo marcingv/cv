@@ -3,6 +3,7 @@ import { HomePageComponent } from './home-page.component';
 import { NO_ERRORS_SCHEMA, signal } from '@angular/core';
 import { HomePageService } from './home-page.service';
 import { CvData, CvDataFactory } from '@gv-cv/shared-util-types';
+import { OrderedProjectsExperiencePipe } from '@gv-cv/angular-ui-cv-projects';
 
 describe('HomePageComponent', (): void => {
   let component: HomePageComponent;
@@ -19,7 +20,7 @@ describe('HomePageComponent', (): void => {
     })
       .overrideComponent(HomePageComponent, {
         set: {
-          imports: [],
+          imports: [OrderedProjectsExperiencePipe],
           providers: [{ provide: HomePageService, useValue: homePageService }],
           schemas: [NO_ERRORS_SCHEMA],
         },
