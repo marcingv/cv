@@ -34,9 +34,7 @@ describe('TimeSpanComponent', () => {
     fixture.detectChanges();
     await fixture.whenStable();
 
-    expect(fixture.nativeElement.textContent).toEqual(
-      '14.02.2024 - 20.02.2024',
-    );
+    expect(fixture.nativeElement.textContent).toEqual('lut 2024 - lut 2024');
   });
 
   it('should display label for pending period', async () => {
@@ -50,7 +48,7 @@ describe('TimeSpanComponent', () => {
 
     const tillNowLabel: TranslationKey = 'tillNow';
     expect(fixture.nativeElement.textContent).toEqual(
-      `14.02.2024 - ${translateService.instant(tillNowLabel)}`,
+      `lut 2024 - ${translateService.instant(tillNowLabel)}`,
     );
   });
 });

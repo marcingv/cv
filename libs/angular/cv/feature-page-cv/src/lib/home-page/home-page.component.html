@@ -8,7 +8,7 @@
 
   <gv-cv-profile-about [profile]="cvData.employee"></gv-cv-profile-about>
 
-  <div class="container flex flex-col gap-4 md:flex-row print:flex-row">
+  <div class="container flex flex-col gap-8 md:flex-row print:flex-row">
     <div class="md:w-2/3">
       <gv-cv-cv-section headerTitle="skills">
         <gv-cv-grouped-skills-list
@@ -20,7 +20,17 @@
     </div>
 
     <div class="md:w-1/3">
-      <gv-cv-cv-section headerTitle="education">
+      <gv-cv-cv-section
+        headerTitle="languages"
+        cssClass="pt-4 pb-4"
+        class="mt-4 px-[1rem] mx-[-1rem] bg-gray-100 dark:bg-gray-700"
+      >
+        <gv-cv-languages-experience-list
+          [data]="cvData.languages"
+        ></gv-cv-languages-experience-list>
+      </gv-cv-cv-section>
+
+      <gv-cv-cv-section headerTitle="education" cssClass="pt-4 pb-8">
         <gv-cv-education-experience-list
           [data]="cvData.education"
         ></gv-cv-education-experience-list>
@@ -47,20 +57,17 @@
   </div>
 
   <div class="bg-gray-50 dark:bg-gray-900">
-    <div class="container flex flex-row flex-wrap gap-4">
-      <gv-cv-cv-section headerTitle="languages" class="flex-1">
-        <gv-cv-languages-experience-list
-          [data]="cvData.languages"
-        ></gv-cv-languages-experience-list>
-      </gv-cv-cv-section>
-
-      <gv-cv-cv-section headerTitle="hobbies" class="flex-1">
+    <div class="container flex flex-row flex-wrap gap-x-4 justify-between">
+      <gv-cv-cv-section headerTitle="hobbies" class="min-w-[33%] print:flex-1">
         <gv-cv-hobbies-list
           [data]="cvData.employee.hobbies"
         ></gv-cv-hobbies-list>
       </gv-cv-cv-section>
 
-      <gv-cv-cv-section headerTitle="additionalSkills" class="flex-1">
+      <gv-cv-cv-section
+        headerTitle="additionalSkills"
+        class="min-w-[33%] print:flex-1"
+      >
         <gv-cv-additional-skills-list
           [data]="cvData.employee.additionalSkills"
         ></gv-cv-additional-skills-list>
