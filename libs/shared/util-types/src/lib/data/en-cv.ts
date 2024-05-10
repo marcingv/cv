@@ -107,7 +107,7 @@ export const EN_CV: CvData = {
       role: 'Independent Freelancer',
       usedSkills: [
         { name: 'PHP' },
-        { name: 'Yii 1' },
+        { name: 'Yii' },
         { name: 'Android' },
         { name: 'CSS' },
         { name: 'REST' },
@@ -188,7 +188,7 @@ export const EN_CV: CvData = {
       name: 'Electronic Services Platform for the Patent Office',
       description:
         'Design and implementation of the Electronic Services Platform for the Patent Office in Poland.',
-      role: 'System Architect, PHP Developer, Angular Developer',
+      role: 'System Architect, PHP & Android Developer',
       companyName: 'Lemisoft',
       from: '2019-01-01',
       to: '2022-09-30',
@@ -220,7 +220,7 @@ export const EN_CV: CvData = {
       companyName: 'Lemisoft',
       description:
         'System using augmented reality to support production processes in enterprises.',
-      role: 'System Architect, PHP Programmer, Angular Programmer',
+      role: 'System Architect, PHP & Angular Developer',
       from: '2021-03-01',
       to: '2022-02-01',
       usedSkills: [
@@ -247,11 +247,11 @@ export const EN_CV: CvData = {
       description:
         'Module implementation on the "PIU Emp@tia" platform for submitting social benefits applications (500+, Large Family Card, etc.).',
       companyName: 'Sygnity',
-      role: 'Angular Programmer / Team Leader',
+      role: 'Angular Developer / Team Leader',
       responsibilities: [
         'Frontend application architecture design, enabling parallel work of different programmer teams on a set of social benefits applications.',
         'Implementation of a set of interactive social benefits applications.',
-        'Coordination of programmer team work.',
+        'Coordination of programmers teams work.',
       ],
       usedSkills: [
         { name: 'Angular 5' },
@@ -266,7 +266,7 @@ export const EN_CV: CvData = {
       to: '2016-03-31',
       description:
         'Maintenance and expansion of the "Occupational Barometer" application commissioned by the Voivodship Labor Office in Krakow.',
-      role: 'WEB Programmer (PHP)',
+      role: 'WEB Developer (PHP)',
       responsibilities: [
         'Expansion of system functionalities according to client expectations.',
         'Preparation of a new visual layer of the application, in accordance with mockups.',
@@ -285,14 +285,14 @@ export const EN_CV: CvData = {
       companyName: 'Lemisoft',
       from: '2015-01-01',
       to: '2015-07-30',
-      role: 'PHP & Android Programmer',
+      role: 'PHP & Android Developer',
       description: 'Advertising platform based on Beacon proximity sensors.',
       responsibilities: [
         'BackOffice application implementation.',
         'Implementation of REST API for the mobile application.',
         'Implementation of a native mobile application for the Android platform.',
       ],
-      usedSkills: [{ name: 'PHP' }, { name: 'Yii 1' }, { name: 'Android' }],
+      usedSkills: [{ name: 'PHP' }, { name: 'Yii' }, { name: 'Android' }],
     },
     {
       name: 'Nurseum - Medical Scheduler',
@@ -301,7 +301,7 @@ export const EN_CV: CvData = {
       to: '2017-12-30',
       description:
         'Tool supporting daily work of nurses and settlements with Social Insurance Institution.',
-      role: 'WEB Programmer (PHP) & Android Programmer',
+      role: 'WEB Developer (PHP) & Android Developer',
       responsibilities: [
         'Implementation of key system functionalities.',
         'REST API development',
@@ -323,7 +323,7 @@ export const EN_CV: CvData = {
     //   description: 'Online room reservation system',
     //   from: '2013-06-01',
     //   to: '2014-01-30',
-    //   role: 'WEB Programmer (PHP)',
+    //   role: 'WEB Developer (PHP)',
     //   responsibilities: [
     //     'System functionality implementation according to requirements.',
     //     'Ensuring responsiveness on mobile devices.',
@@ -341,15 +341,15 @@ export const EN_CV: CvData = {
       name: 'BooksOn',
       companyName: 'Estymator',
       description:
-        'Dedicated platform for running an online bookstore, implemented to order.',
+        "Dedicated platform for running an online bookstore, implemented according to client's requirements.",
       to: '2015-10-01',
       from: '2010-01-01',
-      role: 'WEB Programmer',
+      role: 'WEB Developer',
       responsibilities: [
         'BackOffice system implementation for order handling, shipping process automation, and inventory monitoring.',
         'Preparation of an advanced, dedicated CMS system for managing and conducting sales.',
         'Implementation of frontend application for store customers.',
-        'Implementation of online payments eCard',
+        'Integration with eCard online payments platform.',
         'Integration with the Polish Post API.',
         'Mass email sending mechanism and extensive partner module.',
         'Continuous contact and consultations with the client.',
@@ -364,10 +364,10 @@ export const EN_CV: CvData = {
       ],
     },
     {
-      name: 'SSRMZ - Ministry of Health Resort Statistics System',
+      name: 'SSRMZ - Statistics System for the Ministry of Health Resort',
       description:
         'Maintenance and development of the SSRMZ platform - a reporting system responsible for collecting and processing statistical data of facilities related to the healthcare sector in Poland.',
-      role: 'PHP Programmer',
+      role: 'PHP Developer',
       companyName: 'Lemisoft',
       from: '2014-02-01',
       to: '2016-02-30',
@@ -395,56 +395,64 @@ export const EN_CV: CvData = {
       platform: 'oracle',
       name: 'Oracle Database SQL Certified Expert',
       date: '2014-01-31',
-      certFileUrl: '/assets/files/oracle_sql_expert.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/oracle_sql_expert.pdf',
     },
     {
       platform: 'oracle',
       name: 'Oracle Database 11g Administrator Certified Associate',
       date: '2014-01-31',
-      certFileUrl: '/assets/files/oracle_administrator.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/oracle_administrator.pdf',
     },
     {
       platform: 'udemy',
       name: 'Cypress End-to-End Testing - Getting Started',
       date: '2024-01-03',
-      certFileUrl: '/assets/files/cypress-end-to-end-testing-certificate.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/cypress-end-to-end-testing-certificate.pdf',
     },
     {
       platform: 'udemy',
       name: 'Docker & Kubernetes: The Practical Guide',
       date: '2024-01-09',
-      certFileUrl: '/assets/files/docker-&-kubernetes-certificate.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/docker-&-kubernetes-certificate.pdf',
     },
     {
       platform: 'udemy',
       name: 'GitHub Actions - The Complete Guide',
       date: '2024-03-05',
-      certFileUrl: '/assets/files/github-actions-certificate.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/github-actions-certificate.pdf',
     },
     {
       platform: 'udemy',
       name: 'JavaScript - The Complete Guide',
       date: '2024-02-14',
       certFileUrl:
-        '/assets/files/JavaScript-the-complete-guide-certificate.pdf',
+        'https://marcin.gawski.info/assets/files/JavaScript-the-complete-guide-certificate.pdf',
     },
     {
       platform: 'udemy',
       name: 'Master NestJS a Node.js Framework',
       date: '2024-02-17',
-      certFileUrl: '/assets/files/master-nestjs-certificate.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/master-nestjs-certificate.pdf',
     },
     {
       platform: 'udemy',
       name: 'NgRx (with NgRx Data) - The Complete Guide',
       date: '2022-02-18',
-      certFileUrl: '/assets/files/ngrx-the-complete-guide-certificate.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/ngrx-the-complete-guide-certificate.pdf',
     },
     {
       platform: 'udemy',
       name: 'Understanding TypeScript',
       date: '2023-12-14',
-      certFileUrl: '/assets/files/understanding-typescript-certificate.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/understanding-typescript-certificate.pdf',
     },
   ],
   consents: {

@@ -1,6 +1,6 @@
 @if (cvData(); as cvData) {
   <gv-cv-page-pdf-export
-    class="fixed right-4 bottom-4 lg:right-8 lg:bottom-8 print:hidden"
+    class="fixed right-4 bottom-4 lg:right-8 lg:bottom-8 print:hidden z-10"
     [fileName]="
       'CV - ' + cvData.employee.firstName + ' ' + cvData.employee.lastName
     "
@@ -8,7 +8,7 @@
 
   <gv-cv-profile-about [profile]="cvData.employee"></gv-cv-profile-about>
 
-  <div class="container flex flex-col gap-8 md:flex-row print:flex-row">
+  <div class="container flex flex-col md:gap-8 md:flex-row print:flex-row">
     <div class="md:w-2/3">
       <gv-cv-cv-section headerTitle="skills">
         <gv-cv-grouped-skills-list
