@@ -5,6 +5,7 @@ import { ProjectExperience } from './project-experience';
 import { LanguageExperience } from './language-experience';
 import { LangCode } from '../translations';
 import { Consents } from './consents';
+import { Course } from './course';
 
 export interface CvData {
   lang: LangCode;
@@ -13,5 +14,6 @@ export interface CvData {
   jobs: JobExperience[];
   projects: ProjectExperience[];
   languages: LanguageExperience[];
+  courses: Course[];
   consents: Consents;
 }

@@ -6,6 +6,7 @@ import { ProjectExperienceDto } from './project-experience.dto';
 import { LanguageExperienceDto } from './language-experience.dto';
 import { EmployeeDataDto } from './employee-data.dto';
 import { ConsentsDto } from './consents.dto';
+import { CourseDto } from './course.dto';
 
 @ObjectType()
 export class CvDataDto implements CvData {
@@ -26,6 +27,9 @@ export class CvDataDto implements CvData {
 
   @Field(() => [LanguageExperienceDto])
   languages!: LanguageExperienceDto[];
+
+  @Field(() => [CourseDto])
+  courses!: CourseDto[];
 
   @Field()
   consents!: ConsentsDto;

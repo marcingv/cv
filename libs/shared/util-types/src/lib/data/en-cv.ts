@@ -390,6 +390,62 @@ export const EN_CV: CvData = {
     { name: 'Polish', advancementDescription: 'Native language' },
     { name: 'English', advancementDescription: 'Communicative level' },
   ],
+  courses: [
+    {
+      platform: 'oracle',
+      name: 'Oracle Database SQL Certified Expert',
+      date: '2014-01-31',
+      certFileUrl: '/files/oracle_sql_expert.pdf',
+    },
+    {
+      platform: 'oracle',
+      name: 'Oracle Database 11g Administrator Certified Associate',
+      date: '2014-01-31',
+      certFileUrl: '/files/oracle_administrator.pdf',
+    },
+    {
+      platform: 'udemy',
+      name: 'Cypress End-to-End Testing - Getting Started',
+      date: '2024-01-03',
+      certFileUrl: '/files/cypress-end-to-end-testing-certificate.pdf',
+    },
+    {
+      platform: 'udemy',
+      name: 'Docker & Kubernetes: The Practical Guide',
+      date: '2024-01-09',
+      certFileUrl: '/files/docker-&-kubernetes-certificate.pdf',
+    },
+    {
+      platform: 'udemy',
+      name: 'GitHub Actions - The Complete Guide',
+      date: '2024-03-05',
+      certFileUrl: '/files/github-actions-certificate.pdf',
+    },
+    {
+      platform: 'udemy',
+      name: 'JavaScript - The Complete Guide',
+      date: '2024-02-14',
+      certFileUrl: '/files/JavaScript-the-complete-guide-certificate.pdf',
+    },
+    {
+      platform: 'udemy',
+      name: 'Master NestJS a Node.js Framework',
+      date: '2024-02-17',
+      certFileUrl: '/files/master-nestjs-certificate.pdf',
+    },
+    {
+      platform: 'udemy',
+      name: 'NgRx (with NgRx Data) - The Complete Guide',
+      date: '2022-02-18',
+      certFileUrl: '/files/ngrx-the-complete-guide-certificate.pdf',
+    },
+    {
+      platform: 'udemy',
+      name: 'Understanding TypeScript',
+      date: '2023-12-14',
+      certFileUrl: '/files/understanding-typescript-certificate.pdf',
+    },
+  ],
   consents: {
     RODO: 'I consent to the processing of my personal data for the purpose of recruitment for the position I am applying for.',
   },
