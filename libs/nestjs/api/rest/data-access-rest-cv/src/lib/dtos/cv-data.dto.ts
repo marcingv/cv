@@ -6,6 +6,7 @@ import { JobExperienceDto } from './job-experience.dto';
 import { ProjectExperienceDto } from './project-experience.dto';
 import { LanguageExperienceDto } from './language-experience.dto';
 import { ConsentsDto } from './consents.dto';
+import { CourseDto } from './course.dto';
 
 export class CvDataDto implements CvData {
   @ApiProperty()
@@ -25,6 +26,9 @@ export class CvDataDto implements CvData {
 
   @ApiProperty({ type: [LanguageExperienceDto] })
   languages!: LanguageExperienceDto[];
+
+  @ApiProperty({ type: [CourseDto] })
+  courses!: CourseDto[];
 
   @ApiProperty()
   consents!: ConsentsDto;

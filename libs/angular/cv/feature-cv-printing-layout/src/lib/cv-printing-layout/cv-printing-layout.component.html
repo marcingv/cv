@@ -8,16 +8,18 @@
   </tbody>
   <tfoot>
     <tr>
-      <td class="p-0" [style.height.px]="footer.clientHeight"></td>
+      <td class="{{ FOOTER_HEIGHT_CLASS }} p-0 align-top"></td>
     </tr>
   </tfoot>
 </table>
 
-<footer #footer class="fixed bottom-0 w-full">
+<footer class="fixed bottom-0 w-full">
   <div
-    class="bg-gray-200 text-center text-gray-500 border-gray-100 border-t-4 text-xs"
+    class="{{
+      FOOTER_HEIGHT_CLASS
+    }} flex items-center bg-gray-200 text-center text-gray-500 border-gray-100 border-t-4 text-xs"
   >
-    <div class="container py-4">
+    <div class="container">
       <p>
         {{ footerText$ | async }}
       </p>

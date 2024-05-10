@@ -12,6 +12,8 @@ import { CvDataSelectors } from '@gv-cv/angular-data-access-cv';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CvPrintingLayoutComponent {
+  public readonly FOOTER_HEIGHT_CLASS = 'h-12';
+
   private store = inject(Store);
 
   public footerText$ = this.store.select(

@@ -2,7 +2,9 @@
   class="grid lg:grid-cols-2 xl:grid-cols-3 print:grid-cols-2 gap-y-4 xl:gap-0 print:gap-y-4"
 >
   @for (item of data; track item) {
-    <li class="flex flex-col gap-4 p-4 odd:bg-gray-100 dark:odd:bg-gray-700">
+    <li
+      class="break-inside-avoid flex flex-col gap-4 p-4 odd:bg-gray-100 dark:odd:bg-gray-700"
+    >
       <header>
         <div class="mb-2 flex flex-row justify-between items-start gap-4">
           <div>
