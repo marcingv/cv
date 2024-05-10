@@ -16,6 +16,7 @@ import {
   AdditionalSkillsListComponent,
   GroupedSkillsListComponent,
 } from '@gv-cv/angular-ui-cv-skills';
+import { CoursesListComponent } from '@gv-cv/angular-ui-cv-courses';
 
 @Component({
   selector: 'gv-cv-home-page',
@@ -32,6 +33,7 @@ import {
     GroupedSkillsListComponent,
     PagePdfExportComponent,
     OrderedProjectsExperiencePipe,
+    CoursesListComponent,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',

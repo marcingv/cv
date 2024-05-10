@@ -38,6 +38,14 @@
     </div>
   </div>
 
+  @if (cvData.courses.length) {
+    <div class="container">
+      <gv-cv-cv-section headerTitle="coursesAndCerts" cssClass="pb-8">
+        <gv-cv-courses-list [data]="cvData.courses"></gv-cv-courses-list>
+      </gv-cv-cv-section>
+    </div>
+  }
+
   <div class="bg-gray-100 dark:bg-gray-700">
     <div class="container">
       <gv-cv-cv-section headerTitle="experience">
