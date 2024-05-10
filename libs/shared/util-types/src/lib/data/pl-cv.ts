@@ -107,7 +107,7 @@ export const PL_CV: CvData = {
       role: 'Niezależny freelancer',
       usedSkills: [
         { name: 'PHP' },
-        { name: 'Yii 1' },
+        { name: 'Yii' },
         { name: 'Android' },
         { name: 'CSS' },
         { name: 'REST' },
@@ -188,7 +188,7 @@ export const PL_CV: CvData = {
       name: 'Platforma Usług Elektronicznych Urzędu Patentowego',
       description:
         'Projekt i implementacja Platformy Usług Elektronicznych Urzędu Patentowego w Polsce.',
-      role: 'Architekt systemu, PHP Developer, Angular Developer',
+      role: 'Architekt systemu, Programista PHP & Angular',
       companyName: 'Lemisoft',
       from: '2019-01-01',
       to: '2022-09-30',
@@ -220,7 +220,7 @@ export const PL_CV: CvData = {
       companyName: 'Lemisoft',
       description:
         'System wykorzystujący rozszerzoną rzeczywistość do wspierania procesów produkcji w przesiębiorstwach.',
-      role: 'Architekt systemu, Programista PHP, Programista Angular',
+      role: 'Architekt systemu, Programista PHP & Angular',
       from: '2021-03-01',
       to: '2022-02-01',
       usedSkills: [
@@ -357,7 +357,7 @@ export const PL_CV: CvData = {
       ],
       usedSkills: [
         { name: 'PHP' },
-        { name: 'Yii 1' },
+        { name: 'Yii' },
         { name: 'CSS' },
         { name: 'Bootstrap' },
         { name: 'MySQL' },
@@ -395,56 +395,64 @@ export const PL_CV: CvData = {
       platform: 'oracle',
       name: 'Oracle Database SQL Certified Expert',
       date: '2014-01-31',
-      certFileUrl: '/assets/files/oracle_sql_expert.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/oracle_sql_expert.pdf',
     },
     {
       platform: 'oracle',
       name: 'Oracle Database 11g Administrator Certified Associate',
       date: '2014-01-31',
-      certFileUrl: '/assets/files/oracle_administrator.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/oracle_administrator.pdf',
     },
     {
       platform: 'udemy',
       name: 'Cypress End-to-End Testing - Getting Started',
       date: '2024-01-03',
-      certFileUrl: '/assets/files/cypress-end-to-end-testing-certificate.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/cypress-end-to-end-testing-certificate.pdf',
     },
     {
       platform: 'udemy',
       name: 'Docker & Kubernetes: The Practical Guide',
       date: '2024-01-09',
-      certFileUrl: '/assets/files/docker-&-kubernetes-certificate.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/docker-&-kubernetes-certificate.pdf',
     },
     {
       platform: 'udemy',
       name: 'GitHub Actions - The Complete Guide',
       date: '2024-03-05',
-      certFileUrl: '/assets/files/github-actions-certificate.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/github-actions-certificate.pdf',
     },
     {
       platform: 'udemy',
       name: 'JavaScript - The Complete Guide',
       date: '2024-02-14',
       certFileUrl:
-        '/assets/files/JavaScript-the-complete-guide-certificate.pdf',
+        'https://marcin.gawski.info/assets/files/JavaScript-the-complete-guide-certificate.pdf',
     },
     {
       platform: 'udemy',
       name: 'Master NestJS a Node.js Framework',
       date: '2024-02-17',
-      certFileUrl: '/assets/files/master-nestjs-certificate.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/master-nestjs-certificate.pdf',
     },
     {
       platform: 'udemy',
       name: 'NgRx (with NgRx Data) - The Complete Guide',
       date: '2022-02-18',
-      certFileUrl: '/assets/files/ngrx-the-complete-guide-certificate.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/ngrx-the-complete-guide-certificate.pdf',
     },
     {
       platform: 'udemy',
       name: 'Understanding TypeScript',
       date: '2023-12-14',
-      certFileUrl: '/assets/files/understanding-typescript-certificate.pdf',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/understanding-typescript-certificate.pdf',
     },
   ],
   consents: {
