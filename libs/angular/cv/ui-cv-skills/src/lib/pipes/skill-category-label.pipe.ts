@@ -10,6 +10,7 @@ export class SkillCategoryLabelPipe implements PipeTransform {
   private readonly LABELS: Record<GroupedSkillsKey, TranslationKey> = {
     frontend: 'skillCategoriesLabels.frontend',
     backend: 'skillCategoriesLabels.backend',
+    tests: 'skillCategoriesLabels.tests',
     databases: 'skillCategoriesLabels.databases',
     methodology: 'skillCategoriesLabels.methodology',
     'no-category': 'skillCategoriesLabels.no-category',

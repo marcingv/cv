@@ -15,6 +15,7 @@ describe('GroupSkillsByCategoryPipe', () => {
     { name: 'methodology 2', category: 'methodology' },
     { name: 'other 1' },
     { name: 'other 2' },
+    { name: 'testing', category: 'tests' },
   ];
 
   beforeEach(() => {
@@ -29,7 +30,7 @@ describe('GroupSkillsByCategoryPipe', () => {
     const grouped = pipe.transform(skills);
 
     expect(grouped).toBeInstanceOf(Array);
-    expect(grouped).toHaveLength(5);
+    expect(grouped).toHaveLength(6);
 
     grouped.forEach((oneGroup) => {
       expect(oneGroup.category).toBeTruthy();
@@ -43,11 +44,12 @@ describe('GroupSkillsByCategoryPipe', () => {
 
     expect(grouped[0].category).toEqual('frontend' satisfies GroupedSkillsKey);
     expect(grouped[1].category).toEqual('backend' satisfies GroupedSkillsKey);
-    expect(grouped[2].category).toEqual('databases' satisfies GroupedSkillsKey);
-    expect(grouped[3].category).toEqual(
+    expect(grouped[2].category).toEqual('tests' satisfies GroupedSkillsKey);
+    expect(grouped[3].category).toEqual('databases' satisfies GroupedSkillsKey);
+    expect(grouped[4].category).toEqual(
       'methodology' satisfies GroupedSkillsKey,
     );
-    expect(grouped[4].category).toEqual(
+    expect(grouped[5].category).toEqual(
       'no-category' satisfies GroupedSkillsKey,
     );
   });

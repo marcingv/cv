@@ -1,5 +1,3 @@
-# Polecenia
-
 ## Kubectl
 
 ```bash

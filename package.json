@@ -1,7 +1,12 @@
 {
   "name": "@gv-cv/source",
   "version": "0.0.0",
-  "scripts": {},
+  "scripts": {
+    "start": "docker-compose up",
+    "test": "nx run-many -t test",
+    "e2e": "nx run-many -t e2e",
+    "lint": "nx run-many -t lint"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.0.0",
