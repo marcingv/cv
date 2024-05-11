@@ -30,7 +30,7 @@ describe('GroupSkillsByCategoryPipe', () => {
     const grouped = pipe.transform(skills);
 
     expect(grouped).toBeInstanceOf(Array);
-    expect(grouped).toHaveLength(5);
+    expect(grouped).toHaveLength(6);
 
     grouped.forEach((oneGroup) => {
       expect(oneGroup.category).toBeTruthy();
