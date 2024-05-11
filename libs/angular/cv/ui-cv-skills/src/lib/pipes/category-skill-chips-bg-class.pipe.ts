@@ -13,9 +13,10 @@ export class CategorySkillChipsBgClassPipe implements PipeTransform {
   private readonly CSS_CLASSES: Record<GroupedSkillsKey, string> = {
     frontend: this.ODD_CSS_CLASS,
     backend: this.EVEN_CSS_CLASS,
-    databases: this.ODD_CSS_CLASS,
-    methodology: this.EVEN_CSS_CLASS,
-    'no-category': this.ODD_CSS_CLASS,
+    tests: this.ODD_CSS_CLASS,
+    databases: this.EVEN_CSS_CLASS,
+    methodology: this.ODD_CSS_CLASS,
+    'no-category': this.EVEN_CSS_CLASS,
   };
 
   public transform(category: GroupedSkillsKey | SkillCategory): string {

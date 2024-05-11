@@ -7,12 +7,13 @@ import { Skill } from '@gv-cv/shared-util-types';
   standalone: true,
 })
 export class GroupSkillsByCategoryPipe implements PipeTransform {
-  private readonly categoriesPriority: Record<GroupedSkillsKey, number> = {
+  private readonly CATEGORIES_PRIORITIES: Record<GroupedSkillsKey, number> = {
     frontend: 1,
     backend: 2,
-    databases: 3,
-    methodology: 4,
-    'no-category': 5,
+    tests: 3,
+    databases: 4,
+    methodology: 5,
+    'no-category': 6,
   };
 
   public transform(
@@ -47,9 +48,9 @@ export class GroupSkillsByCategoryPipe implements PipeTransform {
   }
 
   private sorter = (a: GroupedSkillsKey, b: GroupedSkillsKey): number => {
-    if (this.categoriesPriority[a] < this.categoriesPriority[b]) {
+    if (this.CATEGORIES_PRIORITIES[a] < this.CATEGORIES_PRIORITIES[b]) {
       return -1;
-    } else if (this.categoriesPriority[a] > this.categoriesPriority[b]) {
+    } else if (this.CATEGORIES_PRIORITIES[a] > this.CATEGORIES_PRIORITIES[b]) {
       return 1;
     } else {
       return 0;

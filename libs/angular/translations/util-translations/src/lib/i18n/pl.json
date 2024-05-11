@@ -64,6 +64,7 @@
   "skillCategoriesLabels": {
     "frontend": "Frontend",
     "backend": "Backend",
+    "tests": "Testy",
     "databases": "Bazy danych",
     "methodology": "Metodologie",
     "no-category": "Inne"
