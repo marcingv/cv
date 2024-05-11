@@ -96,6 +96,8 @@ nx run frontend-angular:test # Run unit tests for specified application or libra
 nx run frontend-angular-e2e:e2e # Run e2e tests only for frontend application
 nx run frontend-angular-e2e:e2e --watch # Run e2e tests for frontend in watch mode
 nx run backend-e2e:e2e # Run e2e tests only for backend application
+nx test frontend-angular # Run unit tests only for frontend application
+nx e2e frontend-angular-e2e # Run e2e tests only for frontend application
 ```
 
 ### Running tests with code coverage
@@ -115,6 +117,8 @@ Code coverage reports are saved in a directory: `<projectRoot>/coverage`
 
 ```bash
 nx run frontend-angular-e2e:e2e:coverage
+# OR:
+nx e2e frontend-angular-e2e --configuration=coverage
 ```
 
 After run, the code coverage report is available in directory: `<projectRoot>/apps/frontend-angular-e2e/coverage`
