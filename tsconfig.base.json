@@ -55,6 +55,9 @@
       "@gv-cv/angular-test-translations": [
         "libs/angular/translations/test-translations/src/index.ts"
       ],
+      "@gv-cv/angular-ui-buttons": [
+        "libs/angular/shared/ui-buttons/src/index.ts"
+      ],
       "@gv-cv/angular-ui-cv-courses": [
         "libs/angular/cv/ui-cv-courses/src/index.ts"
       ],
