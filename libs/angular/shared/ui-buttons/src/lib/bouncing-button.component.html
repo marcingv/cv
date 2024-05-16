@@ -1,0 +1,29 @@
+<div
+  class="inline-block group animate-bounce hover:[animation-play-state:paused] transition-all ease-in-out"
+>
+  <span
+    class="{{
+      'group-disabled:opacity-0 group-hover:opacity-0 ' +
+        'bg-orange-800 dark:bg-orange-400 ' +
+        'transition-all ease-in-out animate-ping ' +
+        'absolute block ' +
+        'size-[75%] top-[12.5%] left-[12.5%] rounded'
+    }}"
+  ></span>
+
+  <button
+    class="{{
+      'inline-flex flex-col items-center relative p-2 rounded ' +
+        'text-white bg-orange-500 hover:bg-orange-400 active:bg-orange-600 ' +
+        'disabled:opacity-25 ' +
+        'shadow-md shadow-black/25 hover:shadow-lg hover:shadow-black/25 '
+    }}"
+    [disabled]="disabled"
+    (click)="clicked.next()"
+    [title]="title"
+  >
+    <gv-cv-icon-arrow-down-tray></gv-cv-icon-arrow-down-tray>
+
+    <span class="font-mono text-[0.5rem]">{{ label }}</span>
+  </button>
+</div>
