@@ -34,6 +34,7 @@ export class BouncingButtonComponent {
   @Output() public clicked = new EventEmitter<MouseEvent>();
 
   public onClicked($event: MouseEvent): void {
+    console.warn('clicked :)');
     if (!this.disabled) {
       this.clicked.next($event);
     }
