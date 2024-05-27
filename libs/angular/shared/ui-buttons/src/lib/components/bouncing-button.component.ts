@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconArrowDownTrayComponent } from '@gv-cv/angular-ui-icons';
 import { TranslateModule } from '@ngx-translate/core';
@@ -16,6 +22,7 @@ import { ButtonType } from '../types/button-type';
   ],
   templateUrl: './bouncing-button.component.html',
   styleUrl: './bouncing-button.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BouncingButtonComponent {
   protected readonly THEMES: Record<ButtonType, string> = {
@@ -34,7 +41,6 @@ export class BouncingButtonComponent {
   @Output() public clicked = new EventEmitter<MouseEvent>();
 
   public onClicked($event: MouseEvent): void {
-    console.warn('clicked :)');
     if (!this.disabled) {
       this.clicked.next($event);
     }
