@@ -53,7 +53,10 @@
       "inputs": ["production", "^production"]
     },
     "build-storybook": {
-      "cache": true
+      "cache": true,
+      "options": {
+        "styles": ["apps/frontend-angular/src/styles.scss"]
+      }
     }
   },
   "plugins": [
