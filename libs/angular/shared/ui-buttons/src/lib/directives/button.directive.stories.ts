@@ -11,18 +11,6 @@ type ButtonDirectiveArgs = ButtonDirective & {
 const meta: Meta<ButtonDirectiveArgs> = {
   component: ButtonDirective,
   title: 'ButtonDirective',
-  render: (args) => ({
-    moduleMetadata: {
-      imports: [ButtonDirective, IconEyeComponent],
-      schemas: [NO_ERRORS_SCHEMA],
-    },
-    props: { ...args },
-    template: `
-<button ${argsToTemplate(args, { exclude: ['text'] })} class="gap-3 !px-4">
-    ${args.text}
-</button>
-`,
-  }),
   args: {
     gvCvButton: 'primary',
     text: 'My Button',
@@ -35,6 +23,18 @@ const meta: Meta<ButtonDirectiveArgs> = {
       control: { type: 'select' },
     },
   },
+  render: (args) => ({
+    moduleMetadata: {
+      imports: [ButtonDirective, IconEyeComponent],
+      schemas: [NO_ERRORS_SCHEMA],
+    },
+    props: { ...args },
+    template: `
+<button ${argsToTemplate(args, { exclude: ['text'] })} class="gap-3 !px-4">
+    ${args.text}
+</button>
+`,
+  }),
 };
 
 export default meta;
