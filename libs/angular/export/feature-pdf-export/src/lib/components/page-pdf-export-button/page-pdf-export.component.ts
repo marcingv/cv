@@ -5,11 +5,17 @@ import { Subject, takeUntil } from 'rxjs';
 import { IconArrowDownTrayComponent } from '@gv-cv/angular-ui-icons';
 import { TranslationKey } from '@gv-cv/angular-util-translations';
 import { TranslateModule } from '@ngx-translate/core';
+import { BouncingButtonComponent } from '@gv-cv/angular-ui-buttons';
 
 @Component({
   selector: 'gv-cv-page-pdf-export',
   standalone: true,
-  imports: [CommonModule, IconArrowDownTrayComponent, TranslateModule],
+  imports: [
+    CommonModule,
+    IconArrowDownTrayComponent,
+    TranslateModule,
+    BouncingButtonComponent,
+  ],
   templateUrl: './page-pdf-export.component.html',
   styleUrl: './page-pdf-export.component.scss',
 })

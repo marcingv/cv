@@ -1,0 +1,25 @@
+<div
+  class="inline-block group animate-bounce hover:[animation-play-state:paused] transition-all ease-in-out"
+>
+  @if (pingAnimationEnabled) {
+    <span
+      class="pointer-events-none {{
+        'group-disabled:opacity-0 group-hover:opacity-0 ' +
+          THEMES[type] +
+          ' ' +
+          'transition-all ease-in-out animate-ping ' +
+          'absolute block ' +
+          'size-[75%] top-[12.5%] left-[12.5%] rounded'
+      }}"
+    ></span>
+  }
+
+  <button
+    [gvCvButton]="type"
+    [elevated]="elevated"
+    (click)="onClicked($event)"
+    [title]="title"
+  >
+    <ng-content></ng-content>
+  </button>
+</div>
