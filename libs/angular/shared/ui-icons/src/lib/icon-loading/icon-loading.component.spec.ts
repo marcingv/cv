@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BouncingButtonComponent } from './bouncing-button.component';
+import { IconLoadingComponent } from './icon-loading.component';
 
-describe('BouncingButtonComponent', () => {
-  let component: BouncingButtonComponent;
-  let fixture: ComponentFixture<BouncingButtonComponent>;
+describe('IconLoadingComponent', () => {
+  let component: IconLoadingComponent;
+  let fixture: ComponentFixture<IconLoadingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BouncingButtonComponent],
+      imports: [IconLoadingComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(BouncingButtonComponent);
+    fixture = TestBed.createComponent(IconLoadingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
