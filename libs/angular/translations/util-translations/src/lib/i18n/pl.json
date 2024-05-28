@@ -68,5 +68,9 @@
     "databases": "Bazy danych",
     "methodology": "Metodologie",
     "no-category": "Inne"
+  },
+  "pdfExportToasts": {
+    "success": "Dokument PDF został wygenerowany!",
+    "error": "Wystąpił błąd podczas generowania dokumentu PDF. Spróbuj ponownie."
   }
 }

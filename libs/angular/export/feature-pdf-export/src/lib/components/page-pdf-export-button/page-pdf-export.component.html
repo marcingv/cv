@@ -1,13 +1,17 @@
 <gv-cv-bouncing-button
   type="warning"
-  [pingAnimationEnabled]="true"
-  [disabled]="pending()"
+  [pingAnimationEnabled]="!isPending()"
+  [disabled]="isPending()"
   [title]="DOWNLOAD_LABEL | translate"
   (clicked)="export()"
 >
-  <span class="inline-flex flex-col items-center">
-    <gv-cv-icon-arrow-down-tray></gv-cv-icon-arrow-down-tray>
+  <span class="inline-flex flex-col items-center justify-center size-10">
+    @if (isPending()) {
+      <gv-cv-icon-loading class="animate-spin"></gv-cv-icon-loading>
+    } @else {
+      <gv-cv-icon-arrow-down-tray></gv-cv-icon-arrow-down-tray>
 
-    <span class="font-mono text-[0.5rem]">[ PDF ]</span>
+      <span class="font-mono text-[0.5rem]">[ PDF ]</span>
+    }
   </span>
 </gv-cv-bouncing-button>

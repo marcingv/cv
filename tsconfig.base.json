@@ -93,6 +93,9 @@
       "@gv-cv/angular-ui-timespan": [
         "libs/angular/shared/ui-timespan/src/index.ts"
       ],
+      "@gv-cv/angular-ui-toasts": [
+        "libs/angular/shared/ui-toasts/src/index.ts"
+      ],
       "@gv-cv/angular-ui-translations": [
         "libs/angular/translations/ui-translations/src/index.ts"
       ],
