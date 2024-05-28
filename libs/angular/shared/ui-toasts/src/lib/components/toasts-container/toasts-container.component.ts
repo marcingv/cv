@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  effect,
+  inject,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToastsService } from '../../services/toasts.service';
 import { ToastsListComponent } from '../toasts-list/toasts-list.component';
@@ -13,4 +19,13 @@ import { ToastsListComponent } from '../toasts-list/toasts-list.component';
 })
 export class ToastsContainerComponent {
   protected toastsService = inject(ToastsService);
+  protected cd = inject(ChangeDetectorRef);
+
+  public constructor() {
+    effect(() => {
+      if (this.toastsService.messages()) {
+        this.cd.markForCheck();
+      }
+    });
+  }
 }
