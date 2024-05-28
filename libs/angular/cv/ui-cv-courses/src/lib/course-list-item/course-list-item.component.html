@@ -1,0 +1,20 @@
+<a
+  [href]="course.certFileUrl"
+  [title]="course.name"
+  target="_blank"
+  class="p-2 flex flex-row flex-1 justify-between gap-4 items-center cursor-pointer"
+>
+  <div class="hidden sm:flex w-14 text-gray-500">
+    @if (course.platform === 'udemy') {
+      <gv-cv-logo-udemy cssClass="w-10"></gv-cv-logo-udemy>
+    } @else if (course.platform === 'oracle') {
+      <gv-cv-logo-oracle cssClass="w-14"></gv-cv-logo-oracle>
+    }
+  </div>
+
+  <span class="flex-1 text-center">{{ course.name }}</span>
+
+  <div class="hidden sm:flex w-14 justify-end text-gray-500">
+    <gv-cv-icon-arrow-down-tray></gv-cv-icon-arrow-down-tray>
+  </div>
+</a>
