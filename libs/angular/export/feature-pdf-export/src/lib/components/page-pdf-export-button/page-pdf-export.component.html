@@ -1,12 +1,12 @@
 <gv-cv-bouncing-button
   type="warning"
-  [pingAnimationEnabled]="!pending()"
-  [disabled]="pending()"
+  [pingAnimationEnabled]="!isPending()"
+  [disabled]="isPending()"
   [title]="DOWNLOAD_LABEL | translate"
   (clicked)="export()"
 >
   <span class="inline-flex flex-col items-center justify-center size-10">
-    @if (pending()) {
+    @if (isPending()) {
       <gv-cv-icon-loading class="animate-spin"></gv-cv-icon-loading>
     } @else {
       <gv-cv-icon-arrow-down-tray></gv-cv-icon-arrow-down-tray>
