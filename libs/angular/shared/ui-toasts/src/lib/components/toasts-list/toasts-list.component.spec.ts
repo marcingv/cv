@@ -4,6 +4,7 @@ import { ToastMessage } from '../../models/toast-message';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { ToastListItemComponent } from '../toast-list-item/toast-list-item.component';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 
 describe('ToastsListComponent', (): void => {
   let component: ToastsListComponent;
@@ -24,6 +25,7 @@ describe('ToastsListComponent', (): void => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ToastsListComponent],
+      providers: [provideNoopAnimations()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ToastsListComponent);

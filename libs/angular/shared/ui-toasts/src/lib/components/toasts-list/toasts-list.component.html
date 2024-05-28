@@ -1,6 +1,6 @@
 <ul class="toast-container flex flex-col gap-2 items-center">
   @for (toast of messages; track toast) {
-    <li>
+    <li @toastInsertRemoveTrigger>
       <gv-cv-toast-list-item [toast]="toast"></gv-cv-toast-list-item>
     </li>
   }

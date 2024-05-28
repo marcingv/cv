@@ -1,5 +1,5 @@
 import { inject, Injectable, NgZone, Signal } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 import { ToastMessage } from '../models/toast-message';
 import { toSignal } from '@angular/core/rxjs-interop';
 
@@ -11,9 +11,14 @@ export class ToastsService {
   private readonly zone: NgZone = inject(NgZone);
   private readonly messages$ = new BehaviorSubject<ToastMessage[]>([]);
 
-  public readonly messages: Signal<ToastMessage[]> = toSignal(this.messages$, {
-    initialValue: [],
-  });
+  public readonly messages: Signal<ToastMessage[]> = toSignal(
+    this.messages$.pipe(
+      map((messages: ToastMessage[]) => messages.slice().reverse()),
+    ),
+    {
+      initialValue: [],
+    },
+  );
 
   public show(message: ToastMessage): void {
     const updatedMessages: ToastMessage[] = this.messages$.value.slice();

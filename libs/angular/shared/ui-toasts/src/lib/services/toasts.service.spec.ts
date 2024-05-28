@@ -37,4 +37,27 @@ describe('ToastsService', (): void => {
     expect(service.messages()).not.toContain(message);
     expect(service.messages().length).toEqual(0);
   }));
+
+  it('should provide array of messages sorted from newest to oldest', (): void => {
+    const messagesToShow: ToastMessage[] = [
+      { message: '1', severity: 'primary' },
+      { message: '2', severity: 'primary' },
+      { message: '3', severity: 'error' },
+      { message: '4', severity: 'error' },
+      { message: '5', severity: 'primary' },
+    ];
+
+    let serviceMessages: ToastMessage[] = [];
+    messagesToShow.forEach((oneMessage: ToastMessage): void => {
+      service.show(oneMessage);
+      serviceMessages = service.messages();
+    });
+
+    expect(serviceMessages.length).toEqual(messagesToShow.length);
+    expect(serviceMessages[0]).toBe(messagesToShow[4]);
+    expect(serviceMessages[1]).toBe(messagesToShow[3]);
+    expect(serviceMessages[2]).toBe(messagesToShow[2]);
+    expect(serviceMessages[3]).toBe(messagesToShow[1]);
+    expect(serviceMessages[4]).toBe(messagesToShow[0]);
+  });
 });

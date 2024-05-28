@@ -6,6 +6,7 @@ import { provideNgxTranslations } from '@gv-cv/angular-feature-translations';
 import { provideAppState } from './+state';
 import { provideAppRouterConfiguration } from '@gv-cv/angular-feature-localized-router';
 import { routes } from './app.routes';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,5 +16,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()),
     provideClientHydration(),
     provideAppState(),
+    provideAnimationsAsync(),
   ],
 };
