@@ -402,6 +402,13 @@ export const PL_CV: CvData = {
   ],
   courses: [
     {
+      platform: 'angular-training',
+      name: 'Angular Signals',
+      date: '2024-05-14',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/certificate-angular-signals.pdf',
+    },
+    {
       platform: 'oracle',
       name: 'Oracle Database SQL Certified Expert',
       date: '2014-01-31',

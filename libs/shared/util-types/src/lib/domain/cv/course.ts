@@ -1,7 +1,7 @@
 import { DateString } from '../../dtos';
 
 export interface Course {
-  platform: string;
+  platform: 'udemy' | 'oracle' | 'angular-training' | string;
   name: string;
   date: DateString;
   certFileUrl?: string;

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Course } from '@gv-cv/shared-util-types';
 import {
   IconArrowDownTrayComponent,
+  LogoAngularTrainingComponent,
   LogoOracleComponent,
   LogoUdemyComponent,
 } from '@gv-cv/angular-ui-icons';
@@ -15,6 +16,7 @@ import {
     IconArrowDownTrayComponent,
     LogoOracleComponent,
     LogoUdemyComponent,
+    LogoAngularTrainingComponent,
   ],
   templateUrl: './course-list-item.component.html',
   styleUrl: './course-list-item.component.css',
