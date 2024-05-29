@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseIconComponent } from '../../icons/base-icon.component';
+import { BaseLogoComponent } from '../base-logo.component';
 
 @Component({
   selector: 'gv-cv-logo-angular-training',
@@ -10,4 +10,4 @@ import { BaseIconComponent } from '../../icons/base-icon.component';
   styleUrl: './logo-angular-training.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LogoAngularTrainingComponent extends BaseIconComponent {}
+export class LogoAngularTrainingComponent extends BaseLogoComponent {}
