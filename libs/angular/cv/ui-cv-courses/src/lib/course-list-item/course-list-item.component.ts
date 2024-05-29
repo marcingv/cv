@@ -19,7 +19,7 @@ import {
     LogoAngularTrainingComponent,
   ],
   templateUrl: './course-list-item.component.html',
-  styleUrl: './course-list-item.component.css',
+  styleUrl: './course-list-item.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourseListItemComponent {

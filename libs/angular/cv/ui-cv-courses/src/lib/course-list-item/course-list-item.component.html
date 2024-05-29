@@ -2,9 +2,9 @@
   [href]="course.certFileUrl"
   [title]="course.name"
   target="_blank"
-  class="p-2 flex flex-row flex-1 justify-between gap-4 items-center cursor-pointer"
+  class="course-list-item course-platform-{{ course.platform }}"
 >
-  <div class="hidden sm:flex w-14 text-gray-500">
+  <div class="course-list-item__addon">
     @if (course.platform === 'angular-training') {
       <gv-cv-logo-angular-training
         cssClass="w-16"
@@ -16,9 +16,9 @@
     }
   </div>
 
-  <span class="flex-1 text-center">{{ course.name }}</span>
+  <span class="course-list-item__title">{{ course.name }}</span>
 
-  <div class="hidden sm:flex w-14 justify-end text-gray-500">
+  <div class="course-list-item__addon justify-end">
     <gv-cv-icon-arrow-down-tray></gv-cv-icon-arrow-down-tray>
   </div>
 </a>
