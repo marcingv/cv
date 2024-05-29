@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseIconComponent } from '../base-icon.component';
+import { BaseLogoComponent } from '../base-logo.component';
 
 @Component({
   selector: 'gv-cv-logo-oracle',
@@ -9,4 +9,4 @@ import { BaseIconComponent } from '../base-icon.component';
   templateUrl: './logo-oracle.component.html',
   styleUrl: './logo-oracle.component.css',
 })
-export class LogoOracleComponent extends BaseIconComponent {}
+export class LogoOracleComponent extends BaseLogoComponent {}

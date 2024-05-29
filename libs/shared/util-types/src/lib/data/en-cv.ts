@@ -18,6 +18,7 @@ export const EN_CV: CvData = {
       { name: 'PrimeNg', category: 'frontend' },
       { name: 'KendoUI', category: 'frontend' },
       { name: 'Bootstrap', category: 'frontend' },
+      { name: 'Tailwind', category: 'frontend' },
       { name: 'CSS & SASS', category: 'frontend' },
       { name: 'CI/CD', category: 'tests' },
       { name: 'Unit', category: 'tests' },
@@ -25,6 +26,7 @@ export const EN_CV: CvData = {
       { name: 'Jest', category: 'tests' },
       { name: 'Jasmine & Karma', category: 'tests' },
       { name: 'Cypress', category: 'tests' },
+      { name: 'Storybook', category: 'tests' },
       { name: 'Prettier', category: 'frontend' },
       { name: 'Docker' },
       { name: 'Kubernetes' },
@@ -399,6 +401,20 @@ export const EN_CV: CvData = {
     },
   ],
   courses: [
+    {
+      platform: 'angular-training',
+      name: 'Angular Certified Developer',
+      date: '2024-05-28',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/at-angular-developer-certification.pdf',
+    },
+    {
+      platform: 'angular-training',
+      name: 'Angular Signals',
+      date: '2024-05-14',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/certificate-angular-signals.pdf',
+    },
     {
       platform: 'oracle',
       name: 'Oracle Database SQL Certified Expert',

@@ -1,0 +1,24 @@
+<a
+  [href]="course.certFileUrl"
+  [title]="course.name"
+  target="_blank"
+  class="course-list-item course-platform-{{ course.platform }}"
+>
+  <div class="course-list-item__addon">
+    @if (course.platform === 'angular-training') {
+      <gv-cv-logo-angular-training
+        cssClass="w-16"
+      ></gv-cv-logo-angular-training>
+    } @else if (course.platform === 'udemy') {
+      <gv-cv-logo-udemy cssClass="w-10"></gv-cv-logo-udemy>
+    } @else if (course.platform === 'oracle') {
+      <gv-cv-logo-oracle cssClass="w-14"></gv-cv-logo-oracle>
+    }
+  </div>
+
+  <span class="course-list-item__title">{{ course.name }}</span>
+
+  <div class="course-list-item__addon justify-end">
+    <gv-cv-icon-arrow-down-tray></gv-cv-icon-arrow-down-tray>
+  </div>
+</a>
