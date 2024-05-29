@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseIconComponent } from '../base-icon.component';
+import { BaseIconComponent } from '../../icons/base-icon.component';
 
 @Component({
   selector: 'gv-cv-logo-oracle',
