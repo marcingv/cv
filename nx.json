@@ -1,7 +1,4 @@
 {
-  "affected": {
-    "defaultBase": "main"
-  },
   "namedInputs": {
     "sharedGlobals": [
       "{workspaceRoot}/.github/workflows/ci.yml",
@@ -111,5 +108,6 @@
         "cacheableOperations": ["build-storybook"]
       }
     }
-  }
+  },
+  "defaultBase": "main"
 }
