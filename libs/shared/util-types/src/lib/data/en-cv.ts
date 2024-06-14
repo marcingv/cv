@@ -403,6 +403,7 @@ export const EN_CV: CvData = {
   courses: [
     {
       platform: 'angular-training',
+      type: 'angular-developer',
       name: 'Angular Certified Developer',
       date: '2024-05-28',
       certFileUrl:

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomePageComponent } from './home-page.component';
 import { NO_ERRORS_SCHEMA, signal } from '@angular/core';
 import { HomePageService } from './home-page.service';
-import { CvData, CvDataFactory } from '@gv-cv/shared-util-types';
+import { Course, CvData, CvDataFactory } from '@gv-cv/shared-util-types';
 import { OrderedProjectsExperiencePipe } from '@gv-cv/angular-ui-cv-projects';
 
 describe('HomePageComponent', (): void => {
@@ -10,9 +10,13 @@ describe('HomePageComponent', (): void => {
   let fixture: ComponentFixture<HomePageComponent>;
   let homePageService: Partial<HomePageService>;
 
+  const cvData: CvData = CvDataFactory.createInstance();
+  const leadingCert: Course = cvData.courses[0];
+
   beforeEach(async () => {
     homePageService = {
-      cvData: signal<CvData>(CvDataFactory.createInstance()),
+      cvData: signal<CvData>(cvData),
+      leadingCertificate: signal<Course>(leadingCert),
     };
 
     await TestBed.configureTestingModule({

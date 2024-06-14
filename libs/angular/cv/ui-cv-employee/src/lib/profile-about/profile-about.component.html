@@ -1,9 +1,13 @@
 <div class="profile-header container">
-  <div class="certification-badge--wrapper">
-    <div class="certification-badge">
-      <gv-cv-at-cert-level-2-badge></gv-cv-at-cert-level-2-badge>
+  @if (leadingCertificate) {
+    <div class="certification-badge--wrapper">
+      <div class="certification-badge">
+        <gv-cv-leading-certification-badge
+          [certificate]="leadingCertificate"
+        ></gv-cv-leading-certification-badge>
+      </div>
     </div>
-  </div>
+  }
 
   <div class="profile-introduction">
     <div class="text-center md:text-left print:text-left">

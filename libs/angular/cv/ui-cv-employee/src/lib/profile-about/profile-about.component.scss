@@ -23,7 +23,6 @@
 .certification-badge {
   @apply -my-2;
   @apply flex h-32;
-  @apply cursor-pointer;
   @apply hover:scale-105;
   @apply transition duration-300 ease-out;
   @apply grayscale hover:grayscale-0;

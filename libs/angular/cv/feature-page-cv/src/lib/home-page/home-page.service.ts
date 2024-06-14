@@ -2,7 +2,7 @@ import { inject, Injectable, Signal } from '@angular/core';
 import { filter, map, Observable } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Store } from '@ngrx/store';
-import { CvData } from '@gv-cv/shared-util-types';
+import { Course, CvData } from '@gv-cv/shared-util-types';
 import { CvDataSelectors } from '@gv-cv/angular-data-access-cv';
 
 @Injectable()
@@ -19,4 +19,8 @@ export class HomePageService {
   public cvData: Signal<CvData> = toSignal(this.cvDataStore$, {
     requireSync: true,
   });
+
+  public leadingCertificate: Signal<Course | undefined> = toSignal(
+    this.store.select(CvDataSelectors.selectLeadingCertificate),
+  );
 }

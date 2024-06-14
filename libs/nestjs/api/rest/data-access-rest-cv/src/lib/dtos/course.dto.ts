@@ -6,6 +6,9 @@ export class CourseDto implements Course {
   platform!: string;
 
   @ApiProperty()
+  type?: string;
+
+  @ApiProperty()
   name!: string;
 
   @ApiProperty()

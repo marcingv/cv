@@ -6,6 +6,9 @@ export class CourseDto implements Course {
   @Field()
   platform!: string;
 
+  @Field({ nullable: true })
+  type?: string;
+
   @Field()
   name!: string;
 
