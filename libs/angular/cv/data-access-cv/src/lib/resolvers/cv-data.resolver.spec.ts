@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import {
   ActivatedRouteSnapshot,
+  RedirectCommand,
   ResolveFn,
   RouterStateSnapshot,
 } from '@angular/router';
@@ -54,7 +55,7 @@ describe('cvDataResolver', () => {
     });
 
     result.pipe(first()).subscribe({
-      next: (data: CvData | undefined) => {
+      next: (data: CvData | RedirectCommand | undefined) => {
         expect(data).toBeTruthy();
         expect(dispatchSpy).toHaveBeenCalledWith(CvDataActions.load());
 

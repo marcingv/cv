@@ -19,7 +19,7 @@ Welcome to my resume website repository! Here, embark on a journey through my un
 
 ## 🌐 General Info
 
-This repository orbits as an Nx monorepo workspace, featuring two primary applications: the backend, a NestJS masterpiece, and the frontend, a radiant Angular 17 creation. Both applications are encapsulated in the cosmic embrace of Docker containers, ensuring seamless deployment and management across galaxies.
+This repository orbits as an Nx monorepo workspace, featuring two primary applications: the backend, a NestJS masterpiece, and the frontend, a radiant Angular 18 creation. Both applications are encapsulated in the cosmic embrace of Docker containers, ensuring seamless deployment and management across galaxies.
 
 The cosmic ballet of continuous integration and continuous deployment (CI/CD) is choreographed with Docker, Kubernetes, and GitHub Actions, orchestrating flawless development workflows and celestial deployment processes. Additionally, every module undergoes rigorous testing under the watchful gaze of Jest and Cypress, ensuring stellar code quality and reliability.
 
@@ -29,7 +29,7 @@ The backend, powered by the gravitational force of NestJS, weaves intricate REST
 
 ## ✨ Frontend
 
-The frontend, a cosmic symphony orchestrated by Angular 17, offers a transcendental user experience. With the power of server-side rendering (SSR) and SEO optimizations, the website shines brightly, guiding travelers through the cosmos of discovery. It speaks the universal languages of Polish and English, bridging the gap between civilizations.
+The frontend, a cosmic symphony orchestrated by Angular 18, offers a transcendental user experience. With the power of server-side rendering (SSR) and SEO optimizations, the website shines brightly, guiding travelers through the cosmos of discovery. It speaks the universal languages of Polish and English, bridging the gap between civilizations.
 
 The frontend's design, as fluid as the cosmic ether, offers both light and dark modes, adapting effortlessly to the preferences of celestial wanderers. Its responsive layout navigates the cosmic expanse, ensuring seamless exploration across all devices. And with Tailwind CSS, styling becomes a celestial dance of elegance and efficiency.
 
