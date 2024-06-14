@@ -16,7 +16,10 @@ COPY ../.. .
 
 EXPOSE 3000
 
-CMD ["nx", "serve", "backend"]
+# Removing *.sock files on startup, before app serve.
+# Helps to get rid of EADDRINUSE problem
+# Problem details: https://github.com/nrwl/nx/issues/21610
+CMD find /tmp/ -name "*.sock" -delete;nx serve backend
 
 
 
