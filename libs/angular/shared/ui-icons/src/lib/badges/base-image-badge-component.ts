@@ -10,7 +10,8 @@ export abstract class BaseImageBadgeComponent {
 
   @Input() public cssClass?: string;
 
-  @HostBinding('class') private class = 'inline-block';
+  @HostBinding('class') private class = 'inline-flex';
+  @HostBinding('title') private title = this.getImageTitleText();
 
   public constructor() {
     this.imageUrl = this.getImageUrl();
@@ -20,4 +21,6 @@ export abstract class BaseImageBadgeComponent {
   protected abstract getImageUrl(): string;
 
   protected abstract getImageAltText(): string;
+
+  protected abstract getImageTitleText(): string;
 }

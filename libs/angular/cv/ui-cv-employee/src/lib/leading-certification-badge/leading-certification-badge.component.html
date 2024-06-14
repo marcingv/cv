@@ -1,0 +1,15 @@
+<a class="inline-flex" [href]="certificate.certFileUrl" target="_blank">
+  @if (certificate.type === 'angular-junior-developer') {
+    <gv-cv-at-cert-level-1-badge></gv-cv-at-cert-level-1-badge>
+  } @else if (certificate.type === 'angular-developer') {
+    <gv-cv-at-cert-level-2-badge></gv-cv-at-cert-level-2-badge>
+  } @else if (certificate.type === 'angular-expert-developer') {
+    <gv-cv-at-cert-level-3-badge></gv-cv-at-cert-level-3-badge>
+  } @else {
+    <div class="max-w-48 text-center flex items-center">
+      <div class="p-4 bg-orange-500 rounded text-white font-normal">
+        {{ certificate.name }}
+      </div>
+    </div>
+  }
+</a>

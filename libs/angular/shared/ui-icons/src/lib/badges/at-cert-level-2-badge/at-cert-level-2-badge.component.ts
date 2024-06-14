@@ -18,4 +18,8 @@ export class AtCertLevel2BadgeComponent extends BaseImageBadgeComponent {
   protected override getImageAltText(): string {
     return 'Certification Badge Level 2';
   }
+
+  protected override getImageTitleText(): string {
+    return 'Certified by GDEs as Angular Developer';
+  }
 }

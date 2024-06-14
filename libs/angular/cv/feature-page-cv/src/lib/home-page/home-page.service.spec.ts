@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HomePageService } from './home-page.service';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { CvData, LangCode } from '@gv-cv/shared-util-types';
+import { Course, CvData, LangCode } from '@gv-cv/shared-util-types';
 import { fromUi, UiStateFactory } from '@gv-cv/angular-data-access-ui';
 import { CvDataStateFactory, fromCvData } from '@gv-cv/angular-data-access-cv';
 
@@ -33,13 +33,18 @@ describe('HomePageService', (): void => {
   });
 
   it('should provide cv data', (): void => {
-    const cvData: CvData | undefined = service.cvData() as CvData | undefined;
-
+    const cvData: CvData | undefined = service.cvData();
     const lang: LangCode = state[fromUi.uiFeatureKey].lang;
 
     expect(cvData).toBeTruthy();
     expect(cvData).toEqual(
       state[fromCvData.cvDataFeatureKey].entities[lang]?.data,
     );
+  });
+
+  it('should provide provide leading certificate', (): void => {
+    const certificate: Course | undefined = service.leadingCertificate();
+
+    expect(certificate).toBeTruthy();
   });
 });
