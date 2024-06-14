@@ -1,12 +1,16 @@
-<div
-  class="container flex flex-col gap-4 md:flex-row print:flex-row items-center justify-between py-4 md:py-10 print:py-[0.5cm]"
->
-  <div class="flex flex-row gap-4 items-center lg:w-2/3 print:w-2/3">
+<div class="profile-header container">
+  <div class="certification-badge--wrapper">
+    <div class="certification-badge">
+      <gv-cv-at-cert-level-2-badge></gv-cv-at-cert-level-2-badge>
+    </div>
+  </div>
+
+  <div class="profile-introduction">
     <div class="text-center md:text-left print:text-left">
-      <h1 class="text-3xl md:text-5xl font-bold">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl print:text-5xl font-bold">
         {{ profile.firstName }} {{ profile.lastName }}
       </h1>
-      <h2 class="text-2xl md:text-4xl text-gray-400">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl print:text-4xl text-gray-400">
         {{ profile.specialization }}
       </h2>
     </div>
@@ -14,7 +18,7 @@
 
   <gv-cv-contact-details
     [data]="profile.contact"
-    class="lg:w-1/3 print:w-1/3"
+    class="profile-contact"
   ></gv-cv-contact-details>
 </div>
 

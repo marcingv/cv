@@ -18,4 +18,8 @@ export class MadeByGdeBadgeComponent extends BaseImageBadgeComponent {
   protected override getImageAltText(): string {
     return 'Made by Angular GDEs';
   }
+
+  protected override getImageTitleText(): string {
+    return 'Certified by Angular Google Developer Experts';
+  }
 }
