@@ -1,6 +1,6 @@
 @if (data && data.length) {
   <ul class="lg:grid lg:grid-cols-3 print:grid print:grid-cols-3 gap-y-4">
-    @for (item of data; track item) {
+    @for (item of data; track item.company) {
       <li
         class="flex flex-col gap-4 p-4 bg-gray-100 dark:bg-gray-800 odd:bg-white dark:odd:bg-gray-700"
       >

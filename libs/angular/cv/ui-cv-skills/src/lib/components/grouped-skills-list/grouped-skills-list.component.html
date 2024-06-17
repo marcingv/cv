@@ -1,5 +1,5 @@
 <div class="flex flex-col gap-2">
-  @for (oneGroup of data | groupSkillsByCategory; track oneGroup) {
+  @for (oneGroup of data | groupSkillsByCategory; track oneGroup.category) {
     <div class="flex flex-row gap-2">
       <div
         class="hidden print:flex sm:flex md:hidden lg:flex flex-shrink-0 w-[9rem] items-center rounded px-4 bg-gray-50 dark:bg-gray-900"

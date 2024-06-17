@@ -23,6 +23,27 @@ describe('HomePage', () => {
     );
   });
 
+  ['/not-a-valid-route', '/this/is/also/invalid/route'].forEach(
+    (oneInvalidRoute: string) => {
+      it(`should redirect to default lang for invalid route: "${oneInvalidRoute}"`, () => {
+        cy.visit(oneInvalidRoute, {
+          onBeforeLoad(win: Cypress.AUTWindow) {
+            Object.defineProperty(win.navigator, 'language', {
+              value: '',
+            });
+            Object.defineProperty(win.navigator, 'languages', {
+              value: [''],
+            });
+          },
+        });
+
+        cy.location().should((location) => {
+          expect(location.pathname).to.eq('/pl');
+        });
+      });
+    },
+  );
+
   describe('should redirect user to default lang if lang is not specified', () => {
     it('should redirect to PL lang by default', () => {
       cy.visit('/', {

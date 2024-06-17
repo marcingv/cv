@@ -1,1 +1,7 @@
-<img [src]="imageUrl" [alt]="altText" class="{{ cssClass }}" />
+<img
+  [ngSrc]="imageUrl"
+  [alt]="altText"
+  width="250"
+  height="250"
+  class="object-contain w-auto h-auto {{ cssClass }}"
+/>

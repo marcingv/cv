@@ -22,10 +22,10 @@ export const routes: Routes = [
         loadChildren: () =>
           import('@gv-cv/angular-feature-page-cv').then((m) => m.routes),
       },
-      {
-        path: '**',
-        redirectTo: '/',
-      },
     ],
+  },
+  {
+    path: '**',
+    redirectTo: '/',
   },
 ];
