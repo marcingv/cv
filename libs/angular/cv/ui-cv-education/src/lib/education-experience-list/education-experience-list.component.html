@@ -1,6 +1,6 @@
 @if (data && data.length > 0) {
   <ul>
-    @for (item of data; track item) {
+    @for (item of data; track item.name) {
       <li class="mb-4 last-of-type:mb-0">
         <div class="flex flex-row gap-4 justify-between">
           <h3 class="font-normal">{{ item.name }}</h3>

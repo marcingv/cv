@@ -1,5 +1,5 @@
 <ul class="flex flex-row flex-wrap gap-2">
-  @for (oneCourse of data; track oneCourse) {
+  @for (oneCourse of data; track oneCourse.name) {
     <li class="flex text-xs flex-1 items-center min-w-56 sm:min-w-96">
       <gv-cv-course-list-item
         [course]="oneCourse"

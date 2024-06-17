@@ -1,5 +1,5 @@
 <ul class="text-sm">
-  @for (item of data; track item) {
+  @for (item of data; track item.name) {
     <li class="flex flex-row gap-4">
       <div class="font-normal w-[5rem]">{{ item.name }}</div>
       <div class="flex-1 overflow-ellipsis overflow-hidden">
