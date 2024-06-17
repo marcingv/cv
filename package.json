@@ -23,7 +23,7 @@
     "@fontsource/firago": "^5.0.7",
     "@fontsource/montserrat": "^5.0.16",
     "@fontsource/roboto": "^5.0.8",
-    "@gilsdav/ngx-translate-router": "^7.0.0",
+    "@gilsdav/ngx-translate-router": "^7.2.0",
     "@gilsdav/ngx-translate-router-http-loader": "^2.0.0",
     "@nestjs/apollo": "^12.1.0",
     "@nestjs/axios": "^3.0.2",
