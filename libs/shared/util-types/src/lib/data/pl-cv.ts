@@ -403,6 +403,13 @@ export const PL_CV: CvData = {
   courses: [
     {
       platform: 'angular-training',
+      name: 'Angular Accelerator Program',
+      date: '2024-06-17',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/angular-accelerator-program-certificate.pdf',
+    },
+    {
+      platform: 'angular-training',
       type: 'angular-developer',
       name: 'Angular Certified Developer',
       date: '2024-05-28',
