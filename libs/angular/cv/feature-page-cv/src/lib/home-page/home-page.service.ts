@@ -21,6 +21,8 @@ export class HomePageService {
   });
 
   public leadingCertificate: Signal<Course | undefined> = toSignal(
-    this.store.select(CvDataSelectors.selectLeadingCertificate),
+    this.store
+      .select(CvDataSelectors.selectLeadingCertificate)
+      .pipe(filter((cert: Course | undefined) => !!cert)),
   );
 }
