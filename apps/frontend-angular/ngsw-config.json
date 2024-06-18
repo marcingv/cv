@@ -7,9 +7,11 @@
       "installMode": "prefetch",
       "resources": {
         "files": [
-          "/favicon.ico",
           "/index.html",
-          "/manifest.webmanifest",
+          "/index.csr.html",
+          "/index.server.html",
+          "/manifest.json",
+          "/assets/i18n/*",
           "/*.css",
           "/*.js"
         ]
@@ -21,8 +23,21 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
+          "/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2|pdf)"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api",
+      "version": 1,
+      "urls": ["/api/**"],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 50,
+        "maxAge": "1d",
+        "timeout": "0u"
       }
     }
   ]
