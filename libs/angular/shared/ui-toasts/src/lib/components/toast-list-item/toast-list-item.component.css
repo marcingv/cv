@@ -1,5 +1,5 @@
 .toast {
-  @apply py-2 px-4 shadow rounded font-normal text-sm;
+  @apply py-2 px-4 shadow rounded font-normal text-sm text-center;
 }
 
 .toast-primary {
