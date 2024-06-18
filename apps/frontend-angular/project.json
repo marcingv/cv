@@ -4,12 +4,18 @@
   "projectType": "application",
   "prefix": "gv-cv",
   "sourceRoot": "apps/frontend-angular/src",
-  "tags": ["type:app", "scope:frontend", "framework:angular"],
+  "tags": [
+    "type:app",
+    "scope:frontend",
+    "framework:angular"
+  ],
   "targets": {
     "docker-publish-images": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["docker push marcingv/cv-frontend-angular:latest"],
+        "commands": [
+          "docker push marcingv/cv-frontend-angular:latest"
+        ],
         "parallel": false
       }
     },
@@ -24,12 +30,16 @@
     },
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/frontend-angular",
         "index": "apps/frontend-angular/src/index.html",
         "browser": "apps/frontend-angular/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/frontend-angular/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -42,7 +52,9 @@
             "output": "assets/i18n"
           }
         ],
-        "styles": ["apps/frontend-angular/src/styles.scss"],
+        "styles": [
+          "apps/frontend-angular/src/styles.scss"
+        ],
         "scripts": [],
         "server": "apps/frontend-angular/src/main.server.ts",
         "prerender": false,
@@ -64,7 +76,8 @@
               "maximumError": "4kb"
             }
           ],
-          "outputHashing": "bundles"
+          "outputHashing": "bundles",
+          "serviceWorker": "apps/frontend-angular/ngsw-config.json"
         },
         "development": {
           "optimization": false,
@@ -89,16 +102,22 @@
       "configurations": {
         "production": {}
       },
-      "dependsOn": ["build"]
+      "dependsOn": [
+        "build"
+      ]
     },
     "build-webpack-with-coverage": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/frontend-angular",
         "index": "apps/frontend-angular/src/index.html",
         "main": "apps/frontend-angular/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/frontend-angular/tsconfig.app.json",
         "assets": [
           "apps/frontend-angular/src/manifest.json",
@@ -110,7 +129,9 @@
             "output": "assets/i18n"
           }
         ],
-        "styles": ["apps/frontend-angular/src/styles.scss"],
+        "styles": [
+          "apps/frontend-angular/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {

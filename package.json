@@ -18,6 +18,7 @@
     "@angular/platform-browser-dynamic": "18.0.3",
     "@angular/platform-server": "18.0.3",
     "@angular/router": "18.0.3",
+    "@angular/service-worker": "18.0.3",
     "@angular/ssr": "18.0.4",
     "@apollo/server": "^4.10.0",
     "@fontsource/firago": "^5.0.7",
