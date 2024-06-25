@@ -403,6 +403,13 @@ export const EN_CV: CvData = {
   courses: [
     {
       platform: 'angular-training',
+      name: 'Advanced Angular Workshop',
+      date: '2024-06-18',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/advanced-angular-workshop-certificate.pdf',
+    },
+    {
+      platform: 'angular-training',
       name: 'Angular Accelerator Program',
       date: '2024-06-17',
       certFileUrl:
