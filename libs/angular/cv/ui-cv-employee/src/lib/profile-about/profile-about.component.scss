@@ -6,7 +6,7 @@
   @apply relative;
   @apply flex flex-col gap-4 py-4 items-center justify-between;
   @apply md:flex-row md:py-10;
-  @apply print:flex-row print:py-[0.5cm];
+  @apply print:flex-row print:pb-[0.5cm] print:pt-0;
 }
 
 .profile-introduction {
@@ -60,7 +60,7 @@
 
 /** Print **/
 .certification-badge--wrapper {
-  @apply print:top-[5rem];
+  @apply print:top-[3.45rem];
 }
 .certification-badge {
   @apply print:grayscale-0;
