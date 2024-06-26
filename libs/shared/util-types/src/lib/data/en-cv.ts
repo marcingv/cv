@@ -403,6 +403,14 @@ export const EN_CV: CvData = {
   courses: [
     {
       platform: 'angular-training',
+      type: 'angular-expert-developer',
+      name: 'Expert Angular Developer',
+      date: '2024-06-26',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/at-expert-angular-developer-certification.pdf',
+    },
+    {
+      platform: 'angular-training',
       name: 'Advanced Angular Workshop',
       date: '2024-06-18',
       certFileUrl:
