@@ -128,7 +128,7 @@ export const PL_CV: CvData = {
       description: 'Kierunek: Informatyka, specjalizacja grafika komputerowa',
     },
     {
-      name: 'IX Liceum Ogólnokształcące im. M. Kopernika w Lublinie',
+      name: 'IX LO im. M. Kopernika w Lublinie',
       from: '2005-01-01',
       to: '2008-01-01',
       description: 'Profil: językowo - informatyczny',
@@ -401,6 +401,14 @@ export const PL_CV: CvData = {
     },
   ],
   courses: [
+    {
+      platform: 'angular-training',
+      type: 'angular-expert-developer',
+      name: 'Expert Angular Developer',
+      date: '2024-06-26',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/at-expert-angular-developer-certification.pdf',
+    },
     {
       platform: 'angular-training',
       name: 'Advanced Angular Workshop',
