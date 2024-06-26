@@ -74,6 +74,6 @@ describe('CvData Selectors', () => {
 
     expect(result).toBeTruthy();
     expect(result?.platform).toEqual('angular-training');
-    expect(result?.type).toEqual('angular-developer');
+    expect(result?.type).toEqual('angular-expert-developer');
   });
 });
