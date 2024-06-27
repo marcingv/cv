@@ -1,0 +1,9 @@
+.courses-list {
+  @apply flex flex-row flex-wrap gap-2;
+}
+
+.courses-list__item {
+  @apply flex flex-1 items-center;
+  @apply min-w-56 sm:min-w-96;
+  @apply text-xs;
+}

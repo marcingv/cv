@@ -2,7 +2,9 @@
   [href]="course.certFileUrl"
   [title]="course.name"
   target="_blank"
-  class="course-list-item course-platform-{{ course.platform }}"
+  class="course-list-item course-platform-{{ course.platform }} {{
+    course.type
+  }}"
 >
   <div class="course-list-item__addon">
     @if (course.platform === 'angular-training') {

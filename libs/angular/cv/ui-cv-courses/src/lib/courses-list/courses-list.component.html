@@ -1,12 +1,12 @@
-<ul class="flex flex-row flex-wrap gap-2">
+<ul class="courses-list">
   @for (oneCourse of data; track oneCourse.name) {
     <li
-      class="flex text-xs flex-1 items-center min-w-56 sm:min-w-96"
+      class="courses-list__item"
       [ngClass]="{ 'print:hidden': !oneCourse.printable }"
     >
       <gv-cv-course-list-item
         [course]="oneCourse"
-        class="flex h-full w-full"
+        class="flex size-full"
       ></gv-cv-course-list-item>
     </li>
   }
