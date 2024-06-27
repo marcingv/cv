@@ -25,8 +25,12 @@
   @apply flex h-32;
   @apply hover:scale-105;
   @apply transition duration-300 ease-out;
-  @apply grayscale hover:grayscale-0;
   @apply dark:mix-blend-luminosity hover:mix-blend-normal;
+}
+
+::ng-deep .certification-badge img {
+  @apply transition duration-300 ease-out;
+  @apply grayscale hover:grayscale-0;
 }
 
 /** Leading certification responsiveness **/
@@ -62,6 +66,7 @@
 .certification-badge--wrapper {
   @apply print:top-[5rem];
 }
-.certification-badge {
+
+::ng-deep .certification-badge img {
   @apply print:grayscale-0;
 }
