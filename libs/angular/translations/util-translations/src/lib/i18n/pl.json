@@ -72,5 +72,25 @@
   "pdfExportToasts": {
     "success": "Dokument PDF został wygenerowany!",
     "error": "Wystąpił błąd podczas generowania dokumentu PDF. Spróbuj ponownie."
+  },
+  "languageLevels": {
+    "labels": {
+      "native": "Język ojczysty",
+      "A1": "Poziom A1",
+      "A2": "Poziom A2",
+      "B1": "Poziom B1",
+      "B2": "Poziom B2",
+      "C1": "Poziom C1",
+      "C2": "Poziom C2"
+    },
+    "descriptions": {
+      "native": "Biegły",
+      "A1": "Początkujący",
+      "A2": "Początkujący",
+      "B1": "Średnio zaawansowany",
+      "B2": "Wyższy średnio zaawansowany",
+      "C1": "Zaawansowany",
+      "C2": "Biegły"
+    }
   }
 }

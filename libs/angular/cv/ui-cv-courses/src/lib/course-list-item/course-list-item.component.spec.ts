@@ -11,6 +11,8 @@ describe('CourseListItemComponent', (): void => {
     name: 'Docker & Kubernetes: The Practical Guide',
     date: '2024-01-09',
     certFileUrl: 'https://localhost/cert.pdf',
+    visible: true,
+    printable: true,
   };
 
   beforeEach(async () => {

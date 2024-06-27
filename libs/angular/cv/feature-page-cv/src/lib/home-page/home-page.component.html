@@ -11,7 +11,7 @@
     [leadingCertificate]="leadingCertificate()"
   ></gv-cv-profile-about>
 
-  <div class="container flex flex-col md:gap-8 md:flex-row print:flex-row">
+  <div class="container section-skills">
     <div class="md:w-2/3">
       <gv-cv-cv-section headerTitle="skills">
         <gv-cv-grouped-skills-list
@@ -41,15 +41,15 @@
     </div>
   </div>
 
-  @if (cvData.courses.length) {
+  @if (courses().length) {
     <div class="container">
       <gv-cv-cv-section headerTitle="coursesAndCerts" cssClass="pb-8">
-        <gv-cv-courses-list [data]="cvData.courses"></gv-cv-courses-list>
+        <gv-cv-courses-list [data]="courses()"></gv-cv-courses-list>
       </gv-cv-cv-section>
     </div>
   }
 
-  <div class="bg-gray-100 dark:bg-gray-700">
+  <div class="section-experience">
     <div class="container">
       <gv-cv-cv-section headerTitle="experience">
         <gv-cv-job-experience-list
@@ -59,15 +59,15 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container section-projects">
     <gv-cv-cv-section headerTitle="interestingProjects">
       <gv-cv-projects-experience-list
-        [data]="cvData.projects | orderedProjectsExperience"
+        [data]="projects() | orderedProjectsExperience"
       ></gv-cv-projects-experience-list>
     </gv-cv-cv-section>
   </div>
 
-  <div class="bg-gray-50 dark:bg-gray-900">
+  <div class="section-additional-features">
     <div class="container flex flex-row flex-wrap gap-x-4 justify-between">
       <gv-cv-cv-section headerTitle="hobbies" class="min-w-[33%] print:flex-1">
         <gv-cv-hobbies-list

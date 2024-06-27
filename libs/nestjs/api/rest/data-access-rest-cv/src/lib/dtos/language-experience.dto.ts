@@ -1,7 +1,7 @@
-import { LanguageExperience } from '@gv-cv/shared-util-types';
+import { LanguageExperience, LanguageLevel } from '@gv-cv/shared-util-types';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class LanguageExperienceDto implements LanguageExperience {
   @ApiProperty() name!: string;
-  @ApiProperty() advancementDescription!: string;
+  @ApiProperty({ type: 'string' }) level!: LanguageLevel;
 }

@@ -78,7 +78,7 @@ export const EN_CV: CvData = {
       company: 'Lemisoft',
       description:
         'Worked as a senior fullstack developer using Angular, Symfony, Yii, and Yii2 frameworks. Designed system and application architectures. Led a team of developers. Ensured high code quality. Participated in both internal projects and outsourcing projects. During my time at Lemisoft, I implemented several large systems, currently used by thousands of users.',
-      role: 'Fullstack WEB developer (Angular + Symfony)',
+      role: 'Fullstack WEB developer (Angular + PHP)',
       usedSkills: [
         { name: 'Symfony' },
         { name: 'Angular' },
@@ -125,7 +125,8 @@ export const EN_CV: CvData = {
       name: 'Maria Curie-Skłodowska University',
       from: '2008-01-01',
       to: '2013-01-01',
-      description: 'Field: Computer Science, specialization: Computer Graphics',
+      description:
+        'Field: Computer Science<br />Specialization: Computer Graphics',
     },
     {
       name: 'IX Copernicus High School in Lublin',
@@ -143,6 +144,8 @@ export const EN_CV: CvData = {
       companyName: 'Sygnity',
       from: '2022-02-01',
       to: '2023-09-30',
+      visible: true,
+      printable: true,
       responsibilities: [
         'Lead programmer and leader of the frontend team.',
         'Application architecture design and implementation of critical functionalities.',
@@ -172,6 +175,8 @@ export const EN_CV: CvData = {
       companyName: 'Sygnity',
       from: '2018-02-01',
       to: '2021-09-27',
+      visible: true,
+      printable: true,
       responsibilities: [
         'Member of the frontend developers team.',
         'Development and modernization of application architecture.',
@@ -197,6 +202,8 @@ export const EN_CV: CvData = {
       companyName: 'Lemisoft',
       from: '2019-01-01',
       to: '2022-09-30',
+      visible: true,
+      printable: true,
       responsibilities: [
         'Platform architecture design, based on microservices.',
         'Creation of technical project of the platform with documentation.',
@@ -229,6 +236,8 @@ export const EN_CV: CvData = {
       role: 'System Architect, PHP & Angular Developer',
       from: '2021-03-01',
       to: '2022-02-01',
+      visible: true,
+      printable: true,
       usedSkills: [
         { name: 'Symfony 5' },
         { name: 'PostgreSQL' },
@@ -251,6 +260,8 @@ export const EN_CV: CvData = {
       name: 'PIU Emp@tia - platform for social benefits applications',
       from: '2017-03-01',
       to: '2018-01-01',
+      visible: true,
+      printable: true,
       description:
         'Module implementation on the "PIU Emp@tia" platform for submitting social benefits applications (500+, Large Family Card, etc.).',
       companyName: 'Sygnity',
@@ -271,6 +282,8 @@ export const EN_CV: CvData = {
       companyName: 'Lemisoft',
       from: '2015-06-01',
       to: '2016-03-31',
+      visible: true,
+      printable: true,
       description:
         'Maintenance and expansion of the "Occupational Barometer" application commissioned by the Voivodship Labor Office in Krakow.',
       role: 'WEB Developer (PHP)',
@@ -292,6 +305,8 @@ export const EN_CV: CvData = {
       companyName: 'Lemisoft',
       from: '2015-01-01',
       to: '2015-07-30',
+      visible: true,
+      printable: true,
       role: 'PHP & Android Developer',
       description: 'Advertising platform based on Beacon proximity sensors.',
       responsibilities: [
@@ -306,6 +321,8 @@ export const EN_CV: CvData = {
       companyName: 'Lemisoft',
       from: '2016-07-01',
       to: '2017-12-30',
+      visible: true,
+      printable: true,
       description:
         'Tool supporting daily work of nurses and settlements with Social Insurance Institution.',
       role: 'WEB Developer (PHP) & Android Developer',
@@ -324,33 +341,37 @@ export const EN_CV: CvData = {
         { name: 'Android' },
       ],
     },
-    // {
-    //   name: 'OfficeOnTime',
-    //   companyName: 'JoomSoft',
-    //   description: 'Online room reservation system',
-    //   from: '2013-06-01',
-    //   to: '2014-01-30',
-    //   role: 'WEB Developer (PHP)',
-    //   responsibilities: [
-    //     'System functionality implementation according to requirements.',
-    //     'Ensuring responsiveness on mobile devices.',
-    //     'Integration with PayU and PayPal payment systems.',
-    //   ],
-    //   usedSkills: [
-    //     { name: 'PHP' },
-    //     { name: 'Yii' },
-    //     { name: 'PostgreSQL' },
-    //     { name: 'Bootstrap' },
-    //     { name: 'CSS' },
-    //   ],
-    // },
+    {
+      name: 'OfficeOnTime',
+      companyName: 'JoomSoft',
+      description: 'Online room reservation system',
+      from: '2013-06-01',
+      to: '2014-01-30',
+      visible: false,
+      printable: false,
+      role: 'WEB Developer (PHP)',
+      responsibilities: [
+        'System functionality implementation according to requirements.',
+        'Ensuring responsiveness on mobile devices.',
+        'Integration with PayU and PayPal payment systems.',
+      ],
+      usedSkills: [
+        { name: 'PHP' },
+        { name: 'Yii' },
+        { name: 'PostgreSQL' },
+        { name: 'Bootstrap' },
+        { name: 'CSS' },
+      ],
+    },
     {
       name: 'BooksOn',
       companyName: 'Estymator',
       description:
         "Dedicated platform for running an online bookstore, implemented according to client's requirements.",
-      to: '2015-10-01',
       from: '2010-01-01',
+      to: '2015-10-01',
+      visible: true,
+      printable: true,
       role: 'WEB Developer',
       responsibilities: [
         'BackOffice system implementation for order handling, shipping process automation, and inventory monitoring.',
@@ -378,6 +399,8 @@ export const EN_CV: CvData = {
       companyName: 'Lemisoft',
       from: '2014-02-01',
       to: '2016-02-30',
+      visible: true,
+      printable: true,
       responsibilities: [
         'Maintenance and development of the system.',
         'Implementation of a report form wizard.',
@@ -394,10 +417,13 @@ export const EN_CV: CvData = {
     },
   ],
   languages: [
-    { name: 'Polish', advancementDescription: 'Native language' },
+    {
+      name: 'Polish',
+      level: 'native',
+    },
     {
       name: 'English',
-      advancementDescription: 'Level B2 (upper-intermediate)',
+      level: 'B2',
     },
   ],
   courses: [
@@ -408,20 +434,8 @@ export const EN_CV: CvData = {
       date: '2024-06-26',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/at-expert-angular-developer-certification.pdf',
-    },
-    {
-      platform: 'angular-training',
-      name: 'Advanced Angular Workshop',
-      date: '2024-06-18',
-      certFileUrl:
-        'https://marcin.gawski.info/assets/files/advanced-angular-workshop-certificate.pdf',
-    },
-    {
-      platform: 'angular-training',
-      name: 'Angular Accelerator Program',
-      date: '2024-06-17',
-      certFileUrl:
-        'https://marcin.gawski.info/assets/files/angular-accelerator-program-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'angular-training',
@@ -430,6 +444,26 @@ export const EN_CV: CvData = {
       date: '2024-05-28',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/at-angular-developer-certification.pdf',
+      visible: true,
+      printable: true,
+    },
+    {
+      platform: 'angular-training',
+      name: 'Advanced Angular Workshop',
+      date: '2024-06-18',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/advanced-angular-workshop-certificate.pdf',
+      visible: true,
+      printable: true,
+    },
+    {
+      platform: 'angular-training',
+      name: 'Angular Accelerator Program',
+      date: '2024-06-17',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/angular-accelerator-program-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'angular-training',
@@ -437,20 +471,8 @@ export const EN_CV: CvData = {
       date: '2024-05-14',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/certificate-angular-signals.pdf',
-    },
-    {
-      platform: 'oracle',
-      name: 'Oracle Database SQL Certified Expert',
-      date: '2014-01-31',
-      certFileUrl:
-        'https://marcin.gawski.info/assets/files/oracle_sql_expert.pdf',
-    },
-    {
-      platform: 'oracle',
-      name: 'Oracle Database 11g Administrator Certified Associate',
-      date: '2014-01-31',
-      certFileUrl:
-        'https://marcin.gawski.info/assets/files/oracle_administrator.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'udemy',
@@ -458,6 +480,8 @@ export const EN_CV: CvData = {
       date: '2024-01-03',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/cypress-end-to-end-testing-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'udemy',
@@ -465,6 +489,8 @@ export const EN_CV: CvData = {
       date: '2024-01-09',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/docker-&-kubernetes-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'udemy',
@@ -472,6 +498,8 @@ export const EN_CV: CvData = {
       date: '2024-03-05',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/github-actions-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'udemy',
@@ -479,6 +507,8 @@ export const EN_CV: CvData = {
       date: '2024-02-14',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/JavaScript-the-complete-guide-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'udemy',
@@ -486,6 +516,8 @@ export const EN_CV: CvData = {
       date: '2024-02-17',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/master-nestjs-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'udemy',
@@ -493,6 +525,8 @@ export const EN_CV: CvData = {
       date: '2022-02-18',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/ngrx-the-complete-guide-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'udemy',
@@ -500,6 +534,26 @@ export const EN_CV: CvData = {
       date: '2023-12-14',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/understanding-typescript-certificate.pdf',
+      visible: true,
+      printable: true,
+    },
+    {
+      platform: 'oracle',
+      name: 'Oracle Database SQL Certified Expert',
+      date: '2014-01-31',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/oracle_sql_expert.pdf',
+      visible: false,
+      printable: false,
+    },
+    {
+      platform: 'oracle',
+      name: 'Oracle Database 11g Administrator Certified Associate',
+      date: '2014-01-31',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/oracle_administrator.pdf',
+      visible: false,
+      printable: false,
     },
   ],
   consents: {

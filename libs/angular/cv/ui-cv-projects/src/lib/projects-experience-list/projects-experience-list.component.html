@@ -4,6 +4,7 @@
   @for (item of data; track item.name) {
     <li
       class="break-inside-avoid flex flex-col gap-4 p-4 odd:bg-gray-100 dark:odd:bg-gray-700"
+      [ngClass]="{ 'print:hidden': !item.printable }"
     >
       <header>
         <div class="mb-2 flex flex-row justify-between items-start gap-4">

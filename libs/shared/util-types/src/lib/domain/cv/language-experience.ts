@@ -1,4 +1,6 @@
+import { LanguageLevel } from './language-level';
+
 export interface LanguageExperience {
   name: string;
-  advancementDescription: string;
+  level: LanguageLevel;
 }

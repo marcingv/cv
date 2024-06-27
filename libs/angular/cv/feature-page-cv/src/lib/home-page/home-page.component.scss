@@ -1,0 +1,22 @@
+.section-skills {
+  @apply flex flex-col md:gap-8;
+  @apply md:flex-row;
+  @apply print:flex-row;
+}
+
+.section-experience {
+  @apply bg-gray-100;
+  @apply dark:bg-gray-700;
+}
+
+.section-projects {
+  @apply break-before-page;
+}
+
+.section-additional-features {
+  @apply mt-12 border-t-4;
+  @apply bg-gray-50 border-gray-100;
+  @apply dark:bg-gray-900;
+  @apply dark:border-gray-700;
+  @apply print:border-b-4;
+}

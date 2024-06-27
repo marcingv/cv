@@ -17,9 +17,8 @@ body {
   root,
   html,
   body {
-    font-size: 12px;
-    margin: 0;
-    padding: 0;
+    font-size: 11.5px;
+    @apply p-0 m-0;
   }
 }
 

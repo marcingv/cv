@@ -6,16 +6,17 @@
           <h3 class="font-normal">{{ item.name }}</h3>
 
           <span class="text-xs whitespace-nowrap leading-6">
-            (<gv-cv-time-span
+            (
+            <gv-cv-time-span
               [from]="item.from"
               [to]="item.to"
               dateFormat="y"
-            ></gv-cv-time-span
-            >)
+            ></gv-cv-time-span>
+            )
           </span>
         </div>
 
-        <p class="text-sm">{{ item.description }}</p>
+        <p class="text-sm" [innerHTML]="item.description"></p>
       </li>
     }
   </ul>

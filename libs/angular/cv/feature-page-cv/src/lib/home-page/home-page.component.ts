@@ -10,7 +10,7 @@ import {
 } from '@gv-cv/angular-ui-cv-projects';
 import { LanguagesExperienceListComponent } from '@gv-cv/angular-ui-cv-languages';
 import { HobbiesListComponent } from '@gv-cv/angular-ui-cv-hobbies';
-import { Course, CvData } from '@gv-cv/shared-util-types';
+import { Course, CvData, ProjectExperience } from '@gv-cv/shared-util-types';
 import { PagePdfExportComponent } from '@gv-cv/angular-feature-pdf-export';
 import {
   AdditionalSkillsListComponent,
@@ -43,6 +43,9 @@ export class HomePageComponent {
   private dataService: HomePageService = inject(HomePageService);
 
   public cvData: Signal<CvData> = this.dataService.cvData;
+  public courses: Signal<Course[]> = this.dataService.visibleCourses;
+  public projects: Signal<ProjectExperience[]> =
+    this.dataService.visibleProjects;
   public leadingCertificate: Signal<Course | undefined> =
     this.dataService.leadingCertificate;
 }
