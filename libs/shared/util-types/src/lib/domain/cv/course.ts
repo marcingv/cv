@@ -10,4 +10,6 @@ export interface Course {
   name: string;
   date: DateString;
   certFileUrl?: string;
+  visible: boolean;
+  printable: boolean;
 }

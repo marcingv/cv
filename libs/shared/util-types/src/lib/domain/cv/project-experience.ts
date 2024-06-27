@@ -10,4 +10,6 @@ export interface ProjectExperience {
   from: DateString;
   to?: DateString;
   usedSkills?: Skill[];
+  visible: boolean;
+  printable: boolean;
 }

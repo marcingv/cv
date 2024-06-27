@@ -28,14 +28,15 @@ export const selectLeadingCertificate = createSelector(
 
     const angularExpertDeveloperCert: Course | undefined = courses.find(
       (oneCourse: Course): boolean =>
-        oneCourse.type === 'angular-expert-developer',
+        oneCourse.type === 'angular-expert-developer' && oneCourse.visible,
     );
     if (angularExpertDeveloperCert) {
       return angularExpertDeveloperCert;
     }
 
     const angularDeveloperCert: Course | undefined = courses.find(
-      (oneCourse: Course): boolean => oneCourse.type === 'angular-developer',
+      (oneCourse: Course): boolean =>
+        oneCourse.type === 'angular-developer' && oneCourse.visible,
     );
     if (angularDeveloperCert) {
       return angularDeveloperCert;

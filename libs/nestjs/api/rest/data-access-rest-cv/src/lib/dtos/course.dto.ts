@@ -16,4 +16,10 @@ export class CourseDto implements Course {
 
   @ApiProperty()
   certFileUrl?: string | undefined;
+
+  @ApiProperty()
+  printable!: boolean;
+
+  @ApiProperty()
+  visible!: boolean;
 }

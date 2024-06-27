@@ -11,4 +11,6 @@ export class ProjectExperienceDto implements ProjectExperience {
   @ApiProperty() from!: string;
   @ApiProperty({ required: false }) to?: string | undefined;
   @ApiProperty({ type: [SkillDto] }) usedSkills?: SkillDto[] | undefined;
+  @ApiProperty() visible!: boolean;
+  @ApiProperty() printable!: boolean;
 }

@@ -2,7 +2,12 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomePageComponent } from './home-page.component';
 import { NO_ERRORS_SCHEMA, signal } from '@angular/core';
 import { HomePageService } from './home-page.service';
-import { Course, CvData, CvDataFactory } from '@gv-cv/shared-util-types';
+import {
+  Course,
+  CvData,
+  CvDataFactory,
+  ProjectExperience,
+} from '@gv-cv/shared-util-types';
 import { OrderedProjectsExperiencePipe } from '@gv-cv/angular-ui-cv-projects';
 
 describe('HomePageComponent', (): void => {
@@ -16,6 +21,8 @@ describe('HomePageComponent', (): void => {
   beforeEach(async () => {
     homePageService = {
       cvData: signal<CvData>(cvData),
+      visibleCourses: signal<Course[]>(cvData.courses),
+      visibleProjects: signal<ProjectExperience[]>(cvData.projects),
       leadingCertificate: signal<Course>(leadingCert),
     };
 

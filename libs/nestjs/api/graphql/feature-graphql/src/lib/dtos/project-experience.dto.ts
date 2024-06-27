@@ -27,4 +27,10 @@ export class ProjectExperienceDto implements ProjectExperience {
 
   @Field(() => [SkillDto], { nullable: true })
   usedSkills?: SkillDto[] | undefined;
+
+  @Field()
+  visible!: boolean;
+
+  @Field()
+  printable!: boolean;
 }

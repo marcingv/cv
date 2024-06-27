@@ -13,6 +13,8 @@ describe('LeadingCertificationBadgeComponent', () => {
     name: 'Sample certification',
     certFileUrl: 'http://localhost/cert.pdf',
     date: new Date().toISOString(),
+    visible: true,
+    printable: true,
   };
 
   beforeEach(async () => {

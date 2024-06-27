@@ -143,6 +143,8 @@ export const PL_CV: CvData = {
       companyName: 'Sygnity',
       from: '2022-02-01',
       to: '2023-09-30',
+      visible: true,
+      printable: true,
       responsibilities: [
         'Główny programista i lider zespołu frontendowego.',
         'Projekt architektury aplikacji oraz implementacja krytycznych funkcjonalności.',
@@ -172,6 +174,8 @@ export const PL_CV: CvData = {
       companyName: 'Sygnity',
       from: '2018-02-01',
       to: '2021-09-27',
+      visible: true,
+      printable: true,
       responsibilities: [
         'Członek zespołu programistów frontend.',
         'Rozwój i unowocześnienie architektury aplikacji.',
@@ -197,6 +201,8 @@ export const PL_CV: CvData = {
       companyName: 'Lemisoft',
       from: '2019-01-01',
       to: '2022-09-30',
+      visible: true,
+      printable: true,
       responsibilities: [
         'Projekt architektury platformy, oparty o mikroserwisy.',
         'Utworzenie projektu technicznego platformy wraz z dokumentacją.',
@@ -229,6 +235,8 @@ export const PL_CV: CvData = {
       role: 'Architekt systemu, Programista PHP & Angular',
       from: '2021-03-01',
       to: '2022-02-01',
+      visible: true,
+      printable: true,
       usedSkills: [
         { name: 'Symfony 5' },
         { name: 'PostgreSQL' },
@@ -251,6 +259,8 @@ export const PL_CV: CvData = {
       name: 'PIU Emp@tia - platforma z wnioskami o świadczenia socjalne',
       from: '2017-03-01',
       to: '2018-01-01',
+      visible: true,
+      printable: true,
       description:
         'Implementacja modułu na platformie "PIU Emp@tia" do składania wniosków o świadczenia socjalne (500+, Karta Dużej Rodziny, itp).',
       companyName: 'Sygnity',
@@ -271,6 +281,8 @@ export const PL_CV: CvData = {
       companyName: 'Lemisoft',
       from: '2015-06-01',
       to: '2016-03-31',
+      visible: true,
+      printable: true,
       description:
         'Utrzymanie i rozbudowa aplikacji "Barometr Zawodów" na zlecenie Wojewódzkiego Urzędu Pracy w Krakowie',
       role: 'Programista WEB (PHP)',
@@ -292,6 +304,8 @@ export const PL_CV: CvData = {
       companyName: 'Lemisoft',
       from: '2015-01-01',
       to: '2015-07-30',
+      visible: true,
+      printable: true,
       role: 'Programista PHP & Android',
       description: 'Platforma reklamowa oparta o czujniki zbliżeniowie Beacon.',
       responsibilities: [
@@ -306,6 +320,8 @@ export const PL_CV: CvData = {
       companyName: 'Lemisoft',
       from: '2016-07-01',
       to: '2017-12-30',
+      visible: true,
+      printable: true,
       description:
         'Narzędzie wspomagające codzienną pracę pielęgniarek oraz rozliczenia z ZUS.',
       role: 'Programista WEB (PHP) & Android',
@@ -324,26 +340,28 @@ export const PL_CV: CvData = {
         { name: 'Android' },
       ],
     },
-    // {
-    //   name: 'OfficeOnTime',
-    //   companyName: 'JoomSoft',
-    //   description: 'System rezerwacji pomieszczeń on-line',
-    //   from: '2013-06-01',
-    //   to: '2014-01-30',
-    //   role: 'Programista WEB (PHP)',
-    //   responsibilities: [
-    //     'Implementacja funkcjolaności systemu zgodnie z wymaganiami.',
-    //     'Zapewnienie responsywności na urządzeniach mobilnych.',
-    //     'Integracja z systemami płatności PayU i PayPal.',
-    //   ],
-    //   usedSkills: [
-    //     { name: 'PHP' },
-    //     { name: 'Yii' },
-    //     { name: 'PostgreSQL' },
-    //     { name: 'Bootstrap' },
-    //     { name: 'CSS' },
-    //   ],
-    // },
+    {
+      name: 'OfficeOnTime',
+      companyName: 'JoomSoft',
+      description: 'System rezerwacji pomieszczeń on-line',
+      from: '2013-06-01',
+      to: '2014-01-30',
+      visible: false,
+      printable: false,
+      role: 'Programista WEB (PHP)',
+      responsibilities: [
+        'Implementacja funkcjolaności systemu zgodnie z wymaganiami.',
+        'Zapewnienie responsywności na urządzeniach mobilnych.',
+        'Integracja z systemami płatności PayU i PayPal.',
+      ],
+      usedSkills: [
+        { name: 'PHP' },
+        { name: 'Yii' },
+        { name: 'PostgreSQL' },
+        { name: 'Bootstrap' },
+        { name: 'CSS' },
+      ],
+    },
     {
       name: 'BooksOn',
       companyName: 'Estymator',
@@ -351,6 +369,8 @@ export const PL_CV: CvData = {
         'Dedykowana platforma do prowadzenia księgarni internetowej, zrealizowana na zamówienie Klienta.',
       to: '2015-10-01',
       from: '2010-01-01',
+      visible: true,
+      printable: true,
       role: 'Programista WEB',
       responsibilities: [
         'Implementacja systemu BackOffice do obsługi zamówień, automatyzacji procesów wysyłki oraz nadzorowania stanów magazynowych.',
@@ -378,6 +398,8 @@ export const PL_CV: CvData = {
       companyName: 'Lemisoft',
       from: '2014-02-01',
       to: '2016-02-30',
+      visible: true,
+      printable: true,
       responsibilities: [
         'Utrzymanie i rozwój systemu.',
         'Implementacja kreatora formularzy raportowych.',
@@ -408,6 +430,8 @@ export const PL_CV: CvData = {
       date: '2024-06-26',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/at-expert-angular-developer-certification.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'angular-training',
@@ -415,6 +439,8 @@ export const PL_CV: CvData = {
       date: '2024-06-18',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/advanced-angular-workshop-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'angular-training',
@@ -422,6 +448,8 @@ export const PL_CV: CvData = {
       date: '2024-06-17',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/angular-accelerator-program-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'angular-training',
@@ -430,6 +458,8 @@ export const PL_CV: CvData = {
       date: '2024-05-28',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/at-angular-developer-certification.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'angular-training',
@@ -437,6 +467,8 @@ export const PL_CV: CvData = {
       date: '2024-05-14',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/certificate-angular-signals.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'oracle',
@@ -444,6 +476,8 @@ export const PL_CV: CvData = {
       date: '2014-01-31',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/oracle_sql_expert.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'oracle',
@@ -451,6 +485,8 @@ export const PL_CV: CvData = {
       date: '2014-01-31',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/oracle_administrator.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'udemy',
@@ -458,6 +494,8 @@ export const PL_CV: CvData = {
       date: '2024-01-03',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/cypress-end-to-end-testing-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'udemy',
@@ -465,6 +503,8 @@ export const PL_CV: CvData = {
       date: '2024-01-09',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/docker-&-kubernetes-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'udemy',
@@ -472,6 +512,8 @@ export const PL_CV: CvData = {
       date: '2024-03-05',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/github-actions-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'udemy',
@@ -479,6 +521,8 @@ export const PL_CV: CvData = {
       date: '2024-02-14',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/JavaScript-the-complete-guide-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'udemy',
@@ -486,6 +530,8 @@ export const PL_CV: CvData = {
       date: '2024-02-17',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/master-nestjs-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'udemy',
@@ -493,6 +539,8 @@ export const PL_CV: CvData = {
       date: '2022-02-18',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/ngrx-the-complete-guide-certificate.pdf',
+      visible: true,
+      printable: true,
     },
     {
       platform: 'udemy',
@@ -500,6 +548,8 @@ export const PL_CV: CvData = {
       date: '2023-12-14',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/understanding-typescript-certificate.pdf',
+      visible: true,
+      printable: true,
     },
   ],
   consents: {

@@ -17,4 +17,10 @@ export class CourseDto implements Course {
 
   @Field({ nullable: true })
   certFileUrl?: string | undefined;
+
+  @Field()
+  printable!: boolean;
+
+  @Field()
+  visible!: boolean;
 }

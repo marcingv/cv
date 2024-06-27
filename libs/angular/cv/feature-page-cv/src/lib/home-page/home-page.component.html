@@ -41,10 +41,10 @@
     </div>
   </div>
 
-  @if (cvData.courses.length) {
+  @if (courses().length) {
     <div class="container">
       <gv-cv-cv-section headerTitle="coursesAndCerts" cssClass="pb-8">
-        <gv-cv-courses-list [data]="cvData.courses"></gv-cv-courses-list>
+        <gv-cv-courses-list [data]="courses()"></gv-cv-courses-list>
       </gv-cv-cv-section>
     </div>
   }
@@ -62,7 +62,7 @@
   <div class="container">
     <gv-cv-cv-section headerTitle="interestingProjects">
       <gv-cv-projects-experience-list
-        [data]="cvData.projects | orderedProjectsExperience"
+        [data]="projects() | orderedProjectsExperience"
       ></gv-cv-projects-experience-list>
     </gv-cv-cv-section>
   </div>
