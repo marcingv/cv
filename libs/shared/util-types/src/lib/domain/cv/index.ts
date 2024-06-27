@@ -5,6 +5,7 @@ export * from './employee-data';
 export * from './hobby';
 export * from './job-experience';
 export * from './language-experience';
+export * from './language-level';
 export * from './project-experience';
 export * from './skill';
 export * from './skill-category';

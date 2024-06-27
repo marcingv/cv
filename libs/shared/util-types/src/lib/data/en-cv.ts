@@ -416,10 +416,13 @@ export const EN_CV: CvData = {
     },
   ],
   languages: [
-    { name: 'Polish', advancementDescription: 'Native language' },
+    {
+      name: 'Polish',
+      level: 'native',
+    },
     {
       name: 'English',
-      advancementDescription: 'B2 Level (upper-intermediate)',
+      level: 'B2',
     },
   ],
   courses: [

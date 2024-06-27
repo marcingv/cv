@@ -416,10 +416,13 @@ export const PL_CV: CvData = {
     },
   ],
   languages: [
-    { name: 'Polski', advancementDescription: 'Język ojczysty' },
+    {
+      name: 'Polski',
+      level: 'native',
+    },
     {
       name: 'Angielski',
-      advancementDescription: 'Poziom B2 (wyższy średnio zaawansowany)',
+      level: 'B2',
     },
   ],
   courses: [
