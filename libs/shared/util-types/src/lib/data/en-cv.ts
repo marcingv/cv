@@ -435,6 +435,16 @@ export const EN_CV: CvData = {
     },
     {
       platform: 'angular-training',
+      type: 'angular-developer',
+      name: 'Angular Certified Developer',
+      date: '2024-05-28',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/at-angular-developer-certification.pdf',
+      visible: true,
+      printable: true,
+    },
+    {
+      platform: 'angular-training',
       name: 'Advanced Angular Workshop',
       date: '2024-06-18',
       certFileUrl:
@@ -453,38 +463,10 @@ export const EN_CV: CvData = {
     },
     {
       platform: 'angular-training',
-      type: 'angular-developer',
-      name: 'Angular Certified Developer',
-      date: '2024-05-28',
-      certFileUrl:
-        'https://marcin.gawski.info/assets/files/at-angular-developer-certification.pdf',
-      visible: true,
-      printable: true,
-    },
-    {
-      platform: 'angular-training',
       name: 'Angular Signals',
       date: '2024-05-14',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/certificate-angular-signals.pdf',
-      visible: true,
-      printable: true,
-    },
-    {
-      platform: 'oracle',
-      name: 'Oracle Database SQL Certified Expert',
-      date: '2014-01-31',
-      certFileUrl:
-        'https://marcin.gawski.info/assets/files/oracle_sql_expert.pdf',
-      visible: true,
-      printable: true,
-    },
-    {
-      platform: 'oracle',
-      name: 'Oracle Database 11g Administrator Certified Associate',
-      date: '2014-01-31',
-      certFileUrl:
-        'https://marcin.gawski.info/assets/files/oracle_administrator.pdf',
       visible: true,
       printable: true,
     },
@@ -550,6 +532,24 @@ export const EN_CV: CvData = {
         'https://marcin.gawski.info/assets/files/understanding-typescript-certificate.pdf',
       visible: true,
       printable: true,
+    },
+    {
+      platform: 'oracle',
+      name: 'Oracle Database SQL Certified Expert',
+      date: '2014-01-31',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/oracle_sql_expert.pdf',
+      visible: false,
+      printable: false,
+    },
+    {
+      platform: 'oracle',
+      name: 'Oracle Database 11g Administrator Certified Associate',
+      date: '2014-01-31',
+      certFileUrl:
+        'https://marcin.gawski.info/assets/files/oracle_administrator.pdf',
+      visible: false,
+      printable: false,
     },
   ],
   consents: {
