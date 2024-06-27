@@ -2,7 +2,7 @@
   @for (oneCourse of data; track oneCourse.name) {
     <li
       class="courses-list__item"
-      [ngClass]="{ 'print:hidden': !oneCourse.printable }"
+      [ngClass]="{ 'print:!hidden': !oneCourse.printable }"
     >
       <gv-cv-course-list-item
         [course]="oneCourse"

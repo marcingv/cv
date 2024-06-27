@@ -543,7 +543,7 @@ export const PL_CV: CvData = {
       date: '2014-01-31',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/oracle_sql_expert.pdf',
-      visible: false,
+      visible: true,
       printable: false,
     },
     {
@@ -552,7 +552,7 @@ export const PL_CV: CvData = {
       date: '2014-01-31',
       certFileUrl:
         'https://marcin.gawski.info/assets/files/oracle_administrator.pdf',
-      visible: false,
+      visible: true,
       printable: false,
     },
   ],
