@@ -7,7 +7,7 @@ export const PL_CV: CvData = {
     lastName: 'Gawski',
     specialization: 'Programista Angular',
     about:
-      'Jestem programistą WEB z ponad 10-letnim doświadczeniem zawodowym. Przez wiele lat pracowałem jako fullstack developer, wykorzystując różne frameworki backendowe oraz frontendowe. W ostatnim czasie skupiam się na pracy głównie jako programista Angular. Priorytetem dla mnie jest wysoka jakość kodu, którą osiągam dzięki stosowaniu dobrych praktyk programowania, takich jak SOLID, KISS, DRY, CleanCode. Jestem również zwolennikiem pracy w trybie ciągłej integracji oraz konteneryzacji. W przyszłej pracy poszukuję możliwości rozwoju oraz szansy współpracy z innymi doświadczonymi developerami.',
+      'Jestem programistą WEB z ponad 10-letnim doświadczeniem zawodowym. Przez wiele lat pracowałem jako fullstack developer, wykorzystując różne frameworki backendowe oraz frontendowe. W ostatnim czasie głównie skupiam się na pracy jako programista Angular. Priorytetem dla mnie jest wysoka jakość kodu, którą osiągam dzięki stosowaniu dobrych praktyk programowania, takich jak SOLID, KISS, DRY, CleanCode. Jestem również zwolennikiem pracy w trybie ciągłej integracji oraz konteneryzacji. W przyszłej pracy poszukuję możliwości rozwoju oraz szansy współpracy z innymi, doświadczonymi developerami.',
     skills: [
       { name: 'Angular', category: 'frontend' },
       { name: 'TypeScript', category: 'frontend' },
