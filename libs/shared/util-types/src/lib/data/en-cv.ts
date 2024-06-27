@@ -419,7 +419,7 @@ export const EN_CV: CvData = {
     { name: 'Polish', advancementDescription: 'Native language' },
     {
       name: 'English',
-      advancementDescription: 'Level B2 (upper-intermediate)',
+      advancementDescription: 'B2 Level (upper-intermediate)',
     },
   ],
   courses: [

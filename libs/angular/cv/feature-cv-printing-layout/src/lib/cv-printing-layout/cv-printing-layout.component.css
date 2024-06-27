@@ -1,3 +1,11 @@
+::ng-deep .profile-header {
+  @apply print:!pt-0;
+}
+
+::ng-deep .certification-badge--wrapper {
+  @apply print:!top-[3.45rem];
+}
+
 table td {
   @apply p-0;
 }
