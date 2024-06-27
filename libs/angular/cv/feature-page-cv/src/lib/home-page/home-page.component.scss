@@ -14,6 +14,9 @@
 }
 
 .section-additional-features {
-  @apply bg-gray-50;
+  @apply mt-12 border-t-4;
+  @apply bg-gray-50 border-gray-100;
   @apply dark:bg-gray-900;
+  @apply dark:border-gray-700;
+  @apply print:border-b-4;
 }
