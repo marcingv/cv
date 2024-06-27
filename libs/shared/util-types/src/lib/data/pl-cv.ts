@@ -78,7 +78,7 @@ export const PL_CV: CvData = {
       company: 'Lemisoft',
       description:
         'Praca na stanowisku senior fullstack developer z wykorzystaniem frameworków: Angular, Symfony, Yii, Yii2. Projektowanie architektury systemów i aplikacji. Kierowanie zespołem programistów. Dbanie o wysoką jakość kodu. Udział zarówno w projektach wewnętrznych oraz zewnętrznych na zasadzie outsourcingu. Podczas pracy w firmie Lemisoft zrealizowałem kilka dużych systemów, wykorzystywanych obecnie przez tysiące użytkowników.',
-      role: 'Fullstack WEB developer (Angular + Symfony)',
+      role: 'Fullstack WEB developer (Angular + PHP)',
       usedSkills: [
         { name: 'Symfony' },
         { name: 'Angular' },
@@ -125,7 +125,8 @@ export const PL_CV: CvData = {
       name: 'Uniwersytet Marii Curie-Skłodowskiej',
       from: '2008-01-01',
       to: '2013-01-01',
-      description: 'Kierunek: Informatyka, specjalizacja grafika komputerowa',
+      description:
+        'Kierunek: Informatyka<br />Specjalizacja: grafika komputerowa',
     },
     {
       name: 'IX LO im. M. Kopernika w Lublinie',

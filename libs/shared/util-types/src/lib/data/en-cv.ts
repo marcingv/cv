@@ -78,7 +78,7 @@ export const EN_CV: CvData = {
       company: 'Lemisoft',
       description:
         'Worked as a senior fullstack developer using Angular, Symfony, Yii, and Yii2 frameworks. Designed system and application architectures. Led a team of developers. Ensured high code quality. Participated in both internal projects and outsourcing projects. During my time at Lemisoft, I implemented several large systems, currently used by thousands of users.',
-      role: 'Fullstack WEB developer (Angular + Symfony)',
+      role: 'Fullstack WEB developer (Angular + PHP)',
       usedSkills: [
         { name: 'Symfony' },
         { name: 'Angular' },
@@ -125,7 +125,8 @@ export const EN_CV: CvData = {
       name: 'Maria Curie-Skłodowska University',
       from: '2008-01-01',
       to: '2013-01-01',
-      description: 'Field: Computer Science, specialization: Computer Graphics',
+      description:
+        'Field: Computer Science<br />Specialization: Computer Graphics',
     },
     {
       name: 'IX Copernicus High School in Lublin',
