@@ -2,7 +2,6 @@ import {
   BadRequestException,
   Body,
   Controller,
-  Get,
   Post,
   Res,
   UsePipes,
@@ -28,58 +27,6 @@ export class ExportController {
     @Body() body: PdfExportRequestDto,
     @Res() res: Response,
   ) {
-    const url = new PdfExportUrlSanitizer().sanitizeUrl(body.url);
-
-    try {
-      const fileStream = await this.pdfService.exportUrl(url);
-      fileStream.pipe(res);
-    } catch (e: unknown) {
-      throw new BadRequestException(`Could not export URL to pdf: ${url}`, {
-        cause: e,
-        description:
-          !!e &&
-          typeof e === 'object' &&
-          'message' in e &&
-          typeof e.message === 'string'
-            ? e.message
-            : undefined,
-      });
-    }
-  }
-
-  @Get('pdf')
-  @ApiOkResponse()
-  @ApiBadRequestResponse()
-  public async testExportPdf(@Res() res: Response) {
-    const body: PdfExportRequestDto = {
-      url: 'http://angular:4200/pl?printing',
-    };
-    const url = new PdfExportUrlSanitizer().sanitizeUrl(body.url);
-
-    try {
-      const fileStream = await this.pdfService.exportUrl(url);
-      fileStream.pipe(res);
-    } catch (e: unknown) {
-      throw new BadRequestException(`Could not export URL to pdf: ${url}`, {
-        cause: e,
-        description:
-          !!e &&
-          typeof e === 'object' &&
-          'message' in e &&
-          typeof e.message === 'string'
-            ? e.message
-            : undefined,
-      });
-    }
-  }
-
-  @Get('pdf-en')
-  @ApiOkResponse()
-  @ApiBadRequestResponse()
-  public async testExportPdfEn(@Res() res: Response) {
-    const body: PdfExportRequestDto = {
-      url: 'http://angular:4200/en?printing',
-    };
     const url = new PdfExportUrlSanitizer().sanitizeUrl(body.url);
 
     try {
